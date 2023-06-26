@@ -1,0 +1,6 @@
+[report]
+include =
+    src/medialog/*
+omit =
+    */test*
+    */upgrades/*
