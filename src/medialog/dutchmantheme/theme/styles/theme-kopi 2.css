@@ -215,12 +215,6 @@
   }
 }
 
-
-a.autotoc-level-1.active, a.autotoc-level-1.active:hover {
-	background: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)) !important;
-	color: white !important;
-}
-
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
