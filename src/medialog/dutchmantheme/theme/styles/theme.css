@@ -221,6 +221,10 @@ a.autotoc-level-1.active, a.autotoc-level-1.active:hover {
 	color: white !important;
 }
 
+#formfield-form-widgets-related_members label {
+	display: block; width: 100%;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
