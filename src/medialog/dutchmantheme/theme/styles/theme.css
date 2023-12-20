@@ -215,7 +215,7 @@
   }
 }
 
-
+.pat-autotoc.autotabs .autotoc-nav a.active,
 a.autotoc-level-1.active, a.autotoc-level-1.active:hover {
 	background: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)) !important;
 	color: white !important;
