@@ -9,7 +9,7 @@
 .section-Members  #formfield-form-widgets-login div.form-text,
 .section-Members  div#formfield-form-widgets-email,
 .section-Members #formfield-form-widgets-fullname label {
-	xdisplay: none;
+	display: none;
 }
 
 #formfield-form-widgets-fullname div.form-text:before {

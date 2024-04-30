@@ -1,0 +1,15 @@
+<div  id="customcss">
+
+<tal:define
+  tal:define="csscolor python:portal_state.portal().portal_registry['DocentIMS.ActionItems.interfaces.IDocentimsSettings.color1']">
+
+    <tal:check >
+      <link href="${font_url}" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+    </tal:check>
+
+<style>
+ h1 {color: red; }
+</style>
+</tal:define>
+</div>
