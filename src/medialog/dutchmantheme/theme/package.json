@@ -24,6 +24,12 @@
     "css-lint": "stylelint \"styles/**/*.scss\" --cache --cache-location .cache/.stylelintcache"
   },
   "dependencies": {
+    "@fontsource/bitter": "^5.1.1",
+    "@fontsource/encode-sans": "^5.1.1",
+    "@fontsource/open-sans": "^5.1.1",
+    "@fontsource/playfair-display": "^5.1.1",
+    "@fontsource/roboto": "^5.1.1",
+    "@fontsource/roboto-condensed": "^5.1.1",
     "@plone/plonetheme-barceloneta-base": "~3.1.0"
   }
 }

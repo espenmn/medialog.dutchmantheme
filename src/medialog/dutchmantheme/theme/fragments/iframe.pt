@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+
+<div class="videoWrapper disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None">
+    <div tal:replace="structure view/data/iframe"/>
+
+<style>
+.videoWrapper {
+	position: relative;
+	padding-bottom: ${view/data/height|None}%; /* 16:9 */
+	padding-top: 0;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+</style>
+</div>
+</html>

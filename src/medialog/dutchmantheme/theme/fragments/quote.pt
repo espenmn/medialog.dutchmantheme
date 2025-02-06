@@ -1,0 +1,66 @@
+<section tal:define="col view/data/color|None;
+            color python: col or '#00b9f2';
+            char view/data/char|None;
+            charac python: char or '&#8220;';"
+            class="disabled-${view/data/disabled|None}"
+            tal:condition="view/editmode|None">
+    <div class="quote-card hideborder-${view/data/hideborder|None}">
+      <span class="quote-thing serif ${view/data/color|None}">${charac}</span>
+        <p>${view/data/quote|None}</p>
+
+   <div class="from-person" tal:condition="view/data/quoter|None">
+    <svg>
+        <circle cx="26" cy="6" r="3" stroke="black" stroke-width="2" />
+        <line x1="26" y1="3" x2="26" y2="26" style="stroke:rgb(0,0,0);stroke-width:1" />
+        <line x1="25" y1="26" x2="38" y2="26" style="stroke:rgb(0,0,0);stroke-width:1" />
+      </svg>
+      <span>${view/data/quoter}</span></div>
+
+    </div>
+<style>
+.quote-card p {
+	font-weight: 600;
+	font-size: 21px;
+	line-height: 26px;
+	margin: 10px 20px 20px 46px;
+}
+
+
+.quote-card {
+	margin: 0 auto;
+	box-sizing: border-box;
+	background: #fff;
+}
+.quote-card:not(.hideborder-True){
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.2);
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+	padding: 30px 30px;
+}
+
+.quote-thing {
+	color: ${color|None};
+    font-weight: 500;
+	font-size: 80px;
+	line-height: 1;
+  font-style: italic;
+  float: left;
+  postition: relative;
+}
+
+div.from-person {
+	font-style: italic;
+	margin: 0;
+	padding-left: 5px
+}
+
+svg {
+	width:  42px;
+	height:  43px;
+	z-index: 3;
+	top:  -15px;
+	left:  -4px;;
+	position: relative;
+	float:  left;
+}
+</style>
+</section>

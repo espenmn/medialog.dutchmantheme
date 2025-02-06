@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="medialog.dutchmantheme"
+      lang="en"
+      >
+<body>
+
+    <metal:main fill-slot="content-core">
+      Fixed cordinates: ${view/fix_map_cordinates}
+
+    <!--${view/folder_prev_next}   ---
+    ${view/hide_images}-->
+          <h1 class="documentFirstHeading">Change layout 4</h1>
+          <!--form method="post"
+          		tal:attributes="action request/getURL">
+    		        <input name="fra" />
+                <input name="til" />
+      		      <input type="submit" name="submit" value="Submit" />
+		       </form-->
+
+
+    </metal:main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="image_size" type="zope.schema.Choice">
+   <description>Choose Image Size (scale) for you image</description>
+   <required>True</required>
+   <title>Image Size</title>
+   <default>preview</default>
+   <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+ </field>
+  <field name="image_width" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>Max Width</title>
+  </field>
+  <field name="image_height" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>Max height</title>
+  </field>
+    <field name="position-x" type="zope.schema.Int">
+    <description>>Horizontal image position in %. 50 is centered</description>
+    <required>true</required>
+    <min>0</min>
+    <max>100</max>
+    <default>50</default>
+    <title>X cordinate focal point</title>
+  </field>
+  <field name="position-y" type="zope.schema.Int">
+    <description>>Vertical image position in %. 50 is centered</description>
+    <required>true</required>
+    <min>0</min>
+    <max>100</max>
+    <default>50</default>
+    <title>Y cordinate focal point</title>
+  </field>
+</schema>
+</model>

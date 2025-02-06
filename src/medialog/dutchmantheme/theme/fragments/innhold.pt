@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+
+<div class="conteido light-grey-background fullwidth disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+    <div class="items container flex flex-between padding-15">
+        <div class="news-item white-background margin-10-0 width-23 padding-0"
+        tal:repeat="item python:context.portal_catalog(portal_type='News Item', sort_on='published')[-4:]">
+
+            <tal:define tal:define="obj item/getObject;
+                    scale_func obj/@@images;
+                    scale context/@@images;
+                    scaled_image python:scale_func.scale('image', scale='preview');
+                    item_url item/getURL|item/absolute_url"
+                    tal:on-error="">
+                <!--span class="xxx">xxx</span-->
+                <picture class="hidden_picture" hidden>
+                <img tal:replace="structure python:scaled_image.tag()"
+                    tal:condition="scaled_image"  />
+                </picture>
+
+                <div class="padding-20">
+                    <h1><a class="black" href="${item_url}">${item/Title}</a></h1>
+                    <p class="showhide">${item/Description|None}</p>
+                </div>
+
+            </tal:define>
+        </div>
+
+    </div>
+<script>
+$( ".news-item" ).mouseenter(function() {
+  $(this).children(".xxx").hide();
+  $(this).children(".hidden_picture" ).slideIn( 700);
+    $(this).children("div").children(".showhide" ).hide( 700);
+});
+$( ".news-item" ).mouseleave(function() {
+  $(this).children(".hidden_picture" ).slideUp( 700);
+  $(this).children(".xxx").show(700);
+  $(this).children("div").children(".showhide" ).show();
+});
+</script>
+
+</div>
+</html>

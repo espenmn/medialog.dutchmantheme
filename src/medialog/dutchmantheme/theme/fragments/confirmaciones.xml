@@ -1,0 +1,27 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="title" type="zope.schema.TextLine">
+    <description/>
+    <required>True</required>
+    <default>Moviestuff</default>
+    <title>Title text</title>
+  </field>
+  <field name="description" type="zope.schema.TextLine">
+    <description/>
+    <required>True</required>
+    <default>My videos</default>
+    <title>Description</title>
+  </field>
+  </schema>
+</model>

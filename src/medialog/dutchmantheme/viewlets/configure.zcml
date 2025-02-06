@@ -1,0 +1,85 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="medialog.dutchmantheme">
+
+    <include package="Products.CMFCore" file="permissions.zcml" />
+
+    <include package="plone.app.multilingual"/>
+
+    <browser:viewlet
+      name="medialog.dutchmantheme.menuviewlet"
+      for="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.MenuViewlet"
+      template="menu.pt"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+      permission="zope2.View"
+      />
+
+    <!-- Portlets Below Content -->
+    <browser:viewlet
+                name="medialog.dutchmantheme.belowportlets"
+                layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+                manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+                class=".viewlets.BelowViewlet"
+                permission="zope.Public"
+    />
+
+
+    <!-- Custom  Viewlet for switching language -->
+    <browser:viewlet
+      name="medialog.dutchtheme.languageselector"
+      template="languageselector.pt"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="plone.app.multilingual.browser.selector.LanguageSelectorViewlet"
+      permission="zope2.View"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+      />
+
+    <!-- Portlets Above Content -->
+    <browser:viewlet
+                name="medialog.dutchmantheme.aboveportlets"
+                layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+                manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+                class=".viewlets.AboveViewlet"
+                permission="zope.Public"
+    />
+
+    <!-- Alternative Portlets Above Everything -->
+    <browser:viewlet
+                name="medialog.dutchmantheme.aboveallportlets"
+                layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+                manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+                class=".viewlets.AboveViewlet"
+                permission="zope.Public"
+                template = "aboveallportlets.pt"
+    />
+
+
+    <!-- Duplicate Portlets -->
+    <!--browser:viewlet
+                name="medialog.dutchmantheme.footerportlets"
+                layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+                manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+                class=".viewlets.AboveFooterViewlet"
+                permission="zope.Public"
+    /-->
+    <browser:viewlet
+      name="medialog.dutchmantheme.jsheading_viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"    
+      class=".viewlets.jsheadingViewlet"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"                
+      permission="zope2.View"
+    />
+
+    <browser:viewlet
+      name="medialog.dutchmantheme.jsfooter_viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.JSFooterViewlet"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"                
+      permission="zope2.View"
+    />
+
+</configure>

@@ -1,0 +1,85 @@
+
+<section class="tabblock no-border">
+
+
+
+  <div class="pat-autotoc autotabs no-border" data-pat-autotoc="section:fieldset;levels:legend;">
+    <fieldset tal:condition="context/title1|None">
+        <legend>${context/title1}</legend>
+        <tal:block define="value nocall:context/text1|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+    <fieldset tal:condition="context/title2|None">
+        <legend>${context/title2}</legend>
+        <tal:block define="value nocall:context/text2|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+    <fieldset tal:condition="context/title3|None">
+        <legend>${context/title3}</legend>
+        <tal:block define="value nocall:context/text3|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+    <fieldset tal:condition="context/title4|None">
+        <legend>${context/title4}</legend>
+        <tal:block define="value nocall:context/text4|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+    <fieldset tal:condition="context/title5|None">
+      <legend>${context/title5}</legend>
+      <tal:block define="value nocall:context/text5|nothing;
+                   output_relative_to nocall:value/@@output_relative_to|nothing"
+        tal:condition="output_relative_to"
+        tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+    <fieldset tal:condition="context/title6|None">
+      <legend>${context/title6a}</legend>
+      <tal:block define="value nocall:context/text6|nothing;
+                   output_relative_to nocall:value/@@output_relative_to|nothing"
+        tal:condition="output_relative_to"
+        tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+
+    <fieldset tal:condition="context/title7|None">
+        <legend>${context/title7}</legend>
+        <tal:block define="value nocall:context/text7|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+    <fieldset tal:condition="context/title8|None">
+        <legend>${context/title8}</legend>
+        <tal:block define="value nocall:context/text8|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+    <fieldset tal:condition="context/title9|None">
+        <legend>${context/title9}</legend>
+        <tal:block define="value nocall:context/text9|nothing;
+                     output_relative_to nocall:value/@@output_relative_to|nothing"
+          tal:condition="output_relative_to"
+          tal:content="structure python:output_relative_to(context)" />
+    </fieldset>
+
+</div>
+
+</section>
+
+<style>
+  .no-border { border: 0 none !important}
+</style>

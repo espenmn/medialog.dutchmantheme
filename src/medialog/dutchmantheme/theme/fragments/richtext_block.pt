@@ -1,0 +1,26 @@
+<section class="richtext_block ${view/data/color1} ${view/data/color3} padding-20 disabled-${view/data/disabled|None}"
+            tal:condition="view/editmode|None"
+            id="fragment-${python: view.id}"
+            style="background-image: url( ${view/background_image|None } )"
+            tal:define="line_url view/get_url|None">
+  <div class="${view/data/color2}">
+      <tal:block define="value nocall:view/data/text|nothing;
+                   output_relative_to nocall:value/@@output_relative_to|nothing"
+        tal:condition="output_relative_to"
+        tal:content="structure python:output_relative_to(context)" />
+      <div tal:condition="view/data/button">
+         <a class="btn btn-primary ${view/data/buttontype|None}"
+           href="${line_url|None}">
+           ${view/data/button}
+         </a>
+      </div>
+  </div>
+  <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+      <link rel="stylesheet" href="++theme++dutchmantheme/css/richtext_block.css" tal:condition="load_css">
+  </tal:define>
+  <style>
+    .richtext_block {border: 1px solid; background-size: cover; background-position: top center}
+    .btn.outline.white {color: white !important;}
+.btn.outline.white:hover {  box-shadow: 4px 4px 10px rgba(0,0,0, 0.3); }
+  </style>
+</section>

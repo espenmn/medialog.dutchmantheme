@@ -1,0 +1,48 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="linked_folder" type="zope.schema.Choice">
+      <description>Choose Folder for images for you image gallery Leave empty for current folder</description>
+      <required>False</required>
+      <title>Select a folder (or folderish object)</title>
+      <source>collective.themefragments.tiles.CatalogSource</source>
+ </field>
+ <field name="select_folder" type="zope.schema.Choice">
+    <description>Useful for Multilingual setups</description>
+    <required>False</required>
+    <title>Alternatively choose folder here</title>
+    <vocabulary>medialog.dutchmantheme.ShowFoldersVocabulary</vocabulary>
+</field>
+ <field name="image_height" type="zope.schema.Int">
+  <description>Choose Image height in pixels</description>
+  <required>True</required>
+  <title>Image height</title>
+  <default>250</default>
+ </field>
+ <field name="image_width" type="zope.schema.Int">
+  <description>Choose Image width pixels</description>
+  <required>True</required>
+  <title>Image Size</title>
+  <default>250</default>
+ </field>
+ <field name="max_images" type="zope.schema.Int">
+  <description>Max images in each row</description>
+  <required>True</required>
+  <title>Max images pr row</title>
+  <default>5</default>
+  <min>1</min>
+  <max>30</max>
+ </field>
+</schema>
+</model>

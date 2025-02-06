@@ -1,0 +1,28 @@
+<section tal:define="title2 view/data/title2;
+  title1 view/data/title1|None;
+  link_url view/get_url|None;"
+  title="${title2}"
+  data-anchor="anchor-${title2}"
+  class="infoblock ${view/data/color1} ${view/data/style} ${view/data/effect} disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  id="fragment-${python: view.id}">
+   <div class="container margin-10">
+       <div class="info_pre">
+           <h3 class="pretext ${view/data/color2}" tal:condition="title1|None">
+               ${view/data/title1}
+           </h3>
+           <h1 class="info_title ${view/data/color3}">
+               ${title2}
+           </h1>
+       </div>
+       <div class="info_button margin-0" tal:condition="link_url|None">
+           <div class="button btn btn-primary ${view/data/color4}">
+             <a href="${link_url}" class=" ${view/data/color5}">${view/data/buttontext}</a>
+           </div>
+       </div>
+   </div>
+   <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+         <link rel="stylesheet" href="++theme++dutchmantheme/css/info_block.css" tal:condition="load_css">
+   </tal:define>
+
+</section>

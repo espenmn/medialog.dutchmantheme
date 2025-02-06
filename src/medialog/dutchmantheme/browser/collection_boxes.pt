@@ -1,0 +1,93 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="medialog.dutchmantheme">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block use-macro="context/@@listing_view/macros/content-core">
+
+  <metal:entries fill-slot="entries">
+
+    <metal:block use-macro="context/@@listing_view/macros/entries"
+        tal:define="portal context/@@plone_portal_state/portal">
+      <metal:entry fill-slot="entry">
+
+
+        <div class="collection_item margin-10">
+            <div tal:define="item_url item/getURL|item/absolute_url">
+            <a href="${item_url}" class="margin-0">
+                <figure tal:define="obj item/getObject;
+                        scale_func obj/@@images;
+                        scaled_image python:scale_func.scale('image', scale=i_size)"
+                        tal:on-error=""
+                        class="no-pop-up">
+                    <img tal:replace="structure python:scaled_image.tag()"
+                         tal:condition="scaled_image" />
+               </figure>
+            </a>
+            <h3 class="padding-0-20">
+                <a class="black" href="${item_url}/view">${item/Title}</a>
+            </h3>
+            <p tal:define="max_chars view/data/max_chars|python:250; description item/Description"
+              class="description padding-0-20" tal:condition="description">
+              ${python: description[:max_chars]}
+              <tal:check
+                 tal:condition="python: max_chars > 0">…</tal:check>
+            </p>
+         </div>
+       </div>
+
+
+       </metal:entry>
+       </metal:block>
+
+   <style>
+
+
+     .portal-type {
+     margin-bottom: 0;
+    }
+   .portal-type span {
+     padding: 2px 10px;
+      text-transform: uppercase;
+      font-size: 80%;
+    }
+ .collection_item {
+      color: #333;
+     flex: 1;
+      min-width: 230px;
+      border-bottom: 1px solid black;
+      background: #FaFaFa;
+      margin-bottom: 20px;
+    }
+
+ img {
+        width: 100%;
+        height: auto;
+    }
+     </style>
+
+
+     <script>require([
+       'jquery',
+       ], function(Base) {
+         'use strict';
+         $( ".data-filter" ).click(function() {
+          var value_not = ".collection_item:not(." + $(this).attr("data-filter") + ")";
+          $(".collection_item").filter( $(value_not)  ).toggle();
+          });
+       });
+     </script>
+
+   </metal:entries>
+
+   </metal:block>
+   </metal:content-core>
+
+   </body>
+   </html>

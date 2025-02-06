@@ -1,0 +1,64 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="iconfield" type="zope.schema.TextLine"
+      form:widget="medialog.iconpicker.widgets.widget.IconPickerFieldWidget">
+    <description/>
+    <required>True</required>
+    <title>Icon</title>
+  </field>
+  <field name="title" type="zope.schema.TextLine">
+    <description/>
+    <required>False</required>
+    <title>Tittel</title>
+  </field>
+  <field name="description" type="zope.schema.Text">
+    <description/>
+    <required>False</required>
+    <title>Description</title>
+  </field>
+  <field name="color1" type="zope.schema.Choice">
+    <description/>
+    <required>False</required>
+    <title>Header and Icon color</title>
+    <values>
+      <element>black</element>
+      <element>white</element>
+      <element>plone-link</element>
+      <element>plone-link-2</element>
+      <element>plone-link-3</element>
+      <element>plone-link-opposite</element>
+      <element>custom-color1</element>
+      <element>custom-color2</element>
+      <element>custom-color3</element>
+    </values>
+  </field>
+  <field name="color2" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Description color</title>
+      <values>
+        <element>black</element>
+        <element>white</element>
+        <element>plone-link</element>
+        <element>plone-link-2</element>
+        <element>plone-link-3</element>
+        <element>plone-link-opposite</element>
+        <element>custom-color1</element>
+        <element>custom-color2</element>
+        <element>custom-color3</element>
+      </values>
+  </field>
+</schema>
+</model>

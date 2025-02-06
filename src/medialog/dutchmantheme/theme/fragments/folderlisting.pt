@@ -1,0 +1,47 @@
+
+<section id="${view/get_id}"
+  class="selectfragment disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  tal:define="folder view/list_items|None">
+
+   <tal:repeat tal:repeat="item folder/@@contentlisting|view/get_items|None">
+    <div class="listing_card zoom">
+      <a href="${item/getURL|item/absolute_url}">
+        <h2 class="${view/data/color2|None}"><span>${item/Title}</span>  <i class="float-right fa fa-arrow-right ${view/data/color1}" /></h2>
+        <p class="card_label xblack">${item/Description}</p>
+      </a>
+    </div>
+   </tal:repeat>
+
+
+
+</section>
+
+<style>
+.float-right.fa-arrow-right { border: 1px solid; border-radius: 50%; font-size: 0.55em; width: 1.4em; height: 1.4em; line-height: 1.4em; text-align: center; padding-left: 0.1em; display: block}
+.float-right {float: right}
+ div.listing_card{
+	cursor: pointer;
+	border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin: 15px 15px;
+  padding: 15px;
+  background: white;
+}
+div.listing_card:hover{
+ box-shadow: 0 1px 5px  rgba(0,0,0,0.2);
+}
+div.listing_card a{
+ text-decoration: none;
+}
+ .zoom {
+   transition: transform .1s; /* Animation */
+}
+.zoom:hover {
+   transform: scale(1.01);
+}
+
+.listing_card a,
+h2.inherit { color: inherit }
+
+</style>

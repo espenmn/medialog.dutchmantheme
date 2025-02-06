@@ -1,0 +1,52 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+    <field name="content_type" type="zope.schema.List">
+      <description>Select a content typethat has leadimage</description>
+      <title>Content type</title>
+      <default>News Item</default>
+      <value_type type="zope.schema.Choice">
+        <vocabulary>plone.app.vocabularies.PortalTypes</vocabulary>
+      </value_type>
+    </field>
+    <field name="item_c" type="zope.schema.Int">
+      <description>Number of items</description>
+      <title>Items</title>
+      <min>1</min>
+      <max>8</max>
+      <default>4</default>
+    </field>
+    <field name="sort_on" type="zope.schema.Choice">
+      <description/>
+      <title>Sort on</title>
+      <values>
+        <element>modified</element>
+        <element>Date</element>
+        <element>created</element>
+        <element>effective</element>
+        <element>id</element>
+        <element>sortable_title</element>
+        <element>total_comments</element>
+      </values>
+    </field>
+    <field name="sort_order" type="zope.schema.Choice">
+      <description/>
+      <title>Sort order</title>
+      <values>
+        <element>descending</element>
+        <element>ascending</element>
+      </values>
+    </field>
+</schema>
+</model>

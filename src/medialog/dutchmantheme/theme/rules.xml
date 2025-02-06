@@ -4,12 +4,18 @@
        xmlns:xhtml="http://www.w3.org/1999/xhtml"
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
+       
+       
 
   <!-- <xi:include href="++theme++barceloneta/grid-col-marker.xml"/> -->
 
   <theme href="index.html" />
   <notheme css:if-not-content="#visual-portal-wrapper" />
   <notheme css:if-content=".template-manage-viewlets" />
+
+
+  <!-- <after css:theme-children="head" css:content="head script" /> -->
+
 
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
@@ -29,9 +35,18 @@
     <after css:theme-children="head" css:content="head script" />
   </rules>
 
+  <after theme-children="/html/head" >
+
+    <link rel="stylesheet" href="++resource++medialog.iconpicker/icon-fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+  </after>
+
+
+
+
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
   <merge attributes="class" css:content="body" css:theme="body" />
+  <after css:theme="body" css:content="#customcss"  href="/@@theme-fragment/customcss"  />
 
   <!-- move global nav and livesearch -->
   <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />

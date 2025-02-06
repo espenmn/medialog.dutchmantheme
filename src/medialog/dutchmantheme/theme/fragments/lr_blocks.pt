@@ -1,0 +1,58 @@
+
+<section id="fragment-${python: view.id}"
+         tal:define="folder view/get_allitems;
+                items folder/@@contentlisting|context/@@contentlisting|None;
+                image_size view/data/image_size;
+                css_class view/data/css_class;
+                color1 view/data/color1;
+                color2 view/data/color2;
+                buttontext view/data/buttontext|None;
+                load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or ''"
+            class="lrblock disabled-${view/data/disabled|None}"
+            tal:condition="view/editmode|None">
+
+  <tal:repeat tal:repeat="item items" tal:condition="items|None">
+    <div class="container flex padding-0 ${css_class} ${color1} margin-40-0"
+        tal:define="title item/title;
+        item_url item/getURL|item/absolute_url">
+        <div class="half bodytext ${color2} padding-40">
+            <a href="${item_url}">
+              <h2 class="${color2}" tal:condition="title">${title}</h2>
+            </a>
+            <h4  class="${color2}" tal:condition="item/description">${item/description}</h4>
+            <div  class="${color2}" tal:define="value item/text|nothing;
+                  output_relative_to nocall:value/@@output_relative_to|nothing"
+                  tal:condition="output_relative_to"
+                  tal:content="structure python:output_relative_to(context)" />
+
+
+            <a href="${item_url}" class="lrlink ${color2}" tal:condition="buttontext"  href="" >${buttontext}</a>
+        </div>
+        <div class="half image margin-0 padding-0"
+            tal:define="obj item/getObject;
+                           scale_func obj/@@images;
+                           scaled_image python:scale_func.scale('image', scale=image_size)">
+          <img tal:condition="scaled_image|None"
+                tal:replace="structure python:scaled_image.tag()"
+               tal:on-error="" />
+        </div>
+     </div>
+ </tal:repeat>
+ <link rel="stylesheet" href="++theme++dutchmantheme/css/lr_block.css" tal:condition="load_css">
+
+<style>
+#fragment-${python: view.id} { overflow: hidden;}
+<tal:check tal:condition="view/data/image_height|None">
+    #fragment-${python: view.id} img.image-inline {
+        object-fit: cover;
+        width: 100%;
+        max-height: ${view/data/image_height}px;
+        object-position: 0 ${view/data/position-y|None}%;
+    }
+</tal:check>
+ #fragment-${python: view.id} .half {
+    min-width: 30px;
+    box-sizing: border-box;
+ }
+ </style>
+</section>

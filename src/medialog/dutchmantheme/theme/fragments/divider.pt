@@ -1,0 +1,13 @@
+<section id="fragment-${python: view.id}" class="disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+    <div class="line ${view/data/color|None}"/>
+  <style>
+    #fragment-${python: view.id} {
+      margin: ${view/data/margin1|None}px ${view/data/margin2|None}px;
+      vertical-align: middle;
+    }
+    .line {
+      border-bottom: ${view/data/thicknes|None}px solid;
+    }
+  </style>
+</section>

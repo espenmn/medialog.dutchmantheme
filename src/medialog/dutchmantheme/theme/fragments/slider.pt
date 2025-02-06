@@ -1,0 +1,98 @@
+<tal:check tal:condition="view/editmode|None">
+<section tal:define="folder_url request/form/folder_url|None;
+				maxwidth view/data/maxwidth|None;
+				speed view/data/speed|None;
+				t_out view/t_out;
+				pager view/data/pager|None;
+				nav view/data/nav|None;
+				css_file view/data/css_file|None;
+				height view/data/height|None;
+				s_id string:slider-${view/id};
+				min_height view/data/min-height|None;
+				max_height view/data/max-height|None;
+				image_size view/image_size"
+				tal:condition="folder_url"
+				class="no-margin ${view/data/css_class|None} ${s_id} disabled-${view/data/disabled|None}"
+				id="fragment-main-slider">
+		<div id="slider" class="${s_id}" tal:condition="folder_url">
+			   <tal:repeat tal:repeat="item  context/?folder_url/@@contentlisting">
+			   		<div  class="fillme full-${view/data/fill|None}" tal:define="item_url item/getURL|item/absolute_url;
+							        image_url python:item_url + '/@@images/image/' + image_size">
+			 			  <img class="slider-img img-responsive"  alt="${item/title|None}" src="${image_url}"/>
+				      <div class="slidetext-container" tal:condition="view/show_text">
+				        <div class="slidetext  wow bounceInUp animated">
+								    		<h1 tal:content="item/title|None" tal:condition="view/data/showtext"/>
+												<tal:condition
+														tal:condition="view/data/showtext">
+																<h3 tal:condition="exists: item/description">${item/description}</h3>
+													</tal:condition>
+
+													<tal:condition
+															tal:condition="view/data/showbody|None">
+
+															<div tal:define="value item/text|nothing;
+											             output_relative_to nocall:value/@@output_relative_to|nothing"
+											             tal:condition="output_relative_to"
+											             tal:content="structure python:output_relative_to(context)" />
+													</tal:condition>
+
+											 </div>
+			              </div>
+			      </div>
+			   </tal:repeat>
+		</div>
+	<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+ 	 		<link rel="stylesheet" href="++theme++dutchmantheme/css/${css_file}.css" tal:condition="load_css">
+	</tal:define>
+	<style>
+		<tal:condition tal:condition="view/data/fill|None">
+
+			div.fillme.full-True img.slider-img.img-responsive {
+			 width: 100vw !important;
+			 height: ${height}vw;
+		 }
+		  .${s_id} img.slider-img.img-responsive  {
+		    min-height: ${min_height}px !important;
+		    object-fit: cover !important;
+		    object-position: ${view/data/position-x|None}% ${view/data/position-y|None}%;
+		    }
+		</tal:condition>
+
+		#slider.${s_id},
+		#slider.${s_id} img {
+			max-height: ${max_height}px !important;
+			min-height: ${min_height}px !important;
+		}
+	</style>
+
+	<script>require([
+	  'jquery',
+		'++theme++dutchmantheme/javascript/responsiveslides.min'
+		 ], function () {
+	     $("#slider.${s_id}").responsiveSlides({
+		     	maxwidth: ${maxwidth},
+		     	nav: ${nav},
+		     	timeout: ${t_out},
+		 		speed: ${speed},
+		 		pager: ${pager},
+		     	prevText: "<",
+		     	nextText: ">",
+     		});
+		});
+		$(window).resize(function(){
+      // Setting the heigth of the slides
+      var new_height = ($('.${s_id}').width()*${height}/100);
+ 		 var min_height = ${min_height};
+ 		 var max_height = ${max_height};
+ 		 if (new_height > max_height) {
+ 		  $('.${s_id}').height(max_height);
+ 		 } else if (new_height < min_height) {
+ 			$('.${s_id}').height(min_height);
+ 		 } else {
+ 		 	$('.${s_id}').height(new_height);
+			$('.${s_id} img.slider-img.img-responsive').height(new_height);
+ 			}
+    }).resize();
+	</script>
+</section>
+</tal:check>

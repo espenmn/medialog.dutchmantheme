@@ -1,0 +1,112 @@
+<section class="disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+<div class="news-container ${view/data/color1|None}">
+  <div class="slick" tal:define="image_size view/data/image_size|None" >
+    <tal:repeat tal:repeat="item view/get_items|None">
+            <tal:define tal:define="obj item/getObject;
+                    item_url item/getURL|item/absolute_url;
+                    obj item/getObject;
+                            scale_func obj/@@images;
+                            scaled_image python:scale_func.scale('image', scale=image_size)">
+                    <div class="slick_slide">
+                      <a href="${item_url}" title="${item/Title}" alt="${item/Title}">
+                        <h2>${item/Title}</h2>
+                        <p class="black">${item/Description|None}</p>
+                      </a>
+                      <p><i class="fa fa-calendar"> </i> <span class="pat-moment date-time"
+                          data-pat-moment="format:relative;">${item/Date}</span>
+                      </p>
+                      <a href="${item_url}" alt="${item/Title}" title="${item/Title}" >
+
+                        <tal:check tal:condition="not: view/cropped|None"
+                            tal:define="scaled_image python:scale_func.scale('image', scale=image_size)">
+                          <img tal:replace="structure python:scaled_image.tag()"
+                             tal:on-error="" />
+                        </tal:check>
+                        <tal:check tal:condition="view/cropped|None"
+                            tal:define="image_width view/data/image_width;
+                              image_height view/data/image_height;
+                              image_direction view/data/direction;
+                            scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction=image_direction)">
+                          <img tal:replace="structure python:scaled_image.tag()"
+                            tal:on-error="" />
+                        </tal:check>
+                      </a>
+                    </div>
+            </tal:define>
+      </tal:repeat>
+    </div>
+</div>
+<link rel="stylesheet" href="++theme++dutchmantheme/css/slick.css" />
+<script>
+require([
+      'jquery',
+      '++theme++dutchmantheme/javascript/slick.min'
+      ], function(Base) {
+        'use strict';
+        $('.slick').slick({
+            infinite: true,
+            slidesToShow: ${python: view.data['slides-1']},
+            slidesToScroll: ${python: view.data['slides-1']},
+            responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: ${python: view.data['slides-2']},
+              slidesToScroll: ${python: view.data['slides-2']},
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: ${python: view.data['slides-3']},
+              slidesToScroll: ${python: view.data['slides-3']}
+            }
+          },
+          ],
+            vertical: false,
+            dots: ${python: view.data['pager']},
+            arrows: ${python: view.data['nav']},
+            nextArrow: '<i class="fa fa-angle-right large-text"></i>',
+            prevArrow: '<i class="fa fa-angle-left large-text" ></i>',
+        });
+      });
+</script>
+<style>
+.slick-arrow { position: absolute; top: 40%;}
+.fa-angle-left.slick-arrow {left: -1em}
+.fa-angle-right.slick-arrow {right: -1em}
+.slick ul {
+	list-style-image: none;
+	list-style-type: none;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 1em;
+}
+
+.slick li {
+	display:  inline-block;
+ 	margin:  0 3px;
+ 	background: #CCC !important;
+}
+
+.slick li.slick-active  button  {
+	background: #333;
+}
+
+div.slick_slide {
+	padding: 1em 2em;
+
+}
+div.slick_slide img {
+	margin: 0;
+
+}
+
+.slick-track a:hover {text-decoration: none}
+.slick-track a:hover h2 {text-decoration: underline}
+
+.news-container {background: #${python: view.data['color2']}}
+</style>
+</section>

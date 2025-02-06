@@ -1,0 +1,50 @@
+<section id="fragment-${python: view.id}"
+         tal:define="scale view/data/image_size;
+                name view/data/name|None;
+                title view/data/title|None;
+                image view/one_image|view|None;
+                image_url image/getURL;
+                color1 view/data/color1;
+                color2 view/data/color2;
+                email view/data/email;
+                load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or ''"
+          class="disabled-${view/data/disabled|None} ${color1}  ${color2} kontaktand"
+          tal:condition="view/editmode|None">
+  <div class="container flex padding-20 ${color1}">
+    <div class="mosaic-grid-cell mosaic-width-two-thirds bodytext padding-40 ${color2}">
+        <div  tal:define="value view/data/text|nothing;
+              output_relative_to nocall:value/@@output_relative_to|nothing"
+              tal:condition="output_relative_to"
+              tal:content="structure python:output_relative_to(context)" />
+    </div>
+    <div class="mosaic-grid-cell mosaic-width-one-thirds center">
+      <img alt="${title}" class="image-inline "
+          src="${image_url}/@@images/image/${scale}" />
+      <h2  class="${color2}" tal:condition="name">${name}</h2>
+      <h3  class="${color2}" tal:condition="title|None">${title}</h3>
+      <p class="${color2}">${view/data/phone|None}<br/><a class="${color2}" href="mailto: ${email|None}">${email|None}</a></p>
+    </div>
+ </div>
+ <link rel="stylesheet" href="++theme++dutchmantheme/css/lr_block.css" tal:condition="load_css">
+ <style>
+   #fragment-${python: view.id} img.image-inline {
+        object-fit: cover;
+        border-radius: 50%
+  }
+
+  #fragment-${python: view.id} h2 { margin-bottom: 0;}
+
+  #fragment-${python: view.id} h3 { margin-top: 0;}
+
+  #fragment-${python: view.id} { overflow: hidden; margin-left: -15px; margin-right: -15px;}
+
+ #fragment-${python: view.id} div * {
+	color: inherit;
+}
+
+#fragment-${python: view.id} .center {
+	text-align:center;
+}
+
+ </style>
+</section>

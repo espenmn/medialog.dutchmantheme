@@ -1,0 +1,110 @@
+<aside class="padding-10-0 disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None"
+role="complementary"
+id="frag${python: view.id}">
+    <div class="accordian sans-serif">
+        <h3 class=""><!--i class="fa fa-info-circle plone-link large large-text"/--> ${view/data/title}</h3>
+        <div class="accordian-body"
+              tal:define="value view/data/text|nothing;
+              output_relative_to nocall:value/@@output_relative_to|nothing"
+              tal:condition="output_relative_to"
+              tal:content="structure python:output_relative_to(context)" />
+                  <i class="fa fa-info plone-background white i-info"/>
+    </div>
+    <a class="accordian-expand white-background" href="#!" disabled>
+        <i class="white-background fa fa-chevron-down"></i>
+    </a>
+
+</aside>
+
+<script>require([
+      'jquery',
+      ], function(Base) {
+        $("#frag${python: view.id} .accordian-expand,  #frag${python: view.id} .accordian").click(function() {
+            $('#frag${python: view.id} .accordian').toggleClass('open');
+             $('#frag${python: view.id} .fa-chevron-down').toggleClass('fa-rotate-180');
+        });
+      });
+</script>
+<style>
+.i-info {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 18px !important;
+    width: 20px;
+    height: 9750px;
+    line-height: 69px !important;
+    display: block;
+    text-align: center;
+}
+.accordian {
+    position: relative;
+    margin-bottom: 0 !important;
+    border: 1px solid #CCC;
+    border-bottom-width: 1px;
+    background-color: #fff;
+    word-wrap: break-word;
+    padding: 20px 30px 20px 55px;
+    position: relative;
+    max-height: 6.7em;
+    overflow: hidden;
+    color: #999;
+}
+
+.accordian h3 {
+    color: black;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.accordian-body {
+    -webkit-transition: max-height .5s;
+    -o-transition: max-height .5s;
+    transition: max-height .5s;
+    position: relative;
+}
+
+.accordian-body:after {
+  position: absolute;
+  top:0;
+  height: 38px;
+  width: 100%;
+  content: "";
+  background: linear-gradient(to top,
+     rgba(255,255,255, 1) 0%,
+     rgba(255,255,255, 0) 80%
+  );
+  pointer-events: none; /* so the text is still selectable */
+}
+
+
+.accordian.open .accordian-body:after {
+    display: none;
+}
+
+.accordian.open {
+    max-height: 9600px;
+    color: black;
+}
+
+
+.accordian-expand {
+    border: 1px solid;
+    border-radius: 50%;
+    width: 1.6em;
+    height: 1.6em;
+    text-align: center;
+    display: block;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    font-weight: normal;
+    margin: auto;
+    bottom: -0.2em;  /* bottom: 1.3em; */
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index:3;
+}
+
+</style>

@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+	i18n_domain="medialog.dutchmantheme">
+
+
+  <!--  Input (edit) widget  -->
+  <!--z3c:widgetTemplate
+      mode="input"
+      widget="z3c.form.browser.select.SelectWidget"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+      template="imagepicker_input.pt" /-->
+
+  <!--  Pat related items widget  -->
+  <z3c:widgetTemplate
+      mode="input"
+      widget="medialog.dutchmantheme.widgets.widgets.PickerWidget"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+      template="relateditems_input.pt" />
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget="medialog.dutchmantheme.widgets.widgets.FolderPickerWidget"
+      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+      template="select_folder_input.pt" />
+
+</configure>

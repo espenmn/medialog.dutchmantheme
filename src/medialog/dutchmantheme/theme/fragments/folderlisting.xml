@@ -1,0 +1,84 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+    <schema>
+      <field name="disabled" type="zope.schema.Bool">
+          <required>false</required>
+          <title>Hide fragment</title>
+          <description>Click here to hide fragment</description>
+      </field>
+      <field name="collectionfilter" type="zope.schema.Bool">
+          <required>false</required>
+          <title>Use for collectionfilter</title>
+          <description>Click here to give correct id for collectiontiler. Only one on each page</description>
+      </field>
+      <field name="linked_folder" type="zope.schema.Choice">
+          <description>Choose Folder.</description>
+          <required>False</required>
+          <title>Select a folder (or folderish object)</title>
+          <source>collective.themefragments.tiles.CatalogSource</source>
+      </field>
+      <field name="content_type" type="zope.schema.List">
+        <description>Note: This setting is only for folders, not collection</description>
+        <title>Content Types</title>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>plone.app.vocabularies.UserFriendlyTypes</vocabulary>
+        </value_type>
+      </field>
+      <field name="sort_on" type="zope.schema.Choice">
+      <description>Note: This setting is only for folders, not collection</description>
+        <title>Sort on</title>
+        <values>
+          <element>modified</element>
+          <element>Date</element>
+          <element>created</element>
+          <element>effective</element>
+          <element>id</element>
+          <element>sortable_title</element>
+          <element>total_comments</element>
+        </values>
+      </field>
+      <field name="sort_order" type="zope.schema.Choice">
+        <description>Note: This setting is only for folders, not collection</description>
+        <title>Sort order</title>
+        <values>
+          <element>descending</element>
+          <element>ascending</element>
+        </values>
+      </field>
+      <field name="color1" type="zope.schema.Choice">
+          <description/>
+          <required>False</required>
+          <title>Arrow Color</title>
+          <values>
+            <element>black</element>
+            <element>grey</element>
+            <element>plone-link</element>
+            <element>plone-link-2</element>
+            <element>plone-link-3</element>
+            <element>plone-link-opposite</element>
+            <element>custom-color1</element>
+            <element>custom-color2</element>
+            <element>custom-color3</element>
+          </values>
+        </field>
+        <field name="color2" type="zope.schema.Choice">
+            <description/>
+            <required>False</required>
+            <title>Title color</title>
+            <values>
+              <element>black</element>
+              <element>inherit</element>
+              <element>grey</element>
+              <element>plone-link</element>
+              <element>plone-link-2</element>
+              <element>plone-link-3</element>
+              <element>plone-link-opposite</element>
+              <element>custom-color1</element>
+              <element>custom-color2</element>
+              <element>custom-color3</element>
+            </values>
+          </field>
+
+</schema>
+</model>

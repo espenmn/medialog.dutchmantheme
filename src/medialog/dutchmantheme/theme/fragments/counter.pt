@@ -1,0 +1,26 @@
+<div id="fragment-${python: view.id}"
+  class="disabled-${view/data/disabled|None} count-item"
+  tal:condition="view/editmode|None">
+    <span tal:condition="view/data/icon|None" class="fa ${view/data/icon|None} black"></span>
+    <h1><span class="countme count-${view/id}">${view/data/number|None}</span> ${view/data/title|None}</h1>
+    <p tal:condition="view/data/description|None">${view/data/description|None}</p>
+</div>
+<script>require([
+  'jquery',
+  ], function(Base) {
+    $('#fragment-${python: view.id} .countme').each(function () {
+      $(this).prop('Counter',1).animate({
+      Counter: $(this).text()
+      }, {
+        duration: 3000,
+          easing: 'swing',
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+        }
+    });
+    });
+  });
+</script>
+<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+    <link rel="stylesheet" href="++theme++dutchmantheme/css/count.css" tal:condition="load_css">
+</tal:define>

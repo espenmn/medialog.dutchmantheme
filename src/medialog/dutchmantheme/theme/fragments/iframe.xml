@@ -1,0 +1,26 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="iframe" type="zope.schema.Text">
+    <description/>
+    <required>True</required>
+    <default></default>
+    <title>Complete iframe code from youtube</title>
+  </field>
+  <field name="height" type="zope.schema.Float">
+    <description>Divide height by width. 16:9 (9/16) = 56.25</description>
+    <required>True</required>
+    <title>Height (ratio) in percent</title>
+    <default>56.25</default>
+  </field>
+  </schema>
+</model>

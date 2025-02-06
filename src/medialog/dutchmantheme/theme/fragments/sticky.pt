@@ -1,0 +1,14 @@
+<script tal:condition="view/editmode|None">
+require([
+      'jquery',
+      '++theme++dutchmantheme/javascript/jquery.sticky'
+      ], function(Base) {
+        'use strict';
+        $(document).ready(function(){
+          $("${view/data/classId}").sticky({ topSpacing:${view/data/spacing }});
+        });
+      });
+</script>
+<style>
+${view/data/classId} { z-index: ${view/data/zindex} }
+</style>

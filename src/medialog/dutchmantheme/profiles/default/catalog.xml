@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
-<object name="portal_catalog">
-  <!--<column value="my_meta_column"/>-->
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  <index name="iconfield" meta_type="FieldIndex">
+     <indexed_attr value="iconfield"/>
+  </index>
+  <column value="iconfield"/>
+  <index name="whole_day" meta_type="BooleanIndex">
+     <indexed_attr value="whole_day"/>
+  </index>
+  <column value="whole_day"/>
+
 </object>

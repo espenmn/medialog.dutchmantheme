@@ -1,0 +1,31 @@
+<html>
+    <div class="service-item padding-20-0 ${view/data/color1} disabled-${view/data/disabled|None}"
+    tal:condition="view/editmode|None"
+    id="service-item-${python: view.id}"
+		tal:define="item_url view/item_url|None;
+                  dont_link view/data/dont_link|None;
+                  color1 view/data/color1|None;
+                  title view/data/title">
+
+        <tal:cond tal:condition="python: item_url">
+				  <a href="${item_url}"  tal:omit-tag="python: dont_link">
+  	 					<img src="${item_url}/@@images/image/${view/data/image_size}" alt="${view/data/title}"
+  							    	 class="img-responsive" />
+          </a>
+        </tal:cond>
+        <div class="media-body padding-20-0">
+            <a href="${item_url}" tal:omit-tag="python: dont_link">
+              <h1 tal:condition="title" class="media-heading ${view/data/color1}">${title}</h1>
+            </a>
+            <p class="black">${view/data/description}</p>
+            <tal:block define="value nocall:view/data/text|nothing;
+                           output_relative_to nocall:value/@@output_relative_to|nothing"
+                       tal:condition="output_relative_to"
+                       tal:content="structure python:output_relative_to(context)" />
+        </div>
+    </div>
+<style>
+  #service-item-${python: view.id} { border-top: 4px solid }
+</style>
+
+</html>

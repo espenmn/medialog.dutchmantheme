@@ -1,0 +1,58 @@
+<tal:define tal:define="line_url view/get_url|None;
+   color1 view/data/color1;
+   color2 view/data/color2;
+   color3 view/data/color3;
+   color4 view/data/color4;
+   i_height view/data/height|None;
+   link_url view/get_url|None">
+
+<a class="nounderline"  tal:omit-tag="python: link_url == ''" href="link_url">
+<section class="image_banner disabled-${view/data/disabled|None}"
+            tal:condition="view/editmode|None"
+            id="fragment-${python: view.id}">
+  <div class="container">
+   <div class="image_banner_text">
+    <h1 tal:condition="view/data/heading|None">
+      <span class="${color1} ${color2} padding-10-20">${view/data/heading|None}</span>
+    </h1>
+     <div><p>
+      <span class="${color3} ${color4} padding-20" tal:condition="view/data/text|None">
+         ${view/data/text|None} <i class="fa fa-chevron-right ${color1} ${color2} round-box" tal:condition="python: link_url != ''"> </i>
+       </span>
+     </p>
+    </div>
+  </div>
+</div>
+</section>
+</a>
+<style>
+  #fragment-${python: view.id} {
+    background-image: url( ${view/background_image|None } );
+    background-size: cover;
+    background-position: ${view/data/position-x|None}% ${view/data/position-y|None}%;
+    height: ${i_height}px;
+    padding-top: ${view/padding|None}px;
+    width: 100%;}
+  #fragment-${python: view.id} p { font-size: 130%}
+  a.nounderline,  a.nounderline:hover  { text-decoration: none}
+  .fa.round-box { width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.4em;
+    padding-left: 0.2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    margin-left: 1em;
+    margin-top: -0.4em;
+    font-size: 80%;}
+  div.image_banner_text :hover {opacity: 0.9}
+  div.image_banner_text h1 {
+    font-size: 2.1em;
+    line-height: 2.1em;
+    margin-bottom: 0.8em;
+  }
+  .padding-10-20 { padding: 10px 20px; }
+</style>
+
+</tal:define>

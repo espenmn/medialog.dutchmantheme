@@ -1,0 +1,34 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="bannertext" type="zope.schema.TextLine">
+    <description/>
+    <required>True</required>
+    <default>This is a banner…</default>
+    <title>Linktext</title>
+  </field>
+  <field name="link" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Choose Link to</title>
+      <source>collective.themefragments.tiles.CatalogSource</source>
+  </field>
+  <field name="select" type="zope.schema.TextLine" form:widget="plone.app.z3cform.widget.LinkFieldWidget">
+    <description i18n:translate="description_linktype_url">Alternatively, use this for link
+    </description>
+    <title i18n:translate="">URL link</title>
+    <required>False</required>
+  </field>
+  </schema>
+</model>

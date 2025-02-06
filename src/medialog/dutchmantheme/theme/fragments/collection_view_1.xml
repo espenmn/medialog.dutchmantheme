@@ -1,0 +1,64 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="collectionfilter" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Use for collectionfilter</title>
+      <description>Click here to give correct id for collectiontiler. Only one on each page</description>
+  </field>
+  <field name="hide_images" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide images</title>
+      <description>Do not show images in folder</description>
+  </field>
+  <field name="linked_folder" type="zope.schema.Choice">
+      <description>Choose Folder for content. Leave empty for current folder</description>
+      <required>False</required>
+      <title>Select a folder (or folderish object)</title>
+      <source>collective.themefragments.tiles.CatalogSource</source>
+ </field>
+ <field name="select_folder" type="zope.schema.Choice">
+    <description>Useful for Multilingual setups</description>
+    <required>False</required>
+    <title>Alternatively choose folder here</title>
+    <vocabulary>medialog.dutchmantheme.ShowFoldersVocabulary</vocabulary>
+ </field>
+ <field name="image_size" type="zope.schema.Choice">
+      <description>Choose Image Size (scale)</description>
+      <required>True</required>
+      <title>Image Size</title>
+      <default>preview</default>
+      <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+ </field>
+ <field name="max_chars" type="zope.schema.Int">
+      <description>Max characters of description</description>
+      <required>False</required>
+      <title>Max Description Length</title>
+      <min>1</min>
+      <default></default>
+ </field>
+  <field name="ctype" type="zope.schema.Bool">
+      <description></description>
+      <required>False</required>
+      <title>Show Content type name</title>
+      <default>True</default>
+ </field>
+      <field name="csubject" type="zope.schema.Bool">
+      <description>Show  tags/keywords</description>
+      <required>False</required>
+      <title>Show Subjects</title>
+      <default>False</default>
+ </field>
+</schema>
+</model>

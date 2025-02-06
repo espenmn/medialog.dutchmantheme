@@ -1,0 +1,6 @@
+<div id="above-footer-wrapper" class="custom-background1">
+	<div class="container flex">
+			<div tal:on-error="nothing" tal:replace="structure view/render_above_portlets" />
+			<div class="clearboth" />
+	</div>
+</div>

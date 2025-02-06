@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+<div class="white-background center-text padding-10 no-margin fullwidth disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None">
+    <div class="container">
+        <a class="black large-text normal" href="${view/get_theurl}">${view/data/bannertext}</a>
+    </div>
+</div>
+</html>

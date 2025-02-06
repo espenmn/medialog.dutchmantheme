@@ -1,0 +1,102 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+    <schema>
+      <field name="disabled" type="zope.schema.Bool">
+          <required>false</required>
+          <title>Hide fragment</title>
+          <description>Click here to hide fragment</description>
+      </field>
+      <field name="linked_folder" type="zope.schema.Choice">
+          <description>Choose Folder. Leave empty for current folder</description>
+          <required>False</required>
+          <title>Select a folder (or folderish object)</title>
+          <source>collective.themefragments.tiles.CatalogSource</source>
+      </field>
+      <field name="content_type" type="zope.schema.List">
+        <description/>
+        <title>Content Types</title>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>plone.app.vocabularies.UserFriendlyTypes</vocabulary>
+        </value_type>
+      </field>
+      <field name="imagewidth" type="zope.schema.Int">
+        <description>What should we crop the image to</description>
+        <required>True</required>
+        <title>Image Size Width</title>
+        <default>600</default>
+      </field>
+      <field name="imageheight" type="zope.schema.Int">
+        <description>What should we crop the image to</description>
+        <required>True</required>
+        <title>Image Size height</title>
+        <default>400</default>
+      </field>
+      <field name="minwidth" type="zope.schema.Int">
+        <description/>
+        <required>True</required>
+        <title>Min Width</title>
+        <default>300</default>
+      </field>
+      <field name="width" type="zope.schema.Int">
+        <description/>
+        <required>True</required>
+        <title>Width in percent</title>
+        <default>30</default>
+        <min>10</min>
+        <max>100</max>
+      </field>
+      <field name="breakpoint" type="zope.schema.Int">
+        <description/>
+        <required>True</required>
+        <title>What width to show only one column</title>
+        <default>600</default>
+        <min>0</min>
+        <max>1000</max>
+      </field>
+      <field name="effekt" type="zope.schema.Choice">
+        <description/>
+        <title>Choose effect</title>
+        <values>
+          <element>00 None</element>
+          <element>01 Zoom In 1</element>
+          <element>02 Zoom In 2</element>
+          <element>03 Zoom Out 1</element>
+          <element>04 Zoom Out 2</element>
+          <element>05 Slide</element>
+          <element>06 Rotate and Zoom Out</element>
+          <element>07 Blur</element>
+          <element>08 Gray Scale</element>
+          <element>09 Sepia</element>
+          <element>10 Blur and Gray Scale</element>
+          <element>11 Opacity 1</element>
+          <element>12 Opacity 2</element>
+          <element>13 Flashing</element>
+          <element>14 Shine</element>
+          <element>15 Circle</element>
+        </values>
+      </field>
+      <field name="sort_on" type="zope.schema.Choice">
+        <description/>
+        <title>Sort on</title>
+        <values>
+          <element>modified</element>
+          <element>Date</element>
+          <element>created</element>
+          <element>effective</element>
+          <element>id</element>
+          <element>sortable_title</element>
+          <element>total_comments</element>
+        </values>
+      </field>
+
+      <field name="sort_order" type="zope.schema.Choice">
+        <description/>
+        <title>Sort order</title>
+        <values>
+          <element>descending</element>
+          <element>ascending</element>
+        </values>
+      </field>
+</schema>
+</model>

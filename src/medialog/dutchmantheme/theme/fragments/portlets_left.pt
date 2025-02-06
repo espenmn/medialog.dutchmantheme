@@ -1,0 +1,5 @@
+<section class="render_portlets disabled-${view/data/disabled|None}"
+ tal:condition="view/editmode|None"
+ id="fragment-left-portlets">
+ <tal:block tal:on-error="nothing" replace="structure provider:plone.leftcolumn" />
+</section>

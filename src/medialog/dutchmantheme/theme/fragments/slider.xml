@@ -1,0 +1,133 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="folder_url" type="zope.schema.TextLine">
+    <description/>
+    <required>True</required>
+    <title>Path to folder with images to use for slider</title>
+    <default>slider</default>
+  </field>
+  <field name="css_class" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Show on media</title>
+      <values>
+        <element>all-media</element>
+        <element>only-mobile</element>
+        <element>no-mobile</element>
+      </values>
+    </field>
+  <field name="maxwidth" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>Max Width</title>
+    <default>3000</default>
+  </field>
+  <field name="image_size" type="zope.schema.Choice">
+   <description>Choose Image Size (scale)</description>
+   <required>True</required>
+   <title>Image Size</title>
+   <default>preview</default>
+   <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+  </field>
+  <field name="fill" type="zope.schema.Bool">
+    <required>false</required>
+    <title>Strech images</title>
+    <description>Enlarge and center images to fill container</description>
+  </field>
+  <field name="position-x" type="zope.schema.Int">
+    <description>Horizontal image position in %. 50 is centered</description>
+    <required>false</required>
+    <min>0</min>
+    <max>100</max>
+    <default>50</default>
+    <title>X cordinate if Strech images is enabled</title>
+  </field>
+  <field name="position-y" type="zope.schema.Int">
+    <description>Vertical image position in %. 50 is centered</description>
+    <required>false</required>
+    <min>0</min>
+    <max>100</max>
+    <default>50</default>
+    <title>Y cordinate if Strech images is enabled</title>
+  </field>
+  <field name="speed" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>Speed</title>
+    <default>1000</default>
+  </field>
+  <field name="t_out" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>Timeout</title>
+    <min>100</min>
+    <default>2000</default>
+  </field>
+  <field name="height" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>height in percent</title>
+    <default>50</default>
+  </field>
+  <field name="min-height" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>minimum height in pixels</title>
+    <default>200</default>
+  </field>
+  <field name="max-height" type="zope.schema.Int">
+    <description/>
+    <required>True</required>
+    <title>maximum height in pixels</title>
+    <default>600</default>
+  </field>
+  <field name="showtext" type="zope.schema.Bool">
+        <description/>
+        <title>Show Heading and description text</title>
+  </field>
+  <field name="showbody" type="zope.schema.Bool">
+        <description/>
+        <title>Show Body text</title>
+  </field>
+  <field name="pager" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Show pager</title>
+        <values>
+          <element>true</element>
+          <element>false</element>
+        </values>
+  </field>
+  <field name="nav" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Show Navigation</title>
+        <values>
+          <element>true</element>
+          <element>false</element>
+        </values>
+  </field>
+  <field name="css_file" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Style</title>
+      <values>
+        <element>responsiveslides</element>
+        <element>responsiveslides2</element>
+        <element>responsiveslides3</element>
+      </values>
+    </field>
+</schema>
+</model>

@@ -1,0 +1,57 @@
+<section id="section-${python: view.id}"
+  class="disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  tal:define="image_width  view/data/image_width|None;
+              image_height view/data/image_height|None;
+              folder view/get_items|None;
+              items folder/@@contentlisting|context/@@contentlisting;">
+     <ol class="flex flex-wrap">
+      <tal:image tal:repeat="item items|None">
+        <li tal:define="obj item/getObject;
+               scale_func obj/@@images;
+               scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction='down')">
+          <figure tal:condition="scaled_image">
+            <a href="${item/getURL|item/absolute_url}" class="margin-0 padding-0">
+              <img  class="image-popup"
+                    tal:replace="structure python:scaled_image.tag()"
+                    tal:on-error=""
+                    tal:condition="scaled_image"/>
+              <div><p  class="center">${item/Title}</p></div>
+            </a>
+          </figure>
+        </li>
+      </tal:image>
+    </ol>
+    <style>
+
+    #section-${python: view.id} ol.flex.flex-wrap  {
+      padding: 0;
+      list-style-image: none;
+      list-style-type: none;
+      justify-content: flex-start;
+      max-width: ${view/get_width|None}px;
+      margin: auto;
+    }
+
+    #section-${python: view.id} li { 
+        width: ${image_width}px;
+        margin: ${view/get_margin|None}px;
+        list-style-image: none;
+        list-style-type: none;
+        overflow: hidden;
+    }
+
+    #section-${python: view.id} img {
+      width: 100%;
+    }
+
+    #section-${python: view.id} p.center {
+      text-align: center;
+      margin-top: 1em;
+      overflow: hidden;
+      width: ${image_width|None}px;
+      color: #999;
+    }
+
+    </style>
+</section>

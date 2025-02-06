@@ -1,0 +1,21 @@
+<section class="${view/data/effect|None} disabled-${view/data/disabled|None}"
+    tal:condition="view/editmode|None"
+    id="fragment-${view/id|None}"
+    tal:define="link view/one_link|None; link_url link/getURL|None">
+    <div class="roundbutton">
+      <div class="button btn btn-primary ${view/data/color1|None}">
+        <a class="${view/data/color2}" href="${link_url|None}">${view/data/buttontext}</a>
+      </div>
+    </div>
+    <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+     		<link rel="stylesheet" href="++theme++dutchmantheme/css/button.css" tal:condition="load_css">
+    </tal:define>
+    <style>
+      #fragment-${view/id|None} .button,
+        #fragment-${view/id|None} .roundbutton,
+      #fragment-${view/id|None} .button a {
+        border: 0 none;
+        font-size: ${view/data/textsize|None}px;
+      }
+    </style>
+</section>

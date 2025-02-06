@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager="plone.portalheader">
+  <viewlet name="medialog.dutchmantheme.menuviewlet"/>
+  <viewlet name="medialog.dutchtheme.languageselector"/>
+ </hidden>
+
+ <hidden manager="plone.portaltop">
+  <viewlet name="medialog.dutchmantheme.aboveallportlets"/>
+ </hidden>
+
+ 
+
+</object>

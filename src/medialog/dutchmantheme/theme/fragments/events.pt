@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+
+<div class="eventitems  disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  tal:define="image_size view/data/image_size|None; ">
+
+<div class="programicon_item ckFilter-obj"  tal:repeat="item view/get_items|None">
+
+  <div tal:define="obj item/getObject;
+          item_url item/getURL|item/absolute_url;
+          whole_day item/whole_day|python: False">
+
+        <!--p class="pre_title">
+            <a href="link to subject">
+               item/Subject repeat</a>
+        </p-->
+
+    <h1 class="users" >
+        <a href="${item_url}">${item/Title}</a>
+    </h1>
+    <p class="sub_info"><span
+          i18n:translate="">${item/location|None}</span> <tal:check tal:condition="item/location|None">|</tal:check>
+          <span tal:condition="python: whole_day!=True"
+              class="pat-moment"
+              data-pat-moment="format:DD.MM.YYYY - HH:mm;">${item/start}</span>
+          <span tal:condition="python: whole_day==True"
+              class="pat-moment"
+              data-pat-moment="format:DD.MM.YYYY">${item/start}</span>
+    </p>
+    <figure tal:define="scale_func obj/@@images;
+                    scale context/@@images;"
+                    tal:on-error="">
+        <tal:check tal:condition="not: view/cropped|None"
+            tal:define="scaled_image python:scale_func.scale('image', scale=image_size)">
+          <img tal:replace="structure python:scaled_image.tag(title='')"
+             tal:on-error="" />
+        </tal:check>
+        <tal:check tal:condition="view/cropped|None"
+            tal:define="image_width view/data/image_width;
+              image_height view/data/image_height;
+              image_direction view/data/direction;
+            scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction=image_direction)">
+          <img tal:replace="structure python:scaled_image.tag(title='')"
+            tal:on-error="" />
+        </tal:check>
+      </figure>
+
+
+    </div>
+<style>
+    div.eventitems {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:    space-between
+
+}
+p.pre_title  {
+text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+p.sub_info span,
+.pre_title a, {
+	text-align: center;
+	color: #b7b7b7;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+div.programicon_item.ckFilter-obj {
+	margin: 2em 0;
+}
+
+
+h1.users a {
+	color: #5c5c5c;
+}
+
+  p.sub_info span {
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.programicon_item.ckFilter-obj {
+	width: 32%;
+	min-width: 300px;
+
+}
+
+</style>
+
+</div>
+</div>
+</html>

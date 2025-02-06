@@ -1,0 +1,87 @@
+<section class="newsitems flex flex-wrap margin-0--15 disabled-${view/data/disabled|None}"
+    tal:condition="view/editmode"
+    tal:define="collection_items view/get_items|None;
+             items collection_items/@@contentlisting|context/@@contentlisting|None;
+             i_size view/data/image_size;
+             show_csubject python: view.csubject;
+              hide_images python: view.data['hide_images'];
+             show_ctype  view/ctype"
+    id="${view/get_id}">
+
+<!--div>
+<p class="data-filter" data-filter="Nyhetsartikkel">Nyhetsartikkel</p>
+<p class="data-filter" data-filter="Bilde">Bilde</p>
+</div-->
+<tal:repeat tal:repeat="item items">
+    <div tal:define="subject item/Subject|None;
+          tags python: ' '.join(subject);
+          itemType item/portal_type;
+          noShow python: hide_images and itemType=='Image'"
+           tal:condition="python: noShow==False"
+          class="collection_item margin-10 ${item/Type} ${tags}">
+        <div tal:define="item_url item/getURL|item/absolute_url">
+        <p class="${item/portal_type} portal-type white black-background">
+           <span class="sans-serif filterme" xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plone" i18n:translate="" tal:condition="show_ctype">${item/portal_type}</span>
+            <span class="sans-serif" i18n:translate="" tal:condition="show_csubject">
+                <tal:repeat tal:repeat="subject item/subject">  /  ${subject}</tal:repeat>
+            </span>
+         </p>
+        <a href="${item_url}" class="margin-0">
+            <figure tal:define="obj item/getObject;
+                    scale_func obj/@@images;
+                    scaled_image python:scale_func.scale('image', scale=i_size)"
+                    tal:on-error=""
+                    class="no-pop-up">
+                <img tal:replace="structure python:scaled_image.tag()"
+                     tal:condition="scaled_image" />
+           </figure>
+        </a>
+        <h3 class="padding-0-20">
+            <a class="black" href="${item_url}/view">${item/Title}</a>
+        </h3>
+        <p tal:define="max_chars view/data/max_chars|python:1000; description item/Description"
+          class="description padding-0-20" tal:condition="description">
+          ${python: description[:max_chars]}
+          <tal:check
+             tal:condition="python: max_chars > 0">…</tal:check>
+        </p>
+     </div>
+   </div>
+</tal:repeat>
+
+ <style>
+#${view/get_id} .portal-type {
+ margin-bottom: 0;
+}
+#${view/get_id} .portal-type span {
+ padding: 2px 10px;
+  text-transform: uppercase;
+  font-size: 80%;
+}
+#${view/get_id} .collection_item {
+  color: #333;
+ flex: 1;
+  min-width: 230px;
+  border-bottom: 1px solid black;
+  background: #FaFaFa;
+  margin-bottom: 20px;
+}
+
+#${view/get_id} img {
+    width: 100%;
+    height: auto;
+}
+ </style>
+
+
+ <script>require([
+   'jquery',
+   ], function(Base) {
+     'use strict';
+     $( ".data-filter" ).click(function() {
+      var value_not = ".collection_item:not(." + $(this).attr("data-filter") + ")";
+      $(".collection_item").filter( $(value_not)  ).toggle();
+      });
+   });
+ </script>
+ </section>

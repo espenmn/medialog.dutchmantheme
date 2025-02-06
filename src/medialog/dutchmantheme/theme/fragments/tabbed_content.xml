@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="medialog.dutchmantheme">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+    <field name="title1" type="zope.schema.TextLine">
+        <title>Tab title 1</title>
+    <required>False</required>
+    </field>
+    <field name="text1" type="zope.schema.Text">
+      <form:widget><klass>pat-tinymce</klass>
+      </form:widget>
+      <title>Text 1</title>
+    <required>False</required>
+  </field>
+<field name="title2" type="zope.schema.TextLine">
+    <title>Tab title 2</title>
+<required>False</required>
+</field>
+<field name="text2" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text 2</title>
+<required>False</required>
+</field>
+<field name="title3" type="zope.schema.TextLine">
+    <title>Tab title 3</title>
+<required>False</required>
+</field>
+<field name="text3" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text 3</title>
+<required>False</required>
+</field>
+<field name="title4" type="zope.schema.TextLine">
+    <title>Tab title 4</title>
+<required>False</required>
+</field>
+<field name="text4" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text 4</title>
+<required>False</required>
+</field>
+<field name="title5" type="zope.schema.TextLine">
+    <title>Tab title 5</title>
+<required>False</required>
+</field>
+<field name="text5" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text 5</title>
+<required>False</required>
+</field>
+<field name="title6a" type="zope.schema.TextLine">
+    <title>Tab title 5</title>
+<required>False</required>
+</field>
+<field name="text6a" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text 6</title>
+<required>False</required>
+</field>
+<field name="title7" type="zope.schema.TextLine">
+    <title>Tab title 7</title>
+<required>False</required>
+</field>
+<field name="text7" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text 7</title>
+<required>False</required>
+</field>
+<field name="title8" type="zope.schema.TextLine">
+    <title>Tab title 8</title>
+<required>False</required>
+</field>
+<field name="text8" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text8 </title>
+<required>False</required>
+</field>
+<field name="title9" type="zope.schema.TextLine">
+    <title>Tab title 9</title>
+<required>False</required>
+</field>
+<field name="text9" type="zope.schema.Text">
+<form:widget>
+  <klass>pat-tinymce</klass>
+</form:widget>
+      <title>Text</title>
+<required>False</required>
+</field>
+
+</schema>
+</model>

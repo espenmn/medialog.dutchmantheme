@@ -1,0 +1,75 @@
+<section tal:define="wall view/get_wallitems|None;
+         items wall/@@contentlisting|context/@@contentlisting;
+         image_size view/data/image_size|None"
+         id="fragment-${python: view.id}"
+         data-anchor="anchor-images"
+         title="images"
+         class="disabled-${view/data/disabled|None}"
+         tal:condition="view/editmode|None">
+
+    <div class="wall-of-images" tal:condition="image_size">
+
+      <tal:image tal:repeat="item items">
+        <figure tal:define="obj item/getObject;
+                         scale_func obj/@@images;">
+        <tal:check tal:condition="not: view/cropped|None"
+            tal:define="scaled_image python:scale_func.scale('image', scale=image_size)">
+          <img tal:replace="structure python:scaled_image.tag()"
+             tal:on-error=""
+             tal:condition="python: obj.portal_type == 'Image'"/>
+        </tal:check>
+        <tal:check tal:condition="view/cropped|None"
+            tal:define="image_width view/data/image_width;
+              image_height view/data/image_height;
+              image_direction view/data/direction;
+            scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction=image_direction)">
+          <img tal:replace="structure python:scaled_image.tag()"
+            tal:on-error=""
+            tal:condition="python: obj.portal_type == 'Image'"/>
+        </tal:check>
+       </figure>
+
+     </tal:image>
+    </div>
+    <!--tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+        <link rel="stylesheet" href="++theme++dutchmantheme/css/masonary.css" tal:condition="load_css">
+    </tal:define-->
+
+
+    <script>require([
+      'jquery',
+      '++theme++dutchmantheme/javascript/masonry.pkgd.min',
+      '++theme++dutchmantheme/javascript/imagesloaded.pkgd.min'
+      ], function(Base) {
+        'use strict';
+        $('.wall-of-images').imagesLoaded(function() {
+          $('.wall-of-images').masonry({
+            itemSelector: 'figure',
+            percentPosition: true
+          });
+        });
+      });
+    </script>
+
+    <style tal:define="small view/small; medium view/medium; large view/large">
+      @media only screen and (min-width: 768px) {
+        .wall-of-images figure {
+          width: ${small}%;
+          }
+        }
+
+        @media screen and (min-width: 900px) {
+          .wall-of-images figure {
+              width: ${medium}%;
+          }
+        }
+
+      @media screen and (min-width: 1200px) {
+        .wall-of-images figure {
+              width: ${large}%;
+          }
+      }
+
+    </style>
+
+</section>

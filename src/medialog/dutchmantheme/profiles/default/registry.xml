@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<registry>
+
+	<records interface="medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings">
+		<value key="style">dutchmanblue</value>
+		<value key="external_style"></value>
+		<value key="rules">default</value>
+		<value key="color1">123456</value>
+		<value key="color2">234561</value>
+		<value key="color3">345612</value>
+		<value key="load_css">True</value>
+		<value key="extra_css" purge="False">.outer-wrapper div.container, #content-header div.container {max-width: 1450px !important;}</value>
+		<value key="enable_overrides">False</value>
+		<value key="heading_font"></value>
+		<value key="body_font"></value>
+		<value key="nav_background">000000</value>
+		<value key="navlink_color"></value>
+		<value key="navlink_hover">111111</value>
+		<value key="navlink_visited">222222</value>
+		<value key="footer_background">000000</value>
+		<value key="footer_color"></value>
+		<value key="footerlink_color">fffbd3</value>
+		<value key="footerlink_hover">feedb0</value>
+		<value key="footerlink_visited">fffbd3</value>
+		<value key="jsheading" purge="False"></value>
+		<value key="jsfooter" purge="False"></value>
+		<value key="font_load_url" key_type="field.TextLine"></value>
+	</records>
+
+	<records prefix="plone.bundles/imagesloaded-js"
+	           interface="Products.CMFPlone.interfaces.IBundleRegistry">
+	    <value key="depends">plone</value>
+	    <value key="jscompilation">++theme++dutchmantheme/javascript/imagesloaded.pkgd.min.js</value>
+	    <value key="last_compilation">2017-10-06 00:00:00</value>
+	    <value key="compile">False</value>
+	    <value key="enabled">False</value>
+	</records>
+	<records prefix="plone.bundles/masonry-js"
+	           interface="Products.CMFPlone.interfaces.IBundleRegistry">
+	    <value key="depends">imagesloaded-js</value>
+	    <value key="jscompilation">++theme++dutchmantheme/javascript/masonry.pkgd.min.js</value>
+	    <value key="csscompilation">++theme++dutchmantheme/css/masonary.css</value>
+	    <value key="last_compilation">2017-10-06 00:00:00</value>
+	    <value key="compile">False</value>
+	    <value key="enabled">False</value>
+	</records>
+</registry>

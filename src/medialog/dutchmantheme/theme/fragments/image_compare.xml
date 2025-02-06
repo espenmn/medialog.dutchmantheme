@@ -1,0 +1,48 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+    <field name="image1" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Image 1 (Before)</title>
+        <source>collective.themefragments.tiles.CatalogSource</source>
+    </field>
+    <field name="image1b" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Alternative Choose image 1 here </title>
+        <vocabulary>medialog.dutchmantheme.ShowImagesVocabulary</vocabulary>
+    </field>
+     <field name="image2" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Image 2 (After)</title>
+        <source>collective.themefragments.tiles.CatalogSource</source>
+    </field>
+    <field name="image2b" type="zope.schema.Choice">
+        <description/>
+        <required>False</required>
+        <title>Alternative Choose image 2 here </title>
+        <vocabulary>medialog.dutchmantheme.ShowImagesVocabulary</vocabulary>
+    </field>
+   <field name="image_size" type="zope.schema.Choice">
+     <description>Choose Image Size (scale) for you images</description>
+     <required>True</required>
+     <title>Image Size</title>
+     <default>preview</default>
+   <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+  </field>
+
+</schema>
+</model>

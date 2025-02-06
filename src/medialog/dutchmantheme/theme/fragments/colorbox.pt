@@ -1,0 +1,183 @@
+<div class="colorbox margin-0 container flex disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None"
+tal:define="items python:context.portal_catalog(portal_type='News Item', sort_on='published')[-4:];
+     image_size view/data/image_size|None">
+  <tal:check tal:condition="python: len(items)==4">
+
+    <div class="half zoom"
+            tal:define="item python:items[3];
+              item_url item/getURL|item/absolute_url"
+            style="background: url(${item_url}/@@images/image/${image_size})">
+      <div class="darkbox">
+        <div class="colorbox-text">
+            <div class="gradient padding-20">
+            <a href="${item_url}" title="${item/Title}" alt="read more">
+                <h1 class="white">${item/Title}</h1>
+            </a>
+            <p class="white">${item/Description|None}</p>
+            <p class="sub_info white">
+              <span tal:condition="exists: item/Subject|None" i18n:translate="">
+                <tal:repeat tal:repeat="subject item/Subject">
+                    ${subject}
+                </tal:repeat>
+              </span> |
+              <span class="pat-moment" data-pat-moment="format:calendar">
+              ${item/Date}
+              </span>
+            </p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="half flex flex-wrap">
+        <div class="flex two-items half-height">
+            <div tal:define="item python:items[2];
+                    item_url item/getURL|item/absolute_url"
+                    class="zoom firstitem"
+                    style="background: url(${item_url}/@@images/image/${image_size})">
+            <div class="darkbox">
+             <div class="colorbox-text padding-20">
+              <div class="gradient">
+                <a href="${item_url}" title="${item/Title}"
+                    class="white"
+                    alt="read more">
+                    <h1 class="white">${item/Title}</h1>
+                </a>
+                <p>${item/Description|None}</p>
+                <p class="sub_info">
+                  <span tal:condition="exists: item/Subject|None" i18n:translate="">
+                      <tal:repeat tal:repeat="subject item/Subject">${subject} </tal:repeat>
+                  </span> |
+                  <span class="pat-moment" data-pat-moment="format:calendar">
+                  ${item/Date}
+                  </span>
+                </p>
+               </div>
+             </div>
+             </div>
+            </div>
+            <div tal:define="item python:items[1];
+                    item_url item/getURL|item/absolute_url"
+                    class="zoom lastitem"
+                    style="background: url(${item_url}/@@images/image/${image_size})">
+              <div class="colorbox-text padding-20">
+                <div class="gradient">
+                <a href="${item_url}" title="${item/Title}" alt="read more">
+                    <h1 class="white">${item/Title}</h1>
+                </a>
+                <p>${item/Description|None}</p>
+                <p class="sub_info">
+                  <span tal:condition="exists: item/Subject|None" i18n:translate="">
+                    <tal:repeat tal:repeat="subject item/Subject">${subject} </tal:repeat>
+                  </span> |
+                  <span class="pat-moment" data-pat-moment="format:calendar">
+                  ${item/Date}
+                  </span>
+                </p>
+               </div>
+               </div>
+            </div>
+        </div>
+
+        <div tal:define="item python:items[0];
+                item_url item/getURL|item/absolute_url"
+                class="zoom half-height full-width white"
+                style="background: url(${item_url}/@@images/image/${image_size})">
+            <div class="colorbox-text padding-20">
+                <a class="white" href="${item_url}" title="${item/Title}" alt="read more">
+                    <h1 class="white">${item/Title}</h1>
+                </a>
+                <p class="white">${item/Description|None}</p>
+                <p class="sub_info white">
+                  <span tal:condition="exists: item/Subject|None" i18n:translate="">
+                      <tal:repeat tal:repeat="subject item/Subject">${subject} </tal:repeat>
+                  </span> |
+                  <span class="pat-moment" data-pat-moment="format:calendar">
+                  ${item/Date}
+                  </span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+  </tal:check>
+
+  <style>
+
+.colorbox { position: relative}
+
+  .colorbox div  {
+    overflow: hidden;
+    background-size:cover !important;
+    }
+
+    div.colorbox > .half {
+        margin: 4px;
+        min-width: 500px;;
+        flex: 1 50%;
+        overflow: hidden;
+    }
+
+    div.colorbox .half .half {
+        min-width: 450px;
+        height: 50%;
+    }
+
+    div.colorbox .full-width {
+        margin-top: 8px;
+    }
+    .colorbox {
+        width: 100%;
+        PADDING: 8PX;
+        height: ${view/data/height}px}
+
+    .colorbox-text {
+      	vertical-align: bottom;
+	    display: table-cell;
+	}
+
+	.gradient {
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+xbackground: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,1));
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+
+}
+
+
+    .half.zoom {
+        position: relative;
+    }
+
+    div.darkbox {
+	position: absolute !important;
+	display: table;
+	height:  100% !important;
+	vertical-align: bottom;
+    }
+
+    .colorbox .two-items  {
+        height: 50%;
+        width: 100%;
+    }
+
+    .colorbox .two-items > div {
+     flex: 1 50%;
+     margin-bottom: 4px;
+    }
+    .colorbox .firstitem{
+     margin-right: 4px;
+    }
+
+
+    .half-height  {
+        height: 50%;
+    }
+
+.full-width {
+	width:  100%;;
+}
+
+  </style>
+</div>

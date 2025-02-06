@@ -1,0 +1,98 @@
+
+<section id="card-items"
+    tal:define="buttontext view/data/buttontext|None;
+    items view/get_items|None;
+		f_id python: view.id"
+    class="cards-${f_id} disabled-${view/data/disabled|None}"
+    tal:condition="view/editmode">
+
+<tal:check tal:condition="items"
+	    tal:define="image_size view/data/image_size|None;
+	        css_class view/css_class|None;
+	        color1 view/data/color1">
+
+		<tal:repeat tal:repeat="item items">
+			<div class="card" tal:define="item_url item/getURL|item/absolute_url|None;
+           description item/Description;
+           max_chars view/data/max_chars|python:1000">
+        <a href="${item_url}">
+				  <img class="card-img-top" alt="${item/Title}" title="${item/Title}"
+					      src="${item_url}/@@images/image/${image_size}" />
+        </a>
+				<div class="card-block padding-20">
+				    <a href="${item_url}"><h3 class="card-title">
+						${item/Title}
+					</h3></a>
+					<p class="card-text" tal:condition="max_chars">
+						${python: description[:max_chars]}…
+					</p>
+          <p tal:condition="view/data/show_date|None"><i class="fa fa-calendar"> </i> <span class="pat-moment date-time"
+              data-pat-moment="format:relative;">${item/Date}</span>
+          </p>
+					<p>
+						<a tal:condition="buttontext"
+                class="btn btn-primary ${color1}"
+                href="${item_url}">
+                ${buttontext}
+            </a>
+						<!--a class="btn" href="${item_url}">Action</a-->
+					</p>
+				</div>
+		    </div>
+		</tal:repeat>
+</tal:check>
+<style tal:define="small view/small; medium view/medium; large view/large">
+    <tal:check tal:condition="view/data/image_height|None">
+        .cards-${f_id} img.card-img-top {
+            object-fit: cover;
+            height: ${python: view.data['image_height']}px !important;
+            object-position: ${python: view.data['position-x']}% ${python: view.data['position-y']}%;
+        }
+    </tal:check>
+    	.card {
+			margin: 0 1% 2% 1%;
+			box-sizing: border-box;
+			}
+
+		.card .btn { margin-top: 10px}
+
+		@media only screen and (min-width: 768px) {
+			#card-items .card {
+				width: ${small}%;
+				}
+			}
+
+			@media screen and (min-width: 900px) {
+				#card-items .card{
+						width: ${medium}%;
+				}
+			}
+
+		@media screen and (min-width: 1200px) {
+			#card-items .card {
+						width: ${large}%;
+				}
+		}
+
+		img.card-img-top {
+			height: auto;
+			width: 100%;
+		}
+
+		.margin-10-0 { margin 10px 0}
+	</style>
+
+
+<script>require([
+  'jquery',
+  '++theme++dutchmantheme/javascript/masonry.pkgd.min',
+  '++theme++dutchmantheme/javascript/imagesloaded.pkgd.min'
+  ], function(Base) {
+    'use strict';
+    $('#card-items').imagesLoaded(function() {
+      $('#card-items').masonry();
+    });
+  });
+</script>
+
+</section>

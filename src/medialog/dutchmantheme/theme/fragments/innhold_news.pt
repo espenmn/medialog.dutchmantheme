@@ -1,0 +1,94 @@
+ <section id="fragment-${python: view.id}"
+ class="disabled-${view/data/disabled|None}"
+ tal:condition="view/editmode|None">
+    <div class="flex flex-between flex-wrap margin-0--10 padding-0">
+        <tal:repeat tal:repeat="item view/get_items|None">
+              <tal:define tal:define="obj item/getObject;
+                    image_size view/data/image_size;
+                    scale_func obj/@@images;
+                    scale context/@@images;
+                    scaled_image python:scale_func.scale('image', scale=image_size);
+                    item_url item/getURL|item/absolute_url"
+                    tal:on-error="">
+                <div class="news_item margin-10" tal:condition="scaled_image" >
+                    <a class="white margin-0 padding-0" href="${item_url}">
+                        <img tal:replace="structure python:scaled_image.tag(title=None)"/>
+
+                        <div class="news_text padding-20" hidden>
+                            <h3>${item/Title}</h3>
+                            <p>${item/Description|None}</p>
+                        </div>
+                    </a>
+                </div>
+              </tal:define>
+        </tal:repeat>
+    </div>
+<script>
+$( ".news_item a" ).mouseenter(function() {
+  $(this).children(".news_text" ).slideDown(300);
+  $(this).children("img" ).addClass('opacity-x');
+});
+$( ".news_item a" ).mouseleave(function() {
+  $(this).children(".news_text" ).slideUp(300);
+  $(this).children("img" ).removeClass('opacity-x');
+});
+</script>
+<style>
+
+.margin-0--10 {margin: 0 -10px;}
+
+#fragment-${python: view.id} .news_text {
+    position:absolute;
+    top:0;
+    display:none;
+    background: linear-gradient(0deg,  rgba(0,0,0,0), #333);
+    width: 100%
+}
+#fragment-${python: view.id} h3 {
+    margin-bottom: 0;
+    color: white;
+}
+
+#fragment-${python: view.id} .news_item {
+    position:relative;
+    background: black !important;
+    width: ${view/item_width|none}%;
+    min-width: ${view/data/image_min|None}px;
+    max-width: ${view/data/image_width|None}px;
+}
+
+#fragment-${python: view.id} a,
+#fragment-${python: view.id} img {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#fragment-${python: view.id} img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#fragment-${python: view.id} a {
+    width: 100%;
+}
+
+
+#fragment-${python: view.id} .opacity-x {
+    opacity: 0.70;
+}
+#fragment-${python: view.id}  p {
+    padding-bottom:: 170px;
+    display: block;
+}
+@media screen and (max-width: 768px) {
+    #fragment-${python: view.id} div.news_item.margin-10  {
+        margin-left:0 !important;
+        margin-right: 0 !important
+        width: 100%;
+    }
+}
+
+</style>
+
+</section>

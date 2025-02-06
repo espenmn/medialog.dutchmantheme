@@ -1,0 +1,66 @@
+<div  id="customcss">
+
+<tal:define
+  tal:define="extra_css python: context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.extra_css'];
+              ext_css   python: context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.external_style'];
+              color1    python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.color1']);
+              color2    python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.color2']);
+              color3    python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.color3']);
+              iconset   python: str(context.portal_registry['medialog.iconpicker.interfaces.IIconPickerSettings.iconset']);
+              font_url  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.font_load_url']);
+              override  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.enable_overrides'])">
+
+    <tal:check >
+      <link href="${font_url}" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+    </tal:check>
+
+<style>
+.disabled-True { opacity: 0.3}
+div.mosaic-grid-row-fluid {position: relative; width: 100vw; margin-left: calc((50vw - 50%)/-1) !important; }
+option[value=custom-color1], .custom-color1 {color: #${python: color1} !important}
+option[value=custom-color2], .custom-color2 {color: #${python: color2} !important}
+option[value=custom-color3], .custom-color3 {color: #${python: color3} !important}
+option[value=custom-background1], .custom-background1 {background-color: #${python: color1} !important}
+option[value=custom-background2], .custom-background2 {background-color: #${python: color2} !important}
+option[value=custom-background3], .custom-background3 {background-color: #${python: color3} !important}
+<div tal:replace="structure extra_css"/>
+
+    <tal:override tal:condition="python: override == 'True'"
+        tal:define="navlink_color     python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.navlink_color']);
+                    body_font         python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.body_font']);
+                    heading_font      python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.heading_font']);
+                    nav_background    python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.nav_background']);
+                    navlink_hover     python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.navlink_hover']);
+                    navlink_visited   python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.navlink_visited']);
+                    footer_background python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.footer_background']);
+                    footerlink_color  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.footerlink_color']);
+                    footer_color  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.footer_color']);
+                    footerlink_hover  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.footerlink_hover']);
+                    footerlink_visited python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.footerlink_visited']);">
+
+        nav.plone-navbar, #portal-globalnav li a, .plone-nav li a { background: #${python: nav_background};  color: #${python: navlink_color}  }
+        input.searchButton { background: #${python: nav_background};  border-color: #${python: nav_background}; color: #${python: navlink_color}  }
+        input.searchField { border-color: #${python: nav_background}; }
+        nav.plone-navbar li a {color: #${python: navlink_color};}
+        #portal-globalnav li.current a, nav.plone-navbar a:hover, nav.plone-navbar a.selected {background: #${python: navlink_hover} !important}
+        input.searchButton:hover { background:  #${python: navlink_hover}; border-color: #${python: nav_background}; }
+        nav.plone-navbar a:visited {color: #${python: navlink_visited} }
+        footer#portal-footer-wrapper { background: #${python: footer_background}; color: #${python: footer_color} }
+        footer#portal-footer-wrapper a {color: #${python: footerlink_color} }
+        footer#portal-footer-wrapper a:visited {color: #${python: footerlink_visited} }
+        footer#portal-footer-wrapper a:hover {color: #${python: footerlink_hover} }
+
+        <tal:con tal:condition="python: body_font != 'None'">body { font-family: ${body_font};}</tal:con>
+        <tal:con tal:condition="python: heading_font != 'None'">h1, h2, h3, h4, h5, h6 { font-family: ${heading_font};}
+        </tal:con>
+    </tal:override>
+
+    </style>
+    <link rel="stylesheet" tal:condition="ext_css" href="${ext_css}" />
+    <tal:replace tal:condition="python: iconset != 'fontawesome'"
+        tal:replace="structure context/@@fontload"></tal:replace>
+
+
+</tal:define>
+</div>

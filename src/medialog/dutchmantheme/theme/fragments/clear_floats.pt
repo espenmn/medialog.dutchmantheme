@@ -1,0 +1,12 @@
+<tal:define tal:define="height view/data/height|None">
+  <div class="clearfloats add-spacer disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  style="clear: both; height: ${height};">
+    <p class="spacer-hidden hidden grey gray" style="line-height: ${height}"><i class="fa fa-arrows-v"> ${height}</p>
+  </div>
+  <style>
+    .spacer-hidden {display: none; width:100%; margin: auto; }
+    .template-edit .add-spacer,
+    .template-edit .spacer-hidden.hidden {display: block !important; margin:auto; width: 100%; text-align: center}
+  </style>
+</tal:define>

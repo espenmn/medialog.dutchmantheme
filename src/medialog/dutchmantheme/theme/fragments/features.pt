@@ -1,0 +1,42 @@
+<section id="fragment-features"
+		 tal:define="keyword view/data/keyword|None;
+		 css_file view/data/css_file|None;
+		 title view/data/title|None;
+		 family_css view/family_css|None;
+		 language context/Language"
+		 class="${css_file} disabled-${view/data/disabled|None}"
+		 tal:condition="view/editmode|None">
+    <div  tal:condition="keyword">
+    	<div class="center wow fadeInDown">
+      	<h1 tal:condition="title">${title}</h1>
+        <tal:condition tal:condition="view/data/description|None">
+        	<p class="documentDescription">${view/data/description|None}</p>
+      	</tal:condition>
+      </div>
+
+			<div tal:define="items view/get_items">
+
+			<tal:check tal:condition="items">
+				<div class="feature-items">
+					<div tal:repeat="item items"
+							class="feature  wow fadeInDown animated"
+							data-wow-delay="600ms" data-wow-duration="1000ms"
+							style="visibility: visible; animation-duration: 1000ms;
+							animation-delay: 600ms; animation-name: fadeInDown;">
+							<div class="feature-wrap ${family_css}" tal:define="item_url item/getURL|item/absolute_url">
+								<a href="${item_url}">
+									<i  tal:condition="exists:item/iconfield" class=" ${family_css} ${item/iconfield}" />
+								 	<i class="fa fa-info" tal:condition="not:exists:item/iconfield" />
+									<h2>${item/Title}</h2>
+								</a>
+								<h4>${item/Description}</h4>
+							</div>
+        	</div>
+				</div>
+		</tal:check>
+    </div>
+    <!--tal:css tal:replace="structure context/@@fontload"/-->
+		<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+				<link rel="stylesheet" href="++theme++dutchmantheme/css/${css_file}.css" tal:condition="load_css">
+		</tal:define>
+</section>

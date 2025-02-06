@@ -1,0 +1,55 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+    <schema>
+      <field name="disabled" type="zope.schema.Bool">
+          <required>false</required>
+          <title>Hide fragment</title>
+          <description>Click here to hide fragment</description>
+      </field>
+      <field name="keyword" type="zope.schema.List">
+        <description/>
+        <title>Tagged with Keywords</title>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>plone.app.vocabularies.Keywords</vocabulary>
+        </value_type>
+      </field>
+    <field name="item_c" type="zope.schema.Int">
+      <description>Number of items to fetch</description>
+      <title>Items</title>
+      <min>1</min>
+      <max>1000</max>
+      <default>6</default>
+    </field>
+    <field name="image_size" type="zope.schema.Choice">
+         <description>Choose Image Size (scale)</description>
+         <required>True</required>
+         <title>Image Size</title>
+         <default>preview</default>
+       <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+    </field>
+    <field name="image_width" type="zope.schema.Int">
+      <description>Set size if you want to scale image more precisely</description>
+      <required>False</required>
+      <title>Max Width</title>
+      <min>10</min>
+    </field>
+
+    <field name="image_height" type="zope.schema.Int">
+      <description>Set size if you want to scale image more precisely</description>
+      <required>False</required>
+      <title>Max Height</title>
+      <min>10</min>
+    </field>
+
+    <field name="direction" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Scale mode if you set width and height</title>
+      <values>
+        <element>up</element>
+        <element>down</element>
+      </values>
+    </field>
+</schema>
+</model>

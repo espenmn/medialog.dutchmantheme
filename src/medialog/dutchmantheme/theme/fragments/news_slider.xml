@@ -1,0 +1,137 @@
+<model
+  xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="limit" type="zope.schema.Int">
+    <title>Limit</title>
+        <description>Max items to show</description>
+        <required>True</required>
+  </field>
+
+  <field name="sort_on" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Sort on</title>
+         <default>modified</default>
+        <values>
+          <element>modified</element>
+          <element>created</element>
+          <element>Date</element>
+        </values>
+  </field>
+  <field name="subjects" type="zope.schema.Choice">
+   <description>Keyword</description>
+   <required>False</required>
+   <title>If you want to find items with keywords, choose here</title>
+   <default></default>
+   <vocabulary>plone.app.vocabularies.Keywords</vocabulary>
+  </field>
+
+  <field name="image_size" type="zope.schema.Choice">
+   <description>Choose Image Size (scale) for you image wall</description>
+   <required>True</required>
+   <title>Image Size</title>
+   <default>preview</default>
+   <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+  </field>
+
+
+    <field name="image_width" type="zope.schema.Int">
+      <description>Set size if you want to scale image more precisely</description>
+      <required>False</required>
+      <title>Max Width</title>
+      <min>10</min>
+    </field>
+
+    <field name="image_height" type="zope.schema.Int">
+      <description>Set size if you want to scale image more precisely</description>
+      <required>False</required>
+      <title>Max Height</title>
+      <min>10</min>
+    </field>
+
+    <field name="direction" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Scale mode if you set width and height</title>
+      <values>
+        <element>up</element>
+        <element>down</element>
+      </values>
+    </field>
+    
+  <field name="pager" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Show pager</title>
+        <values>
+          <element>true</element>
+          <element>false</element>
+        </values>
+  </field>
+  <field name="nav" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Show Navigation</title>
+        <values>
+          <element>true</element>
+          <element>false</element>
+        </values>
+  </field>
+  <field name="color1" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <default></default>
+      <title>Background color</title>
+      <values>
+        <element>grey-background</element>
+        <element>black-background</element>
+        <element>white-background</element>
+        <element>plone-background</element>
+        <element>plone-background-2</element>
+        <element>plone-background-3</element>
+        <element>plone-background-opposite</element>
+        <element>custom-background1</element>
+        <element>custom-background2</element>
+        <element>custom-background3</element>
+      </values>
+    </field>
+
+    <field name="color2" type="zope.schema.TextLine">
+      <form:widget type="medialog.iconpicker.widgets.widget.ColorPickerFieldWidget"/>
+      <title>Or choose a color</title>
+      <description>If the above is not set, this will be used instead of the color selected above</description>
+      <default></default>
+      <required>False</required>
+    </field>
+
+    <field name="slides-1" type="zope.schema.Int">
+          <description/>
+          <required>True</required>
+          <title>Slides to show</title>
+          <min>0</min>
+          <max>10</max>
+    </field>
+    <field name="slides-2" type="zope.schema.Int">
+          <description/>
+          <required>True</required>
+          <title>Slides to show for 1024 width</title>
+          <min>0</min>
+          <max>10</max>
+    </field>
+    <field name="slides-3" type="zope.schema.Int">
+          <description/>
+          <required>True</required>
+          <title>Slides to show for 768 width</title>
+          <min>0</min>
+          <max>10</max>
+    </field>
+</schema>
+</model>

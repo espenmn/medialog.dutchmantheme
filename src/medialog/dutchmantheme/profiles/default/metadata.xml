@@ -4,5 +4,10 @@
   <dependencies>
     <!--<dependency>profile-plone.app.dexterity:default</dependency>-->
     <dependency>profile-plone.app.theming:default</dependency>
+    <dependency>profile-medialog.controlpanel:default</dependency>
+    <dependency>profile-medialog.iconpicker:default</dependency>
+    <dependency>profile-collective.themefragments:default</dependency>
+    <dependency>profile-plone.app.mosaic:default</dependency>
+    <dependency>profile-plone.app.imagecropping:default</dependency>
   </dependencies>
 </metadata>

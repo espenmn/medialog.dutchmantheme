@@ -1,15 +1,46 @@
 <div  id="customcss">
 
-<tal:define
-  tal:define="csscolor python:portal_state.portal().portal_registry['DocentIMS.ActionItems.interfaces.IDocentimsSettings.color1']">
-
+ 
     <tal:check >
-      <link href="${font_url}" rel="stylesheet">
+      <link href="${view/font_url|None}" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
     </tal:check>
 
 <style>
- h1 {color: red; }
-</style>
-</tal:define>
+.disabled-True { opacity: 0.3}
+div.mosaic-grid-row-fluid {position: relative; width: 100vw; margin-left: calc((50vw - 50%)/-1) !important; }
+option[value=custom-color1], .custom-color1 {color: #${view/color1|None} !important}
+option[value=custom-color2], .custom-color2 {color: #${view/color2|None} !important}
+option[value=custom-color3], .custom-color3 {color: #${view/color3|None} !important}
+option[value=custom-background1], .custom-background1 {background-color: #${view/color1|None} !important}
+option[value=custom-background2], .custom-background2 {background-color: #${view/color2|None} !important}
+option[value=custom-background3], .custom-background3 {background-color: #${view/color3|None} !important}  
+
+<div tal:replace="structure view/extra_css|None"/>  
+<tal:override tal:condition="view/override|None">
+
+        nav.navbar-barceloneta , #portal-globalnav li a, .plone-nav li a { background: #${view/nav_background};  color: #${view/navlink_color}  }
+        input.searchButton { background: #${view/nav_background};  border-color: #${view/nav_background}; color: #${view/navlink_color}  }
+        input.searchField { border-color: #${view/nav_background}; }
+        nav.navbar-barceloneta  li a {color: #${view/navlink_color};}
+        #portal-globalnav li.current a, nav.navbar-barceloneta . a:hover, nav.navbar-barceloneta  a.selected {background: #${view/navlink_hover} !important}
+        input.searchButton:hover { background:  #${view/navlink_hover}; border-color: #${view/nav_background}; }
+        nav.navbar-barceloneta  a:visited {color: #${view/navlink_visited} }
+        footer#portal-footer-wrapper { background: #${view/footer_background} !important; color: #${view/footer_color} }
+        footer#portal-footer-wrapper a {color: #${view/footerlink_color} }
+        footer#portal-footer-wrapper a:visited {color: #${view/footerlink_visited} }
+        footer#portal-footer-wrapper a:hover {color: #${view/footerlink_hover} }
+        <tal:con tal:condition="view/body_font|None">body { font-family: ${view/body_font};}</tal:con>
+        <tal:con tal:condition="view/heading_font|None">h1, h2, h3, h4, h5, h6 { font-family: ${view/heading_font};}
+        </tal:con>
+    </tal:override>  
+
+    </style>
+    <link rel="stylesheet" href="/++theme++dutchman-theme/${view/cssfile}/theme.min.css"/>
+    <link rel="stylesheet" tal:condition="view/ext_css|None" href="${view/ext_css|None}" /> 
+    <tal:condition tal:condition="view/iconset|None" tal:define="iconset view/iconset|None">
+      <tal:replace tal:condition="python: iconset != 'fontawesome'"
+        tal:replace="structure context/@@fontload"></tal:replace> 
+    </tal:condition> 
+ 
 </div>

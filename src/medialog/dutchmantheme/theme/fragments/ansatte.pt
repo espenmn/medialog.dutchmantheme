@@ -1,0 +1,242 @@
+<section class="seksjons_block custom-background3"
+            tal:condition="view/editmode|None"
+            id="fragment-${python: view.id}">
+
+
+ 
+
+            <metal:content-core fill-slot="content-core">
+            <metal:block use-macro="context/@@listing_view/macros/content-core">
+
+              <metal:entries fill-slot="entries">
+
+                <metal:block use-macro="context/@@listing_view/macros/entries"
+                    tal:define="portal context/@@plone_portal_state/portal">
+                  <metal:entry fill-slot="entry">
+
+
+                        <div class="ansatt-div white-background">
+                            <tal:define tal:define="item_url item/getURL|item/absolute_url;
+                                          item_title item/Title">
+                               <p class="plone-background white margin-0 padding-0-10">${item/avdeling}</p>
+                              <a href="#" tal:attributes="href item_url">
+                                 <img alt="${item_title}"
+                                        src="${item_url}/@@images/image/portrett" />
+                              </a>
+                              <div class="media-body padding-20">
+                                <a href="${item_url}">
+                                  <h2 class="media-heading"><span class="fornavn">${item/fornavn}</span><br/><span class="etternavn">${item/etternavn}</span></h2>
+                                </a>
+                                <p class="work-title plone-link"><b>${item/tittel}</b></p>
+                                <!--hr/-->
+                                <p><a   href="tel:${item/telefon}" tal:condition="item/telefon"><i class="fa fa-phone"/>&nbsp; ${item/telefon}</a> <br/> <tal:check  tal:condition="item/mobil"><a href="tel:${item/mobil}"><i class="fa fa-mobile"/> &nbsp; ${item/mobil}</a></tal:check> &nbsp;</p>
+                                <p class="eposten"><a mailto="tel:${item/epost}" tal:condition="item/epost"><i class="fa fa-envelope-o" /> ${item/epost}</a></p>
+                              </div>
+                            </tal:define>
+                         </div><!-- tal repeat-->
+
+
+
+            </metal:entry>
+            </metal:block>
+
+                  <style>
+
+                    .collectionFilter header.portletHeader {
+                   	display:  none;
+                   }
+
+
+                    div.portletContent.filterContent {
+                     background: #f4f5f4;
+                     border:  0 none;
+                     box-shadow: none
+                     }
+
+                    aside.portlet.filterAvdelinger.collectionFilter {
+                     box-shadow: none
+                    }
+
+                    .ansatt-di i.fa { text-align: center}
+
+                    li.filterItem {
+                    	background: #e7ecf0;
+                     }
+
+
+                    li.filterItem  {
+                    	 margin: 5px;
+                    	 border-radius: 2em;
+                    	 line-height: 3em;
+
+                    }
+
+                    label.checked {
+                    	color:  black;
+                    }
+
+                    li.filterItem.selected ,
+                    li.filterItem:hover {
+                    	 background: #29d2c8 !important;
+                    }
+
+
+                    li.filterItem input {
+                    display: none
+                    }
+
+                    #content-core { display: flex; flex-wrap: wrap;}
+
+                    #above-portlets-wrapper.custom-background1 {background: none !important;}
+
+                    #above-portlets-wrapper div.container.flex,
+
+                    #aboveall-portlets-wrapper div.container.flex {
+                    	max-width: 1200px;
+                    }
+
+
+                      div.ansatt-div {
+                       float:  left;
+                       min-height: 660px;
+                      }
+
+                       .template-ansatte-view  .portletWrapper {
+                      	width: 100%;
+                        margin: 0;
+                      }
+
+                      i.fa {
+                      	width: 1em;
+                      	text-align: center;
+                      }
+
+
+                       .template-ansatte-view  header.portletHeader {
+                      	margin: 1em 0 0 0;
+                      	padding: 0 14px;
+                      	font-size: 100%;
+
+                      }
+
+                      span.filterLabel {
+                      	display: flex;
+                      }
+
+                      li.filterItem.filter-skade.  {
+                      	display: flex;
+                      }
+
+                       .collectionFilter.pat-collectionfilter div.portletContent.filterContent ul {
+                      	display: flex;
+                        flex-wrap: wrap;
+                      }
+
+
+                       .collectionFilter.pat-collectionfilter div.portletContent.filterContent ul li {
+                      	min-width: 130px;
+                      }
+
+                      .collectionFilter.pat-collectionfilter div.portletContent.filterContent ul li.filter-administrasjon {
+                       min-width: 200px;
+                     }
+
+
+
+                    h1.documentFirstHeading { display: none; text-align: center}
+
+                   .ansatt-div {
+                     margin: 15px !important;
+                      float:  left;
+             }
+
+
+                   .ansatt-div  a {
+                     text-decoration: none !important;
+                     border-bottom: 0 none !important;
+                   }
+
+
+
+                   body.template-ansatte-view .outer-wrapper {
+                     background: whitesmoke;
+                     xpadding-top: 175px;
+                   }
+
+                   span.fornavn {
+                     font-weight: 300;
+                   }
+
+                   body.template-ansatte-view h1.documentFirstHeading {
+                     border-bottom: 0;
+                     text-align: center;
+                   }
+
+                   body.template-ansatte-view div.media-body.padding-20 p a {
+                     border-style: none;
+                   }
+
+                   body.template-ansatte-viewv h2.media-heading {
+                     margin-top: 10px;
+                   }
+
+                    body.template-ansatte-view div.media-body hr {
+                     border-color: whitesmoke;
+                     margin-top: 10px;
+                    }
+
+                   p.work-title {
+                     margin-bottom: 30px;
+                    min-height: 3em !important;
+                  }
+
+                   div.ansatt-div {
+                     width: 22.5%;
+                     min-width: 250px;
+                     max-width: 300px;
+
+                   }
+
+                   div.ansatt-div  p.eposten a {
+                     font-size: 85%;
+                    }
+
+                   @media (max-width:1000px)  {
+
+                      div.ansatt-div  {
+                       width: 45%;
+                       min-width: 250px;
+                       max-width: 300px;
+
+
+                     }
+
+                   }
+
+
+                   @media (max-width:550px)  {
+
+                      div.ansatt-div  {
+                       width: auto;
+                       min-width: 250px;
+                       max-width: 100%;
+
+                     }
+
+                   }
+                   }
+
+
+                  </style>
+            </metal:entries>
+
+            </metal:block>
+            </metal:content-core>
+
+            </body>
+            </html>
+
+
+
+
+</section>

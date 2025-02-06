@@ -1,0 +1,85 @@
+<section  tal:define="scale view/data/image_size;
+         f_id python: view.id;
+         title view/data/title|None;
+         image view/one_image;
+         image_url image/getURL;
+         image_size view/data/image_size;
+         color1 view/data/color1"
+         id="fragment-${python: view.id}"
+         class="${view/data/color2} padding-20 disabled-${view/data/disabled|None}"
+         tal:condition="view/editmode|None">
+
+    <img src="${image_url}/@@images/image/${view/data/image_size}"
+          alt="${title}"
+         data-speed="${view/data/speed}"
+         class="img-parallax"/>
+   <div class="p-text-block ${view/data/style} ${color1}">
+        <h1  tal:condition="title" class="${color1}">${title}</h1>
+        <tal:block define="value nocall:view/data/text|nothing;
+                   output_relative_to nocall:value/@@output_relative_to|nothing"
+               tal:condition="output_relative_to"
+               tal:content="structure python:output_relative_to(context)" />
+  </div>
+<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+      <link rel="stylesheet" href="++theme++dutchmantheme/css/parallax.css" tal:condition="load_css">
+  </tal:define>
+<style>
+#fragment-${f_id} {
+  width: 100%;
+  height: ${view/data/height}px;
+  position: relative;
+  overflow: hidden;
+}
+#fragment-${f_id} .p-text-block {
+  position: relative;
+  display: block;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+    z-index: 2;
+
+}
+#fragment-${f_id} .img-parallax {
+  min-width: 100%;
+  xmin-height: ${view/data/height}px;
+  height: calc(${view/data/height}px + ${view/data/height}px *${view/data/speed});
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  pointer-events: none;
+  opacity: ${view/data/opacity};
+}
+</style>
+<script>
+// need to get rid of each, will probably be only one image
+$('#fragment-${f_id} .img-parallax').each(function(){
+  var img = $(this);
+  var imgParent = $(this).parent();
+  function parallaxImg () {
+    var speed = img.data('speed');
+    var imgY = imgParent.offset().top;
+    var winY = $(this).scrollTop();
+    var winH = $(this).height();
+    var parentH = imgParent.innerHeight();
+    var winBottom = winY + winH;
+    if (winBottom > imgY && winY < imgY + parentH) {
+      var imgBottom = ((winBottom - imgY) * speed);
+      var imgTop = winH + parentH;
+      var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+    }
+    img.css({
+      top: imgPercent + '%',
+      transform: 'translate(-50%, -' + imgPercent + '%)'
+    });
+  }
+  $(document).on({
+    scroll: function () {
+      parallaxImg();
+    }, ready: function () {
+      parallaxImg();
+    }
+  });
+});
+</script>
+</section>

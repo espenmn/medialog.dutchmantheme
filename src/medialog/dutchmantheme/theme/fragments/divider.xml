@@ -1,0 +1,54 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+ <field name="thicknes" type="zope.schema.Int">
+  <description></description>
+  <required>True</required>
+  <title>Line width</title>
+  <default>1</default>
+  <min>1</min>
+ </field>
+    <field name="color" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Line color</title>
+      <values>
+        <element>black</element>
+        <element>white</element>
+        <element>plone-link</element>
+        <element>plone-link-2</element>
+        <element>plone-link-3</element>
+        <element>plone-link-opposite</element>
+        <element>custom-color1</element>
+        <element>custom-color2</element>
+        <element>custom-color3</element>
+      </values>
+    </field>
+ <field name="margin1" type="zope.schema.Int">
+  <description>Space above and below</description>
+  <required>True</required>
+  <title>Top / Bottom Margin</title>
+  <default>0</default>
+  <min>0</min>
+ </field>
+ <field name="margin2" type="zope.schema.Int">
+  <description>Indent</description>
+  <required>True</required>
+  <title>Left / Right Margin</title>
+  <default>0</default>
+  <min>0</min>
+ </field>
+
+</schema>
+</model>

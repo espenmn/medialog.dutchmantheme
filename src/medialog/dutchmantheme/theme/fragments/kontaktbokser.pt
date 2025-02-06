@@ -1,0 +1,108 @@
+<section class="kontaktbokser custom-background3"
+            id="fragment-${python: view.id}">
+      <div class="container flex space-between">
+        <div class="kontakt-item">
+          <a href="tel:55332800">
+              <img src="/bilder/hvite-ikoner/call_us_white.png/@@images/image/preview" />
+              <p class="white">Ring <span class="no-mobile">oss </span>55 33 28 00</p>
+          </a>
+        </div>
+        <div class="kontakt-item">
+          <a href="/ring-meg">
+              <img src="/bilder/hvite-ikoner/call_me_white.png/@@images/image/preview" />
+              <p class="white">Ring meg opp</p>
+
+          </a>
+        </div>
+        <div class="kontakt-item">
+          <a href="fa-tilbud"><img src="/bilder/hvite-ikoner/get_an_offer_white.png/@@images/image/preview" />
+          <p class="white">Få tilbud</p>
+        </a>
+        </div>
+      </div>
+    <style>
+      /* @override https://fonts.googleapis.com/css?family=Modak&display=swap */
+
+      .space-between {justify-content: space-between;}
+
+            .kontaktbokser{ padding: 90px 0}
+
+            .kontaktbokser .kontakt-item {
+              background: #00587C;
+               flex-grow: 1;
+               flex-shrink: 1;
+               flex-basis: 0;
+               text-align: center;
+               max-width: 31%;
+               min-height: 280px;
+               width: 31%;
+               min-width: 300px;
+               padding-top: 31%;
+               position: relative;
+               vertical-align: center;
+               font-size: 2rem;
+               margin-bottom:  1em;;
+                box-sizing:border-box;
+
+            }
+
+
+
+
+            .kontaktbokser .kontakt-item:hover {
+              background:   #DA291C;
+            }
+
+            .kontaktbokser a {
+              text-decoration: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              z-index: 2;
+              display: block;
+              vertical-align: center;
+              height:100%;
+              box-sizing:border-box;
+            }
+
+            .kontaktbokser a p {
+               font-size: 1.266rem;
+               font-weight: bold;
+            }
+
+            .kontaktbokser img {
+            margin:  20% auto 9%;
+            max-height: 160px;
+            max-width: 33%;
+            }
+
+            @media (max-width: 767px) {
+              .kontaktbokser .kontakt-item {
+                  max-width: 100%;
+                  width: 90%;
+                  min-height: 300px;
+                  margin-bottom: 1em;
+                  margin: 15px;
+
+
+              }
+
+
+              .kontaktbokser {
+              flex-direction: column;
+              margin: 0;
+              padding-top:  15px;
+              }
+
+              .kontaktbokser img {
+      	      margin:  10% auto 4%;
+      	      max-height: 160px;
+      	      max-width: 33%;
+      	      }
+            }
+
+
+    </style>
+</section>

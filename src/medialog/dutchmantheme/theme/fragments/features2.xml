@@ -1,0 +1,63 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="title" type="zope.schema.TextLine">
+    <description/>
+    <required>False</required>
+    <title>Tittel</title>
+  </field>
+  <field name="description" type="zope.schema.Text">
+    <description/>
+    <required>False</required>
+    <title>Description</title>
+  </field>
+  <field name="keyword" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Keyword</title>
+      <vocabulary>plone.app.vocabularies.Keywords</vocabulary>
+    </field>
+    <field name="sort_on" type="zope.schema.Choice">
+      <description/>
+      <title>Sort on</title>
+      <values>
+        <element>modified</element>
+        <element>Date</element>
+        <element>created</element>
+        <element>effective</element>
+        <element>id</element>
+        <element>sortable_title</element>
+        <element>total_comments</element>
+      </values>
+    </field>
+    <field name="sort_order" type="zope.schema.Choice">
+      <description/>
+      <title>Sort order</title>
+      <values>
+        <element>ascending</element>
+        <element>descending</element>
+      </values>
+    </field>
+    <field name="css_file" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Style</title>
+        <values>
+          <element>features</element>
+          <element>features2</element>
+          <element>arrows</element>
+        </values>
+      </field>
+</schema>
+</model>

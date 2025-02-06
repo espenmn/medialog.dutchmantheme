@@ -1,0 +1,45 @@
+<section id="fragment-features"
+		 tal:define="keyword view/data/keyword|None;
+		 css_file view/data/css_file|None;
+		 title view/data/title|None;
+		 family_css view/family_css|None;
+		 language context/Language"
+		 class="${css_file} disabled-${view/data/disabled|None} section-${family_css}"
+		 tal:condition="view/editmode">
+    <div tal:condition="keyword">
+    	<div class="center">
+      	<h1 class="featuretitle" tal:condition="title">${title}</h1>
+        <tal:condition tal:condition="view/data/description|None">
+        	<p class="documentDescription">${view/data/description|None}</p>
+      	</tal:condition>
+      </div>
+
+		  <div tal:define="items view/get_items">
+
+			<tal:check tal:condition="items">
+				<div class="feature-items container">
+					<div tal:repeat="item items"
+							class="feature">
+							<div class="feature-wrap ${family_css}" tal:define="item_url item/getURL|item/absolute_url">
+								<a href="${item_url}">
+									<img tal:condition="python: css_file=='arrows'" src='${item_url}/@@images/image/mini'/>
+									<tal:check tal:condition="python: css_file!='arrows'" >
+									<i  tal:condition="exists:item/image" class="${family_css}"
+										style="background-image: url('${item_url}/@@images/image');" />
+								 	 <i tal:condition="not:exists:item/image" />
+									 </tal:check>
+									<h2>${item/Title}<i tal:condition="python: css_file=='arrows'" class="fa fa-chevron-right round-box"> </i>
+									</h2>
+								</a>
+								<h4 tal:condition="python: css_file  != 'arrows'">${item/Description}</h4>
+							</div>
+        	</div>
+				</div>
+		</tal:check>
+    </div>
+    <!--tal:css tal:replace="structure context/@@fontload"/-->
+		<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+				<link rel="stylesheet" href="++theme++dutchmantheme/css/featurestwo.css" tal:condition="load_css">
+		</tal:define>
+
+</section>

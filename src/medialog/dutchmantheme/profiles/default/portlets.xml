@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <portletmanager
+   name="medialog.dutchmantheme.belowportlets"
+   type="medialog.dutchmantheme.interfaces.IBelow"
+   />
+
+ <portletmanager
+   name="medialog.dutchmantheme.aboveportlets"
+   type="medialog.dutchmantheme.interfaces.IAbove"
+   />
+
+   <!--portletmanager
+     name="medialog.dutchmantheme.aboveallportlets"
+     type="medialog.dutchmantheme.interfaces.IPortalTop"
+  /-->
+
+  <hidden manager="plone.portaltop">
+   <viewlet name="medialog.dutchmantheme.aboveallportlets"/>
+  </hidden>
+
+</portlets>

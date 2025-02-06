@@ -1,21 +1,17 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:meta="http://namespaces.zope.org/meta"
     i18n_domain="medialog.dutchmantheme">
 
   <i18n:registerTranslations directory="locales" />
-
-  <!--
-    Be careful if you use general includeDependencies, it can have side effects!
-    Better import explicit packages or configurations ;)
-  -->
-  <!--<includeDependencies package="." />-->
-
   <include package=".browser" />
-
   <include file="permissions.zcml" />
+  <include package=".widgets" />
+  <include package=".viewlets" />
+  <meta:provides feature="mosaic-sitelayouts" />
 
   <genericsetup:registerProfile
       name="default"
@@ -39,10 +35,30 @@
       factory=".setuphandlers.HiddenProfiles"
       name="medialog.dutchmantheme-hiddenprofiles"
       />
+ 
 
-  <!-- -*- extra stuff goes here -*- -->
+ <plone:static
+      directory="layouts"
+      name="mosaic_layouts"
+      type="contentlayout"
+    />
 
   <plone:static
+      directory="sitelayouts"
+      name="sitelayouts"
+      type="sitelayout"
+  />
+ 
+    <utility
+  	  component=".vocabulary.ShowImagesVocabulary"
+      name="medialog.dutchmantheme.ShowImagesVocabulary" />
+
+    <utility
+      component=".vocabulary.ShowFoldersVocabulary"
+      name="medialog.dutchmantheme.ShowFoldersVocabulary" />
+
+ 
+   <plone:static
       directory="theme"
       type="theme"
       name="dutchman-theme"

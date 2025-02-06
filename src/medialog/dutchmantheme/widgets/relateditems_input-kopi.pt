@@ -1,0 +1,13 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     tal:omit-tag="">
+
+     <input type="text" class="pat-relateditems"
+                 data-pat-relateditems='{"selectableTypes": ["Document"],  "maximumSelectionSize": 1}' />
+
+</div>
+
+<input type="hidden" class="pat-select2"
+       data-pat-select2="placeholder:Search for a Value;
+                         vocabularyUrl:select2-test.json;
+                         width:20em" />

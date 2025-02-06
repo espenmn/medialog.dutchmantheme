@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="medialog.dutchmantheme">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="kode" type="zope.schema.SourceText">
+    <required>False</required>
+    <title>Add code here, without any pre or code tags</title>
+  </field>
+</schema>
+</model>

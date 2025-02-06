@@ -1,0 +1,58 @@
+
+<section id="fragment-${python: view.id}"
+  class="tabblock no-border disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None">
+
+  <div class="pat-autotoc autotabs no-border" data-pat-autotoc="section:fieldset;levels:legend;">
+    <fieldset tal:condition="view/data/title1|None">
+        <legend>${view/data/title1}</legend>
+        <div tal:replace="structure view/data/text1|None"></div>
+    </fieldset>
+    <fieldset tal:condition="view/data/title2|None">
+        <legend>${view/data/title2}</legend>
+        <div tal:replace="structure view/data/text2|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="view/data/title3|None">
+        <legend>${view/data/title3}</legend>
+        <div tal:replace="structure view/data/text3|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="view/data/title4|None">
+        <legend>${view/data/title4}</legend>
+        <div tal:replace="structure view/data/text4|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="view/data/title5|None">
+      <legend>${view/data/title5}</legend>
+      <div tal:replace="structure view/data/text5|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="view/data/title6a|None">
+      <legend>${view/data/title6a}</legend>
+      <div tal:replace="structure view/data/text6a|None"></div>
+    </fieldset>
+
+
+    <fieldset tal:condition="view/data/title7|None">
+        <legend>${view/data/title7}</legend>
+        <div tal:replace="structure view/data/text7|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="view/data/title8|None">
+        <legend>${view/data/title8}</legend>
+        <div tal:replace="structure view/data/text8|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="view/data/title9|None">
+        <legend>${view/data/title9}</legend>
+        <div tal:replace="structure view/data/text9|None"></div>
+    </fieldset>
+
+</div>
+
+</section>
+
+<style>
+  .no-border { border: 0 none !important}
+</style>

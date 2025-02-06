@@ -1,0 +1,231 @@
+<section id="fragment-services"
+				 tal:define="folder_url nocall:request/form/folder_url|None;
+				 css_file python: view.data['css_file'];
+				 title context/?folder_url/Title|None;
+				 color1 python: view.data['color1'];
+				 color2 python: view.data['color2'];
+				 color3 python: view.data['color3'];
+				 color4 python: view.data['color4'];
+				 min_width python: view.data['min_width'];
+				 disabled python: view.data['disabled'];
+				 item_width python: view.item_width;
+				 b_point python: view.b_point;
+				 editmode python: view.editmode;
+				 image_size python: view.data['image_size'];
+				 button python: view.data['button'];
+				 buttoncolor python: view.data['buttoncolor'];
+				 max_chars view/data/max_chars|python:1000"
+				 title="${title}"
+				 class="${color1} disabled-${disabled} service-${css_file}"
+				 tal:condition="editmode"
+				 data-anchor="anchor-${title}">
+
+				 <div tal:condition="folder_url">
+		   		<div class="center wow fadeInDown animated container servicetext"
+		            style="visibility: visible; animation-name: fadeInDown;">
+		           <h2 class="${color2}" tal:content="context/?folder_url/Title|None"/>
+		           <p class="lead ${color2}"
+								 			tal:condition="context/?folder_url/Description|None"
+		                 	tal:content="context/?folder_url/Description|None"/>
+		       </div>
+		       <div class="service-items container flex flex-wrap">
+		 				<div tal:repeat="item context/?folder_url/@@contentlisting|None"
+		               class="wow fadeInDown animated service-item ${color3}"
+		               data-wow-delay="600ms" data-wow-duration="1000ms"
+		               style="visibility: visible; animation-duration: 1000ms;
+		                         animation-delay: 600ms; animation-name: fadeInDown;">
+		 				    <tal:define tal:define="item_url item/getURL|item/absolute_url;
+		 							               item_title item/Title;
+																 description item/Description;
+																 des_lenght python: len(description)">
+		 							<a href="#" tal:attributes="href item_url">
+		 	 							<img src="${item_url}/@@images/image/${image_size}" alt="${item_title}"
+		 							    	 tal:condition="item/image|None"
+		                      class="img-responsive" />
+		               </a>
+		   						<div class="media-body">
+		 	                <a href="${item_url}">
+		                     <h1 class="media-heading ${color4}">${item_title}</h1>
+		                   </a>
+											 <p  tal:condition="max_chars">
+						 						${python: description[:max_chars]}<tal:check tal:condition="python: des_lenght>max_chars">…</tal:check>
+						 					</p>
+		                  <div  tal:condition="python: css_file=='services3'">
+												 <a href="${item_url}"><i class="fa fa-chevron-right round-box white"> </i> ${button}</a>
+											 </div>
+		               </div>
+		 							<div  tal:condition="python: css_file=='services'">
+		 								<a href="${item_url}" class="${color2} ${buttoncolor} btn">${button}</a>
+		 							</div>
+
+
+		 							<tal:cond  tal:condition="python: css_file=='withbodytext'">
+		 								<tal:block define="value nocall:item/text|nothing;
+		 		                           output_relative_to nocall:value/@@output_relative_to|nothing"
+		 		                       tal:condition="output_relative_to"
+		 		                       tal:content="structure python:output_relative_to(context)" />
+		 							</tal:cond>
+		           	</tal:define>
+		 				  </div>
+		     	</div>
+
+			<style>
+				/* @override https://www.fender.no/news/None */
+
+div.servicetext {
+				  margin: auto;
+				  text-align: center;
+
+				}
+
+
+div.service-item  {
+	position: relative;
+}
+
+div.media-body div {
+	position: absolute;
+	border: 0;
+	bottom: 30px;
+}
+
+
+
+				#fragment-services  {
+				  padding: 30px 15px 15px;
+				  text-align: center;
+				}
+
+				#fragment-services.service-services2 .service-item  {
+					padding: 0 0 15px 0;
+				}
+
+				.mosaic-grid-row-fluid  #fragment-services {
+				margin-left: -15px;
+				margin-right: -15px;}
+
+				div.service-items.container {
+				  justify-content: space-between;
+				  margin-top: 3em;
+				  margin-bottom: 1.4em;
+					width: 100%;
+				}
+				.service-item {
+				  background: white;
+				  padding: 0.9em;
+				  margin-bottom: 1em;
+				}
+
+				.service-services3 div.service-items.container  {
+					max-width: 1200px;
+				}
+
+				.service-services3 .service-item {
+					padding: 0;
+				}
+
+
+				.service-services3 div.media-body {
+					text-align: left;
+
+				}
+
+				.service-services3 div.media-body p {
+
+					line-height: 140%;
+				}
+
+
+				.service-services3 h2.plone-link-2 {
+					display: none;
+				}
+
+				.service-services3  div.media-body {
+					margin:  1em 1.9em 2em;
+
+				}
+
+
+
+
+				.service-services3 .service-item {
+				 padding-bottom: 50px;
+				}
+
+
+				.service-services3 h1 {
+					font-size: 26px  ;
+					line-height: 1.3em
+				}
+
+				.service-services3 i.fa.fa-chevron-right.round-box.white {
+				margin-left:  0;
+				margin-top:  1.2em;;
+				height: 1.6em;
+				width:  1.6em;
+				line-height: 1.6em;
+				padding-left:4px;
+				border-radius: 50%;
+				background: #d9291c;
+				text-align: center;
+ 			}
+
+
+				.service-item img {
+				 margin-bottom: 1em;
+				}
+
+				@media (max-width: 768px) {
+				  div.service-items {
+				    flex-direction: column;
+				    justify-content: center;
+				  }
+				  .service-item {
+				    margin-left: auto;
+				    margin-right: auto;
+				  }
+				}
+				.service-round .service-item {
+				  margin-bottom: 2em;
+				  padding:  0;
+
+				}
+				#fragment-services.service-round .service-item {
+					background: transparent !important;
+					color: white;
+
+				}
+				#fragment-services.service-services2 .media-body  {
+					padding-left: 1em;
+					padding-right: 1em;
+
+				}
+				.service-round .media-body {
+					 padding:  1em;
+				}
+				.service-round .service-item img {
+				  border-radius: 50%;
+				  border: 1.5px solid white;
+				}
+
+				@media (min-width: ${min_width}px ){
+				.service-item {
+  				width: ${item_width}%;
+					min-width: ${min_width}px;
+				 }
+				}
+
+				@media (max-width: ${b_point}px ){
+				#fragment-services  {
+					padding-left: 0;
+					padding-right: 0;
+				}
+				.service-item {
+  				width: 100%%;
+					min-width: 100%;
+				 }
+				}
+
+
+			</style>
+</section>

@@ -1,0 +1,117 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     tal:omit-tag="">
+<select id="" name="" class="" tabindex="" disabled="" multiple="" size=""
+        tal:attributes="id view/id;
+                        name string:${view/name}:list;
+                        class view/klass;
+                        style view/style;
+                        title view/title;
+                        lang view/lang;
+                        onclick view/onclick;
+                        ondblclick view/ondblclick;
+                        onmousedown view/onmousedown;
+                        onmouseup view/onmouseup;
+                        onmouseover view/onmouseover;
+                        onmousemove view/onmousemove;
+                        onmouseout view/onmouseout;
+                        onkeypress view/onkeypress;
+                        onkeydown view/onkeydown;
+                        onkeyup view/onkeyup;
+                        disabled view/disabled;
+                        tabindex view/tabindex;
+                        onfocus view/onfocus;
+                        onblur view/onblur;
+                        onchange view/onchange;
+                        multiple view/multiple;
+                        size view/size">
+<tal:block repeat="item view/items"
+  ><option id="" value="" selected="selected"
+         tal:condition="item/selected"
+         tal:attributes="id item/id;
+                         value item/value"
+         tal:content="item/content"
+         data-img-src="++theme++dutchmantheme/previews/${item/value}.png"
+         >label</option
+  ><option id="" value=""
+         tal:condition="not:item/selected"
+         tal:attributes="id item/id;
+                         value item/value"
+         tal:content="item/content"
+         data-img-src="++theme++dutchmantheme/previews/${item/value}.png"
+         >label</option
+></tal:block>
+</select>
+<input name="field-empty-marker" type="hidden" value="1"
+       tal:attributes="name string:${view/name}-empty-marker" />
+
+<script src="++theme++dutchmantheme/javascript/image-picker.js"></script>
+<script>
+$("#medialog-themefragments-fragment-fragment").imagepicker({hide_select : false,show_label  : true})
+</script>
+<style>
+  /* @override http://localhost:8080/Plone4 */
+
+
+
+  .thumbnails.image_picker_selector li:first-child {display:none; }
+  ul.thumbnails.image_picker_selector {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3em;
+    margin-bottom: 1.4em;
+  }
+    ul.thumbnails.image_picker_selector ul {
+      overflow: auto;
+      list-style-image: none;
+      list-style-position: outside;
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px; }
+    ul.thumbnails.image_picker_selector li.group {width:100%;}
+    ul.thumbnails.image_picker_selector li.group_title {
+      float: none; }
+    ul.thumbnails.image_picker_selector li {
+      margin-bottom: 1em;
+        border: 1px solid #dddddd;
+        background: white;
+      height:  auto;
+      width:  23.5%;
+      max-width: 500px;
+      min-width: 200px;}
+      ul.thumbnails.image_picker_selector li .thumbnail {
+        -webkit-user-select: none;
+        height: 100%;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        margin: 6px}
+        ul.thumbnails.image_picker_selector li .thumbnail img {
+          -webkit-user-drag: none;
+          padding: 6px;
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height:  auto;}
+      ul.thumbnails.image_picker_selector li .thumbnail.selected {
+        border: 3px solid  #0088cc; ;
+        margin: 3px;
+        background: #eee ;}
+
+
+  .image_picker_selector li div.thumbnail p {
+  	margin-bottom: 0;
+  	margin-top:  5px;
+  	text-align: center;
+  	background: #EEE;
+  	padding: 2px 10px;
+
+  }
+
+</style>
+</div>

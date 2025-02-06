@@ -1,0 +1,26 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+    <field name="background_image" type="zope.schema.Choice">
+        <description/>
+        <required>True</required>
+        <title>Choose image</title>
+        <source>collective.themefragments.tiles.CatalogSource</source>
+    </field>
+    <field name="height" type="zope.schema.Int">
+        <description/>
+        <max>100</max>
+        <min>20</min>
+        <required>True</required>
+        <title>Height (in percent of height, from 20 to 100)</title>
+    </field>
+</schema>
+</model>

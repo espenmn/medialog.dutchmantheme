@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="medialog.dutchmantheme"
+      lang="en">
+
+<section tal:define="color1 view/data/color1|None;
+    color2 view/data/color2|None;
+    date view/data/countdown_date|None;
+    css_file view/data/css_file|None"
+  class="countdown ${color1} disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  id="fragment-${view/id|None}">
+    <h3 class="${color2}">${view/data/promotion_text|None}</h3>
+    <h1 id="clock" class="${color2}"></h1>
+    <div class="legend">
+      <span class="${color2}" i18n:translate="">Days</span>
+      <span class="${color2}" i18n:translate="">Hours</span>
+      <span class="${color2}" i18n:translate="">Minutes</span>
+      <span class="${color2}" i18n:translate="">Seconds</span>
+    </div>
+    <h4  class="${color2} pat-moment">${date}</h4>
+    <script>require([
+      'jquery',
+      '++theme++dutchmantheme/javascript/jquery.countdown.min'
+      ], function(Base) {
+        'use strict';
+        $('#clock').countdown('${date}', function(event) {
+            $(this).html(event.strftime('<span>%D</span><span class="colon">:</span><span>%H</span><span class="colon">:</span><span>%M</span><span class="colon">:</span><span>%S</span>'));
+        });
+      });
+    </script>
+    <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+        <link rel="stylesheet" href="++theme++dutchmantheme/css/${css_file}.css" tal:condition="load_css">
+    </tal:define>
+</section>
+</html>

@@ -1,0 +1,22 @@
+<section class="seksjons_block ${view/data/color1}"
+            tal:condition="view/editmode|None"
+            id="fragment-${python: view.id}">
+  <div class="container margin-20">
+    <h3 class="plone-link-2" tal:condition="view/data/subtitle">${view/data/subtitle|None}</h3>
+    <h1 tal:condition="view/data/title">${view/data/title|None}<h1>
+    <tal:block define="value nocall:view/data/text|nothing;
+                   output_relative_to nocall:value/@@output_relative_to|nothing"
+               tal:condition="output_relative_to"
+               tal:content="structure python:output_relative_to(context)" />
+  </div>
+
+  <style>
+    .seksjons_block { padding:  80px;}
+    .seksjons_block .container {margin-top: 50px; margin-bottom: 50px;}
+    .seksjons_block p {
+    line-height: 165%;
+      font-size: 1.5rem;
+      max-width: 1200px;
+      margin: auto;    }
+  </style>
+</section>

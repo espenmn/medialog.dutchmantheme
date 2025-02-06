@@ -1,0 +1,24 @@
+
+<div tal:define="p_image view/one_image;
+    item_url p_image/getURL|item/absolute_url|None"
+    class="parallax-img parallax-touch disabled-${view/data/disabled|None}"
+    tal:condition="view/editmode|None"
+    style="background-image: url(${item_url}); min-height: ${view/data/height}vh">
+</div>
+
+<style>
+.parallax-img {
+		position: relative;
+		opacity: 1.0;
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		margin-bottom: 20px;
+		width: 100vw;
+		margin-left: calc((50vw - 50%)/-1);
+}
+</style>

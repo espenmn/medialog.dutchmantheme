@@ -1,0 +1,7 @@
+<div id="above-footerportlets-wrapper" class="custom-background1 disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+	<div class="container flex" >
+			<div tal:on-error="nothing" tal:replace="structure context/@@render_above_portlets" />
+			<div class="clearboth" />
+	</div>
+</div>

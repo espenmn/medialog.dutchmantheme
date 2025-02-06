@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+<div class="feature-item feature-item-2 disabled-${view/data/disabled|None}"
+    tal:condition="view/editmode|None"
+    id="fragent-${python: view.id}"
+    tal:define="family_css view/family_css;
+    title view/data/title|None;
+    item_url view/get_theurl|None;
+    description view/data/description|None">
+	<div class="feature-icon-2">
+		<i class="${view/data/color1} ${family_css} ${view/data/iconfield}"></i>
+	</div>
+	<div class="feature-text-2">
+    <h2 tal:condition="title" class="${view/data/color1|None}">${title}</h2>
+	  <p class="${view/data/color2}" tal:condition="description">${description}</p>
+	  <a tal:condition="item_url|None" class="btn btn-primary ${view/data/color3}" href="${item_url}">${view/data/buttontext}</a>
+</div>
+</div>
+<style>
+.feature-item-2 {
+		display: flex
+}
+</style>
+<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+		<link rel="stylesheet" href="++theme++dutchmantheme/css/feature.css" tal:condition="load_css">
+</tal:define>
+</html>

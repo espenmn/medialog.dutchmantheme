@@ -22,7 +22,6 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
-        "Framework :: Plone :: 5.2",
         "Framework :: Plone :: 6.0",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.7",
@@ -50,6 +49,13 @@ setup(
     python_requires=">=3.7",
     install_requires=[
         'setuptools',
+        'plone.api',
+        'collective.themefragments',
+        'medialog.controlpanel',
+        'plone.app.mosaic',
+        'medialog.iconpicker',
+        'collective.z3cform.colorpicker',
+        'plone.app.imagecropping',
         # -*- Extra requirements: -*-
         'z3c.jbot',
         'plone.api>=1.8.4',

@@ -1,0 +1,41 @@
+<tal:define  tal:define="item_url view/item_url|None; load_item view/load_item|None;
+          obj load_item/getObject;
+          scale_func obj/@@images;
+          scaled_image python:scale_func.scale('image', scale='large')"
+          tal:condition="view/editmode|None">
+
+  <div  id="fragment-${view/id|None}" class="inner-service post type-post format-standard has-post-thumbnail hentry category-blog disabled-${view/data/disabled|None}">
+         <div class="shadow-box white-background padding-10">
+           <div class="box-image col-xs-6 margin-0 padding-0" tal:condition="scaled_image">
+                <img tal:replace="structure python:scaled_image.tag()" tal:on-error=""/>
+              </div>
+           <div class="new-text col-xs-6 padding-10">
+             <h3 class="section-title"><a href="${item_url}" title="Link">${load_item/Title|None}</a></h3>
+             <div class="post-info"><span class="entry-date pat-moment" data-pat-moment="format:relative;">${load_item/Date}</span> <span>|</span> <span class="entry-author">${load_item/Creator}</span></div>
+             <p>${load_item/Description|None}</p>
+             <div class="button btn btn-primary content-bttn"><a href="${item_url}" title="Lire la suite">${view/data/linktext|None}</a></div>
+           </div> <!-- end new-text-->
+           <div class="clearboth" />
+         </div> <!--end shadow-box-->
+
+    </div>
+
+</tal:define>
+
+
+<style>
+  .shadow-box {
+  margin-bottom: 5%;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0px 15px 10px -15px #999;
+}
+
+.box-image img { margin:10px 0; padding:0}
+
+.content-bttn {display: block;}
+
+.clearboth {
+display: block;
+clear: both;
+}
+ </style>

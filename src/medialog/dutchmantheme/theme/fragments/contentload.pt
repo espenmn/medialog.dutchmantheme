@@ -1,0 +1,20 @@
+<section
+  id="fragment-${view/id|None}"
+  tal:define="item view/load_item|None"
+  class="contentloader disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None">
+<div id="content-target-${view/id|None}">
+<button type="button" class="btn btn-primary ${view/data/buttonstyle|None} pat-contentloader"
+     data-pat-contentloader="url:${view/item_url|None}?ajax_load=1;target:#content-target-${view/id};?ajax_load=1;content:#content">
+        <span>${view/data/buttontext|None}</span>
+</button>
+<style>
+#content #portal-footer-wrapper {
+    display: none;
+}
+</style>
+</div>
+<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+    <link rel="stylesheet" href="++theme++dutchmantheme/css/contentload.css" tal:condition="load_css">
+</tal:define>
+</section>

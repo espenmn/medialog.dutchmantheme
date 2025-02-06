@@ -1,0 +1,21 @@
+<section class="search-fragment ${view/data/color2} padding-20 disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+<div class="container">
+<form action="${portal_url}/@@search" class="flex">
+  <!--label for="main-search">Search</label-->
+  <input id="main-search" type="text" name="SearchableText" placeholder="Search..." />
+  <button class="secondary button fa fa-search ${view/data/color1}" type="submit"> Search</button>
+</form>
+</div>
+<style>
+   .search-fragment input {padding: 25px 20px; font-size: 150%}
+   #main-search { flex-grow: 1; border-color: silver}
+   .search-fragment button.button {
+        border: 0 none;
+        margin-left: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 5px;
+        font-size: 130%}
+</style>
+</section>

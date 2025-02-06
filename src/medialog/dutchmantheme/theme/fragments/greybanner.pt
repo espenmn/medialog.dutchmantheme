@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+
+<div class="${view/data/color1|None} bold center-text large-text padding-10 margin-0 line-feed-1 disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+    <a href="${view/get_theurl}" class="${view/data/color2|None}"><span tal:replace="structure view/data/bannertext|None"/></a>
+</div>
+</html>

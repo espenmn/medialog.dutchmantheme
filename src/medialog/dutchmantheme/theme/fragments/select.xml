@@ -1,0 +1,55 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+    <schema>
+      <field name="disabled" type="zope.schema.Bool">
+          <required>false</required>
+          <title>Hide fragment</title>
+          <description>Click here to hide fragment</description>
+      </field>
+      <field name="linked_folder" type="zope.schema.Choice">
+          <description>Choose Folder. Leave empty for current folder</description>
+          <required>False</required>
+          <title>Select a folder (or folderish object)</title>
+          <source>collective.themefragments.tiles.CatalogSource</source>
+      </field>
+      <field name="content_type" type="zope.schema.List">
+        <description/>
+        <title>Content Types</title>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>plone.app.vocabularies.UserFriendlyTypes</vocabulary>
+        </value_type>
+      </field>
+      <field name="sort_on" type="zope.schema.Choice">
+        <description/>
+        <title>Sort on</title>
+        <values>
+          <element>modified</element>
+          <element>Date</element>
+          <element>created</element>
+          <element>effective</element>
+          <element>id</element>
+          <element>sortable_title</element>
+          <element>total_comments</element>
+        </values>
+      </field>
+      <field name="sort_order" type="zope.schema.Choice">
+        <description/>
+        <title>Sort order</title>
+        <values>
+          <element>descending</element>
+          <element>ascending</element>
+        </values>
+      </field>
+      <field name="labeltext" type="zope.schema.TextLine">
+        <required>False</required>
+        <title>Labeltext</title>
+      </field>
+      <field name="defaulttext" type="zope.schema.TextLine">
+        <required>True</required>
+        <title>Default select text</title>
+        <default>---Select---</default>
+      </field>
+
+</schema>
+</model>

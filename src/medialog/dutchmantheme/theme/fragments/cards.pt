@@ -1,0 +1,53 @@
+<section tal:define="keyword view/data/keyword|None;
+        items view/get_items;
+        buttontext view/data/buttontext|None;
+        f_id python: view.id"
+        id="cards-${f_id}"
+        class="disabled-${view/data/disabled|None}"
+        tal:condition="view/editmode|None">
+	<tal:check tal:condition="items"
+	    tal:define="image_size view/data/image_size|None;
+	        css_class view/css_class|None;
+	        color1 view/data/color1">
+
+		<div tal:repeat="item items"
+          id="card_items"
+			    class="col-md-${view/css_class|None}">
+			<div class="card margin-10-0"
+          tal:define="item_url item/getURL|item/absolute_url|None;
+          description item/Description;
+          description python: description.ljust(500);
+          max_chars view/data/max_chars|python:1000">
+          <a href="${item_url}">
+              <img class="card-img-top" alt="${item/Title}" title="${item/Title}"
+					 src="${item_url}/@@images/image/${image_size}" />
+         </a>
+				<div class="card-block">
+                <a href="${item_url}">
+                    <h3 class="card-title">
+                        ${item/Title}
+                    </h3>
+                </a>
+        <p class="card-text" tal:condition="max_chars">
+      		${python: description[:max_chars]}…
+      	</p>
+				<p>
+					<a tal:condition="buttontext" class="btn btn-primary ${color1}" href="${item_url}">${buttontext}</a>
+						<!--a class="btn" href="${item_url}">Action</a-->
+				</p>
+				</div>
+		    </div>
+		</div>
+</tal:check>
+<style>
+#cards-${f_id} img.card-img-top {
+  width: 100%;
+  height: auto;
+<tal:check tal:condition="view/data/image_height|None">
+  object-fit: cover;
+  height: ${python: view.data.['image_height']'px !important;
+  object-position: ${python: view.data['position-x']}% ${view/data/position-y|None}%;
+</tal:check>
+}
+</style>
+</section>

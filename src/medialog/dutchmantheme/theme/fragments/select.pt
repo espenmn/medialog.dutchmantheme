@@ -1,0 +1,13 @@
+ <section id="fragment-${python: view.id}"
+   class="selectfragment disabled-${view/data/disabled|None}"
+   tal:condition="view/editmode|None">
+
+    <label for="folder_select-${python: view.id}">${view/data/labeltext|None}</label>
+    <select name="folder_select-${python: view.id}" id="folder_select-${python: view.id}" onchange="location = this.value;">
+      <option value="" selected>${view/data/defaulttext}</option>
+     <tal:repeat tal:repeat="item view/get_items|None">
+      <option value="${item/getURL|item/absolute_url}">${item/Title}</option>
+    </tal:repeat>
+    </select>
+
+</section>

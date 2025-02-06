@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    i18n:domain="medialog.dutchmantheme">
+<div class="newsitems disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None">
+<div class="programicon_item ckFilter-obj"
+ tal:repeat="item view/get_items|None">
+
+    <div tal:define="obj item/getObject">
+    <p class="pre_title">
+       <span xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plone" i18n:translate="">${item/portal_type}</span>
+     </p>
+    <h1 class="users" tal:define="item_url item/getURL|item/absolute_url">
+        <a href="${item_url}">${item/Title}</a>
+    </h1>
+    <p class="documentDescription" tal:condition="item/Description">${item/Description}</p>
+
+        <figure tal:define="scale_func obj/@@images;
+                scale context/@@images;
+                scaled_image python:scale_func.scale('image', scale='preview')"
+                tal:on-error="">
+            <img tal:replace="structure python:scaled_image.tag()"
+                 tal:condition="scaled_image" />
+       </figure>
+
+</div>
+
+ <style>
+div.newsitems .ckFilter-obj {
+	width: ${python: view.item_width}%;
+	margin:  10px;
+  min-width: 150px;
+}
+
+div.newsitems {
+	display: flex;
+  justify-content: space-between
+}
+
+ </style>
+</div>
+</div>
+</html>

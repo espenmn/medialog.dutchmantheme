@@ -1,0 +1,11 @@
+<section tal:define="my_id python: view.id; item view/load_item; title item/Title;"
+  class="pat-inject disabled-${view/data/disabled|None}"
+  tal:condition="view/editmode|None"
+  id="fragment-${my_id}"
+  data-anchor="anchor-${title}"
+  title="${title}">
+  <div id="pat-target-${my_id}">
+    <a href="${view/item_url}"
+      class="pat-inject" data-pat-inject="target: #pat-target-${my_id}; trigger: autoload; source: ${view/data/load_div}">Loading…</a>
+  </div>
+</section>

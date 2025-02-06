@@ -1,0 +1,18 @@
+<section id="fragment-gallery"
+	class="disabled-${view/data/disabled|None}"
+	tal:condition="view/editmode|None">
+		<div id="slider">
+      <tal:repeat tal:repeat="picture context/images|None">
+        <div tal:define="item python:picture.to_object">
+            <h1>${item/Title|None}</h1>
+            <p>${item/Description|None}</p>
+
+            <tal:define  tal:define="item_url item/getURL|item/absolute_url">
+                <img title="${item/Title|None}"
+                    alt="${item/Description|None}"
+                    src="${item_url}/@@images/image/${view/data/image_size}">
+            </tal:define>
+          </div>
+      </tal:repeat>
+		</div>
+</section>

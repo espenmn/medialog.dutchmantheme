@@ -1,0 +1,51 @@
+<section id="fragment-shoplist" class="disabled-${view/data/disabled|None}"
+tal:condition="view/editmode|None">
+
+
+       <tal:repeat tal:repeat="item context/@@contentlisting">
+        <div class="${view/data/style} buyable"
+			 tal:define="item_object item/getObject;"
+			 tal:condition="exists: item_object/item_net">
+			 <a href="#" tal:attributes="href item/getURL">
+				 <h4 class="ProductHeadline" tal:content="item/Title|None" />
+
+				 <p class="tileBody" tal:condition="item/Description|None">
+					 <span class="description">
+						 ${item/Description|None}
+					 </span>
+				 </p>
+				 <div class="imagebox padding-10 margin-10">
+				 <!-- maybe use background image so we can vertical align it-->
+				 <img src="" alt=""
+					tal:condition="item_object/image|nothing"
+					tal:define="scales item_object/@@images;
+								scale python:scales.scale('image', 'mini')"
+					tal:replace="structure python:scale and scale.tag(css_class='ProductImage') or None" />
+				 </div>
+			  </a>
+			  <span class="cart_item_uid"
+					   style="display: none;"
+					   tal:content="item/UID">12345678</span>
+
+			  <div class="productfooter" tal:condition="exists: item/item_net">
+				 <p  class="itemprice"
+					 tal:define="item_net item/item_net|None;
+              item_vat item/item_vat|None;
+              item_sum python:float(item_net) * (100+int(item_vat))/100">
+				 <span>Price: ${item_sum}</span></p>
+				 <input type="text"
+					 size="2"
+					 value="1"
+					 class="cart_item_count" />
+				 <a href="" class="add_cart_item buyable_add_to_cart button btn-large context white margin-10 padding-10-20"
+				  i18n:translate="buy"><i class="icon-shopping-cart"></i>  buy
+				 </a>
+			 </div>
+		 	<div class="visualClear" ><!-- --></div>
+	   </div>
+	 </tal:repeat>
+
+    <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
+        <link rel="stylesheet" href="++theme++dutchmantheme/css/shopviews.css" tal:condition="load_css">
+    </tal:define>
+</section>

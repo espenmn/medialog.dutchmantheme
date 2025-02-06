@@ -1,0 +1,107 @@
+<section id="fragment-circular_menu-${python: view.id}"
+				 class="${view/data/color3} disabled-${view/data/disabled|None}"
+				 tal:condition="view/editmode|None"
+				 tal:define="items view/get_items|None;
+				 showimage view/data/show-image|None;
+				 height view/get_height|None;
+				 w_size   view/data/width|None;
+				 size python: w_size or 70;
+				 color1 view/data/color1;
+				 color2 view/data/color2;
+				 family_css view/family_css;"
+				 style= "height: ${height}px">
+<div id="circular_menu-${python: view.id}" tal:condition="items" >
+	<input type="checkbox" id="toggle-${python: view.id}" onClick="toggle();"/>
+	<label id="show-menu-${python: view.id}" for="toggle-${python: view.id}">
+	<tal:check tal:condition="items">
+		<div tal:condition="not:showimage" class="btn ${color1}">
+			<i class="${color2} ${family_css} ${view/data/menuicon}"></i>
+		</div>
+		<div tal:condition="showimage" class="btn ${color1}"
+		    tal:define="linked_folder view/get_item_image;
+		    img_url linked_folder/getURL|linked_folder/absolute_url|None"
+		    style="background-image: url('${img_url}/@@images/image/preview')">
+		</div>
+		<tal:repeat tal:repeat="item items">
+            <a tal:condition="not:showimage" href="${link}" class="btn ${color1} ${color2} show-${view/data/show-on-load|None}"
+                tal:define="mi python:item['item'];
+                               x python:item['x'];
+                               y python:item['y'];
+                               index python:item['index'];
+                               link python:item['obj'];"
+                style='top:${y}px; left:${x}px; -webkit-transition-delay: ${index}0ms;transition-delay: ${index}0ms'
+                href="${link}" >
+                <i class="${color2} family_css fa ${item/iconfield|None}"></i>
+            </a>
+
+            <a tal:condition="showimage" href="${link}" class="btn ${color1} ${color2} show-${view/data/show-on-load|None}"
+                tal:define="mi python:item['item'];
+                               x python:item['x'];
+                               y python:item['y'];
+                               index python:item['index'];
+                               link python:item['obj'];"
+                style='top:${y}px; left:${x}px; -webkit-transition-delay: ${index}0ms;transition-delay: ${index}0ms;
+                    background-image: url(${link}/@@images/image/preview)'
+                href="${link}" >
+            </a>
+        </tal:repeat>
+	</tal:check>
+</div>
+<style>
+
+#fragment-circular_menu-${python: view.id} {padding: 35px}
+
+#circular_menu-${python: view.id} input {
+    position: absolute;
+    display: none}
+
+#circular_menu-${python: view.id} {
+	   margin: 0 auto;
+	   position: absolute;
+	   left: 50%;
+	   margin-left: -35px;
+	  }
+
+#circular_menu-${python: view.id} .btn {
+	   width: ${size}px;
+	   height: ${size}px;
+  	   line-height: ${size}px;
+	   font-size: 30px;
+	   border-radius: 50%;
+	   position: absolute;
+	   cursor: pointer;
+	   text-align:center;
+	   padding: 0;
+	 }
+
+#circular_menu-${python: view.id} .btn {
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+     background-size: auto 105%;
+     background-repeat: no-repeat;
+     background-position: center center;
+     }
+
+#circular_menu-${python: view.id} .btn.show-:not(:first-child),
+#circular_menu-${python: view.id} .btn.show-False:not(:first-child) {
+	display: none;
+}
+
+
+#circular_menu-${python: view.id} input#toggle-${python: view.id}:checked ~ #show-menu-${python: view.id} .btn {
+	   display: block;
+	 }
+
+#circular_menu-${python: view.id} {
+	margin-top: ${view/get_radius}px;
+	margin-bottom: ${view/get_radius}px;
+}
+
+#circular_menu-${python: view.id} ::selection {
+	background: none; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+	background: none; /* Gecko Browsers */
+}
+</style>
+</section>

@@ -1,0 +1,56 @@
+
+<section
+  class="tabblock no-border" >
+
+  <div class="pat-autotoc autotabs no-border" data-pat-autotoc="section:fieldset;levels:legend;">
+    <fieldset tal:condition="context/title1|None">
+        <legend>${context/title1}</legend>
+        <div tal:replace="structure context/text1|None"></div>
+    </fieldset>
+    <fieldset tal:condition="context/title2|None">
+        <legend>${context/title2}</legend>
+        <div tal:replace="structure context/text2|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title3|None">
+        <legend>${context/title3}</legend>
+        <div tal:replace="structure context/text3|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title4|None">
+        <legend>${context/title4}</legend>
+        <div tal:replace="structure context/text4|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title5|None">
+      <legend>${context/title5}</legend>
+      <div tal:replace="structure context/text5|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title6|None">
+      <legend>${context/title6}</legend>
+      <div tal:replace="structure context/tex6|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title7|None">
+        <legend>${context/title7}</legend>
+        <div tal:replace="structure context/text7|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title8|None">
+        <legend>${context/title8}</legend>
+        <div tal:replace="structure context/text8|None"></div>
+    </fieldset>
+
+    <fieldset tal:condition="context/title9|None">
+        <legend>${context/title9}</legend>
+        <div tal:replace="structure context/text9|None"></div>
+    </fieldset>
+
+</div>
+
+</section>
+
+<style>
+  .no-border { border: 0 none !important}
+</style>
