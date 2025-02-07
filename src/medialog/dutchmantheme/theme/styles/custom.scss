@@ -8,6 +8,44 @@
     color: inherit;
 }
 
+
+.documentDescription, p.lead {
+	color:  $plone-link-color;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid $plone-link-color;
+	font-weight: 600;
+}
+
+// body .btn
+// body .btn-primary {
+// 	--bs-btn-bg: $plone-link-color;
+// 	// --bs-btn-disabled-bg: #cc0000;
+//  }
+
+// body.template-contact-info .formControls .btn-secondary
+body a.btn-primary  {
+	// --bs-btn-bg: $plone-link-color;
+	background: $plone-link-color; //WORKS
+	border-color : darken( $plone-link-color, 5%);
+}
+
+
+a.btn-secondary {	
+	background:  $plone-link-opposite;
+	border-color : adjust-hue( $plone-link-opposite, -(20));
+	//
+	// border-color : darken($plone-link-opposite, 15%);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
+}
+
+h2 {
+    margin-top: 25px;
+}
+
 img,
 .flex .portletWrapper img {
 	max-width: 100%;
@@ -180,13 +218,10 @@ option[value=grey-background], .grey-background { background-color: #DDD  !impor
   --plone-link-opposite : $plone-link-opposite ;
 }
 
-.documentDescription, p.lead {
-	color:  $plone-link-color;
-	padding-bottom: 0.5em;
-	margin-bottom: 1em;
-	border-bottom: 1px solid $plone-link-color;
-	font-weight: 600;
-}
+
+//  end
+
+
 
 
 

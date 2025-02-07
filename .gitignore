@@ -37,3 +37,4 @@ report.html
 reports/
 venv/
 # excludes
+src/medialog/dutchmantheme/tiles.py
