@@ -13,7 +13,7 @@
              <h3 class="section-title"><a href="${item_url}" title="Link">${load_item/Title|None}</a></h3>
              <div class="post-info"><span class="entry-date pat-moment" data-pat-moment="format:relative;">${load_item/Date}</span> <span>|</span> <span class="entry-author">${load_item/Creator}</span></div>
              <p>${load_item/Description|None}</p>
-             <div class="button btn btn-primary content-bttn"><a href="${item_url}" title="Lire la suite">${view/data/linktext|None}</a></div>
+             <div><a class="button btn btn-primary" href="${item_url}" title="Lire la suite">${view/data/linktext|None}</a></div>
            </div> <!-- end new-text-->
            <div class="clearboth" />
          </div> <!--end shadow-box-->

@@ -1,0 +1,96 @@
+ 
+div.container.flex.padding-0.left {
+	flex-direction: row-reverse
+}
+
+.lrblock div.container.flex {
+ 
+	margin: auto !important;
+}
+
+
+
+@media (max-width: 768px) {
+
+.mosaic-width-full .lrblock {
+    width: 100vw; 
+    margin-left: 0;
+    margin-righ: 0;
+}
+
+div.half {
+	width: 100%; 
+	position: static;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	min-width: 100%
+ 
+	}
+
+.half.bodytext {
+	text-align: left	
+	}
+}
+
+
+.half.bodytext  ul {
+	padding-left: 1.5em;
+}
+
+ 
+.text-on-image div.half {
+	width: 100vw ;
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+ 
+div.flex.text-on-image {
+	position: relative;
+	margin-bottom: 2em;
+}
+
+
+.text-on-image div.half.bodytext {
+	z-index: 3;
+	top:  2em;
+	left: 4em;
+	position: absolute;
+}
+
+.text-on-image.center .half.bodytext {
+	left: 0;
+	text-align: center;
+}
+
+
+body div.black hr {
+	border-color:  white;
+	color: white;
+}
+
+ 
+div.flex.left-right:nth-child(odd){
+	flex-direction: row-reverse ;
+}
+
+div.flex.left-right:nth-child(even){
+	 background: white;
+}
+
+div.flex.black-background.left-right:nth-child(odd) div.half.bodytext.black  {
+	color:  white !important;
+}
+
+div.flex.black-background.left-right:nth-child(odd)   div.half.bodytext.black.padding-40 h2,
+div.flex.black-background.left-right:nth-child(odd)   div.half.bodytext.black.padding-40 h4,
+div.flex.black-background.left-right:nth-child(odd)   div.half.bodytext.black a {
+	color:  white !important;
+
+}
+
+div.flex.black-background.left-right:nth-child(even)   div.half.bodytext  {
+	background: white !important;
+
+}

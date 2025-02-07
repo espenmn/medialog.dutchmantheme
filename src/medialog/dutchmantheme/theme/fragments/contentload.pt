@@ -15,6 +15,6 @@
 </style>
 </div>
 <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
-    <link rel="stylesheet" href="++theme++dutchmantheme/css/contentload.css" tal:condition="load_css">
+    <link rel="stylesheet" href="++theme++dutchman-theme/css/contentload.css" tal:condition="load_css">
 </tal:define>
 </section>

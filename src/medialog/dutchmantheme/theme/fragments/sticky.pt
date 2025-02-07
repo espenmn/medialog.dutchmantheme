@@ -1,7 +1,7 @@
 <script tal:condition="view/editmode|None">
 require([
       'jquery',
-      '++theme++dutchmantheme/javascript/jquery.sticky'
+      '++theme++dutchman-theme/javascript/jquery.sticky'
       ], function(Base) {
         'use strict';
         $(document).ready(function(){

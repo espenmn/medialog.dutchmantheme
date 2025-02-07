@@ -1,0 +1,32 @@
+/* @override http://localhost:8080/Mega/++theme++dutchestheme/css/masonary.css */
+
+@media only screen {
+   .wall-of-images {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .wall-of-images figure {
+        float: left;
+        margin:  0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        border: 5px solid transparent;
+    }
+    
+    .wall-of-images figure img {
+        margin:  0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+
+  
+  button.mfp-arrow:hover {
+	background: #222;
+	}
+
+}
+
+
+

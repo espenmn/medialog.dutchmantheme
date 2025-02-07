@@ -20,31 +20,31 @@
   </xsl:variable>
 
   <rules if="$diazo_off">
-    <xi:include href="++theme++dutchmantheme/disabled.xml"/>
+    <xi:include href="++theme++dutchman-theme/disabled.xml"/>
 	</rules>
 
   <rules if="$default">
-	 <xi:include href="++theme++dutchmantheme/default.xml"/>
+	 <xi:include href="++theme++dutchman-theme/default.xml"/>
 	</rules>
 
   <rules if="$spot">
-	 <xi:include href="++theme++dutchmantheme/spot.xml"/>
+	 <xi:include href="++theme++dutchman-theme/spot.xml"/>
 	</rules>
 
   <rules if="$spot_2">
-	 <xi:include href="++theme++dutchmantheme/spot_2.xml"/>
+	 <xi:include href="++theme++dutchman-theme/spot_2.xml"/>
 	</rules>
 
   <rules if="$head">
-   <xi:include href="++theme++dutchmantheme/head_rules.xml"/>
+   <xi:include href="++theme++dutchman-theme/head_rules.xml"/>
   </rules>
 
   <rules if="$fullmenu">
-   <xi:include href="++theme++dutchmantheme/fullmenu.xml"/>
+   <xi:include href="++theme++dutchman-theme/fullmenu.xml"/>
   </rules>
 
   <rules if="$fullmenu_l">
-   <xi:include href="++theme++dutchmantheme/fullmenu_l.xml"/>
+   <xi:include href="++theme++dutchman-theme/fullmenu_l.xml"/>
   </rules>
 
   <after theme-children="/html/head" >
@@ -63,7 +63,7 @@
     <link rel="apple-touch-icon-precomposed"
           href="{$portal_url}/apple-touch-icon.png" />
 
-  	<link  rel="stylesheet" href="++theme++dutchmantheme/less/{$cssfile}/theme.css"/>
+  	<link  rel="stylesheet" href="++theme++dutchman-theme/less/{$cssfile}/theme.css"/>
     <link rel="stylesheet" href="++resource++medialog.iconpicker/icon-fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
   </after>
 

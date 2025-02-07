@@ -1,0 +1,159 @@
+/* @override http://localhost:8086/++theme++dutchestheme/css/t-menu.css */
+
+span.top-searchicon {
+	cursor:  pointer;
+}
+
+a.closebtn {
+position: fixed;
+top: 0;
+right: 0.5em;
+color:  white;
+font-size: 2em;
+}
+a.closebtn:hover {
+color:  white;
+}
+
+header#content-header {
+	-webkit-box-shadow: 0px 0 15px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0 15px 0 rgba(0,0,0,0.5);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+margin-bottom:  30px;
+height:  75px;
+
+}
+
+div#portal-header {
+	padding-top:  8px !important;
+	padding-bottom: 0 !important;
+	margin-top:  0 !important;
+	margin-bottom: 0 !important;
+}
+
+
+#portal-header {
+	margin-left:  0 !important;
+	margin-right:  auto;
+}
+
+#portal-logo {
+	margin-top: 0;
+}
+#portal-logo img {
+	max-height: 58px;
+}
+
+
+#menu-area input {
+  display: none;
+}
+
+.open-menu {
+  display: block;
+  z-index: 1000;
+  color:  #333;
+  font-size: 46px;
+  margin-right: 30px;
+  margin-left: 0 auto;
+}
+
+.open-menu i:hover {
+  opacity: 0.6
+}
+
+#menu-area {
+	overflow: scroll;
+}
+
+@media screen and (max-width: 800px) {
+ .open-menu {
+  margin-right:  15px;
+}
+header#content-header .flex{
+	flex-direction: row;
+}
+}
+
+
+.menu-open {
+  cursor: pointer;
+}
+
+
+.t-menu {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  padding-bottom: 30px;
+  background: rgba(255, 135, 2, 0.9);
+  z-index:  999;
+}
+
+.t-menu label {
+  cursor: pointer;
+}
+
+.t-menu .menu-content {
+  position: relative;
+  padding-top:  20vh;
+  font-size: 34px;
+  text-align: center;
+  padding-bottom: 100%;
+}
+
+.t-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.t-menu ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.t-menu ul li a:hover {
+  color: #ff8702;
+}
+
+.t-menu ul li:hover {
+  background: white;
+}
+
+.menu-effects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menu-effects ul {
+  transform: translateY(0%);
+  transition: all 0.5s;
+}
+
+#menu-toggle:checked ~ .menu-effects {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+#menu-toggle:checked ~ .menu-effects ul {
+  opacity: 1;
+}
+
+#menu-toggle:checked ~ .menu-open .open {
+  background-color: transparent;
+}
+
+ 
+#menu-toggle:not(:checked) ~ .menu-effects ul {
+  transform: translateY(-30%);
+}

@@ -46,7 +46,7 @@
           	</tal:define>
 				  </div>
     	</div>
-			<link rel="stylesheet" href="++theme++dutchmantheme/css/${css_file}.css" tal:condition="load_css">
+			<link rel="stylesheet" href="++theme++dutchman-theme/css/${css_file}.css" tal:condition="load_css">
 			<style>
 				@media (min-width: ${view/data/min_width|None}px ){
 				.service-item {

@@ -9,7 +9,7 @@
   <notheme css:if-not-content="#visual-portal-wrapper" />
 
   <after theme-children="/html/head" >
-       <link rel="stylesheet" href="++theme++dutchmantheme/css/t-menu.css" />
+       <link rel="stylesheet" href="++theme++dutchman-theme/css/t-menu.css" />
   </after>
 
   <rules css:if-content="#portal-top">

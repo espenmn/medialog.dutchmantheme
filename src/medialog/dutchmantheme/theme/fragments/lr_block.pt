@@ -33,7 +33,7 @@
             src="${image_url}/@@images/image/${scale}" />
     </div>
  </div>
- <link rel="stylesheet" href="++theme++dutchmantheme/css/lr_block.css" tal:condition="load_css">
+ <link rel="stylesheet" href="++theme++dutchman-theme/css/lr_block.css" tal:condition="load_css">
  <style>
 
 <tal:check tal:condition="view/data/image_height|None">

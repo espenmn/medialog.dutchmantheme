@@ -1,0 +1,41 @@
+
+body div.container.servicetext,
+body #fragment-services div.service-items.container {
+	max-width: 100% !important;
+}
+
+
+div.servicetext {
+  margin: auto;
+  text-align: center;
+}
+#fragment-services  {
+  padding: 1em;
+  text-align: center;
+}
+div.service-items {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 3em;
+  margin-bottom: 1.4em;
+}
+.service-item {
+  background: white;
+  padding: 0.9em;
+  margin-bottom: 1em;
+}
+
+h1.media-heading {
+  font-size: 200%;
+}
+@media (max-width: 768px) {
+  div.service-items {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .service-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

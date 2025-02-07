@@ -1,0 +1,38 @@
+/* @override http://localhost:8086/Plone2/++theme++dutchestheme/css/richtext_block.csss */
+
+section.sosial-block {
+ text-align: center;	
+}
+
+.sosial-block.round span.btn.btn-social {
+	border:  1px solid #777;
+	border-radius: 50%;
+	width: 2em;
+	height:  2em;
+	line-height: 1.6em;;
+	margin: 0 3px
+}
+
+section.sosial-block .btn-social{
+ font-size: 200%;
+ margin-left: 0.3em;
+ margin-right: 0.3em;
+}
+
+.sosial-block.round.grey span.btn.btn-social {
+	border-color: #AAA;
+}
+
+.sosial-block.round.grey a{
+	color:  #555;
+	padding: 0;
+	margin: 0 !important
+}
+
+.sosial-block.black span.btn.btn-social {
+	background: #000;
+}
+
+.sosial-block.neg a{
+	color:  #FFF;
+}

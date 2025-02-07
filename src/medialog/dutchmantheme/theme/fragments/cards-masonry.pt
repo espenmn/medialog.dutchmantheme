@@ -85,8 +85,8 @@
 
 <script>require([
   'jquery',
-  '++theme++dutchmantheme/javascript/masonry.pkgd.min',
-  '++theme++dutchmantheme/javascript/imagesloaded.pkgd.min'
+  '++theme++dutchman-theme/javascript/masonry.pkgd.min',
+  '++theme++dutchman-theme/javascript/imagesloaded.pkgd.min'
   ], function(Base) {
     'use strict';
     $('#card-items').imagesLoaded(function() {

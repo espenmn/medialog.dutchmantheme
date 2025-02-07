@@ -99,9 +99,9 @@ background: red;
 <!--
 require([
         'jquery',
-        '++theme++dutchmantheme/javascript/isInViewport',
-        '++theme++dutchmantheme/javascript/jquery.visible',
-        '++theme++dutchmantheme/javascript/jquery.appear'
+        '++theme++dutchman-theme/javascript/isInViewport',
+        '++theme++dutchman-theme/javascript/jquery.visible',
+        '++theme++dutchman-theme/javascript/jquery.appear'
         ], function(Base) {
           'use strict';
           $( document ).scroll(function() {

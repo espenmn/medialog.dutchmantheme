@@ -1,0 +1,37 @@
+.features5  div.feature-items {
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
+.features5 div.feature  {
+	min-width: 200px;
+	min-height: 200px;
+	flex: 1 25%;
+	padding:  0 20px 20px 0;
+	background: white;
+	margin-top:  0 !important;
+}
+
+.features5 div.feature-wrap i {
+	color:  #555;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 50px;
+}
+
+.features5 div.feature-wrap  a:hover {
+	text-decoration: none;
+	border-bottom: 0 none;
+}
+
+.features5 .feature-wrap.fa a h2 {
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.features5 h4 {
+	color:  black;
+}
+

@@ -40,11 +40,11 @@ tal:condition="view/editmode|None">
 
 
      </div>
-<link rel="stylesheet" href="++theme++dutchmantheme/css/slick.css" />
+<link rel="stylesheet" href="++theme++dutchman-theme/css/slick.css" />
 <script>
 require([
       'jquery',
-      '++theme++dutchmantheme/javascript/slick.min'
+      '++theme++dutchman-theme/javascript/slick.min'
       ], function(Base) {
         'use strict';
         $('.pat-contentloader').click();

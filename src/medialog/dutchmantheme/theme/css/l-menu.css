@@ -1,0 +1,121 @@
+/* @override http://localhost:8086/medialog/front-page/++theme++dutchestheme/css/l-menu.css */
+
+/* @override 
+	http://localhost:8086/++theme++dutchestheme/css/l-menu.css
+	http://localhost:8086/xxxxx/++theme++dutchestheme/css/l-menu.css
+*/
+
+header#content-header {
+	-webkit-box-shadow: 0px 0 15px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0 15px 0 rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+	margin-bottom:  30px;
+	height:  75px;
+}
+
+div#portal-header {
+	padding-top:  8px !important;
+	padding-bottom: 0 !important;
+	margin-top:  0 !important;
+	margin-bottom: 0 !important;
+}
+
+#portal-header {
+	margin-left:  0 !important;
+	margin-right:  auto;
+}
+
+#portal-logo {
+	margin-top: 0;
+}
+#portal-logo img {
+	max-height: 58px;
+}
+
+#myNav {display: block; 
+top: 0; left: 0; position: fixed;
+padding:  0;
+margin: 0;}
+
+@media screen and (max-width: 800px) {
+ 
+header#content-header .flex{
+	flex-direction: row;
+}
+}
+
+.nav-togglers {
+	margin-left: auto;
+}
+.nav-togglers a,
+#myNav a,
+.nav-togglers i {
+	font-size: 43px;
+}
+
+#myNav a:hover{
+ text-decoration: none;
+ border-bottom:0 none;
+}
+
+
+#myNav.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+#myNav .overlay-content {
+  position: relative;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#myNav.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#mtNAva.closebtn:hover {
+	text-decoration: none;
+	opacity:  0.6;
+}
+
+#myNav.overlay a:hover, #myNav.overlay a:focus {
+  color: #f1f1f1;
+}
+.nav-togglers span {
+  font-size: 40px;
+  margin-top: 15px
+}
+ 
+#myNav .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  z-index: 101;
+  color:  white;;
+}
+
+@media screen and (max-height: 450px) {
+  .nav-togglers a {font-size: 20px}
+  #myNav.closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+ 

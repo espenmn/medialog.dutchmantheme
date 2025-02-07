@@ -21,7 +21,7 @@
                      height="30px"
                      alt="${name}"
                      title="${name}"
-                     src="++theme++dutchmantheme/flag/${short_name}.png" />
+                     src="++theme++dutchman-theme/flag/${short_name}.png" />
             </tal:flag
             > <span class="sans-serif">${short_name}</span>
           </a>

@@ -39,7 +39,7 @@
     </div>
     <!--tal:css tal:replace="structure context/@@fontload"/-->
 		<tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
-				<link rel="stylesheet" href="++theme++dutchmantheme/css/featurestwo.css" tal:condition="load_css">
+				<link rel="stylesheet" href="++theme++dutchman-theme/css/featurestwo.css" tal:condition="load_css">
 		</tal:define>
 
 </section>

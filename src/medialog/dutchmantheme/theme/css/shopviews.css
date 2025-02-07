@@ -1,0 +1,347 @@
+/* @override http://xweb14d.plana.dk:8086/demo4/++theme++dutchestheme/css/shopviews.css */
+
+.bda_products {
+	width: 200px;
+	border: 1px solid silver;
+	background-color: #FCFCFC;
+	float: left;
+	margin: 0 30px 30px 0;
+	-webkit-box-shadow: 2px 2px 7px rgba(152, 154, 152, 0.65);
+	-moz-box-shadow: 2px 2px 7px rgba(152, 154, 152, 0.65);
+	box-shadow: 2px 2px 7px rgba(152, 154, 152, 0.65);
+}
+
+.bda_productlisting {
+	background: #f6f6f6;
+	border: 1px solid #949494;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 15px;
+	-webkit-box-shadow: 2px 2px 7px rgba(152, 154, 152, 0.65);
+	-moz-box-shadow: 2px 2px 7px rgba(152, 154, 152, 0.65);
+	box-shadow: 2px 2px 7px rgba(152, 154, 152, 0.65);
+ 
+}
+
+#fragment-shoplist {
+	width: 100%;
+	display: flex !important;
+	margin: 41px	justify-content: space-around;
+}
+
+h4.ProductHeadline {
+	font-size: 17px;
+	text-align: left;
+	padding-left: 15px;
+	color: white;
+	background: #555;
+	line-height: 22px;
+	font-weight: normal;
+	margin-top:  0;
+	padding: 10px
+}
+
+.bda_products p {
+	text-align: left;
+	padding-left: 15px;
+}
+
+.bda_productlist.buyable {
+	padding: 2px;
+	background: #EEE;
+	border: 1px solid silver;
+}
+
+#content .bda_products a {
+	font-size: 12px;
+	color: black;
+	text-decoration: none;
+}
+
+.imagebox {
+	background: white;
+
+}
+
+.bda_productlisting .imagebox {
+	margin-right: 15px;
+}
+
+.bda_productlisting .imagebox,
+.bda_productlist .imagebox {
+	float: left;
+	width: 220px;
+}
+
+.bda_productlist .imagebox img {
+	float: left;
+}
+
+img.ProductImage {
+	margin: 0 auto;
+	display: block;
+}
+
+.ProductBody {
+	text-align: left;
+}
+
+.bda_productlist div.productfooter {
+	border-top: 1px solid silver;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid silver;
+}
+
+p.itemprice {
+	float: left;
+	font-size: 16px;
+	margin-left: 20px;
+	margin-bottom: 5px;
+}
+
+.bda_productlisting .itemprice {
+	font-size: 24px;
+	font-weight: bold;
+	padding-top: 6px;
+}
+
+.bda_productlist p.itemprice {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+p.itemprice.span {
+	float: left;
+}
+
+.add_cart_item {
+	float: right;
+	margin: 0 12px;
+	font-weight: bold;
+}
+
+#portlet-cart {
+	border: 1px solid silver;
+	padding-bottom: 0px;
+	margin: 10px;
+	font-size: 90%;
+}
+
+#portlet-cart dt.portletHeader a.tile {
+	background-color: #ececec;
+	padding: 7px 15px;
+	color: #777;
+}
+
+ul#cart_items {
+	list-style-image: none;
+	list-style-type: none;
+	background: white;
+	padding: 0
+}
+
+li.cart_item {
+	padding-left: 15px;
+	padding-right: 15px;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+#cart_summary table.cart_sum_content {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.bda_productlisting .cart_item_count,
+.bda_products .cart_item_count {
+	display: none !important;
+}
+
+.image-grid {
+	width: 100%
+}
+
+.image-grid:after {
+	content: "";
+	display: block;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+
+.template-quicksand_view #content-core {
+	position: relative;
+}
+
+.image-grid ul {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+.image-grid li {
+	margin: 0px 10px 10px 0 !important;
+	display: block;
+	border: 1px solid #AAA;
+	float: left;
+	overflow: hidden;
+}
+
+img.cart_item_preview_image {
+	float: right;
+}
+
+.section-nettbutikk div#content {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.section-nettbutikk .documentDescription {
+	background: none;
+	padding: 0;
+}
+
+ul#shopitems.image-grid {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+ul#shopitems.productbox-grid {
+	margin: 0;
+}
+
+.productbox-grid li {
+	width: 200px;
+
+
+/* percentage makes items "jump" */
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	min-height: 280px;
+	float: left;
+	padding-right: 18px;
+	text-align: center;
+}
+
+.productbox-grid .imagebox {
+	border: 5px solid #F7F7F4;
+	position: relative;
+	display: block;
+	height: 150px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.productbox-grid .ProductTitle,
+.productbox-grid .itemprice {
+	padding: 0;
+	margin: 10px 20px 0;
+	font-weight: 600;
+	color: #2C2D31;
+	font-family: 'Open Sans', "Helvetica Neue", Hevetica, Arial, sans-serif;
+	font-size: 1.2em;
+	clear: both;
+	text-align: center;
+}
+
+.productbox-grid p.itemprice {
+	color: #999;
+	float: none;
+}
+
+.productbox-grid  a.button {
+	background: #f5f5f5;
+	
+
+/* Old browsers */
+	background: -moz-linear-gradient(top, #fbfbfb 0%, #f0f0f0 100%);
+
+
+/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f0f0f0));
+
+/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fbfbfb 0%,#f0f0f0 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fbfbfb 0%,#f0f0f0 100%);
+	/* Opera11.10+ */
+	background: -ms-linear-gradient(top, #fbfbfb 0%,#f0f0f0 100%);
+	/* IE10+ */
+	background: linear-gradient(top, #fbfbfb 0%,#f0f0f0 100%);
+	/* W3C */
+	-pie-background: linear-gradient(#fbfbfb, #f0f0f0);
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	position: relative;
+	margin: 17px auto 0;
+	border: 1px solid #E7E7E7;
+	color: #666;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	font-size: 11px;
+	padding: 0 15px;
+	height: 25px;
+	line-height: 25px;
+	display: inline-block;
+	width: auto;
+	bottom: 20px;
+	position: static;
+}
+
+.productbox-grid a.button:hover {
+	color: #111;
+	font-weight: bold;
+}
+
+/* @group tabs and such */
+
+div.variations {
+	margin-bottom:  10px;;
+}
+
+div.panes {
+	padding: 20px;
+	border: 1px solid silver;
+}
+
+#portal-columns ul.tabs {
+	margin-bottom: 0;
+}
+
+#portal-columns ul.tabs li {
+	list-style-image: none;
+	list-style-type: none;
+	display: inline-block;
+	margin: 0 3px;
+}
+
+#portal-columns ul.tabs li a {
+	padding: 6px 15px;
+	display: block;
+	color: #333;
+	background: #EEE;
+	border: 1px solid silver;
+	margin: 5px 0 -1px 0;
+}
+
+#portal-columns ul.tabs li a:hover {
+	background: #DDD;
+}
+
+#portal-columns ul.tabs li a.current {
+	font-weight: bold;
+	background: #FFF;
+	border-bottom: 1px solid white;
+	margin-top: 0;
+	padding-top: 12px;
+}
+
+/* @end */

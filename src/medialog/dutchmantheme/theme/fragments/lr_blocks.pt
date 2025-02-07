@@ -38,7 +38,7 @@
         </div>
      </div>
  </tal:repeat>
- <link rel="stylesheet" href="++theme++dutchmantheme/css/lr_block.css" tal:condition="load_css">
+ <link rel="stylesheet" href="++theme++dutchman-theme/css/lr_block.css" tal:condition="load_css">
 
 <style>
 #fragment-${python: view.id} { overflow: hidden;}

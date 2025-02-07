@@ -18,6 +18,6 @@
 	<p tal:condition="description" class="${view/data/color2}">${description}</p>
 </div>
 <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
-		<link rel="stylesheet" href="++theme++dutchmantheme/css/feature.css" tal:condition="load_css">
+		<link rel="stylesheet" href="++theme++dutchman-theme/css/feature.css" tal:condition="load_css">
 </tal:define>
 </html>

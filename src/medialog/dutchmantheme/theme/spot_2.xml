@@ -29,7 +29,7 @@
     <after css:theme-children="head" css:content="head script" />
 
     <after theme-children="/html/head" >
-        <link rel="stylesheet" href="++theme++dutchmantheme/css/spot.css" />
+        <link rel="stylesheet" href="++theme++dutchman-theme/css/spot.css" />
    </after>
   </rules>
 

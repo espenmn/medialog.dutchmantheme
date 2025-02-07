@@ -1,0 +1,128 @@
+div.container.flex {
+	max-width: 100%;
+	padding: 0;
+}
+
+.mosaic-width-full .flex {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-justify-content: center;
+   justify-content: center;
+   /* You can set flex-wrap and flex-direction individually */
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   /* Or do it all in one line with flex flow */
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
+   /* tweak the where items line up on the row */
+   /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+   -webkit-align-content: flex-end;
+   align-content: flex-end;
+}
+
+.mosaic-width-full .lrblock {
+    width: 300%; 
+    margin-left: -100%;
+    margin-righ: -100%;
+}
+
+.lrblock .container{
+    margin-left: auto;   
+    margin-right: auto;
+    max-width: 90vw;
+}
+
+@media (max-width: 768px) {
+
+.mosaic-width-full .lrblock {
+    width: 100%; 
+    margin-left: 0;
+    margin-righ: 0;
+}
+
+div.half {
+	width: 100%; 
+	position: static;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+ 
+	}
+	.half.bodytext {
+	text-align: left	
+	}
+}
+
+.half img {
+	max-width: 100%;
+}
+
+.half.bodytext  ul {
+	padding-left: 1.5em;
+}
+
+div.left .half.bodytext {
+	padding-right: 30px;
+	padding-left: 15px;
+}
+
+
+div.right .half.bodytext {
+	padding-left: 30px;
+	padding-right: 15px;
+}
+
+.flex.right {
+	 flex-direction: row-reverse;
+}
+
+.center div.half,
+.text-on-image div.half {
+	width: 100% ;
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+ 
+div.flex.text-on-image {
+	position: relative;
+	margin-bottom: 2em;
+}
+
+div.flex.text-on-image.center img {
+	width: 100%;
+	height:  auto;
+}
+
+.text-on-image div.half.bodytext {
+	z-index: 3;
+	top:  2em;
+	left: 4em;
+	position: absolute;
+}
+
+.text-on-image.center .half.bodytext {
+	left: 0;
+	text-align: center;
+}
+
+.half {
+  width: 50%;
+  box-sizing: border-box;
+  padding:  30px 15px 30px 15px;
+  text-align: left;
+}
+
+.half.bodytext {
+	max-width: 95vw;
+}
+
+body div.black hr {
+	border-color:  white;
+	color: white;
+}
+
+ 
+ 

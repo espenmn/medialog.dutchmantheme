@@ -1,0 +1,43 @@
+.features4 div.feature-items {
+	display: flex;
+	flex-wrap: wrap;
+	background: #FAFAFA;
+	padding: 30px 15px;
+}
+
+.features4 div.feature  {
+	min-width: 230px;
+	min-height: 200px;
+	flex: 1 23%;
+	padding:  20px !important;
+	margin: 15px !important;
+	background: white;
+	border:  7px solid white;
+}
+
+.features4 div.feature:hover  {
+	border-color:  #EEE;;
+}
+
+.features4 div.feature-wrap i {
+	color:  #777;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 50px;
+}
+
+.features4 div.feature-wrap  a:hover {
+	text-decoration: none;
+	border-bottom: 0 none;
+}
+
+.features4 .feature-wrap.fa a h2 {
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.features4 h4 {
+	color:  black;
+}
+

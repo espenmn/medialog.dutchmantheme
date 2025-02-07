@@ -46,6 +46,6 @@ tal:condition="view/editmode|None">
 	 </tal:repeat>
 
     <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
-        <link rel="stylesheet" href="++theme++dutchmantheme/css/shopviews.css" tal:condition="load_css">
+        <link rel="stylesheet" href="++theme++dutchman-theme/css/shopviews.css" tal:condition="load_css">
     </tal:define>
 </section>

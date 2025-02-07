@@ -1,0 +1,39 @@
+/* @override http://xweb14d.plana.dk:8081/bea/++theme++dutchestheme/css/services2.css */
+
+div.servicetext {
+	max-width: 90vw;
+	margin: auto;
+	text-align: center;
+}
+
+#fragment-services{
+	position: relative;
+	width:  300%;
+	left:  -100%;
+	right:  -100%;
+	padding: 1em;
+	text-align: center;
+}
+div.service-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 3em;
+	margin-bottom: 1.4em;
+}
+
+.service-item {
+  margin-bottom: 2em;
+
+}
+
+@media (max-width: 768px) {
+  div.service-items {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .service-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,72 @@
+/* @override http://xweb14d.plana.dk:8081/bea/++theme++dutchestheme/css/pdfgallery.css */
+
+#fragment-pdfgallery {
+	position: relative;
+	padding: 1em;
+	text-align: center;
+	width: 300%;
+	left: -100%;
+}
+
+
+div.pdfgallery-items.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 3em;
+	margin-bottom: 1.4em;   
+}
+
+div.pdf-gallery-body {
+	max-width: 90vw;
+	margin: auto;
+	text-align: center;
+}
+ 
+div.pdf-item{
+  min-width: 210px;
+  width: 24%;
+  margin-bottom: 1em;
+  border: 3px solid #FAFAFA;
+  padding: 8px;
+}
+
+h1.media-heading {
+	font-size: 150%;
+	line-height: 150%
+}
+
+div.pdf-gallery-body i {
+	font-size: 1.7em;
+	line-height: 2em;
+	z-index: 9;
+	position: relative;
+	top: -1em;
+	background: white;
+	border-radius: 50%;
+	border:  1px solid;
+	height: 2em;
+	width: 2em;
+}
+
+
+ 
+div.pdf-item  button {
+	margin: 1em;
+}
+
+@media (max-width: 768px) {
+  div.pdfgallery-items.container {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vw;
+  }
+  
+  
+  div.pdf-item {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    width:  80%;
+  }
+}

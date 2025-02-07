@@ -1,0 +1,29 @@
+.richtext_block {
+	border:  1px solid;
+	padding: 2em;
+}
+
+.richtext_block div.container  {
+	max-width: 100%	
+}
+
+.richtext_block a.plone-link {
+	 color: white;
+}
+ 
+	
+a.outline { 
+	margin: 2em auto;
+	padding:  10px 20px;; 
+	background-color: white; 
+	color: #666 !important;
+	border-width: 2px;
+	font-size:  125%;
+	border-radius: 0; 
+	border-color:  inherit !important; 
+	}
+	
+	
+a.outline:hover { 
+	color:  black !important; 
+	}

@@ -1,0 +1,175 @@
+/* @override 
+	http://localhost:8086/xxxxx/++theme++dutchestheme/css/spot.css
+	http://localhost:8086/xxxxx/slider/++theme++dutchestheme/css/spot.css
+*/
+
+header  div.flex {
+    flex-direction: row;
+}
+  
+a#portal-logo {
+	height: 60px;
+	overflow: hidden;
+	padding-top: 10px;
+	margin-left: 10px;
+}
+
+a#portal-logo img{
+	height: auto;
+	width:  auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+ 
+#content-header  {
+	background: white;
+	border-bottom:  1px solid #CCC;
+	box-shadow: 0 0 12px rgba(0,0,0, 0.3);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top:  0;
+	z-index: 4;
+	min-height: 70px;
+ 
+}
+ 
+div.outer-wrapper {
+	padding-top: 116px;
+}
+
+
+ 
+.mosaic-grid div.outer-wrapper {
+	padding-top: 70px;
+}
+
+#content-header div.container.flex {
+	display: flex;
+	margin: auto;
+}
+
+div#portal-globalnav-wrapper {
+	margin-left: auto;
+	padding-left: 30px;
+}
+
+.plone-collapse.plone-navbar-collapse.collapse.in {
+	position: fixed;
+	left:  0;
+	right:  0;
+	text-align: center;
+	background: white;
+	box-shadow: 0 7px 7px rgba(0,0,0, 0.3);
+	border-top:  1px solid;
+}
+
+div#portal-globalnav-wrapper a {
+	color:  #777;
+	background: inherit;
+}
+
+div#portal-globalnav-wrapper a:hover {
+	color:  inherit;
+}
+
+div#portal-globalnav-wrapper ul.submenu {
+	background: white; ;
+	box-shadow: 3px 3px 7px rgba(0,0,0, 0.3);
+}
+
+
+#portal-globalnav-wrapper div.plone-navbar-header {
+	margin: 6px 10px;
+}
+
+button.plone-navbar-toggle {
+	background: #555 !important;
+	font-size: 140%;
+	content: "xx" !important;
+}
+
+ul.dropdown
+.has_subtree.dropdown {
+	background: white !important;
+}
+
+body ul.dropdown li {
+	background: white;
+	border-top:  0 none !important;
+	xborder-bottom:  1px solid  #ccc !important;
+	box-shadow: 0 2px 4px rgba(0,0,0, 0.3);
+}
+
+/* @group Search */
+
+span.top-searchicon {
+	cursor:  pointer;
+	width:  auto;
+}
+
+div#seach-wrapper {
+	bottom:  0;
+	z-index: 99;
+	background: rgba(0,0,0,0.93);
+	padding: 10px;
+	margin-top:  15px;;
+}
+
+div#portal-searchbox {
+	background: none;
+}
+
+div#portal-searchbox {
+	float: none;
+	margin:  auto;
+	top:  30%;
+}
+
+input#searchGadget.searchField {
+	width: 75%;
+	margin-right: 3%;
+}
+
+div.LSBox {
+	background: none;
+}
+
+#searchGadget_form div.LSBox div.searchSection label {
+	color:  white;;	
+}
+
+#searchGadget_form  {
+	margin-bottom: 10px;
+}
+
+.top-searchicon i {
+	font-size: 3em;
+	pointer: hand;
+}
+
+span.top-searchicon.white {
+	float: right;
+	padding:  20px 30px;;
+}
+
+input.searchButton,
+input#searchGadget.searchField {
+		height: 1.5em;
+	font-size: 4.2rem;
+	padding: 10px 20px !important;
+	margin-right: 10px;
+	line-height: 1.4em;
+	border-radius: 6px
+}
+
+
+input.searchButton  {
+	line-height: 0;
+	background: orange;
+	font-size: 4.2rem;
+	font-weight: normal;
+
+}
+
+/* @end */

@@ -32,14 +32,14 @@
      </tal:image>
     </div>
     <!--tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
-        <link rel="stylesheet" href="++theme++dutchmantheme/css/masonary.css" tal:condition="load_css">
+        <link rel="stylesheet" href="++theme++dutchman-theme/css/masonary.css" tal:condition="load_css">
     </tal:define-->
 
 
     <script>require([
       'jquery',
-      '++theme++dutchmantheme/javascript/masonry.pkgd.min',
-      '++theme++dutchmantheme/javascript/imagesloaded.pkgd.min'
+      '++theme++dutchman-theme/javascript/masonry.pkgd.min',
+      '++theme++dutchman-theme/javascript/imagesloaded.pkgd.min'
       ], function(Base) {
         'use strict';
         $('.wall-of-images').imagesLoaded(function() {

@@ -23,7 +23,7 @@ def script(self):
     s_id = self.get_id
     return """require([
       "jquery",
-        "++theme++dutchmantheme/javascript/responsiveslides.min",
+        "++theme++dutchman-theme/javascript/responsiveslides.min",
          ], function () {
          $("%(s_id)s").responsiveSlides({
                 maxwidth: %(maxwidth)i,
@@ -60,7 +60,7 @@ def script(self):
 
 def xscript(self):
     data = self.data
-    return """require(["jquery", "++theme++dutchmantheme/javascript/responsiveslides.min.js",], function () {
+    return """require(["jquery", "++theme++dutchman-theme/javascript/responsiveslides.min.js",], function () {
 $("#slider.slider-033090786cd84a61bb88d4ca79cb3a68").responsiveSlides();
 });""" % { "s_id": id }
 
