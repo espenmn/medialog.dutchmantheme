@@ -15,6 +15,8 @@ option[value=custom-color3], .custom-color3 {color: #${view/color3|None} !import
 option[value=custom-background1], .custom-background1 {background-color: #${view/color1|None} !important}
 option[value=custom-background2], .custom-background2 {background-color: #${view/color2|None} !important}
 option[value=custom-background3], .custom-background3 {background-color: #${view/color3|None} !important}  
+.plone-link-opposite : {color: ${view/color2|None} };
+.plone-background-opposite {background: ${view/color2|None}}
 
 <div tal:replace="structure view/extra_css|None"/>  
 <tal:override tal:condition="view/override|None">

@@ -1,0 +1,1025 @@
+ 
+//*// COLORS
+//grays
+$plone-gray-darker:							lighten(#000, 20%);   // #333
+$plone-gray-dark:							lighten(#000, 30%);   // #4c4c4c
+$plone-gray:								lighten(#000, 41%);   // #696969
+$plone-gray-light:							lighten(#000, 46.5%); // #767676 //discreet
+$plone-gray-lighter:						lighten(#000, 80%);   // #ccc //disableds like
+
+//colors
+$plone-link-color:							#20a7de; //dutchmanblue
+$plone-link-color-on-dark:					#20a7de;
+$plone-link-color-on-grey:		  			#20a7de;
+$plone-link-secondary: spin($plone-link-color, -(120));
+$plone-link-tertiary: spin($plone-link-color, (120));
+$plone-link-opposite: spin($plone-link-color, (180));
+
+//if you need different contrast or color
+
+$plone-link-color-on-grey:		  			#086ca3; //valid wcag 2.0
+$plone-default-published-color:				$plone-link-color; //published and external same color
+// $plone-default-draft-color:					darken($plone-toolbar-draft-color, 15%); // lime-yellow //draft is visible
+// $plone-default-pending-color:				darken($plone-toolbar-pending-color, 15%); // orange
+// $plone-default-private-color:				$plone-toolbar-private-color; // red
+// $plone-default-internal-color:				darken($plone-toolbar-internal-color, 15%); // is draft
+// $plone-default-internally-published-color:	darken($plone-toolbar-internally-published-color, 5%); // is intranet
+
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                           not-allowed;
+
+//*// SCAFFOLDING
+$plone-body-bg:            				   #FFF;
+$plone-footer-bg:            				 $plone-link-color; //portland
+$plone-text-color:           				 #000;
+$plone-link-hover-color:     				 darken($plone-link-color, 15%);
+
+
+
+//*// TYPOGRAPHY
+$plone-font-family-sans-serif:  "Encode Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
+$plone-font-family-condensed:   "Roboto Condensed", "Arial Narrow", sans-serif; //just on toolbar
+$plone-font-family-serif:       "Bitter", "Times New Roman", Times, serif;
+$plone-font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$plone-font-family-base:        $plone-font-family-serif;
+
+$plone-font-size-base:          14px;
+$plone-font-size-large:         ceil(($plone-font-size-base * 1.25));
+$plone-font-size-small:         ceil(($plone-font-size-base * 0.85));
+
+$plone-font-size-h1:            floor(($plone-font-size-base * 2.8));
+$plone-font-size-h2:            floor(($plone-font-size-base * 2.25));
+$plone-font-size-h3:            ceil(($plone-font-size-base * 1.8));
+$plone-font-size-h4:            ceil(($plone-font-size-base * 1.35));
+$plone-font-size-h5:            ceil(($plone-font-size-base * 1.12));
+$plone-font-size-h6:            ceil(($plone-font-size-base * 1));
+
+//** Unit-less `line-height` for use in components like buttons.
+$plone-line-height-base:        1.5;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$plone-line-height-computed:    floor(($plone-font-size-base * $plone-line-height-base)); // ~20px
+
+$plone-headings-font-family:    'Encode Sans';
+$plone-headings-font-weight:    $font-weight-light;
+$plone-headings-line-height:    1.2;
+$plone-headings-color:          #2b5d9f;
+
+$plone-font-weight-light:		200;
+$plone-font-weight-regular:		400;
+$plone-font-weight-medium:		400;
+$plone-font-weight-bold:		700;
+
+
+
+//*// COMPONENTS
+$plone-padding-base-vertical:     6px;
+$plone-padding-base-horizontal:   12px;
+$plone-padding-large-vertical:    10px;
+$plone-padding-large-horizontal:  16px;
+$plone-padding-small-vertical:    5px;
+$plone-padding-small-horizontal:  10px;
+$plone-padding-xs-vertical:       1px;
+$plone-padding-xs-horizontal:     5px;
+$plone-line-height-large:         1.33;
+$plone-line-height-small:         1.5;
+$plone-border-radius-base:        4px;
+$plone-border-radius-large:       6px;
+$plone-border-radius-small:       2px;
+//** Global color for active items (e.g., navs or dropdowns).
+$plone-component-active-color:    #fff;
+//** Global background color for active items (e.g., navs or dropdowns).
+$plone-component-active-bg:       $plone-link-color;
+//** Width of the `border` for generating carets that indicate dropdowns.
+$plone-caret-width-base:          4px;
+//** Carets increase slightly in size for larger components.
+$plone-caret-width-large:         5px;
+
+
+
+//*// TABLES
+$plone-table-cell-padding:            8px;
+$plone-table-condensed-cell-padding:  5px;
+$plone-table-bg:                      #fff;
+$plone-table-bg-accent:               lighten($plone-link-color, 40%);
+$plone-table-bg-hover:                #f0f0f0;
+$plone-table-bg-active:               $plone-table-bg-hover;
+$plone-table-border-color:            $plone-link-color;
+
+
+
+//*// STATES
+$plone-state-info-text:    		            rgba(0,0,0,.5);
+$plone-state-info-bg:     		            #aad6ea;
+$plone-state-info-border: 		            1px solid darken($plone-state-info-bg,4%);
+$plone-state-info-bullet:					#3e7b91;
+$plone-state-warning-text:          	    rgba(0,0,0,.5);
+$plone-state-warning-bg:          	 	    #ebd380;
+$plone-state-warning-border:        	    1px solid darken($plone-state-warning-bg,6%);
+$plone-state-warning-bullet:				#bc8d0d;
+$plone-state-error-text:              		rgba(0,0,0,.5);
+$plone-state-error-bg:                		#EC9C8D;
+$plone-state-error-border:            		1px solid darken($plone-state-error-bg,2%);
+$plone-state-error-bullet:					#ac493f;
+
+
+//*// TOOLBAR
+
+$plone-left-toolbar-expanded: 120px;
+$plone-left-toolbar: 60px;
+
+//*// DEVICES
+$plone-screen-xs-min:              480px;
+$plone-screen-sm-min:              768px;
+$plone-screen-md-min:              992px;
+$plone-screen-lg-min:              1200px;
+$plone-screen-xl-min:              1600px;
+
+$plone-screen-xs-max:              ($plone-screen-sm-min - 1);
+$plone-screen-sm-max:              ($plone-screen-md-min - 1);
+$plone-screen-md-max:              ($plone-screen-lg-min - 1);
+$plone-screen-lg-max:              ($plone-screen-xl-min - 1);
+
+$plone-grid-columns:        12;
+$plone-grid-gutter-width:         30px;
+$plone-grid-float-breakpoint:     $plone-screen-sm-min;
+//** Point at which the navbar begins collapsing.
+$plone-grid-float-breakpoint-max: ($plone-grid-float-breakpoint - 1);
+
+
+//*// CONTAINERS
+$plone-container-xs:                 (540px + $plone-grid-gutter-width);
+$plone-container-sm:                 (720px + $plone-grid-gutter-width);
+$plone-container-md:                 (960px + $plone-grid-gutter-width);
+$plone-container-lg:                 (1140px + $plone-grid-gutter-width);
+$plone-container-xl:                 (1540px + $plone-grid-gutter-width);
+
+//*// CONTAINER SIZE ALIASES
+$plone-container-mobile:              $plone-container-xs;
+$plone-container-tablet:              $plone-container-sm;
+$plone-container-desktop:             $plone-container-md;
+$plone-container-large-desktop:       $plone-container-lg;
+$plone-container-extra-large:         $plone-container-xl;
+
+
+
+//*// Buttons
+$plone-btn-standalone-color:          		#FFF;
+$plone-btn-standalone-bg:             	#20a7de;
+$plone-btn-standalone-border:          	darken($plone-btn-standalone-bg, 5%);
+$plone-btn-context-color:              		#fff;
+$plone-btn-context-bg:                 	#20a7de;
+$plone-btn-context-border:             	darken($plone-btn-context-bg, 5%);
+$plone-btn-destructive-color:              #fff;
+$plone-btn-destructive-bg:               $plone-link-opposite;
+// $plone-btn-destructive-border:           darken(bs-$btn-destructive-bg, 5%);
+
+//*// FORMS
+//** `<input>` background color
+$plone-input-bg:                       #fff;
+//** `<input disabled>` background color
+$plone-input-bg-disabled:              $plone-table-border-color;
+//** Text color for `<input>`s
+$plone-input-color:                    $plone-gray;
+//** `<input>` border color
+$plone-input-border:                   #20a7de;
+//** `<input>` border radius
+$plone-input-border-radius:            $plone-border-radius-base;
+//** Border color for inputs on focus
+// $plone-input-border-focus:             $plone-portlet-list-bullet;
+//** Placeholder text color
+$plone-input-color-placeholder:        $plone-gray-light;
+//** Default `.form-control` height
+$plone-input-height-base:              ($plone-line-height-computed + ($plone-padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+$plone-input-height-large:             (ceil($plone-font-size-large * $plone-line-height-large) + ($plone-padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+$plone-input-height-small:             (floor($plone-font-size-small * $plone-line-height-small) + ($plone-padding-small-vertical * 2) + 2);
+$plone-legend-color:                   $plone-link-color-on-grey;
+$plone-legend-border-color:            $plone-link-color;
+
+//** Background color for textual input addons
+$plone-input-group-addon-bg:           $plone-gray-lighter;
+//** Border color for textual input addons
+$plone-input-group-addon-border-color: $plone-input-border;
+
+
+
+//*// ALERTS
+$plone-alert-icon-size:							20px;
+$plone-alert-padding:							15px;
+$plone-alert-border-radius:					4px;
+$plone-alert-link-font-weight:				$plone-font-weight-regular; //it depends on your font-family
+$plone-alert-info-bg:						$plone-state-info-bg;
+$plone-alert-info-text:						$plone-state-info-text; //the text on alert is black with opacity to use the same color and match the bg.
+$plone-alert-info-border:					$plone-state-info-border;
+$plone-alert-info-bullet:					$plone-state-info-bullet;
+$plone-alert-warning-bg:					$plone-state-warning-bg;
+$plone-alert-warning-text:					$plone-state-warning-text;
+$plone-alert-warning-border:				$plone-state-warning-border;
+$plone-alert-warning-bullet:				$plone-state-warning-bullet;
+$plone-alert-error-bg:						$plone-state-error-bg;
+$plone-alert-error-text:					$plone-state-error-text;
+$plone-alert-error-border:					$plone-state-error-border;
+$plone-alert-error-bullet:					$plone-state-error-bullet;
+
+
+
+//*// PORTLETS
+$plone-border-base:							1px solid $plone-link-color;
+$plone-portlet-header-bg:					$plone-link-color;
+$plone-portlet-header-color:				 #FFF;
+$plone-portlet-content-bg:					#fff;
+$plone-portlet-footer-bg:					$plone-link-color;
+$plone-portlet-border:						1px solid $plone-link-color;
+$plone-portlet-contrast-bg:					#FFF;
+$plone-portlet-event-bullet:				$plone-link-color;
+$plone-portlet-list-bullet:					#64bee8;
+$plone-portlet-list-hover-bg:				#fefefe;
+$plone-portlet-list-small-text:			$plone-gray-darker;
+
+
+
+//*// THUMBS
+//** Padding around the thumbnail image
+$plone-thumbnail-padding:           4px;
+//** Thumbnail background color
+$plone-thumbnail-bg:                $plone-body-bg;
+//** Thumbnail border color
+$plone-thumbnail-border:            #ddd;
+//** Thumbnail border radius
+$plone-thumbnail-border-radius:     $plone-border-radius-base;
+//** Custom text color for thumbnail captions
+$plone-thumbnail-caption-color:     $plone-text-color;
+//** Padding around the thumbnail caption
+$plone-thumbnail-caption-padding:   9px;
+
+
+
+//*// BREADCRUMBS
+$plone-breadcrumb-padding-vertical:   8px;
+$plone-breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+$plone-breadcrumb-bg:                 lighten($plone-portlet-header-bg, 75%);
+//** Breadcrumb text color
+$plone-breadcrumb-color:              $plone-gray-lighter;
+//** Text color of current page in the breadcrumb
+$plone-breadcrumb-active-color:       $plone-gray-light;
+
+
+//*// SITE NAV
+$plone-sitenav-height:                    50px;
+$plone-sitenav-margin-bottom:             $plone-line-height-computed;
+$plone-sitenav-border-radius:             $plone-border-radius-base;
+// $plone-sitenav-padding-horizontal:        floor(($plone-grid-gutter-width / 2));
+// $plone-sitenav-padding-vertical:          ($plone-sitenav-height - $plone-line-height-computed) / 2;
+$plone-sitenav-collapse-max-height:       340px;
+$plone-sitenav-link-padding:              10px 15px;
+$plone-sitenav-link-hover-bg:             lighten($plone-link-color, 10%);
+$bs-navbar-background         :      			 $plone-link-color;
+$plone-sitenav-bg:      			      $plone-link-color;
+$plone-sitenav-hover-bg:      			  $plone-link-color;
+  $plone-portlet-navtree-maxlevel:		  5;
+
+
+$navbar-barceloneta-background:            $plone-link-color;
+//navbar text
+// $navbar-barceloneta-color:                  rgb(255,248,220);
+// //selected text
+// $navbar-barceloneta-active-color:           whitesmoke;
+
+// // selected background
+// $navbar-barceloneta-active-background:      #123456;
+
+// // Hover and selected color
+// //$navbar-barceloneta-hover-color:            purple;
+
+// //// hover background color
+// $navbar-barceloneta-hover-background:        rgba(18,52,86, 0.7);
+
+//*// PAGINATION
+$plone-pagination-color:                   $plone-link-color;
+$plone-pagination-bg:                      $plone-portlet-content-bg;
+$plone-pagination-border:                  $plone-portlet-border;
+$plone-pagination-hover-color:             $plone-link-hover-color;
+$plone-pagination-hover-bg:                $plone-portlet-header-bg;
+$plone-pagination-hover-border:            $plone-portlet-border;
+$plone-pagination-active-color:            $plone-portlet-content-bg;
+$plone-pagination-active-bg:               $plone-link-color;
+$plone-pagination-active-border:           $plone-link-color;
+$plone-pagination-disabled-color:          $plone-gray-lighter;
+$plone-pagination-disabled-bg:             $plone-portlet-footer-bg;
+$plone-pagination-disabled-border:         $plone-portlet-border;
+
+
+
+//*// CODE
+$plone-code-color:                  	#c7254e;
+$plone-code-bg:                     #f9f2f4;
+$plone-kbd-color:                   #fff;
+$plone-kbd-bg:                      #333;
+$plone-pre-bg:                      	#f5f5f5;
+$plone-pre-color:                   $plone-gray-dark;
+$plone-pre-border-color:            #ccc;
+$plone-pre-scrollable-max-height:   340px;
+
+
+
+//*// TYPE
+//** Text muted color
+$plone-text-discreet:               $plone-gray;
+//** Abbreviations and acronyms border color
+$plone-abbr-border-color:           $plone-gray-light;
+//** Headings small color
+$plone-headings-small-color:        $plone-gray-light;
+//** Blockquote small color
+$plone-blockquote-small-color:      $plone-gray-light;
+//** Blockquote font size
+$plone-blockquote-font-size:        ($plone-font-size-base * 1.25);
+//** Blockquote border color
+$plone-blockquote-border-color:     $plone-gray-lighter;
+//** Page header border color
+$plone-page-header-border-color:    #FFF;
+
+
+
+//*// MISC
+//** Horizontal line color.
+$plone-hr-border:                   $plone-link-color;
+//** Horizontal offset for forms and lists.
+$plone-component-offset-horizontal: 180px;
+
+
+//*// COLORS
+//grays
+$bs-gray-darker:							lighten(#000, 20%);   // #333
+$bs-gray-dark:							lighten(#000, 30%);   // #4c4c4c
+$bs-gray:								lighten(#000, 41%);   // #696969
+$bs-gray-light:							lighten(#000, 46.5%); // #767676 //discreet
+$bs-gray-lighter:						lighten(#000, 80%);   // #ccc //disableds like
+
+//colors
+$bs-link-color:							#20a7de; //dutchmanblue
+$--bs-link-color-rgb:							#20a7de; //dutchmanblue
+$bs-link-color-rgb: 						red;
+$bs-link-color-on-dark:					#20a7de;
+$bs-link-color-on-grey:		  			#20a7de;
+$bs-link-secondary: spin($bs-link-color, -(120));
+$bs-link-tertiary: spin($bs-link-color, (120));
+$bs-link-opposite: spin($bs-link-color, (180));
+
+//if you need different contrast or color
+
+$bs-link-color-on-grey:		  			#086ca3; //valid wcag 2.0
+$bs-default-published-color:				$bs-link-color; //published and external same color
+// $bs-default-draft-color:					darken($bs-toolbar-draft-color, 15%); // lime-yellow //draft is visible
+// $bs-default-pending-color:				darken($bs-toolbar-pending-color, 15%); // orange
+// $bs-default-private-color:				$bs-toolbar-private-color; // red
+// $bs-default-internal-color:				darken($bs-toolbar-internal-color, 15%); // is draft
+// $bs-default-internally-published-color:	darken($bs-toolbar-internally-published-color, 5%); // is intranet
+
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                           not-allowed;
+
+//*// SCAFFOLDING
+$bs-body-bg:            				   #FFF;
+$bs-footer-bg:            				 $bs-link-color; //portland
+$bs-text-color:           				 #000;
+$bs-link-hover-color:     				 darken($bs-link-color, 15%);
+
+
+//*// TYPOGRAPHY
+$bs-font-family-sans-serif:  "Encode Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
+$bs-font-family-condensed:   "Roboto Condensed", "Arial Narrow", sans-serif; //just on toolbar
+$bs-font-family-serif:       "Bitter", "Times New Roman", Times, serif;
+$bs-font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$bs-font-family-base:        $bs-font-family-serif;
+
+$bs-font-size-base:          14px;
+$bs-font-size-large:         ceil(($bs-font-size-base * 1.25));
+$bs-font-size-small:         ceil(($bs-font-size-base * 0.85));
+
+$bs-font-size-h1:            floor(($bs-font-size-base * 2.8));
+$bs-font-size-h2:            floor(($bs-font-size-base * 2.25));
+$bs-font-size-h3:            ceil(($bs-font-size-base * 1.8));
+$bs-font-size-h4:            ceil(($bs-font-size-base * 1.35));
+$bs-font-size-h5:            ceil(($bs-font-size-base * 1.12));
+$bs-font-size-h6:            ceil(($bs-font-size-base * 1));
+
+//** Unit-less `line-height` for use in components like buttons.
+$bs-line-height-base:        1.5;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$bs-line-height-computed:    floor(($bs-font-size-base * $bs-line-height-base)); // ~20px
+
+$bs-headings-font-family:    'Encode Sans';
+$bs-headings-font-weight:    $font-weight-light;
+$bs-headings-line-height:    1.2;
+$bs-headings-color:          #2b5d9f;
+
+$bs-font-weight-light:		200;
+$bs-font-weight-regular:		400;
+$bs-font-weight-medium:		400;
+$bs-font-weight-bold:		700;
+
+
+
+//*// COMPONENTS
+$bs-padding-base-vertical:     6px;
+$bs-padding-base-horizontal:   12px;
+$bs-padding-large-vertical:    10px;
+$bs-padding-large-horizontal:  16px;
+$bs-padding-small-vertical:    5px;
+$bs-padding-small-horizontal:  10px;
+$bs-padding-xs-vertical:       1px;
+$bs-padding-xs-horizontal:     5px;
+$bs-line-height-large:         1.33;
+$bs-line-height-small:         1.5;
+$bs-border-radius-base:        4px;
+$bs-border-radius-large:       6px;
+$bs-border-radius-small:       2px;
+//** Global color for active items (e.g., navs or dropdowns).
+$bs-component-active-color:    #fff;
+//** Global background color for active items (e.g., navs or dropdowns).
+$bs-component-active-bg:       $bs-link-color;
+//** Width of the `border` for generating carets that indicate dropdowns.
+$bs-caret-width-base:          4px;
+//** Carets increase slightly in size for larger components.
+$bs-caret-width-large:         5px;
+
+
+
+//*// TABLES
+$bs-table-cell-padding:            8px;
+$bs-table-condensed-cell-padding:  5px;
+$bs-table-bg:                      #fff;
+$bs-table-bg-accent:               lighten($bs-link-color, 40%);
+$bs-table-bg-hover:                #f0f0f0;
+$bs-table-bg-active:               $bs-table-bg-hover;
+$bs-table-border-color:            $bs-link-color;
+
+
+
+//*// STATES
+$bs-state-info-text:    		            rgba(0,0,0,.5);
+$bs-state-info-bg:     		            #aad6ea;
+$bs-state-info-border: 		            1px solid darken($bs-state-info-bg,4%);
+$bs-state-info-bullet:					#3e7b91;
+$bs-state-warning-text:          	    rgba(0,0,0,.5);
+$bs-state-warning-bg:          	 	    #ebd380;
+$bs-state-warning-border:        	    1px solid darken($bs-state-warning-bg,6%);
+$bs-state-warning-bullet:				#bc8d0d;
+$bs-state-error-text:              		rgba(0,0,0,.5);
+$bs-state-error-bg:                		#EC9C8D;
+$bs-state-error-border:            		1px solid darken($bs-state-error-bg,2%);
+$bs-state-error-bullet:					#ac493f;
+
+
+//*// TOOLBAR
+
+$bs-left-toolbar-expanded: 120px;
+$bs-left-toolbar: 60px;
+
+//*// DEVICES
+$bs-screen-xs-min:              480px;
+$bs-screen-sm-min:              768px;
+$bs-screen-md-min:              992px;
+$bs-screen-lg-min:              1200px;
+$bs-screen-xl-min:              1600px;
+
+$bs-screen-xs-max:              ($bs-screen-sm-min - 1);
+$bs-screen-sm-max:              ($bs-screen-md-min - 1);
+$bs-screen-md-max:              ($bs-screen-lg-min - 1);
+$bs-screen-lg-max:              ($bs-screen-xl-min - 1);
+
+$bs-grid-columns:        12;
+$bs-grid-gutter-width:         30px;
+$bs-grid-float-breakpoint:     $bs-screen-sm-min;
+//** Point at which the navbar begins collapsing.
+$bs-grid-float-breakpoint-max: ($bs-grid-float-breakpoint - 1);
+
+
+//*// CONTAINERS
+$bs-container-xs:                 (540px + $bs-grid-gutter-width);
+$bs-container-sm:                 (720px + $bs-grid-gutter-width);
+$bs-container-md:                 (960px + $bs-grid-gutter-width);
+$bs-container-lg:                 (1140px + $bs-grid-gutter-width);
+$bs-container-xl:                 (1540px + $bs-grid-gutter-width);
+
+//*// CONTAINER SIZE ALIASES
+$bs-container-mobile:              $bs-container-xs;
+$bs-container-tablet:              $bs-container-sm;
+$bs-container-desktop:             $bs-container-md;
+$bs-container-large-desktop:       $bs-container-lg;
+$bs-container-extra-large:         $bs-container-xl;
+
+
+
+//*// Buttons
+$bs-btn-standalone-color:          		#FFF;
+$bs-btn-standalone-bg:             	#20a7de;
+$bs-btn-standalone-border:          	darken($bs-btn-standalone-bg, 5%);
+$bs-btn-context-color:              		#fff;
+$bs-btn-context-bg:                 	#20a7de;
+$bs-btn-context-border:             	darken($bs-btn-context-bg, 5%);
+$bs-btn-destructive-color:              #fff;
+$bs-btn-destructive-bg:               $bs-link-opposite;
+// $bs-btn-destructive-border:           darken(bs-$btn-destructive-bg, 5%);
+
+//*// FORMS
+//** `<input>` background color
+$bs-input-bg:                       #fff;
+//** `<input disabled>` background color
+$bs-input-bg-disabled:              $bs-table-border-color;
+//** Text color for `<input>`s
+$bs-input-color:                    $bs-gray;
+//** `<input>` border color
+$bs-input-border:                   #20a7de;
+//** `<input>` border radius
+$bs-input-border-radius:            $bs-border-radius-base;
+//** Border color for inputs on focus
+// $bs-input-border-focus:             $bs-portlet-list-bullet;
+//** Placeholder text color
+$bs-input-color-placeholder:        $bs-gray-light;
+//** Default `.form-control` height
+$bs-input-height-base:              ($bs-line-height-computed + ($bs-padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+$bs-input-height-large:             (ceil($bs-font-size-large * $bs-line-height-large) + ($bs-padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+$bs-input-height-small:             (floor($bs-font-size-small * $bs-line-height-small) + ($bs-padding-small-vertical * 2) + 2);
+$bs-legend-color:                   $bs-link-color-on-grey;
+$bs-legend-border-color:            $bs-link-color;
+
+//** Background color for textual input addons
+$bs-input-group-addon-bg:           $bs-gray-lighter;
+//** Border color for textual input addons
+$bs-input-group-addon-border-color: $bs-input-border;
+
+
+
+//*// ALERTS
+$bs-alert-icon-size:							20px;
+$bs-alert-padding:							15px;
+$bs-alert-border-radius:					4px;
+$bs-alert-link-font-weight:				$bs-font-weight-regular; //it depends on your font-family
+$bs-alert-info-bg:						$bs-state-info-bg;
+$bs-alert-info-text:						$bs-state-info-text; //the text on alert is black with opacity to use the same color and match the bg.
+$bs-alert-info-border:					$bs-state-info-border;
+$bs-alert-info-bullet:					$bs-state-info-bullet;
+$bs-alert-warning-bg:					$bs-state-warning-bg;
+$bs-alert-warning-text:					$bs-state-warning-text;
+$bs-alert-warning-border:				$bs-state-warning-border;
+$bs-alert-warning-bullet:				$bs-state-warning-bullet;
+$bs-alert-error-bg:						$bs-state-error-bg;
+$bs-alert-error-text:					$bs-state-error-text;
+$bs-alert-error-border:					$bs-state-error-border;
+$bs-alert-error-bullet:					$bs-state-error-bullet;
+
+
+
+//*// PORTLETS
+$bs-border-base:							1px solid $bs-link-color;
+$bs-portlet-header-bg:					$bs-link-color;
+$bs-portlet-header-color:				 #FFF;
+$bs-portlet-content-bg:					#fff;
+$bs-portlet-footer-bg:					$bs-link-color;
+$bs-portlet-border:						1px solid $bs-link-color;
+$bs-portlet-contrast-bg:					#FFF;
+$bs-portlet-event-bullet:				$bs-link-color;
+$bs-portlet-list-bullet:					#64bee8;
+$bs-portlet-list-hover-bg:				#fefefe;
+$bs-portlet-list-small-text:			$bs-gray-darker;
+
+
+
+//*// THUMBS
+//** Padding around the thumbnail image
+$bs-thumbnail-padding:           4px;
+//** Thumbnail background color
+$bs-thumbnail-bg:                $bs-body-bg;
+//** Thumbnail border color
+$bs-thumbnail-border:            #ddd;
+//** Thumbnail border radius
+$bs-thumbnail-border-radius:     $bs-border-radius-base;
+//** Custom text color for thumbnail captions
+$bs-thumbnail-caption-color:     $bs-text-color;
+//** Padding around the thumbnail caption
+$bs-thumbnail-caption-padding:   9px;
+
+
+
+//*// BREADCRUMBS
+$bs-breadcrumb-padding-vertical:   8px;
+$bs-breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+$bs-breadcrumb-bg:                 lighten($bs-portlet-header-bg, 75%);
+//** Breadcrumb text color
+$bs-breadcrumb-color:              $bs-gray-lighter;
+//** Text color of current page in the breadcrumb
+$bs-breadcrumb-active-color:       $bs-gray-light;
+
+
+//*// SITE NAV
+$bs-sitenav-height:                    50px;
+$bs-sitenav-margin-bottom:             $bs-line-height-computed;
+$bs-sitenav-border-radius:             $bs-border-radius-base;
+// $bs-sitenav-padding-horizontal:        floor(($bs-grid-gutter-width / 2));
+// $bs-sitenav-padding-vertical:          ($bs-sitenav-height - $bs-line-height-computed) / 2;
+$bs-sitenav-collapse-max-height:       340px;
+$bs-sitenav-link-padding:              10px 15px;
+$bs-sitenav-link-hover-bg:             lighten($bs-link-color, 10%);
+$bs-sitenav-bg:      			      $bs-link-color;
+$bs-sitenav-hover-bg:      			  $bs-link-color;
+  $bs-portlet-navtree-maxlevel:		  5;
+
+//*// PAGINATION
+$bs-pagination-color:                   $bs-link-color;
+$bs-pagination-bg:                      $bs-portlet-content-bg;
+$bs-pagination-border:                  $bs-portlet-border;
+$bs-pagination-hover-color:             $bs-link-hover-color;
+$bs-pagination-hover-bg:                $bs-portlet-header-bg;
+$bs-pagination-hover-border:            $bs-portlet-border;
+$bs-pagination-active-color:            $bs-portlet-content-bg;
+$bs-pagination-active-bg:               $bs-link-color;
+$bs-pagination-active-border:           $bs-link-color;
+$bs-pagination-disabled-color:          $bs-gray-lighter;
+$bs-pagination-disabled-bg:             $bs-portlet-footer-bg;
+$bs-pagination-disabled-border:         $bs-portlet-border;
+
+
+
+//*// CODE
+$bs-code-color:                  	#c7254e;
+$bs-code-bg:                     #f9f2f4;
+$bs-kbd-color:                   #fff;
+$bs-kbd-bg:                      #333;
+$bs-pre-bg:                      	#f5f5f5;
+$bs-pre-color:                   $bs-gray-dark;
+$bs-pre-border-color:            #ccc;
+$bs-pre-scrollable-max-height:   340px;
+
+
+
+//*// TYPE
+//** Text muted color
+$bs-text-discreet:               $bs-gray;
+//** Abbreviations and acronyms border color
+$bs-abbr-border-color:           $bs-gray-light;
+//** Headings small color
+$bs-headings-small-color:        $bs-gray-light;
+//** Blockquote small color
+$bs-blockquote-small-color:      $bs-gray-light;
+//** Blockquote font size
+$bs-blockquote-font-size:        ($bs-font-size-base * 1.25);
+//** Blockquote border color
+$bs-blockquote-border-color:     $bs-gray-lighter;
+//** Page header border color
+$bs-page-header-border-color:    #FFF;
+
+
+
+//*// MISC
+//** Horizontal line color.
+$bs-hr-border:                   $bs-link-color;
+//** Horizontal offset for forms and lists.
+$bs-component-offset-horizontal: 180px;
+
+//*// COLORS
+//grays
+$gray-darker:							lighten(#000, 20%);   // #333
+$gray-dark:							lighten(#000, 30%);   // #4c4c4c
+$gray:								lighten(#000, 41%);   // #696969
+$gray-light:							lighten(#000, 46.5%); // #767676 //discreet
+$gray-lighter:						lighten(#000, 80%);   // #ccc //disableds like
+
+//colors
+$link-color:							#20a7de; //dutchmanblue
+$link-color-on-dark:					#20a7de;
+$link-color-on-grey:		  			#20a7de;
+$link-secondary: spin($link-color, -(120));
+$link-tertiary: spin($link-color, (120));
+$link-opposite: spin($link-color, (180));
+
+//if you need different contrast or color
+
+$link-color-on-grey:		  			#086ca3; //valid wcag 2.0
+$default-published-color:				$link-color; //published and external same color
+// $default-draft-color:					darken($toolbar-draft-color, 15%); // lime-yellow //draft is visible
+// $default-pending-color:				darken($toolbar-pending-color, 15%); // orange
+// $default-private-color:				$toolbar-private-color; // red
+// $default-internal-color:				darken($toolbar-internal-color, 15%); // is draft
+// $default-internally-published-color:	darken($toolbar-internally-published-color, 5%); // is intranet
+
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                           not-allowed;
+
+//*// SCAFFOLDING
+$body-bg:            				   #FFF;
+$footer-bg:            				 $link-color; //portland
+$text-color:           				 #000;
+$link-hover-color:     				 darken($link-color, 15%);
+
+
+
+//*// TYPOGRAPHY
+$font-family-sans-serif:  "Encode Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
+$font-family-condensed:   "Roboto Condensed", "Arial Narrow", sans-serif; //just on toolbar
+$font-family-serif:       "Bitter", "Times New Roman", Times, serif;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-serif;
+
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25));
+$font-size-small:         ceil(($font-size-base * 0.85));
+
+$font-size-h1:            floor(($font-size-base * 2.8));
+$font-size-h2:            floor(($font-size-base * 2.25));
+$font-size-h3:            ceil(($font-size-base * 1.8));
+$font-size-h4:            ceil(($font-size-base * 1.35));
+$font-size-h5:            ceil(($font-size-base * 1.12));
+$font-size-h6:            ceil(($font-size-base * 1));
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.5;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+$headings-font-family:    'Encode Sans';
+$headings-font-weight:    $font-weight-light;
+$headings-line-height:    1.2;
+$headings-color:          #2b5d9f;
+
+$font-weight-light:		200;
+$font-weight-regular:		400;
+$font-weight-medium:		400;
+$font-weight-bold:		700;
+
+
+
+//*// COMPONENTS
+$padding-base-vertical:     6px;
+$padding-base-horizontal:   12px;
+$padding-large-vertical:    10px;
+$padding-large-horizontal:  16px;
+$padding-small-vertical:    5px;
+$padding-small-horizontal:  10px;
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;
+$line-height-large:         1.33;
+$line-height-small:         1.5;
+$border-radius-base:        4px;
+$border-radius-large:       6px;
+$border-radius-small:       2px;
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $link-color;
+//** Width of the `border` for generating carets that indicate dropdowns.
+$caret-width-base:          4px;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px;
+
+
+
+//*// TABLES
+$table-cell-padding:            8px;
+$table-condensed-cell-padding:  5px;
+$table-bg:                      #fff;
+$table-bg-accent:               lighten($link-color, 40%);
+$table-bg-hover:                #f0f0f0;
+$table-bg-active:               $table-bg-hover;
+$table-border-color:            $link-color;
+
+
+
+//*// STATES
+$state-info-text:    		            rgba(0,0,0,.5);
+$state-info-bg:     		            #aad6ea;
+$state-info-border: 		            1px solid darken($state-info-bg,4%);
+$state-info-bullet:					#3e7b91;
+$state-warning-text:          	    rgba(0,0,0,.5);
+$state-warning-bg:          	 	    #ebd380;
+$state-warning-border:        	    1px solid darken($state-warning-bg,6%);
+$state-warning-bullet:				#bc8d0d;
+$state-error-text:              		rgba(0,0,0,.5);
+$state-error-bg:                		#EC9C8D;
+$state-error-border:            		1px solid darken($state-error-bg,2%);
+$state-error-bullet:					#ac493f;
+
+
+//*// TOOLBAR
+
+$left-toolbar-expanded: 120px;
+$left-toolbar: 60px;
+
+//*// DEVICES
+$screen-xs-min:              480px;
+$screen-sm-min:              768px;
+$screen-md-min:              992px;
+$screen-lg-min:              1200px;
+$screen-xl-min:              1600px;
+
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);
+
+$grid-columns:        12;
+$grid-gutter-width:         30px;
+$grid-float-breakpoint:     $screen-sm-min;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+
+//*// CONTAINERS
+$container-xs:                 (540px + $grid-gutter-width);
+$container-sm:                 (720px + $grid-gutter-width);
+$container-md:                 (960px + $grid-gutter-width);
+$container-lg:                 (1140px + $grid-gutter-width);
+$container-xl:                 (1540px + $grid-gutter-width);
+
+//*// CONTAINER SIZE ALIASES
+$container-mobile:              $container-xs;
+$container-tablet:              $container-sm;
+$container-desktop:             $container-md;
+$container-large-desktop:       $container-lg;
+$container-extra-large:         $container-xl;
+
+
+
+//*// Buttons
+$btn-standalone-color:          		#FFF;
+$btn-standalone-bg:             	#20a7de;
+$btn-standalone-border:          	darken($btn-standalone-bg, 5%);
+$btn-context-color:              		#fff;
+$btn-context-bg:                 	#20a7de;
+$btn-context-border:             	darken($btn-context-bg, 5%);
+$btn-destructive-color:              #fff;
+$btn-destructive-bg:               $link-opposite;
+// $btn-destructive-border:           darken(bs-$btn-destructive-bg, 5%);
+
+//*// FORMS
+//** `<input>` background color
+$input-bg:                       #fff;
+//** `<input disabled>` background color
+$input-bg-disabled:              $table-border-color;
+//** Text color for `<input>`s
+$input-color:                    $gray;
+//** `<input>` border color
+$input-border:                   #20a7de;
+//** `<input>` border radius
+$input-border-radius:            $border-radius-base;
+//** Border color for inputs on focus
+// $input-border-focus:             $portlet-list-bullet;
+//** Placeholder text color
+$input-color-placeholder:        $gray-light;
+//** Default `.form-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+$legend-color:                   $link-color-on-grey;
+$legend-border-color:            $link-color;
+
+//** Background color for textual input addons
+$input-group-addon-bg:           $gray-lighter;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border;
+
+
+
+//*// ALERTS
+$alert-icon-size:							20px;
+$alert-padding:							15px;
+$alert-border-radius:					4px;
+$alert-link-font-weight:				$font-weight-regular; //it depends on your font-family
+$alert-info-bg:						$state-info-bg;
+$alert-info-text:						$state-info-text; //the text on alert is black with opacity to use the same color and match the bg.
+$alert-info-border:					$state-info-border;
+$alert-info-bullet:					$state-info-bullet;
+$alert-warning-bg:					$state-warning-bg;
+$alert-warning-text:					$state-warning-text;
+$alert-warning-border:				$state-warning-border;
+$alert-warning-bullet:				$state-warning-bullet;
+$alert-error-bg:						$state-error-bg;
+$alert-error-text:					$state-error-text;
+$alert-error-border:					$state-error-border;
+$alert-error-bullet:					$state-error-bullet;
+
+
+
+//*// PORTLETS
+$border-base:							1px solid $link-color;
+$portlet-header-bg:					$link-color;
+$portlet-header-color:				 #FFF;
+$portlet-content-bg:					#fff;
+$portlet-footer-bg:					$link-color;
+$portlet-border:						1px solid $link-color;
+$portlet-contrast-bg:					#FFF;
+$portlet-event-bullet:				$link-color;
+$portlet-list-bullet:					#64bee8;
+$portlet-list-hover-bg:				#fefefe;
+$portlet-list-small-text:			$gray-darker;
+
+
+
+//*// THUMBS
+//** Padding around the thumbnail image
+$thumbnail-padding:           4px;
+//** Thumbnail background color
+$thumbnail-bg:                $body-bg;
+//** Thumbnail border color
+$thumbnail-border:            #ddd;
+//** Thumbnail border radius
+$thumbnail-border-radius:     $border-radius-base;
+//** Custom text color for thumbnail captions
+$thumbnail-caption-color:     $text-color;
+//** Padding around the thumbnail caption
+$thumbnail-caption-padding:   9px;
+
+
+
+//*// BREADCRUMBS
+$breadcrumb-padding-vertical:   8px;
+$breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+$breadcrumb-bg:                 lighten($portlet-header-bg, 75%);
+//** Breadcrumb text color
+$breadcrumb-color:              $gray-lighter;
+//** Text color of current page in the breadcrumb
+$breadcrumb-active-color:       $gray-light;
+
+
+//*// SITE NAV
+$sitenav-height:                    50px;
+$sitenav-margin-bottom:             $line-height-computed;
+$sitenav-border-radius:             $border-radius-base;
+// $sitenav-padding-horizontal:        floor(($grid-gutter-width / 2));
+// $sitenav-padding-vertical:          ($sitenav-height - $line-height-computed) / 2;
+$sitenav-collapse-max-height:       340px;
+$sitenav-link-padding:              10px 15px;
+$sitenav-link-hover-bg:             lighten($link-color, 10%);
+$sitenav-bg:      			      $link-color;
+$sitenav-hover-bg:      			  $link-color;
+  $portlet-navtree-maxlevel:		  5;
+
+//*// PAGINATION
+$pagination-color:                   $link-color;
+$pagination-bg:                      $portlet-content-bg;
+$pagination-border:                  $portlet-border;
+$pagination-hover-color:             $link-hover-color;
+$pagination-hover-bg:                $portlet-header-bg;
+$pagination-hover-border:            $portlet-border;
+$pagination-active-color:            $portlet-content-bg;
+$pagination-active-bg:               $link-color;
+$pagination-active-border:           $link-color;
+$pagination-disabled-color:          $gray-lighter;
+$pagination-disabled-bg:             $portlet-footer-bg;
+$pagination-disabled-border:         $portlet-border;
+
+
+
+//*// CODE
+$code-color:                  	#c7254e;
+$code-bg:                     #f9f2f4;
+$kbd-color:                   #fff;
+$kbd-bg:                      #333;
+$pre-bg:                      	#f5f5f5;
+$pre-color:                   $gray-dark;
+$pre-border-color:            #ccc;
+$pre-scrollable-max-height:   340px;
+
+
+
+//*// TYPE
+//** Text muted color
+$text-discreet:               $gray;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-light;
+//** Headings small color
+$headings-small-color:        $gray-light;
+//** Blockquote small color
+$blockquote-small-color:      $gray-light;
+//** Blockquote font size
+$blockquote-font-size:        ($font-size-base * 1.25);
+//** Blockquote border color
+$blockquote-border-color:     $gray-lighter;
+//** Page header border color
+$page-header-border-color:    #FFF;
+
+
+
+//*// MISC
+//** Horizontal line color.
+$hr-border:                   $link-color;
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px;
+
+
+
+//*// END

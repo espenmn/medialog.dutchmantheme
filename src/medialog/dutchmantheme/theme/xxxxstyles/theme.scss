@@ -7,26 +7,30 @@
 //$enable-roboto-webfont: false !default;
 
 //*// Font families
-@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Encode+Sans:200,400');
+// @import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Encode+Sans:200,400');
+
 @import '@fontsource/encode-sans';
+
+@import '@fontsource/bitter';
+
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
 
-// 3. Include remainder of required Barceloneta and Bootstrap stylesheets
-@import "@plone/plonetheme-barceloneta-base/scss/variables.colors.plone";
 
+// 3. Include remainder of required Barceloneta and Bootstrap stylesheets
+
+@import "@plone/plonetheme-barceloneta-base/scss/variables.colors.plone";
 @import "@plone/plonetheme-barceloneta-base/scss/variables.colors.dark.plone";
 @import "@plone/plonetheme-barceloneta-base/scss/variables.colors.dark.plone";
 @import "@plone/plonetheme-barceloneta-base/scss/variables.properties";
 @import "@plone/plonetheme-barceloneta-base/scss/variables.barceloneta";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
-@import "theme_variables";
-@import "variables";
-
+// @import "colors";
+// @import "theme_variables";
 // 4. Include any default map overrides here
 
 // 5. Include remainder of required parts

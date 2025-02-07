@@ -1,0 +1,179 @@
+
+
+.flex {display: flex;   justify-content: space-between;}
+
+.pat-autotoc.autotabs .autotoc-nav a, .autotabs .autotoc-nav a {
+    background: inherit;
+}
+
+.label {
+    color: inherit;
+}
+
+img,
+.flex .portletWrapper img {
+	max-width: 100%;
+}
+.flex .portletWrapper img,
+.flex .portletWrapper image-inline {
+	margin: 0;
+}
+
+.flex .portletWrapper {
+	margin: 1em;;
+}
+
+
+.mosaic-grid  #content {
+ 	margin-bottom: 0;
+}
+
+.mosaic-grid-row-fullwidth {
+	@extend .container;
+}
+
+@media (max-width: 998px) {
+  #portal-column-two,
+  #sidebar{
+    width: 100%;
+  }
+}
+
+#sidebar img {
+  max-width: 100%;
+}
+
+.arrow_down {
+  width: 134px;
+	height: 50px;
+	border-left: 67px solid transparent;
+	border-right: 67px solid transparent;
+	border-top: 50px solid $body-bg;;
+	margin-bottom: 15px;
+}
+
+div.outer-wrapper {
+	overflow-x:hidden;
+}
+
+.photoAlbumEntry a,
+.portletNavigationTree ul li.navTreeItem a {
+	background: white;
+}
+
+.portletNavigationTree ul li.navTreeItem a:hover {
+	text-decoration: none;
+}
+
+aside.portlet.portletNavigationTree {
+	border-radius: 0;
+}
+
+#portal-footer-wrapper,
+#portal-footer-wrapper a:hover{
+	color: #FFF;
+	// a {
+	// 	color: lighten($link-opposite, 55%);
+	// }
+}
+
+.summary a {
+	font-size: 125%;
+ 	border-bottom-width: 0 !important;
+}
+
+article.entry {
+	margin-bottom: 1em;
+	border-bottom: 1px dotted lighten($link-color, 40%);
+}
+
+
+.documentDescription {
+	border-bottom: 1px solid $link-color;
+	color:  $link-color;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+}
+
+.formControls {
+	background: lighten($link-color, 40%);
+
+}
+.pat-autotoc.autotabs .autotoc-nav,
+.autotabs .autotoc-nav,
+nav.autotoc-nav {
+	background: #FCFCFC !important;
+	a:hover {
+			background: $link-secondary !important;
+	}
+}
+nav.autotoc-nav a {
+		margin-left: 0 !important;
+		margin-right: 2px !important;
+}
+
+#content-core .pat-autotoc.autotabs .autotoc-nav a,
+#content-core .autotabs .autotoc-nav a
+.portaltype-plone-site .pat-autotoc.autotabs .autotoc-nav a,
+.portaltype-plone-site .autotabs .autotoc-nav a {
+   background: lighten($link-color, 40%);
+}
+
+
+.image-product figcaption {background: none;}
+
+body.template-login_form #content-core,
+body.template-logged_out #content-core {
+  background: #FFF;
+}
+
+option[value=plone-link],
+.plone-link { color: $link-color !important}
+
+option[value=plone-link-2],
+.plone-link-2 { color: $link-secondary !important}
+
+option[value=plone-link-3],
+.plone-link-3 { color: $link-tertiary !important }
+
+option[value=plone-link-opposite],
+.plone-link-opposite { color: $link-opposite  !important}
+
+option[value=plone-background],
+.plone-background { background: $link-color  !important}
+
+option[value=plone-background-2],
+.plone-background-2 { background: $link-secondary  !important}
+
+option[value=plone-background-3],
+.plone-background-3 { background: $link-tertiary  !important}
+
+option[value=plone-background-opposite],
+.plone-background-opposite { background: $link-opposite  !important}
+
+
+.black-background { background-color: #000  !important}
+.white-background { background-color: #FFF  !important}
+option[value=grey-background], .grey-background { background-color: #DDD  !important}
+
+.black { color: #000  !important}
+.white { color: #FFF  !important}
+.grey { color: #DDD  !important}
+
+
+h1,h2, h3 {
+    font-weight: 100;
+}
+
+.documentDescription,
+.lead {
+	border-bottom: 1px solid #20a7de;
+	color: #20a7de;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+    font-size: 19px;
+    font-weight: 700;
+	
+}
+
+

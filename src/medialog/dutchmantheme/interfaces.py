@@ -93,7 +93,7 @@ class IMedialogDutchmanThemeSettings(model.Schema):
 
     style = schema.Choice(
         title=_(u'Style'),
-        values=['dutchmanblue', 'blue'],
+        values=['dutchmanblue', 'dutchblue', 'xstyles', 'xxstyles','styles', 'blue'],
         default='dutchmanblue',
         required=False,
     )
