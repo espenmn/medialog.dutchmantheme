@@ -5,6 +5,7 @@
 		f_id python: view.id"
     class="cards-${f_id} disabled-${view/data/disabled|None}"
     tal:condition="view/editmode">
+ 
 
 <tal:check tal:condition="items"
 	    tal:define="image_size view/data/image_size|None;
@@ -82,8 +83,17 @@
 		.margin-10-0 { margin 10px 0}
 	</style>
 
+ 
+<script src="++theme++dutchman-theme/javascript/masonry.pkgd.min.js"/>
+<script src="++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js"/>  
 
-<script>require([
+<script>
+	$('#card-items').imagesLoaded(function() {
+      $('#card-items').masonry();
+    });
+
+</script>
+<!-- <script>require([
   'jquery',
   '++theme++dutchman-theme/javascript/masonry.pkgd.min',
   '++theme++dutchman-theme/javascript/imagesloaded.pkgd.min'
@@ -93,6 +103,6 @@
       $('#card-items').masonry();
     });
   });
-</script>
+</script> -->
 
 </section>

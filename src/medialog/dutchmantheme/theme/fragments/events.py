@@ -17,8 +17,6 @@ def get_items(self):
 
 def get_keyword(self):
     keyword = self.data['keyword']
-    if isinstance(u"", str):
-        keyword.encode('ascii','ignore')
     return [s for s in keyword]
 
 def editmode(self):

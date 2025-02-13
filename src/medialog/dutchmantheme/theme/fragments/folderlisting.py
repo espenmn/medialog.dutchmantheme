@@ -9,8 +9,7 @@ def get_items(self):
             content_type = self.data['content_type']
             sort_on = self.data['sort_on']
             sort_order = str(self.data['sort_order'])
-            folder_path.encode('ascii','ignore')
-
+            
             return self.context.portal_catalog(portal_type=content_type, path={'query': folder_path,}, Language=language, sort_on=sort_on, sort_order=sort_order)
 
 def get_path(self):
