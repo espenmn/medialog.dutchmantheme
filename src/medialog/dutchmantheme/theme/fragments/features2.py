@@ -34,8 +34,8 @@ def get_items(self):
     keyword = data['keyword']
 
     if isinstance(u"", str):
-        keyword.encode('ascii','ignore')
-
+        keyword
+        
 
     sorton = 'modified'
     sort_order = 'descending'
