@@ -3,7 +3,7 @@
         buttontext view/data/buttontext|None;
         f_id python: view.id"
         id="cards-${f_id}"
-        class="disabled-${view/data/disabled|None}"
+        class="disabled-${view/data/disabled|None} flex flex-wrap gap-0 column-gap-1"
         tal:condition="view/editmode|None">
 	<tal:check tal:condition="items"
 	    tal:define="image_size view/data/image_size|None;
