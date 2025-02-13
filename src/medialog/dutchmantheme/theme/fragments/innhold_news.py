@@ -20,7 +20,7 @@ def get_keyword(self):
     keyword = self.data['keyword']
 
     if isinstance(u"", str):
-        return [s.encode('ascii', 'ignore') for s in keyword]
+        return [s for s in keyword]
     return [s for s in keyword]
 
 def editmode(self):

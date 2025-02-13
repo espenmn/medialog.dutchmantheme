@@ -32,8 +32,8 @@ def iconset(self):
 def get_items(self):
     data = self.data
     keyword = data['keyword']
-    if isinstance(u"", str):
-        keyword.encode('ascii','ignore')
+    # if isinstance(u"", str):
+    #     keyword.encode('ascii','ignore')
     sorton = 'modified'
     sort_order = 'descending'
     if 'sort_order' in data.keys():

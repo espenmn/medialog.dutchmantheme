@@ -1,11 +1,11 @@
 def get_theurl(self):
     link =  self.data['link']
     if link:
-        item =  link.encode('ascii','ignore')
+        item =  link
         items =self.context.portal_catalog(UID=item)
         irurl = items[0].getURL()
-        return irurl.encode('ascii','ignore')
-
+        return irurl
+    
     url = self.data['select']
 
     if url:
