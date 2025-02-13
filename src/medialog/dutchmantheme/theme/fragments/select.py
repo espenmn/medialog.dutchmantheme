@@ -9,8 +9,7 @@ def get_items(self):
     if linked:
         folder_path = self.get_path()
 
-    folder_path.encode('ascii','ignore')
-
+    
     return self.context.portal_catalog(portal_type=content_type, path={'query': folder_path,}, Language=language, sort_on=sort_on, sort_order=sort_order)
 
 def get_path(self):
