@@ -1,12 +1,12 @@
-<section id="section-${python: view.id}"
+
+ <section id="${view/get_id|None}"
   class="disabled-${view/data/disabled|None}"
   tal:condition="view/editmode|None"
   tal:define="image_width  view/data/image_width|None;
               image_height view/data/image_height|None;
-              folder view/get_items|None;
-              items folder/@@contentlisting|context/@@contentlisting;">
+              folder view/list_items|None;">
      <ol class="flex flex-wrap">
-      <tal:image tal:repeat="item items|None">
+      <tal:image tal:repeat="item folder/@@contentlisting|view/get_items|None">
         <li tal:define="obj item/getObject;
                scale_func obj/@@images;
                scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction='down')">
@@ -23,8 +23,11 @@
       </tal:image>
     </ol>
     <style>
+    section #${view/get_id|None} ol {
+      list-style-type: none;
+    }
 
-    #section-${python: view.id} ol.flex.flex-wrap  {
+    section #${view/get_id|None} ol.flex.flex-wrap  {
       padding: 0;
       list-style-image: none;
       list-style-type: none;
@@ -33,7 +36,7 @@
       margin: auto;
     }
 
-    #section-${python: view.id} li { 
+    section #${view/get_id|None} li { 
         width: ${image_width}px;
         margin: ${view/get_margin|None}px;
         list-style-image: none;
@@ -41,11 +44,11 @@
         overflow: hidden;
     }
 
-    #section-${python: view.id} img {
+    #${view/get_id|None} img {
       width: 100%;
     }
 
-    #section-${python: view.id} p.center {
+    #${view/get_id|None} p.center {
       text-align: center;
       margin-top: 1em;
       overflow: hidden;
