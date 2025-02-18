@@ -3,10 +3,9 @@
   class="disabled-${view/data/disabled|None}"
   tal:condition="view/editmode|None"
   tal:define="image_width  view/data/image_width|None;
-              image_height view/data/image_height|None;
-              folder view/list_items|None;">
+              image_height view/data/image_height|None"> 
      <ol class="flex flex-wrap">
-      <tal:image tal:repeat="item folder/@@contentlisting|view/get_items|None">
+      <tal:image tal:repeat="item view/get_items|None">
         <li tal:define="obj item/getObject;
                scale_func obj/@@images;
                scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction='down')">
