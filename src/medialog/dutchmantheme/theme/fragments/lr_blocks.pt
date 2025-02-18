@@ -1,8 +1,5 @@
-
 <section id="fragment-${python: view.id}"
-         tal:define="folder view/get_allitems;
-                items folder/@@contentlisting|context/@@contentlisting|None;
-                image_size view/data/image_size;
+         tal:define="image_size view/data/image_size;
                 css_class view/data/css_class;
                 color1 view/data/color1;
                 color2 view/data/color2;
@@ -11,16 +8,18 @@
             class="lrblock disabled-${view/data/disabled|None}"
             tal:condition="view/editmode|None">
 
-  <tal:repeat tal:repeat="item items" tal:condition="items|None">
+  <tal:repeat  tal:repeat="item view/get_items|None">
     <div class="container flex padding-0 ${css_class} ${color1} margin-40-0"
-        tal:define="title item/title;
+        tal:define="title item/Title;
+        real_item item/getObject;
         item_url item/getURL|item/absolute_url">
         <div class="half bodytext ${color2} padding-40">
             <a href="${item_url}">
               <h2 class="${color2}" tal:condition="title">${title}</h2>
             </a>
-            <h4  class="${color2}" tal:condition="item/description">${item/description}</h4>
-            <div  class="${color2}" tal:define="value item/text|nothing;
+            <h4  class="${color2}" tal:condition="item/Description">${item/Description}</h4>
+            
+            <div class="${color2}" tal:define="value real_item/text|nothing;
                   output_relative_to nocall:value/@@output_relative_to|nothing"
                   tal:condition="output_relative_to"
                   tal:content="structure python:output_relative_to(context)" />
