@@ -14,7 +14,8 @@ def get_items(self):
 
 def item_width(self):
     items = self.data['item_r']
-    return 100/items
+    return 100/items -2
+    #-2
 
 def get_keyword(self):
     keyword = self.data['keyword']

@@ -1,42 +1,32 @@
-<section id="fragment-${python: view.id}"
-         tal:define="scale view/data/image_size;
+<section id="fragment-${python: view.id}" tal:define="scale view/data/image_size;
                 title view/data/title|None;
                 image view/one_image|view|None;
                 image_url image/getURL;
                 css_class view/data/css_class;
                 color1 view/data/color1;
                 color2 view/data/color2;
-                load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or ''"
-          class="lrblock disabled-${view/data/disabled|None}"
-          tal:condition="view/editmode|None"
-          data-anchor="anchor-${title}"
-          title="${title}">
+                load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or ''" class="lrblock disabled-${view/data/disabled|None}" tal:condition="view/editmode|None" data-anchor="anchor-${title}" title="${title}">
   <div class="container flex padding-0 ${css_class} ${color1}">
     <div class="half bodytext ${color2} padding-40">
-        <h2 class="${color2}" tal:condition="title">${title}</h2>
-        <h4  class="${color2}" tal:condition="view/data/description">${view/data/description}</h4>
-        <div  class="${color2}" tal:define="value view/data/text|nothing;
-              output_relative_to nocall:value/@@output_relative_to|nothing"
-              tal:condition="output_relative_to"
-              tal:content="structure python:output_relative_to(context)" />
+      <h2 class="${color2}" tal:condition="title">${title}</h2>
+      <h4 class="${color2}" tal:condition="view/data/description">${view/data/description}</h4>
+      <div class="${color2}" tal:define="value view/data/text|nothing;
+              output_relative_to nocall:value/@@output_relative_to|nothing" tal:condition="output_relative_to" tal:content="structure python:output_relative_to(context)" />
 
-        <div class="buttondiv" tal:condition="view/data/button|None">
-           <a class="btn btn-primary ${view/data/buttontype|None}"
-             href="${line_url|None}">
+      <div class="buttondiv" tal:condition="view/data/button|None">
+        <a class="btn btn-primary ${view/data/buttontype|None}" href="${line_url|None}">
              ${view/data/button}
-           </a>
-        </div>
+        </a>
+      </div>
     </div>
     <div class="half image margin-0 padding-0">
-        <img alt="${title}" class="image-inline"
-            title="${title}"
-            src="${image_url}/@@images/image/${scale}" />
+      <img alt="${title}" class="image-inline" title="${title}" src="${image_url}/@@images/image/${scale}" />
     </div>
- </div>
- <link rel="stylesheet" href="++theme++dutchman-theme/css/lr_block.css" tal:condition="load_css">
- <style>
+  </div>
+  <link rel="stylesheet" href="++theme++dutchman-theme/css/lr_block.css" tal:condition="load_css" />
+  <style>
 
-<tal:check tal:condition="view/data/image_height|None">
+    <tal:check tal:condition="view/data/image_height|None">
     #fragment-${python: view.id} img.image-inline {
         object-fit: cover;
         width: 100%;
@@ -44,7 +34,7 @@
         max-height: ${view/data/image_height}px;
         object-position: ${view/data/position-y|None}%  ${view/data/position-y|None}%;
     }
-</tal:check>
+    </tal:check>
 
    #fragment-${python: view.id} { overflow: hidden; margin-left: -15px; margin-right: -15px;}
 
@@ -68,6 +58,6 @@
  .buttondiv a.outline:hover {
  	color:  black !important;
  	}
- </style>
+  </style>
 
 </section>

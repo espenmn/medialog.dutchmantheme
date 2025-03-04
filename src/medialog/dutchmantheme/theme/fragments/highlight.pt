@@ -11,5 +11,5 @@
            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-<pre><code>${view/data/kode|Nothing}</code></pre>
+<pre><code>${view/data/kode|None}</code></pre>
 </html>

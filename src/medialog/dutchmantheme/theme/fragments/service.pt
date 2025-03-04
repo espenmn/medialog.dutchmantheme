@@ -1,6 +1,6 @@
 <html tal:condition="view/editmode|None">
     <div class="service-item padding-20-0 ${view/data/color1} disabled-${view/data/disabled|None}" id="service-item-${view/id}"
-			tal:define="item_object view/get_item;
+			tal:define="item_object view/get_item|None;
                   item_url view/item_url;
                   color1 view/data/color1|None">
 

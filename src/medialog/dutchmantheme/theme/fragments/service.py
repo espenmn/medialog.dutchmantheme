@@ -1,5 +1,5 @@
 def get_item(self):
-    item =  self.data['link'].encode('ascii')
+    item =  self.data['link'] 
     items =self.context.portal_catalog(UID=item)
     return items[0]
 

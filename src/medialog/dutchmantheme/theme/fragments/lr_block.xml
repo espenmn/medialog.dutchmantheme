@@ -149,7 +149,7 @@
       </description>
       <title i18n:translate="">URL link</title>
       <required>False</required>
-    </field>
+    
     <required>false</required>
     <title>Use for collectionfilter</title>
     <description>Click here to give correct id for collectiontiler. Only one on each page</description>
