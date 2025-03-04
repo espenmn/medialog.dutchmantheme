@@ -5,10 +5,8 @@
     lang="en"
     i18n:domain="medialog.dutchmantheme">
 
-<div class="eventitems  disabled-${view/data/disabled|None}"
-  tal:condition="view/editmode|None"
-  tal:define="image_size view/data/image_size|None; ">
-
+<div class="eventitems disabled-${view/data/disabled|None}" tal:condition="view/editmode|None" tal:define="image_size view/data/image_size|None; ">
+xxxxxx
 <div class="programicon_item ckFilter-obj"  tal:repeat="item view/get_items|None">
 
   <div tal:define="obj item/getObject;

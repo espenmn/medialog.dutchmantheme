@@ -1,8 +1,6 @@
 <section class="newsitems flex flex-wrap margin-0--15 disabled-${view/data/disabled|None}"
     tal:condition="view/editmode"
-    tal:define="collection_items view/get_items|None;
-             items collection_items/@@contentlisting|context/@@contentlisting|None;
-             i_size view/data/image_size;
+    tal:define="i_size view/data/image_size;
              show_csubject python: view.csubject;
               hide_images python: view.data['hide_images'];
              show_ctype  view/ctype"
@@ -12,7 +10,7 @@
 <p class="data-filter" data-filter="Nyhetsartikkel">Nyhetsartikkel</p>
 <p class="data-filter" data-filter="Bilde">Bilde</p>
 </div-->
-<tal:repeat tal:repeat="item items">
+<tal:repeat tal:repeat="item view/get_items|None">
     <div tal:define="subject item/Subject|None;
           tags python: ' '.join(subject);
           itemType item/portal_type;
@@ -43,7 +41,7 @@
           class="description padding-0-20" tal:condition="description">
           ${python: description[:max_chars]}
           <tal:check
-             tal:condition="python: max_chars > 0">…</tal:check>
+             tal:condition="python: max_chars and max_chars != 0">…</tal:check>
         </p>
      </div>
    </div>

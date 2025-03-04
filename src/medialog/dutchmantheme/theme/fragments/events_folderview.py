@@ -1,20 +1,31 @@
 def get_items(self):
-    item_count = self.data['item_c']
     language = self.context.Language()
-    linked = self.data['linked_folder']
-    folder_path = '/'.join(context.getPhysicalPath())
-    from DateTime import DateTime
-    date_range = {
-        'query': (
-            DateTime(),
-        ),
-        'range': 'min',
-    }
-
+    item_count = self.data['item_c']
+    linked = self.data['linked_folder'] or self.data['select_folder'] or self.get_uid()
     if linked:
-        folder_path = self.get_path()
+        folder = self.context.portal_catalog(UID=linked)
+        mappe =  folder[0].getObject()
+        folder_path = '/'.join(mappe.getPhysicalPath())
+        from DateTime import DateTime
+        date_range = {
+            'query': (
+                DateTime(),
+            ),
+            'range': 'min',
+        }
+        if mappe.portal_type != 'Collection':
+            return self.context.portal_catalog(path={'query': folder_path, 'depth': 1}, Language=language, end=date_range, sort_on='start')[:item_count]
+        
+        query = mappe.query
+        query_dict = {q['i']: q['v'] for q in query if 'i' in q and 'v' in q}
+        return self.context.portal_catalog(**query_dict)[:item_count]
+ 
+ 
+    
+ 
 
-    return self.context.portal_catalog(portal_type='Event', path={'query': folder_path,},  Language=language, end=date_range, sort_on='start')[:item_count]
+# return self.context.portal_catalog(portal_type='Event', path={'query': folder_path,},  Language=language, end=date_range, sort_on='start')[:item_count]
+ 
 
 def get_path(self):
     linked = self.data['linked_folder']
