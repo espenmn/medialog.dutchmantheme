@@ -9,7 +9,7 @@
             tal:condition="view/editmode|None">
 
   <tal:repeat  tal:repeat="item view/get_items|None">
-    <div class="container flex padding-0 ${css_class} ${color1} margin-40-0"
+    <div class="container flex padding-0 ${css_class} ${color1} mb-40"
         tal:define="title item/Title;
         real_item item/getObject;
         item_url item/getURL|item/absolute_url">
@@ -42,10 +42,10 @@
 <style>
 #fragment-${python: view.id} { overflow: hidden;}
 <tal:check tal:condition="view/data/image_height|None">
-    #fragment-${python: view.id} img.image-inline {
+    #fragment-${python: view.id} img  {
         object-fit: cover;
         width: 100%;
-        max-height: ${view/data/image_height}px;
+        max-height: ${view/data/image_height}px !important;
         object-position: 0 ${view/data/position-y|None}%;
     }
 </tal:check>
@@ -53,5 +53,10 @@
     min-width: 30px;
     box-sizing: border-box;
  }
+ 
+ .lrblock div.container.flex.mb-40 {
+    margin-bottom: 40px !important;  
+ }
+ .padding-40 {padding: 40px}
  </style>
 </section>
