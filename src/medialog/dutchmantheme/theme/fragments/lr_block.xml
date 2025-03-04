@@ -7,70 +7,69 @@
   xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
   xmlns:security="http://namespaces.plone.org/supermodel/security"
   xmlns:users="http://namespaces.plone.org/supermodel/users"
-  xmlns="http://namespaces.plone.org/supermodel/schema"
-  i18n:domain="medialog.dutchmantheme">
-<schema>
-  <field name="disabled" type="zope.schema.Bool">
+  xmlns="http://namespaces.plone.org/supermodel/schema" i18n:domain="medialog.dutchmantheme">
+  <schema>
+    <field name="disabled" type="zope.schema.Bool">
       <required>false</required>
       <title>Hide fragment</title>
       <description>Click here to hide fragment</description>
-  </field>
-<field name="background_image" type="zope.schema.Choice">
-        <description/>
-        <required>False</required>
-        <title>Choose image</title>
-        <source>collective.themefragments.tiles.CatalogSource</source>
-</field>
-<field name="bkground_image" type="zope.schema.Choice">
-        <description/>
-        <required>False</required>
-        <title>Alternative Choose image here </title>
-        <vocabulary>medialog.dutchmantheme.ShowImagesVocabulary</vocabulary>
-</field>
-<field name="image_size" type="zope.schema.Choice">
-     <description>Choose Image Size (scale)</description>
-     <required>True</required>
-     <title>Image Size</title>
-     <default>preview</default>
-   <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
-</field>
-<field name="image_height" type="zope.schema.Int">
-    <description>Leave empty to disable</description>
-    <required>False</required>
-    <title>Max height in pixels</title>
-    <default></default>
-</field>
-<field name="position-y" type="zope.schema.Int">
-    <description>Vertical image position in %. 50 is centered. 0 is top, 100 is bottom</description>
-    <required>false</required>
-    <min>0</min>
-    <max>100</max>
-    <default>50</default>
-    <title>Y cordinate if Strech images is enabled</title>
-</field>
-<field name="position-x" type="zope.schema.Int">
-    <description>Horizontal image position in %. 50 is centered. 0 isleft, 100 is rightm</description>
-    <required>false</required>
-    <min>0</min>
-    <max>100</max>
-    <default>50</default>
-    <title>X cordinate if Strech images is enabled</title>
-</field>
+    </field>
+    <field name="background_image" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Choose image</title>
+      <source>collective.themefragments.tiles.CatalogSource</source>
+    </field>
+    <field name="bkground_image" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Alternative Choose image here </title>
+      <vocabulary>medialog.dutchmantheme.ShowImagesVocabulary</vocabulary>
+    </field>
+    <field name="image_size" type="zope.schema.Choice">
+      <description>Choose Image Size (scale)</description>
+      <required>True</required>
+      <title>Image Size</title>
+      <default>preview</default>
+      <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+    </field>
+    <field name="image_height" type="zope.schema.Int">
+      <description>Leave empty to disable</description>
+      <required>False</required>
+      <title>Max height in pixels</title>
+      <default></default>
+    </field>
+    <field name="position-y" type="zope.schema.Int">
+      <description>Vertical image position in %. 50 is centered. 0 is top, 100 is bottom</description>
+      <required>false</required>
+      <min>0</min>
+      <max>100</max>
+      <default>50</default>
+      <title>Y cordinate if Strech images is enabled</title>
+    </field>
+    <field name="position-x" type="zope.schema.Int">
+      <description>Horizontal image position in %. 50 is centered. 0 isleft, 100 is rightm</description>
+      <required>false</required>
+      <min>0</min>
+      <max>100</max>
+      <default>50</default>
+      <title>X cordinate if Strech images is enabled</title>
+    </field>
 
-<field name="title" type="zope.schema.TextLine">
-    <description/>
-    <required>False</required>
-    <title>Title</title>
-</field>
-<field name="description" type="zope.schema.TextLine">
-    <description/>
-    <required>False</required>
-    <title>Description</title>
-</field>
-<field name="text" type="plone.app.textfield.RichText" marshal:primary="true" >
+    <field name="title" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>Title</title>
+    </field>
+    <field name="description" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>Description</title>
+    </field>
+    <field name="text" type="plone.app.textfield.RichText" marshal:primary="true">
       <title>Text</title>
-</field>
-<field name="css_class" type="zope.schema.Choice">
+    </field>
+    <field name="css_class" type="zope.schema.Choice">
       <description/>
       <required>True</required>
       <title>Style</title>
@@ -80,76 +79,80 @@
         <element>text-on-image</element>
         <element>text-on-image center</element>
       </values>
-</field>
-<field name="color1" type="zope.schema.Choice">
-    <description/>
-    <required>False</required>
-    <title>Background color</title>
-    <values>
-      <element>grey-background</element>
-      <element>black-background</element>
-      <element>white-background</element>
-      <element>plone-background</element>
-      <element>plone-background-2</element>
-      <element>plone-background-3</element>
-      <element>plone-background-opposite</element>
-      <element>custom-background1</element>
-      <element>custom-background2</element>
-      <element>custom-background3</element>
-    </values>
-</field>
-      <field name="color2" type="zope.schema.Choice">
-        <description/>
-        <required>False</required>
-        <title>Text coior</title>
-        <values>
-          <element>black</element>
-          <element>white</element>
-          <element>plone-link</element>
-          <element>plone-link-2</element>
-          <element>plone-link-3</element>
-          <element>plone-link-opposite</element>
-          <element>custom-color1</element>
-          <element>custom-color2</element>
-          <element>custom-color3</element>
-        </values>
-      </field>
+    </field>
+    <field name="color1" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Background color</title>
+      <values>
+        <element>grey-background</element>
+        <element>black-background</element>
+        <element>white-background</element>
+        <element>plone-background</element>
+        <element>plone-background-2</element>
+        <element>plone-background-3</element>
+        <element>plone-background-opposite</element>
+        <element>custom-background1</element>
+        <element>custom-background2</element>
+        <element>custom-background3</element>
+      </values>
+    </field>
+    <field name="color2" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Text coior</title>
+      <values>
+        <element>black</element>
+        <element>white</element>
+        <element>plone-link</element>
+        <element>plone-link-2</element>
+        <element>plone-link-3</element>
+        <element>plone-link-opposite</element>
+        <element>custom-color1</element>
+        <element>custom-color2</element>
+        <element>custom-color3</element>
+      </values>
+    </field>
 
-      <field name="button" type="zope.schema.TextLine">
-        <title>Button text</title>
-        <description/>
-        <required>False</required>
-        <title>Button</title>
-      </field>
-      <field name="buttontype" type="zope.schema.Choice">
-          <description/>
-          <required>False</required>
-          <title>Buttontype</title>
-          <values>
-            <element>standard</element>
-            <element>outline</element>
-            <element>grey-background</element>
-            <element>black-background</element>
-            <element>plone-background</element>
-            <element>plone-background-2</element>
-            <element>plone-background-3</element>
-            <element>plone-background-opposite</element>
-            <element>custom-background1</element>
-            <element>custom-background2</element>
-            <element>custom-background3</element>
-          </values>
-      </field>
-      <field name="link" type="zope.schema.Choice">
-          <description/>
-          <required>False</required>
-          <title>Choose Link to</title>
-          <source>collective.themefragments.tiles.CatalogSource</source>
-      </field>
-      <field name="select" type="zope.schema.TextLine" form:widget="plone.app.z3cform.widget.LinkFieldWidget">
-        <description i18n:translate="description_linktype_url">Alternatively, use this for link
-        </description>
-        <title i18n:translate="">URL link</title>
-        <required>False</required>
-      </field>
+    <field name="button" type="zope.schema.TextLine">
+      <title>Button text</title>
+      <description/>
+      <required>False</required>
+      <title>Button</title>
+    </field>
+    <field name="buttontype" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Buttontype</title>
+      <values>
+        <element>standard</element>
+        <element>outline</element>
+        <element>grey-background</element>
+        <element>black-background</element>
+        <element>plone-background</element>
+        <element>plone-background-2</element>
+        <element>plone-background-3</element>
+        <element>plone-background-opposite</element>
+        <element>custom-background1</element>
+        <element>custom-background2</element>
+        <element>custom-background3</element>
+      </values>
+    </field>
+    <field name="link" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Choose Link to</title>
+      <source>collective.themefragments.tiles.CatalogSource</source>
+    </field>
+    <field name="select" type="zope.schema.TextLine" form:widget="plone.app.z3cform.widget.LinkFieldWidget">
+      <description i18n:translate="description_linktype_url">Alternatively, use this for link
+      </description>
+      <title i18n:translate="">URL link</title>
+      <required>False</required>
+    </field>
+    <required>false</required>
+    <title>Use for collectionfilter</title>
+    <description>Click here to give correct id for collectiontiler. Only one on each page</description>
+  </field>
 </schema>
 </model>

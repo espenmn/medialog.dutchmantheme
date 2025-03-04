@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+
+<schema>
+  <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+  </field>
+  <field name="tittel" 
+      type="zope.schema.TextLine"> 
+    <title>Title</title>
+  </field> 
+    <field name="bold_text" 
+      type="zope.schema.TextLine"> 
+    <title>Bold text</title>
+  </field> 
+  <field name="body_text" 
+        type="plone.app.textfield.RichText" 
+        marshal:primary="true"
+        form:widget="plone.app.z3cform.widget.RichTextFieldWidget">
+      <title>Body Text</title>
+  </field>
+  <field name="link_url" type="zope.schema.URI">
+    <description/>   
+    <title>Link_url</title>
+  </field>
+    <field name="image_url" type="zope.schema.URI">
+    <description/>   
+    <title>Image (logo) url</title>
+  </field>
+</schema>
+</model>
