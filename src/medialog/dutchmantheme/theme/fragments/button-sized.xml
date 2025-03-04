@@ -61,7 +61,7 @@
       <field name="textsize" type="zope.schema.Int">
           <description>Text size</description>
           <required>False</required>
-          <title>Color 2</title>
+          <title>Text size</title>
         </field>
       <field name="effect" type="zope.schema.Choice">
             <description/>
