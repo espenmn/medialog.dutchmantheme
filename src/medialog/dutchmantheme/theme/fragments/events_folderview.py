@@ -21,11 +21,7 @@ def get_items(self):
         return self.context.portal_catalog(**query_dict)[:item_count]
  
  
-    
- 
-
-# return self.context.portal_catalog(portal_type='Event', path={'query': folder_path,},  Language=language, end=date_range, sort_on='start')[:item_count]
- 
+     
 
 def get_path(self):
     linked = self.data['linked_folder']
