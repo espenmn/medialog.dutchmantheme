@@ -15,5 +15,5 @@ def editmode(self):
         return self.data['disabled']  == False
     return True
 
-def get_description(self)
+def get_description(self):
     return self.data['description']
