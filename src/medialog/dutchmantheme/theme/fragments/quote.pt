@@ -1,3 +1,4 @@
+<body>
 <section tal:define="col view/data/color|None;
             color python: col or '#00b9f2';
             char view/data/char|None;
@@ -64,3 +65,4 @@ svg {
 }
 </style>
 </section>
+</body>
