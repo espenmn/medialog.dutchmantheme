@@ -53,5 +53,5 @@ option[value=custom-background3], .custom-background3 {background-color: #${view
         tal:replace="structure context/@@fontload"></tal:replace> 
     </tal:condition> 
 
-</tal:define> xxx
+</tal:define> 
 </div>
