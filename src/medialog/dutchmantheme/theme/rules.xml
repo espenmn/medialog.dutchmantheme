@@ -36,12 +36,8 @@
   </rules>
 
   <after theme-children="/html/head" >
-
     <link rel="stylesheet" href="++resource++medialog.iconpicker/icon-fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
   </after>
-
-
-
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
