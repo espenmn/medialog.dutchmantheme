@@ -1,10 +1,18 @@
 <div  id="customcss">
 
- 
-    <tal:check >
-      <link href="${view/font_url|None}" rel="stylesheet">
+<tal:define
+  tal:define="extra_css python: context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.extra_css'];
+              ext_css   python: context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.external_style'];
+              iconset   python: str(context.portal_registry['medialog.iconpicker.interfaces.IIconPickerSettings.iconset']);
+              font_url  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.font_load_url']);
+              override  python: str(context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.enable_overrides'])">
+
+
+  
+      <link tal:condition="font_url|None" href="${font_url|None}" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
-    </tal:check>
+ 
+ 
 
 <style>
 .disabled-True { opacity: 0.3}
@@ -24,16 +32,16 @@ option[value=custom-background3], .custom-background3 {background-color: #${view
         nav.navbar-barceloneta , #portal-globalnav li a, .plone-nav li a { background: #${view/nav_background};  color: #${view/navlink_color}  }
         input.searchButton { background: #${view/nav_background};  border-color: #${view/nav_background}; color: #${view/navlink_color}  }
         input.searchField { border-color: #${view/nav_background}; }
-        nav.navbar-barceloneta  li a {color: #${view/navlink_color};}
-        #portal-globalnav li.current a, nav.navbar-barceloneta . a:hover, nav.navbar-barceloneta  a.selected {background: #${view/navlink_hover} !important}
+        #portal-globalnav  li a {color: #${view/navlink_color};}
+        #portal-globalnav li.current a, #portal-globalnav a:hover, #portal-globalnav a.selected {background: #${view/navlink_hover} !important}
         input.searchButton:hover { background:  #${view/navlink_hover}; border-color: #${view/nav_background}; }
-        nav.navbar-barceloneta  a:visited {color: #${view/navlink_visited} }
+        .navbar a:visited {color: #${view/navlink_visited} }
         footer#portal-footer-wrapper { background: #${view/footer_background} !important; color: #${view/footer_color} }
         footer#portal-footer-wrapper a {color: #${view/footerlink_color} }
         footer#portal-footer-wrapper a:visited {color: #${view/footerlink_visited} }
         footer#portal-footer-wrapper a:hover {color: #${view/footerlink_hover} }
-        <tal:con tal:condition="view/body_font|None">body { font-family: ${view/body_font};}</tal:con>
-        <tal:con tal:condition="view/heading_font|None">h1, h2, h3, h4, h5, h6 { font-family: ${view/heading_font};}
+        <tal:con tal:condition="view/body_font|None">body { font-family: ${view/body_font} !important;}</tal:con>
+        <tal:con tal:condition="view/heading_font|None">h1, h2, h3, h4, h5, h6 { font-family: ${view/heading_font} !important;}
         </tal:con>
     </tal:override>  
 
@@ -44,5 +52,6 @@ option[value=custom-background3], .custom-background3 {background-color: #${view
       <tal:replace tal:condition="python: iconset != 'fontawesome'"
         tal:replace="structure context/@@fontload"></tal:replace> 
     </tal:condition> 
- 
+
+</tal:define> xxx
 </div>
