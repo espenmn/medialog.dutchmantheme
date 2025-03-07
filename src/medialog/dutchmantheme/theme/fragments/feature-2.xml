@@ -13,8 +13,7 @@
       <title>Hide fragment</title>
       <description>Click here to hide fragment</description>
   </field>
-  <field name="iconfield" type="zope.schema.TextLine"
-      <!-- form:widget="medialog.iconpicker.widgets.widget.IconPickerFieldWidget"> -->
+  <field name="iconfield" type="zope.schema.TextLine"> 
     <description/>
     <required>True</required>
     <title>Icon</title>

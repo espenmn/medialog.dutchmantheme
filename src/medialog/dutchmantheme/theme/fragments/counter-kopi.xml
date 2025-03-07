@@ -13,12 +13,11 @@
     <required>True</required>
     <title>Int</title>
   </field>
-   <!-- <field name="icon" type="zope.schema.TextLine"
-    form:widget="medialog.iconpicker.widgets.widget.IconPickerFieldWidget">
+    <field name="icon" type="zope.schema.TextLine" >
     <description/>
     <required>False</required>
     <title>Icon</title>
-  </field> -->
+  </field>  
   <field name="title" type="zope.schema.TextLine">
     <description/>
     <required>False</required>
