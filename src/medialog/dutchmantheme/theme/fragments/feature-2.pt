@@ -1,10 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:metal="http://xml.zope.org/namespaces/metal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    lang="en"
     i18n:domain="medialog.dutchmantheme">
 <div class="feature-item feature-item-2 disabled-${view/data/disabled|None}"
     tal:condition="view/editmode|None"

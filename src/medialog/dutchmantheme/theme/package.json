@@ -37,6 +37,7 @@
     "jquery.countdown": "^1.2.8",
     "jquery.sticky": "^0.2.1",
     "npm": "^11.1.0",
+    "popper": "^1.0.1",
     "require": "^0.4.4",
     "requirejs": "^2.3.7",
     "shufflejs": "^6.1.1"
