@@ -36,7 +36,7 @@
     }
     </tal:check>
 
-   #fragment-${python: view.id} { overflow: hidden; margin-left: -15px; margin-right: -15px;}
+   #xfragment-${python: view.id} { overflow: hidden; margin-left: -15px; margin-right: -15px;}
 
  #fragment-${python: view.id} .half {
     min-width: 30px;
