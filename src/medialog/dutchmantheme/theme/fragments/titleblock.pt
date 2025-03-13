@@ -18,6 +18,7 @@ tal:condition="view/editmode|None"
 
 .titleblock .border {
 	height: 1px;
+	border: 1px solid;
 }
 
 titleblock.flex .headertext {
