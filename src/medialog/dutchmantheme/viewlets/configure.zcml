@@ -27,13 +27,6 @@
                 permission="zope.Public"
     />
 
-    <browser:viewlet
-                name="medialog.dutchmantheme.belovportlets"
-                layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
-                manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
-                class=".viewlets.BelowViewlet"
-                permission="zope.Public"
-    />
 
     <!-- Custom  Viewlet for switching language -->
     <browser:viewlet

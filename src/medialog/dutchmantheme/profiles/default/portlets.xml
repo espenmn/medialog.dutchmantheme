@@ -5,7 +5,7 @@
    name="medialog.dutchmantheme.belowportlets"
    type="medialog.dutchmantheme.interfaces.IBelow"
    />
- 
+
  <portletmanager
    name="medialog.dutchmantheme.aboveportlets"
    type="medialog.dutchmantheme.interfaces.IAbove"
