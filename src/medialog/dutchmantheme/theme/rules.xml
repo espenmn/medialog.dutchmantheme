@@ -104,6 +104,11 @@
   <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" />
 
   <!-- Move all other footer portlets into doormat area. -->
+  <replace
+      css:theme-children=".bewlowportlets-container"
+      css:content-children=".bewlowportlets-container"
+      />
+  
   <replace css:theme-children="#portal-footer .doormat">
     <xsl:variable name="columns">
       <xsl:if test="$footer_portlets_count=1">col-md-12</xsl:if>
