@@ -8,8 +8,4 @@
   <!-- Import Barceloneta rules -->
   <xi:include href="++theme++barceloneta/rules.xml" />
 
-  <rules css:if-content="#visual-portal-wrapper">
-    <!-- Placeholder for your own additional rules -->
-  </rules>
-
 </rules>
