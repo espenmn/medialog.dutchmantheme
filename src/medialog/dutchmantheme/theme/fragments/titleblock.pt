@@ -1,9 +1,9 @@
 <div class="titleblock flex align-center disabled-${view/data/disabled|None}"
 tal:condition="view/editmode|None"
  tal:define="color1 view/data/color1">
-    <span class="border ${color1}"/><BR/>
+    <span class="myborder ${color1}"/><BR/>
     <span class="headertext" tal:content="structure view/titlestructure"/>
-    <span class="border ${color1}"/>
+    <span class="myborder ${color1}"/>
 <style>
 .titleblock.align-center {
 	align-items: center;
@@ -16,9 +16,8 @@ tal:condition="view/editmode|None"
 	line-height: 100%;
 }
 
-.titleblock .border {
+.titleblock .myborder {
 	height: 1px;
-	border: 1px solid;
 }
 
 titleblock.flex .headertext {
