@@ -19,14 +19,23 @@
       />
 
     <!-- Portlets Below Content -->
-    <browser:viewlet
+    <!-- <browser:viewlet
                 name="medialog.dutchmantheme.belowportlets"
                 layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
                 manager="plone.app.layout.viewlets.interfaces.IBelowContent"
                 class=".viewlets.BelowViewlet"
                 permission="zope.Public"
-    />
+                template = "belowportlets.pt"
+    /> -->
 
+    <browser:viewlet
+                name="medialog.dutchmantheme.belowportlets"
+                layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"
+                manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+                class=".viewlets.BelowViewlet"
+                permission="zope.Public"
+                template = "belowportlets.pt"
+    />
 
     <!-- Custom  Viewlet for switching language -->
     <browser:viewlet
@@ -58,6 +67,8 @@
     />
 
 
+ 
+
     <!-- Duplicate Portlets -->
     <!--browser:viewlet
                 name="medialog.dutchmantheme.footerportlets"
@@ -66,13 +77,7 @@
                 class=".viewlets.AboveFooterViewlet"
                 permission="zope.Public"
     /-->
-    <browser:viewlet
-      name="medialog.dutchmantheme.jsheading_viewlet"
-      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"    
-      class=".viewlets.jsheadingViewlet"
-      layer="medialog.dutchmantheme.interfaces.IMedialogDutchmanthemeLayer"                
-      permission="zope2.View"
-    />
+ 
 
     <browser:viewlet
       name="medialog.dutchmantheme.jsfooter_viewlet"

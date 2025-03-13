@@ -43,10 +43,8 @@
   <copy attributes="*" css:content="body" css:theme="body" />
   <merge attributes="class" css:content="body" css:theme="body" />
   <after css:theme="body" css:content="#customcss"  href="/@@theme-fragment/customcss"  />
-  <replace
-        css:theme="#above-footerportlets-wrapper" css:content="#above-portlets-wrapper" mode="raw" />
-  <replace
-        css:theme="#below-footerportlets-wrapper" css:content="#below-portlets-wrapper" mode="raw" />
+   <!-- <replace css:theme="#below-portlets-wrapper" css:content="#below-portlets-wrapper-children" mode="raw" /> -->
+    <drop css:content="#below-portlets-wrapper" />  
 
   <!-- move global nav and livesearch -->
   <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
@@ -63,7 +61,9 @@
   <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
 
   <!-- full-width breadcrumb -->
-  <replace css:theme="#above-content" css:content="#viewlet-above-content" />
+ 
+ 
+ <!-- <replace css:theme="#above-content" css:content="#viewlet-below-content-body" /> -->
 
   <!-- Central column -->
   <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content"></replace>
@@ -160,6 +160,8 @@
       css:theme-children="html body"
       content="//footer[@id='portal-footer-wrapper']/*[not(@class='row')]"
       />
+ 
+
 
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
