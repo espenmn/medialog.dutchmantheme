@@ -84,7 +84,7 @@ var klaroConfig = {
     // If "mustConsent" is set to true, Klaro will directly display the consent
     // manager modal and not allow the user to close it before having actively
     // consented or declines the use of third-party services.
-    mustConsent: false,
+    mustConsent: true,
 
     // Show "accept all" to accept all services instead of "ok" that only accepts
     // required and "default: true" services
@@ -258,12 +258,16 @@ var klaroConfig = {
                 gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
                 gtag('set', 'ads_data_redaction', true)
             `,
+            // onDecline: `
+            //     // initialization code here (will be executed only once per page-load)
+            //     window.dataLayer = window.dataLayer || [];
+            //     window.gtag = function(){dataLayer.push(arguments)}
+            //     gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+            //     gtag('set', 'ads_data_redaction', true)
+            // `,
             onDecline: `
-                // initialization code here (will be executed only once per page-load)
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = function(){dataLayer.push(arguments)}
-                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
-                gtag('set', 'ads_data_redaction', true)
+                console.log("Google Analytics blocked by Klaro");
+                window['ga-disable-UA-XXXXX-Y'] = true; // Replace with your GA tracking ID
             `,
             vars: {
                 googleAnalytics: 'google-analytics'
