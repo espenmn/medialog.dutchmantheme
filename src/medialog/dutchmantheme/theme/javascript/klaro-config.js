@@ -258,17 +258,12 @@ var klaroConfig = {
                 gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
                 gtag('set', 'ads_data_redaction', true)
             `,
-            // onDecline: `
-            //     // initialization code here (will be executed only once per page-load)
-            //     window.dataLayer = window.dataLayer || [];
-            //     window.gtag = function(){dataLayer.push(arguments)}
-            //     gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
-            //     gtag('set', 'ads_data_redaction', true)
-            // `,
             onDecline: `
-                console.log("Google Analytics blocked by Klaro");
-                alert('blocked);
-                window['ga-disable-UA-XXXXX-Y'] = true; // Replace with your GA tracking ID
+                // initialization code here (will be executed only once per page-load)
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function(){dataLayer.push(arguments)}
+                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+                gtag('set', 'ads_data_redaction', true)
             `,
             vars: {
                 googleAnalytics: 'google-analytics'
