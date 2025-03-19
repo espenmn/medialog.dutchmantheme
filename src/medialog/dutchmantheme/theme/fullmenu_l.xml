@@ -12,6 +12,28 @@
        <link rel="stylesheet" href="++theme++dutchman-theme/css/l-menu.css" />
   </after>
 
+
+  <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
+  <copy attributes="*" css:content="body" css:theme="body" />
+  <merge attributes="class" css:content="body" css:theme="body" />
+  <after css:theme="body" css:content="#customcss" href="/@@theme-fragment/customcss" />
+  <!-- <replace css:theme="#below-portlets-wrapper" css:content="#below-portlets-wrapper-children" mode="raw" /> -->
+  <drop css:content="#below-portlets-wrapper" />
+
+  <!-- move global nav and livesearch -->
+  <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
+  <!-- set aria-label for toggler button -->
+  <copy attributes="aria-label" css:theme=".navbar-toggler" css:content=".navbar-toggler" />
+  <!-- move searchbox into place -->
+  <replace css:theme="#portal-searchbox" css:content="#portal-searchbox" mode="raw" />
+  <drop css:content="#portal-header #portal-searchbox" />
+
+  <!-- Content header -->
+  <replace css:theme="#portal-logo" css:content="#portal-logo" mode="raw" />
+  <drop css:content="#portal-logo" />
+
+  <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
+
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
     <copy attributes="*" css:theme="html" css:content="html" />
@@ -66,7 +88,7 @@
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
 
-    <div class="{$central}">
+    <div class="central">
       <!-- <p class="pull-right visible-xs">
         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
       </p> -->

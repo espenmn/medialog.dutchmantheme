@@ -6,63 +6,47 @@
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <theme href="head_index.html" />
-  <notheme css:if-not-content="#visual-portal-wrapper" />
-
-  <after theme-children="/html/head" >
-       <link rel="stylesheet"  href="++theme++dutchman-theme/css/rightmenu.css" />
-  </after>
-
-  <rules css:if-content="#portal-top">
-    <!-- Attributes -->
-    <copy attributes="*" css:theme="html" css:content="html" />
-    <!-- Base tag -->
-    <before css:theme="title" css:content="base" />
-    <!-- Title -->
-    <replace css:theme="title" css:content="title" />
-    <!-- Pull in Plone Meta -->
-    <after css:theme-children="head" css:content="head meta" />
-    <!-- Don't use Plone icons, use the theme's -->
-    <drop css:content="head link[rel='apple-touch-icon']" />
-    <drop css:content="head link[rel='shortcut icon']" />
-    <!-- drop the theme stylesheets -->
-    <drop theme="/html/head/link[rel='stylesheet']" />
-    <!-- CSS -->
-    <after css:theme-children="head" css:content="head link" />
-    <!-- Script -->
-    <after css:theme-children="head" css:content="head script" />
-  </rules>
+  <xi:include href="++theme++barceloneta/backend.xml" />
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
+  <merge attributes="class" css:content="body" css:theme="body" />
+  <after css:theme="body" css:content="#customcss" href="/@@theme-fragment/customcss" />
+  <!-- <replace css:theme="#below-portlets-wrapper" css:content="#below-portlets-wrapper" mode="raw" /> -->
+  <copy attributes="aria-label" css:theme=".navbar-toggler" css:content=".navbar-toggler" />
 
-  <!-- alternative globalnav menus, not all working yet -->
-  <!-- css:content-children="#portal-left-sitemap" href="@@/left_sitemap" /-->
+
+  <after theme-children="/html/head" >
+       <link rel="stylesheet"  href="++theme++dutchman-theme/css/rightmenu.css" />
+       <after css:theme="body" css:content="#customcss" href="/@@theme-fragment/customcss" />
+  </after>
+ 
+  <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
+  <copy attributes="*" css:content="body" css:theme="body" />
+
   <replace css:theme="#portal-mobile-sitemap" css:content="#portal-mobile-sitemap" href="/@@mobile_sitemap" />
   <drop css:content-children="#portal-searchbox" />
   <drop css:content-children="#portal-anontools" />
-  <!--  css:content="#portal-sitemap"     href="/@@menu_sitemap" /-->
-  <!--  css:content="#portal-sitemap"     href="/@@visual_sitemap" /-->
-
+ 
 
   <!-- full-width breadcrumb -->
-  <!--replace css:content="#viewlet-above-content" css:theme="#above-content" /-->
+  <replace css:content="#viewlet-above-content" css:theme="#above-content" />
 
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
-    <div class="{$central}">
-      <!-- <p class="pull-right visible-xs">
-        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-      </p> -->
+    <div>
+     <!-- class="{$central}"> -->
+ 
       <div class="row">
         <div class="col-xs-12 col-sm-12">
           <xsl:apply-templates css:select="#content" />
         </div>
       </div>
-      <footer class="row">
+      <!-- <div class="row">
         <div class="col-xs-12 col-sm-12">
           <xsl:copy-of css:select="#viewlet-below-content" />
         </div>
-      </footer>
+      </div> -->
     </div>
   </replace>
 
@@ -97,7 +81,10 @@
 
   <!-- Content header -->
   <replace css:theme="#portal-top" css:content-children="#portal-top" />
-
+  <!-- <replace css:theme="#below-portlets-wrapper" css:content="#below-portlets-wrapper" /> -->
+  <replace css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" />
+  <drop css:theme-children="#portal-footer-wrapper" />
+  <drop css:theme-children="#below-portlets-wrapper" /> 
 
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />

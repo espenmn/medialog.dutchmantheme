@@ -5,32 +5,23 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+  
+
   <theme href="fullmenu_index.html" />
   <notheme css:if-not-content="#visual-portal-wrapper" />
+  <xsl:variable name="footer_portlets" select="//footer[@id='portal-footer-wrapper']//div[@class='portletWrapper']/*[not(contains(@id,'portal-colophon')) and not(contains(@id,'portal-footer-signature')) and not(contains(@class,'portletActions'))]"></xsl:variable>
+  <xsl:variable name="footer_portlets_count" select="count($footer_portlets)"></xsl:variable>
+
+    <!-- Content header -->
+  <replace css:theme="#portal-logo" css:content="#portal-logo" mode="raw" />
+  <drop css:content="#portal-logo" />
 
   <after theme-children="/html/head" >
        <link rel="stylesheet" href="++theme++dutchman-theme/css/t-menu.css" />
   </after>
 
-  <rules css:if-content="#portal-top">
-    <!-- Attributes -->
-    <copy attributes="*" css:theme="html" css:content="html" />
-    <!-- Base tag -->
-    <before css:theme="title" css:content="base" />
-    <!-- Title -->
-    <replace css:theme="title" css:content="title" />
-    <!-- Pull in Plone Meta -->
-    <after css:theme-children="head" css:content="head meta" />
-    <!-- Don't use Plone icons, use the theme's -->
-    <drop css:content="head link[rel='apple-touch-icon']" />
-    <drop css:content="head link[rel='shortcut icon']" />
-    <!-- drop the theme stylesheets -->
-    <drop theme="/html/head/link[rel='stylesheet']" />
-    <!-- CSS -->
-    <after css:theme-children="head" css:content="head link" />
-    <!-- Script -->
-    <after css:theme-children="head" css:content="head script" />
-  </rules>
+
+  <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
@@ -66,7 +57,7 @@
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
 
-    <div class="{$central}">
+    <div class="central">
       <!-- <p class="pull-right visible-xs">
         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
       </p> -->
