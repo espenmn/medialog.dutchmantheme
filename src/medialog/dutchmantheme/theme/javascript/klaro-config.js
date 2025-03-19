@@ -225,10 +225,11 @@ var klaroConfig = {
         {
             name: 'google-analytics',
             title: 'Google Analytics',
-            purposes: ['analytics'],
+            purposes: ['analytics', 'marketing'],
             cookies: [/^_ga/, /^_gid/],
             // required: true,
             // purposes: ['marketing', 'functional'],
+            // purposes: ['marketing'],
             manages: ['google-analytics'],
             onAccept: `
                 // we notify the tag manager about all services that were accepted. You can define
@@ -253,18 +254,17 @@ var klaroConfig = {
             onInit: `
                 // initialization code here (will be executed only once per page-load)
                 window.dataLayer = window.dataLayer || [];
-                window.gtag = function(){dataLayer.push(arguments)};
-                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
-                gtag('set', 'ads_data_redaction', true);
+                window.gtag = function(){dataLayer.push(arguments)}
+                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+                gtag('set', 'ads_data_redaction', true)
             `,
             onDecline: `
                 // initialization code here (will be executed only once per page-load)
                 window.dataLayer = window.dataLayer || [];
-                window.gtag = function(){dataLayer.push(arguments)};
-                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
-                gtag('set', 'ads_data_redaction', true);
-                console.log("Google Analytics blocked by Klaro");
-                window['ga-disable-UA-XXXXX-Y'] = true; ,
+                window.gtag = function(){dataLayer.push(arguments)}
+                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied'})
+                gtag('set', 'ads_data_redaction', true)
+            `,
             vars: {
                 googleAnalytics: 'google-analytics'
             }
