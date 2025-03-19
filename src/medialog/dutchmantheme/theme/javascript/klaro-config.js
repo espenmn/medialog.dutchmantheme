@@ -267,6 +267,7 @@ var klaroConfig = {
             // `,
             onDecline: `
                 console.log("Google Analytics blocked by Klaro");
+                alert('blocked);
                 window['ga-disable-UA-XXXXX-Y'] = true; // Replace with your GA tracking ID
             `,
             vars: {
