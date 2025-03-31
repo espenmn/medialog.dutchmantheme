@@ -8,12 +8,12 @@
 
   <theme href="index.html" />
 
-
-
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
   <merge attributes="class" css:content="body" css:theme="body" />
->
+
+  <!-- <replace css:theme="#below-portlets-wrapper" css:content="#below-portlets-wrapper-children" mode="raw" /> -->
+  <drop css:content="#below-portlets-wrapper" />
 
   <!-- move global nav and livesearch -->
   <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
@@ -33,6 +33,7 @@
 
   <!-- Central column -->
   <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content"></replace>
+  <replace css:theme-children="#viewlet-below-content" css:content-children="#viewlet-below-content"></replace>
 
 
  
@@ -43,37 +44,31 @@
   <after css:theme-children="#portal-column-one" css:content-children="#portal-column-one"></after>
   <drop css:theme="#portal-column-one" css:if-not-content="#portal-column-one" />
 
- 
-
   <!-- Right column -->
   <after css:theme-children="#portal-column-two" css:content-children="#portal-column-two"></after>
   <drop css:theme="#portal-column-two" css:if-not-content="#portal-column-two" />
 
-
-   <replace css:theme="#below-portlets-wrapper" css:content-children="#below-portlets-wrapper-div" method="raw" />
-  <drop css:content-children="#below-portlets-wrapper"  />
-  <!-- <drop css:theme-children="#below-portlets-wrapper-div"  /> -->
-  <!-- <drop css:content="#below-portlets-wrapper-div"  /> -->
-  <!-- <drop css:theme="#below-portlets-wrapper-div"  /> --> 
-  
   <!-- manage-portlets Footer portlets -->
  <!-- <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" css:if-content="#portal-footer-wrapper #portletmanager-plone-footerportlets"></after>  -->
-<after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper"></after> 
 
- 
-  <!-- <replace css:theme-children="#portal-footer .copyright > div" css:content-children="#portal-footer-wrapper #portal-footer-signature .card-body" /> -->
-<!-- <drop css:theme="#portal-footer .copyright" css:if-not-content="#portal-footer-wrapper #portal-footer-signature" /> -->
+  <!-- Footer -->
+  <!-- <xsl:variable name="footer_portlets" select="//footer[@id='portal-footer-wrapper']//div[@class='portletWrapper']/*[not(contains(@id,'portal-colophon')) and not(contains(@id,'portal-footer-signature')) and not(contains(@class,'portletActions'))]"></xsl:variable>
+  <xsl:variable name="footer_portlets_count" select="count($footer_portlets)"></xsl:variable>   -->
+
+  <!-- Replace footer information with Plone version. -->
+  <replace css:theme-children="#portal-footer .copyright > div" css:content-children="#portal-footer-wrapper #portal-footer-signature .card-body" />
+  <drop css:theme="#portal-footer .copyright" css:if-not-content="#portal-footer-wrapper #portal-footer-signature" />
 
   <!-- Replace colophon information with Plone version. -->
-  <!-- <replace css:theme-children="#portal-footer .colophon > div" css:content-children="#portal-footer-wrapper #portal-colophon .card-body" /> -->
-  <!-- <drop css:theme="#portal-footer .colophon" css:if-not-content="#portal-footer-wrapper #portal-colophon" /> -->
+  <replace css:theme-children="#portal-footer .colophon > div" css:content-children="#portal-footer-wrapper #portal-colophon .card-body" />
+  <drop css:theme="#portal-footer .colophon" css:if-not-content="#portal-footer-wrapper #portal-colophon" />
 
   <!-- Replace site-actions with Plone version. -->
-  <!-- <replace css:theme-children="#portal-footer .site-actions > div" css:content="#portal-footer-wrapper .actions-site_actions" /> -->
-  <!-- <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" /> -->
+  <replace css:theme-children="#portal-footer .site-actions > div" css:content="#portal-footer-wrapper .actions-site_actions" />
+  <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" />
 
   <!-- Move all other footer portlets into doormat area. -->
-<!-- 
+
   <replace css:theme-children="#portal-footer .doormat">
     <xsl:variable name="columns">
       <xsl:if test="$footer_portlets_count=1">col-md-12</xsl:if>
@@ -129,6 +124,5 @@
         </xsl:for-each>
       </div>
     </xsl:for-each>
-  </replace>  -->
-
+  </replace> 
 </rules>

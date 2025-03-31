@@ -30,9 +30,8 @@ class JSFooterViewlet(ViewletBase):
     
     def render(self):
         js_footer =  api.portal.get_registry_record('medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.jsfooter')
-        if js_footer:
-            return js_footer
-        return ""
+        extra_css = api.portal.get_registry_record('medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.extra_css')               
+        return f"{js_footer}<style>{extra_css}</style>" if js_footer else f"<style>{extra_css}</style>"
 
 
 class MenuViewlet(GlobalSectionsViewlet):

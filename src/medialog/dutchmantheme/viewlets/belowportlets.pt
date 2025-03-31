@@ -1,4 +1,6 @@
-<div id="below-portlets-wrapper" class="bewlowportlets-container margin-0--15">
+<div id="below-portlets-wrapper-div" class="bewlowportlets-container margin-0--15">
+	<div id="below-portlets-wrapper"  class="container">
 		<div tal:on-error="nothing" tal:replace="structure view/render_below_portlets" />
 		<div class="clearboth" />
+	</div>
 </div>
