@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='medialog.dutchmantheme',
-    version='1.0a1',
+    version='1.0',
     description="A Theme for Plone 6",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/

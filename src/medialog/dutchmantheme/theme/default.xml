@@ -52,6 +52,7 @@
 
    <replace css:theme="#below-portlets-wrapper" css:content-children="#below-portlets-wrapper-div" method="raw" />
   <drop css:content-children="#below-portlets-wrapper"  />
+  <drop css:content-children="#below-portlets-wrapper-div"  />
   <!-- <drop css:theme-children="#below-portlets-wrapper-div"  /> -->
   <!-- <drop css:content="#below-portlets-wrapper-div"  /> -->
   <!-- <drop css:theme="#below-portlets-wrapper-div"  /> --> 
