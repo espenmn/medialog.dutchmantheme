@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+    <include package="plone.behavior" file="meta.zcml"/>
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <plone:behavior
+        name="medialog.dutchmantheme.auto_publish_behavior"
+        title="AutoPublishBehavior"
+        description="Change publishing state after save"
+        provides=".auto_publish_behavior.IAutoPublishBehavior"
+        factory=".auto_publish_behavior.AutoPublishBehavior"
+        marker=".auto_publish_behavior.IAutoPublishBehaviorMarker"
+        />
+
+
+</configure>

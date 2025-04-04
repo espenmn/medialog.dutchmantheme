@@ -1,0 +1,38 @@
+document.addEventListener("DOMContentLoaded", function () {
+  if (!document.cookie.includes("cookie_consent=accepted")) {
+    let banner = document.createElement("div");
+    banner.id = "cookie-banner";
+    banner.innerHTML = `
+      <div class="cookie-message">
+        <p>We use cookies to improve your experience. By accepting, you agree to our use of cookies.</p>
+        <button id="accept-cookies">Accept</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    document.getElementById("accept-cookies").addEventListener("click", function () {
+      document.cookie = "cookie_consent=accepted; path=/; max-age=31536000"; // 1 year
+      banner.remove();
+      loadGoogleTag();
+    });
+  } else {
+    loadGoogleTag();
+  }
+});
+
+
+function loadGoogleTag() {
+  if (document.cookie.includes("cookie_consent=accepted")) {
+    let script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-QTCSF2NY4G";
+    script.async = true;
+    document.head.appendChild(script);
+
+    let inlineScript = document.getElementById("google-tag-script");
+    if (inlineScript) {
+      eval(inlineScript.innerHTML); // Execute GTM script
+    }
+  }
+}
+
+
