@@ -28,6 +28,10 @@
     <xi:include href="++theme++dutchman-theme/default.xml"/>
   </rules>
 
+  <rules if="$default_old">
+    <xi:include href="++theme++dutchman-theme/default_old.xml"/>
+  </rules>
+
   <rules if="$spot">
     <xi:include href="++theme++dutchman-theme/spot.xml"/>
   </rules>

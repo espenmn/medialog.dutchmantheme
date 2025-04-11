@@ -18,7 +18,7 @@
   <merge attributes="class" css:content="body" css:theme="body" />
   <after css:theme="body" css:content="#customcss" href="/@@theme-fragment/customcss" />
   <!-- <replace css:theme="#below-portlets-wrapper" css:content="#below-portlets-wrapper-children" mode="raw" /> -->
-  <drop css:content="#below-portlets-wrapper" />
+  <!-- <drop css:content="#below-portlets-wrapper" /> -->
 
   <!-- move global nav and livesearch -->
   <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
@@ -30,7 +30,7 @@
 
   <!-- Content header -->
   <replace css:theme="#portal-logo" css:content="#portal-logo" mode="raw" />
-  <drop css:content="#portal-logo" />
+  <!-- <drop css:content="#portal-logo" /> -->
 
   <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
 

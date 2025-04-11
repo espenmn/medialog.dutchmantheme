@@ -1,68 +1,40 @@
-var klarConfig = {
-    acceptAll: true,
-    services: [
+window.klaroConfig = {
+    privacyPolicy: '/privacy.html',
+    styling: {
+        theme: ['dark'], // Optional: sets light theme explicitly
+    },
+   services : [
+        {
+            name : 'google-analytics',
+            default: false,
+            title : 'Google Analytics',
+            purposes : ['statistics'],
+            cookies : [/^ga/i],
+            callback : function(consent, app){
+                // example callback
+            },
+        },
         {
             name: 'google-tag-manager',
-            required: true,
+            title: 'Google Tag Manager',
             purposes: ['marketing'],
-            onAccept: `
-                // we notify the tag manager about all services that were accepted. You can define
-                // a custom event in GTM to load the service if consent was given.
-                for(let k of Object.keys(opts.consents)){
-                    if (opts.consents[k]){
-                        let eventName = 'klaro-'+k+'-accepted'
-                        dataLayer.push({'event': eventName})
-                    }
+            default: false,
+            required: false,
+            callback: function(consent, app) {
+                if (consent) {
+                    // Load GTM script
+                    const gtmScript = document.createElement('script');
+                    gtmScript.async = true;
+                    gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=G-QTCSF2NY4G';
+                    document.head.appendChild(gtmScript);
+
+                    // Optionally add noscript fallback for non-JS environments
+                    const noScript = document.createElement('noscript');
+                    noScript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=G-QTCSF2NY4G" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+                    document.body.appendChild(noScript);
                 }
-            `,
-            onInit: `
-                // initialization code here (will be executed only once per page-load)
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = function(){dataLayer.push(arguments)}
-                gtag('consent', 'default', {'ad_storage': 'denied', 'analytics_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied'})
-                gtag('set', 'ads_data_redaction', true)
-            `,
+            },
         },
-        {
-            // In GTM, you should define a custom event trigger named `klaro-google-analytics-accepted` which should trigger the Google Analytics integration.
-            name: 'google-analytics',
-            cookies: [
-                /^_ga(_.*)?/ // we delete the Google Analytics cookies if the user declines its use
-            ],
-            purposes: ['marketing'],
-            onAccept: `
-                // we grant analytics storage
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted',
-                })
-            `,
-            onDecline: `
-                // we deny analytics storage
-                gtag('consent', 'update', {
-                    'analytics_storage': 'denied',
-                })
-            `,
-        },
-        {
-            name: 'google-ads',
-            cookies: [],
-            onAccept: `
-                // we grant ad storage and personalization
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                })
-            `,
-            onDecline: `
-                // we decline ad storage and personalization
-                gtag('consent', 'update', {
-                    'ad_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied'
-                })
-            `,
-            purposes: ['marketing'],
-        }
-    ]
-}
+        // Add more apps here if needed...
+    ],
+} 

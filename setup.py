@@ -53,6 +53,7 @@ setup(
         'collective.themefragments',
         'medialog.controlpanel',
         'plone.app.mosaic',
+        'plone.app.tiles',
         'medialog.iconpicker',
         'collective.z3cform.colorpicker',
         'plone.app.imagecropping',
