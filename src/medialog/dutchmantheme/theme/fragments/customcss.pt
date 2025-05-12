@@ -14,6 +14,7 @@
 
 
       <style>
+          #popover-upload {z-index: 999}
           .disabled-True { opacity: 0.3}
           xdiv.mosaic-grid-row-fluid {position: relative; width: 100vw; margin-left: calc((50vw - 50%)/-1) !important; } 
           option[value=custom-color1], .custom-color1 {color: #${view/color1|None} !important} 
