@@ -5,6 +5,9 @@
    xmlns:xi="http://www.w3.org/2001/XInclude"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+
+   <xi:include href="++theme++barceloneta/backend.xml"/>
+
    <xi:include href="++theme++barceloneta/rules.xml"/>
 
    <rules css:if-content="body.frontend#visual-portal-wrapper">
