@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+   xmlns:css="http://namespaces.plone.org/diazo/css"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:xi="http://www.w3.org/2001/XInclude"
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+   <xi:include href="++theme++barceloneta/rules.xml"/>
+
+   <rules css:if-content="body.frontend#visual-portal-wrapper">
+      <theme href="++theme++barceloneta/index.html" />
+   </rules>
+
+</rules>

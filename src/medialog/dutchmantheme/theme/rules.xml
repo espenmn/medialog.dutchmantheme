@@ -52,6 +52,10 @@
     <xi:include href="++theme++dutchman-theme/fullmenu_l.xml"/>
   </rules>
 
+  <rules if="$barceloneta">
+    <xi:include href="++theme++dutchman-theme/barceloneta.xml"/>
+  </rules>
+
   <notheme css:if-not-content="#visual-portal-wrapper" />
 
 
