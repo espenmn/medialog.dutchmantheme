@@ -53,7 +53,7 @@
   </rules>
 
   <rules if="$barceloneta">  
-    <xi:include href="++theme++dutchman-theme/barceloneta.xml"/>
+    <xi:include href="/++theme++dutchman-theme/barceloneta.xml"/>
   </rules>
 
   <notheme css:if-not-content="#visual-portal-wrapper" />
