@@ -35,20 +35,16 @@
         <link rel="stylesheet" href="++theme++dutchman-theme/css/masonary.css" tal:condition="load_css">
     </tal:define-->
 
+<script src="++theme++dutchman-theme/javascript/masonry.pkgd.min.js"/>  
+<script src="++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js"/>  
 
-    <script>require([
-      'jquery',
-      '++theme++dutchman-theme/javascript/masonry.pkgd.min',
-      '++theme++dutchman-theme/javascript/imagesloaded.pkgd.min'
-      ], function(Base) {
-        'use strict';
+    <script> 
         $('.wall-of-images').imagesLoaded(function() {
           $('.wall-of-images').masonry({
             itemSelector: 'figure',
             percentPosition: true
           });
         });
-      });
     </script>
 
     <style tal:define="small view/small; medium view/medium; large view/large">

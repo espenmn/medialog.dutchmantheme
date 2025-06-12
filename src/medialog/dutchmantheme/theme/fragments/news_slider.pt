@@ -38,17 +38,15 @@ tal:condition="view/editmode|None">
     </div>
 </div>
 <link rel="stylesheet" href="++theme++dutchman-theme/css/slick.css" />
+<script type="text/javascript" src="++theme++dutchman-theme/javascript/slick.min.js"/>
 <script>
-require([
-      'jquery',
-      '++theme++dutchman-theme/javascript/slick.min'
-      ], function(Base) {
-        'use strict';
-        $('.slick').slick({
-            infinite: true,
-            slidesToShow: ${python: view.data['slides-1']},
-            slidesToScroll: ${python: view.data['slides-1']},
-            responsive: [
+  (function($) {
+    $(document).ready(function() {
+      $('.slick').slick({
+        infinite: true,
+        slidesToShow: ${python: view.data['slides-1']},
+        slidesToScroll: ${python: view.data['slides-1']},
+        responsive: [
           {
             breakpoint: 1024,
             settings: {
@@ -62,16 +60,18 @@ require([
               slidesToShow: ${python: view.data['slides-3']},
               slidesToScroll: ${python: view.data['slides-3']}
             }
-          },
-          ],
-            vertical: false,
-            dots: ${python: view.data['pager']},
-            arrows: ${python: view.data['nav']},
-            nextArrow: '<i class="fa fa-angle-right large-text"></i>',
-            prevArrow: '<i class="fa fa-angle-left large-text" ></i>',
-        });
+          }
+        ],
+        vertical: false,
+        dots: ${python: view.data['pager']},
+        arrows: ${python: view.data['nav']},
+        nextArrow: '<i class="fa fa-angle-right large-text"></i>',
+        prevArrow: '<i class="fa fa-angle-left large-text"></i>',
       });
+    });
+  })(jQuery);
 </script>
+ 
 <style>
 .slick-arrow { position: absolute; top: 40%;}
 .fa-angle-left.slick-arrow {left: -1em}

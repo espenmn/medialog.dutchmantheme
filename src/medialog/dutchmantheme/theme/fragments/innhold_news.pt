@@ -75,7 +75,6 @@ $( ".news_item a" ).mouseleave(function() {
     width: 100%;
 }
 
-
 #fragment-${python: view.id} .opacity-x  {
     opacity: 0.80;
 }

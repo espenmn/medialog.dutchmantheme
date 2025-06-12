@@ -1,71 +1,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:metal="http://xml.zope.org/namespaces/metal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    lang="en"
-    i18n:domain="medialog.dutchmantheme">
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en" i18n:domain="medialog.dutchmantheme">
 
 
-<div class="conteido grey-background fullwidth padding-10-0 disabled-${view/data/disabled|None}"
-tal:condition="view/editmode|None">
+  <div class="conteido grey-background fullwidth padding-10-0 disabled-${view/data/disabled|None}" tal:condition="view/editmode|None">
     <div class="container center-text">
-        <h2>${view/data/title|None}</h2>
-        <p>${view/data/description|None}</p>
+      <h2>${view/data/title|None}</h2>
+      <p>${view/data/description|None}</p>
     </div>
 
 
     <div class="container slick">
 
-        <div class="margin-10 black padding-10"
-                tal:define="movie_year view/data/movie_year"
-                tal:repeat="item python:context.portal_catalog(portal_type='movie'">
-            <tal:define tal:define="obj item/getObject;
-                    item_url item/getURL|item/absolute_url"
-                    tal:on-error="">
-                <!--p class="movie-session">${item/Description|None}</p-->
-                <!-- scale_func obj/@@images;
+      <div class="margin-10 black padding-10" tal:define="movie_year view/data/movie_year" tal:repeat="item python:context.portal_catalog(portal_type='movie'">
+        <tal:define tal:define="obj item/getObject;
+                    item_url item/getURL|item/absolute_url" tal:on-error="">
+          <!--p class="movie-session">${item/Description|None}</p-->
+          <!-- scale_func obj/@@images;
                 scale context/@@images;
                 scaled_image python:scale_func.scale('image', scale='mini');
 
-                <a href="${item_url}"><img tal:replace="structure python:scaled_image.tag()"
-                    tal:condition="scaled_image" /></a-->
-               <a href="#" class="pat-contentloader"
-                      data-pat-contentloader="url:${item_url}/@@wildcard_video_macro?">Load content</a>
-                <h3 class="movie-title">
-                    <a href="${item_url}" class="black">${item/Title|None}</a>
-                </h3>
-                <p class="movie-text">${item/Description|None}</p>
-            </tal:define>
-        </div>
+                <a href="${item_url}"><img tal:replace="structure python:scaled_image.tag()" tal:condition="scaled_image" /></a-->
+          <a href="#" class="pat-contentloader" data-pat-contentloader="url:${item_url}/@@wildcard_video_macro?">Load content</a>
+          <h3 class="movie-title">
+            <a href="${item_url}" class="black">${item/Title|None}</a>
+          </h3>
+          <p class="movie-text">${item/Description|None}</p>
+        </tal:define>
+      </div>
 
 
-     </div>
-<link rel="stylesheet" href="++theme++dutchman-theme/css/slick.css" />
-<script>
-require([
-      'jquery',
-      '++theme++dutchman-theme/javascript/slick.min'
-      ], function(Base) {
-        'use strict';
-        $('.pat-contentloader').click();
-        $('.slick').slick({
+    </div>
+    <link rel="stylesheet" href="++theme++dutchman-theme/css/slick.min.css" />
+    <script>
+$('.pat-contentloader').click();
+$('.slick').slick({
             infinite: true,
             slidesToShow: 4,
             slidesToScroll: 4,
             dots: false,
             arrows: true,
             nextArrow: '<i class="fa fa-angle-right large-text"></i>',
-            prevArrow: '<i class="fa fa-angle-left large-text" ></i>',
-        });
-      });
-</script>
-<script>
+            prevArrow: '<i class="fa fa-angle-left large-text"></i>',
+});
+    </script>
+    <script>
   $(window).resize(function(){
     // Setting the heigth of the videos since iframe is a problem to resize
     $('iframe').height($('.slick-slide').width()*70/100);
   }).resize();
-</script>
-<style>
+    </script>
+    <style>
 .slick-arrow { position: absolute; top: 40%;}
 .fa-angle-left.slick-arrow {left: -1em}
 .fa-angle-right.slick-arrow {right: -1em}
@@ -73,7 +59,7 @@ require([
   width: 100%;
   max-height: 200px;
 }
-</style>
+    </style>
 
-</div>
+  </div>
 </html>

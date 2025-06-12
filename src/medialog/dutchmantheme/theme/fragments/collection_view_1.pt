@@ -72,14 +72,10 @@
  </style>
 
 
- <script>require([
-   'jquery',
-   ], function(Base) {
-     'use strict';
+ <script> 
      $( ".data-filter" ).click(function() {
       var value_not = ".collection_item:not(." + $(this).attr("data-filter") + ")";
       $(".collection_item").filter( $(value_not)  ).toggle();
       });
-   });
  </script>
  </section>

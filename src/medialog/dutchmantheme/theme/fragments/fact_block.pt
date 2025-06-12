@@ -17,14 +17,12 @@ id="frag${python: view.id}">
 
 </aside>
 
-<script>require([
-      'jquery',
-      ], function(Base) {
+<script> 
         $("#frag${python: view.id} .accordian-expand,  #frag${python: view.id} .accordian").click(function() {
             $('#frag${python: view.id} .accordian').toggleClass('open');
              $('#frag${python: view.id} .fa-chevron-down').toggleClass('fa-rotate-180');
         });
-      });
+     
 </script>
 <style>
 .i-info {

@@ -46,21 +46,18 @@
     <link rel="stylesheet" href="++theme++dutchman-theme/css/slick-flex.css" tal:condition="load_css">
 </tal:define>
 <script>
-require([
-      'jquery',
-      '++theme++dutchman-theme/javascript/slick.min'
-      ], function(Base) {
-        'use strict';
-        $('#fragment-${python: view.id} .slick').slick({
-            infinite: true,
-            slidesToShow: ${view/data/slides-1|None},
-            slidesToScroll: ${view/data/slides-1|None},
-            responsive: [
+  (function($) {
+    $(document).ready(function() {
+      $('#fragment-${python: view.id} .slick').slick({
+        infinite: true,
+        slidesToShow: ${view/data/slides-1|None},
+        slidesToScroll: ${view/data/slides-1|None},
+        responsive: [
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: ${view/data/slides-2|None},
-              slidesToScroll: ${view/data/slides-2|None},
+              slidesToScroll: ${view/data/slides-2|None}
             }
           },
           {
@@ -69,15 +66,16 @@ require([
               slidesToShow: ${view/data/slides-3|None},
               slidesToScroll: ${view/data/slides-3|None}
             }
-          },
-          ],
-            vertical: false,
-            dots: ${view/data/pager|None},
-            arrows: ${view/data/nav|None},
-            nextArrow: '<i class="fa fa-angle-right large-text"></i>',
-            prevArrow: '<i class="fa fa-angle-left large-text" ></i>',
-        });
+          }
+        ],
+        vertical: false,
+        dots: ${view/data/pager|None},
+        arrows: ${view/data/nav|None},
+        nextArrow: '<i class="fa fa-angle-right large-text"></i>',
+        prevArrow: '<i class="fa fa-angle-left large-text"></i>'
       });
+    });
+  })(jQuery);
 </script>
 <style>
 #fragment-${python: view.id} .slick-arrow { position: absolute; top: 40%;}
