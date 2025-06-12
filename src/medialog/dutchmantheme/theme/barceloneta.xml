@@ -4,9 +4,8 @@
    xmlns:xi="http://www.w3.org/2001/XInclude"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
    <!--  <xi:include href="++theme++barceloneta/grid-col-marker.xml"/>  -->
-   <theme href="++theme++barceloneta/index.html"/>
+   <theme href="barceloneta.html"/>
 
-   
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
   <merge attributes="class" css:content="body" css:theme="body" />
@@ -50,6 +49,10 @@
   <!-- <drop css:theme-children="#below-portlets-wrapper-div"  /> -->
   <!-- <drop css:content="#below-portlets-wrapper-div"  /> -->
   <!-- <drop css:theme="#below-portlets-wrapper-div"  /> --> 
+
+  <replace css:theme="#below-portlets-wrapper" css:content-children="#below-portlets-wrapper-div" method="raw" />
+  <drop css:content-children="#below-portlets-wrapper"  />
+  <drop css:content-children="#below-portlets-wrapper-div"  />
   
   <!-- manage-portlets Footer portlets -->
  <!-- <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" css:if-content="#portal-footer-wrapper #portletmanager-plone-footerportlets"></after>  -->
