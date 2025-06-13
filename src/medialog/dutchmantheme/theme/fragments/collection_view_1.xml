@@ -42,6 +42,16 @@
       <default>preview</default>
       <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
  </field>
+  <field name="height" type="zope.schema.Int">
+    <description>Leave empty for full image</description>
+    <required>Falsee</required>
+    <title>Image height in pixels</title>
+    <default></default>
+  </field>
+   <field name="border" type="zope.schema.Int">
+      <required>false</required>
+      <title>Border at bottom</title> 
+  </field>
  <field name="max_chars" type="zope.schema.Int">
       <description>Max characters of description</description>
       <required>False</required>

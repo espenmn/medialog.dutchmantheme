@@ -39,3 +39,6 @@ def get_id(self):
 
 def max_chars(self):
     return self.data.max_chars or 1000
+
+def border(self):
+    return self.data.border or 1

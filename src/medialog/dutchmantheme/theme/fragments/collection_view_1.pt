@@ -28,8 +28,8 @@
             <figure tal:define="obj item/getObject;
                     scale_func obj/@@images;
                     scaled_image python:scale_func.scale('image', scale=i_size)"
-                    tal:on-error=""
-                    class="no-pop-up">
+                    tal:on-error=""                   
+                    class="no-pop-up fit-image">
                 <img tal:replace="structure python:scaled_image.tag()"
                      tal:condition="scaled_image" />
            </figure>
@@ -48,6 +48,7 @@
 </tal:repeat>
 
  <style>
+
 #${view/get_id} .portal-type {
  margin-bottom: 0;
 }
@@ -60,14 +61,15 @@
   color: #333;
  flex: 1;
   min-width: 230px;
-  border-bottom: 1px solid black;
+  border-bottom: ${view/data/border|None}px solid black; 
   background: #FaFaFa;
   margin-bottom: 20px;
 }
 
 #${view/get_id} img {
     width: 100%;
-    height: auto;
+    height:  ${view/data/height|None}px;  
+    object-fit: cover;
 }
  </style>
 
