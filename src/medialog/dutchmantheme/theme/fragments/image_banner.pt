@@ -6,7 +6,7 @@
    i_height view/data/height|None;
    link_url view/get_url|None">
 
-<a class="nounderline"  tal:omit-tag="python: link_url == ''" href="link_url">
+<a class="nounderline"  tal:omit-tag="python: link_url == ''" href="${link_url}">
 <section class="image_banner disabled-${view/data/disabled|None}"
             tal:condition="view/editmode|None"
             id="fragment-${python: view.id}">
