@@ -13,8 +13,8 @@ tal:condition="view/editmode|None">
                         <h2>${item/Title}</h2>
                         <p class="black">${item/Description|None}</p>
                       </a>
-                      <p><i class="fa fa-calendar"> </i> <span class="pat-moment date-time"
-                          data-pat-moment="format:relative;">${item/Date}</span>
+                      <p><i class="fa fa-calendar"> </i> <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">Date</span> 
                       </p>
                       <a href="${item_url}" alt="${item/Title}" title="${item/Title}" >
 

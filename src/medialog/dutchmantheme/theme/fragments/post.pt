@@ -11,7 +11,8 @@
               </div>
            <div class="new-text col-xs-6 padding-10">
              <h3 class="section-title"><a href="${item_url}" title="Link">${load_item/Title|None}</a></h3>
-             <div class="post-info"><span class="entry-date pat-moment" data-pat-moment="format:relative;">${load_item/Date}</span> <span>|</span> <span class="entry-author">${load_item/Creator}</span></div>
+             <div class="post-info">
+             <span tal:content="python:here.toLocalizedTime(item.Date, long_format=1)">Date</span>  <span>|</span> <span class="entry-author">${load_item/Creator}</span></div>
              <p>${load_item/Description|None}</p>
              <div><a class="button btn btn-primary" href="${item_url}" title="Lire la suite">${view/data/linktext|None}</a></div>
            </div> <!-- end new-text-->

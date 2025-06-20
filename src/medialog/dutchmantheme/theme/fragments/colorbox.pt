@@ -21,8 +21,8 @@ tal:define="items python:context.portal_catalog(portal_type='News Item', sort_on
                     ${subject}
                 </tal:repeat>
               </span> |
-              <span class="pat-moment" data-pat-moment="format:calendar">
-              ${item/Date}
+              <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">Date</span> 
               </span>
             </p>
             </div>
@@ -49,9 +49,8 @@ tal:define="items python:context.portal_catalog(portal_type='News Item', sort_on
                   <span tal:condition="exists: item/Subject|None" i18n:translate="">
                       <tal:repeat tal:repeat="subject item/Subject">${subject} </tal:repeat>
                   </span> |
-                  <span class="pat-moment" data-pat-moment="format:calendar">
-                  ${item/Date}
-                  </span>
+                  <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">Date</span> 
                 </p>
                </div>
              </div>
@@ -71,9 +70,8 @@ tal:define="items python:context.portal_catalog(portal_type='News Item', sort_on
                   <span tal:condition="exists: item/Subject|None" i18n:translate="">
                     <tal:repeat tal:repeat="subject item/Subject">${subject} </tal:repeat>
                   </span> |
-                  <span class="pat-moment" data-pat-moment="format:calendar">
-                  ${item/Date}
-                  </span>
+                  <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">Date</span> 
                 </p>
                </div>
                </div>
@@ -93,9 +91,8 @@ tal:define="items python:context.portal_catalog(portal_type='News Item', sort_on
                   <span tal:condition="exists: item/Subject|None" i18n:translate="">
                       <tal:repeat tal:repeat="subject item/Subject">${subject} </tal:repeat>
                   </span> |
-                  <span class="pat-moment" data-pat-moment="format:calendar">
-                  ${item/Date}
-                  </span>
+                  <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">Date</span> 
                 </p>
             </div>
 

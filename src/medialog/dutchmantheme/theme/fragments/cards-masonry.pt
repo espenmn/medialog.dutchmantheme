@@ -27,8 +27,8 @@
 					<p class="card-text" tal:condition="max_chars">
 						${python: description[:max_chars]}…
 					</p>
-          <p tal:condition="view/data/show_date|None"><i class="fa fa-calendar"> </i> <span class="pat-moment date-time"
-              data-pat-moment="format:relative;">${item/Date}</span>
+          <p tal:condition="view/data/show_date|None"><i class="fa fa-calendar"> </i> <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">Date</span> 
           </p>
 					<p>
 						<a tal:condition="buttontext"

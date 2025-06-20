@@ -6,7 +6,7 @@
               order view/data/order;
               show_text python: order != 'only-image';
               item_c view/data/item_c|None;
-              items collection_items/@@contentlisting|context/@@contentlisting|None">
+              items view/get_items|None">
     <tal:repeat tal:repeat="item python:items[:item_c]">
             <tal:define tal:define="obj item/getObject;
                   item_url item/getURL|item/absolute_url;
@@ -19,8 +19,8 @@
                         <h2>${item/Title}</h2>
                         <p class="black">${item/Description|None}</p>
                     </a>
-                    <p><i class="fa fa-calendar"> </i> <span class="pat-moment date-time"
-                          data-pat-moment="format:relative;">${item/Date}</span>
+                    <p><i class="fa fa-calendar"> </i> <span tal:content="python:here.toLocalizedTime(item.Date,
+                         long_format=1)">End Date Time</span>
                     </p>
                 </div>
                 <div class="slick-image ${order}">
@@ -107,3 +107,4 @@
   .news-container {background: #${python: view.data['color2']}; }
 </style>
 </section>
+ 

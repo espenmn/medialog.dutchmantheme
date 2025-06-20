@@ -38,3 +38,4 @@ reports/
 venv/
 # excludes
 src/medialog/dutchmantheme/tiles.py
+src/medialog/dutchmantheme/theme/javascript/bundle.js
