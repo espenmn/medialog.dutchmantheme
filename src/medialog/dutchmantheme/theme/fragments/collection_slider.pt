@@ -14,11 +14,12 @@
                   scale_func obj/@@images;
                   scaled_image python:scale_func.scale('image', scale=image_size)">
               <div class="slick_slide padding-20">
-                <div class="slick-text"  tal:condition="show_text">
+                <div class="slick-textx"  tal:condition="show_text">
                     <a href="${item_url}" title="${item/Title}">
                         <h2>${item/Title}</h2>
-                        <p class="black">${item/Description|None}</p>
                     </a>
+                        <p class="black">${item/Description|None}</p>
+                    
                     <p><i class="fa fa-calendar"> </i> <span tal:content="python:here.toLocalizedTime(item.Date,
                          long_format=1)">End Date Time</span>
                     </p>
