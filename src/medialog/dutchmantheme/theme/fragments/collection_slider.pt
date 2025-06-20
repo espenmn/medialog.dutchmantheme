@@ -1,55 +1,87 @@
-<section class="disabled-${view/data/disabled|None}"
-  tal:condition="view/editmode">
-<div id="fragment-${python: view.id}" class="news-container ${view/data/color1|None}">
-  <div class="slick" tal:define="image_size view/data/image_size|None;
+<section class="disabled-${view/data/disabled|None}" tal:condition="view/editmode">
+  <div id="fragment-${python: view.id}" class="news-container ${view/data/color1|None}">
+    <div class="slick" tal:define="image_size view/data/image_size|None;
               collection_items view/get_items|None;
               order view/data/order;
               show_text python: order != 'only-image';
               item_c view/data/item_c|None;
               items view/get_items|None">
-    <tal:repeat tal:repeat="item python:items[:item_c]">
-            <tal:define tal:define="obj item/getObject;
+      <tal:repeat tal:repeat="item python:items[:item_c]">
+        <tal:define tal:define="obj item/getObject;
                   item_url item/getURL|item/absolute_url;
                   obj item/getObject;
                   scale_func obj/@@images;
                   scaled_image python:scale_func.scale('image', scale=image_size)">
-              <div class="slick_slide padding-20">
-                <div class="slick-textx"  tal:condition="show_text">
-                    <a href="${item_url}" title="${item/Title}">
-                        <h2>${item/Title}</h2>
-                    </a>
-                        <p class="black">${item/Description|None}</p>
-                    
-                    <p><i class="fa fa-calendar"> </i> <span tal:content="python:here.toLocalizedTime(item.Date,
-                         long_format=1)">End Date Time</span>
-                    </p>
-                </div>
-                <div class="slick-image ${order}">
-                  <a href="${item_url}" title="${item/Title}"
-                     tal:condition="scaled_image">
-                    <img tal:replace="structure python:scaled_image.tag()"
-                         tal:on-error=""/>
-                  </a>
-                </div>
+          <div class="slick_slide padding-20 flex-row">
+            <div class="slick-text" tal:condition="show_text">
+
+              <a href="${item_url}" title="${item/Title}">
+                <h2>${item/Title}</h2>
+              </a>
+              <p class="black">${item/Description|None}</p>
+              <p>
+                <i class="fa fa-calendar"></i>
+                <span tal:content="python:here.toLocalizedTime(item.Date, long_format=1)">End Date Time</span>
+              </p>
+              <div class="slick-image ${order}">
+                <a href="${item_url}" title="${item/Title}" tal:condition="scaled_image">
+                  <img tal:replace="structure python:scaled_image.tag()" tal:on-error=""/>
+                </a>
               </div>
-            </tal:define>
+            </div>
+          </div>
+        </tal:define>
       </tal:repeat>
-      <div tal:condition="python: item_c <= len(items)" class="slick_slide padding-20"
-        tal:define="folder collection_items/absolute_url|context/absolute_url|None">
-        <div class="slick-text" >
-            <a href="${folder}" title="See all items">
-                <h2>See all</h2>
-            </a>
+      <div tal:condition="python: item_c <= len(items)" class="slick_slide padding-20" tal:define="folder collection_items/absolute_url|context/absolute_url|None">
+        <div class="slick-text">
+          <a href="${folder}" title="See all items">
+            <h2>See all</h2>
+          </a>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">
-    <link rel="stylesheet" href="++theme++dutchman-theme/css/slick-flex.css" tal:condition="load_css">
-</tal:define>
+  <link rel="stylesheet" href="++theme++dutchman-theme/css/slick-flex.css" tal:condition="load_css">
+  </tal:define>
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	
-<script>
+
+<style>
+.slick-slide > div { flex-direction: column !important;
+}
+.flex-row {flex-direction: row}
+
+#fragment-${python: view.id} .slick-arrow { position: absolute; top: 40%;}
+#fragment-${python: view.id} .fa-angle-left.slick-arrow {left: -1em;}
+
+.fa-angle-right.slick-arrow {right: -1em;}
+#fragment-${python: view.id} .slick ul { list-style-image: none;
+	list-style-type: none;
+	display: block;	width: 100%;	text-align: center;	padding: 1em;}
+
+#fragment-${python: view.id} div.slick_slide a {
+ display:  block;
+}
+
+#fragment-${python: view.id} .slick li.slick-active  button  {
+	background: #333;
+}
+
+#fragment-${python: view.id} div.slick_slide img {
+	margin: 0;
+}
+    <tal:condition tal:condition="view/data/height|None">
+  #fragment-${python: view.id} img  {
+    height: ${view/data/height}px !important;
+    object-fit: cover !important;
+    object-position: ${view/data/position-x|None}% ${view/data/position-y|None}%;
+    }
+    </tal:condition>
+  .news-container {background: #${python: view.data['color2']}; }
+  </style>
+
+  <script>
   (function($) {
     $(document).ready(function() {
       $('#fragment-${python: view.id} .slick').slick({
@@ -80,35 +112,7 @@
       });
     });
   })(jQuery);
-</script>
-<style>
-#fragment-${python: view.id} .slick-arrow { position: absolute; top: 40%;}
-#fragment-${python: view.id} .fa-angle-left.slick-arrow {left: -1em;}
+  </script>
 
-.fa-angle-right.slick-arrow {right: -1em;}
-#fragment-${python: view.id} .slick ul { list-style-image: none;
-	list-style-type: none;
-	display: block;	width: 100%;	text-align: center;	padding: 1em;}
-
-#fragment-${python: view.id} div.slick_slide a {
- display:  block;
-}
-
-#fragment-${python: view.id} .slick li.slick-active  button  {
-	background: #333;
-}
-
-#fragment-${python: view.id} div.slick_slide img {
-	margin: 0;
-}
-<tal:condition tal:condition="view/data/height|None">
-  #fragment-${python: view.id} img  {
-    height: ${view/data/height}px !important;
-    object-fit: cover !important;
-    object-position: ${view/data/position-x|None}% ${view/data/position-y|None}%;
-    }
-</tal:condition>
-  .news-container {background: #${python: view.data['color2']}; }
-</style>
 </section>
  
