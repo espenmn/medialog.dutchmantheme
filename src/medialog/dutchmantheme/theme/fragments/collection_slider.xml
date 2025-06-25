@@ -34,6 +34,16 @@
         <element>id</element>
       </values>
     </field>
+    <field name="sort_order" type="zope.schema.Choice">
+      <description>Choose Sort order if you Choose a Folder instead of a Collection </description>
+      <required>True</required>
+      <title>Sort order</title>
+      <default>descending</default>
+      <values>
+        <element>descending</element>
+        <element>ascending</element>
+      </values>
+    </field>
 
     <field name="image_size" type="zope.schema.Choice">
       <description>Choose Image Size (scale) for you images</description>
