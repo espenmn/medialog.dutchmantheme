@@ -1,61 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model
-  xmlns:form="http://namespaces.plone.org/supermodel/form"
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
   xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
   xmlns="http://namespaces.plone.org/supermodel/schema">
-<schema>
-  <field name="disabled" type="zope.schema.Bool">
+  <schema>
+    <field name="disabled" type="zope.schema.Bool">
       <required>false</required>
       <title>Hide fragment</title>
       <description>Click here to hide fragment</description>
-  </field>
-  <field name="linked_folder" type="zope.schema.Choice">
+    </field>
+    <field name="linked_folder" type="zope.schema.Choice">
       <description>Choose Folder for content. Leave empty for current folder</description>
       <required>False</required>
       <title>Select a folder (or folderish object)</title>
       <source>collective.themefragments.tiles.CatalogSource</source>
- </field>
- <field name="select_folder" type="zope.schema.Choice">
-    <description>Useful for Multilingual setups</description>
-    <required>False</required>
-    <title>Alternatively choose folder here</title>
-    <vocabulary>medialog.dutchmantheme.ShowFoldersVocabulary</vocabulary>
- </field>
+    </field>
+    <field name="select_folder" type="zope.schema.Choice">
+      <description>Useful for Multilingual setups</description>
+      <required>False</required>
+      <title>Alternatively choose folder here</title>
+      <vocabulary>medialog.dutchmantheme.ShowFoldersVocabulary</vocabulary>
+    </field>
+    <field name="sort_on" type="zope.schema.Choice">
+      <description>Choose Sort metyhod if you Choose a Folder instead of a Collection </description>
+      <required>False</required>
+      <title>Sort on</title>
+      <default>modified</default>
+      <values>
+        <element>modified</element>
+        <element>created</element>
+        <element>Date</element>
+        <element>sortable_title</element>
+        <element>id</element>
+      </values>
+    </field>
 
-  <field name="image_size" type="zope.schema.Choice">
-   <description>Choose Image Size (scale) for you images</description>
-   <required>True</required>
-   <title>Image Size</title>
-   <default>preview</default>
-   <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
-  </field>
+    <field name="image_size" type="zope.schema.Choice">
+      <description>Choose Image Size (scale) for you images</description>
+      <required>True</required>
+      <title>Image Size</title>
+      <default>preview</default>
+      <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+    </field>
 
-  <field name="height" type="zope.schema.Int">
-    <description>Leave empty for full image</description>
-    <required>Falsee</required>
-    <title>Image height in pixels</title>
-    <default></default>
-  </field>
+    <field name="height" type="zope.schema.Int">
+      <description>Leave empty for full image</description>
+      <required>Falsee</required>
+      <title>Image height in pixels</title>
+      <default></default>
+    </field>
 
-  <field name="position-x" type="zope.schema.Int">
-    <description>Horizontal image position in %. 50 is centered</description>
-    <required>false</required>
-    <min>0</min>
-    <max>100</max>
-    <default>50</default>
-    <title>X cordinate if Strech images is enabled</title>
-  </field>
-  <field name="position-y" type="zope.schema.Int">
-    <description>Vertical image position in %. 50 is centered</description>
-    <required>false</required>
-    <min>0</min>
-    <max>100</max>
-    <default>50</default>
-    <title>Y cordinate if Strech images is enabled</title>
-  </field>
+    <field name="position-x" type="zope.schema.Int">
+      <description>Horizontal image position in %. 50 is centered</description>
+      <required>false</required>
+      <min>0</min>
+      <max>100</max>
+      <default>50</default>
+      <title>X cordinate if Strech images is enabled</title>
+    </field>
+    <field name="position-y" type="zope.schema.Int">
+      <description>Vertical image position in %. 50 is centered</description>
+      <required>false</required>
+      <min>0</min>
+      <max>100</max>
+      <default>50</default>
+      <title>Y cordinate if Strech images is enabled</title>
+    </field>
 
-  <field name="order" type="zope.schema.Choice">
+    <field name="order" type="zope.schema.Choice">
       <description>Image on top or bottom</description>
       <required>True</required>
       <default></default>
@@ -68,25 +80,25 @@
       </values>
     </field>
 
-  <field name="pager" type="zope.schema.Choice">
-        <description/>
-        <required>True</required>
-        <title>Show pager</title>
-        <values>
-          <element>true</element>
-          <element>false</element>
-        </values>
-  </field>
-  <field name="nav" type="zope.schema.Choice">
-        <description/>
-        <required>True</required>
-        <title>Show Navigation</title>
-        <values>
-          <element>true</element>
-          <element>false</element>
-        </values>
-  </field>
-  <field name="color1" type="zope.schema.Choice">
+    <field name="pager" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Show pager</title>
+      <values>
+        <element>true</element>
+        <element>false</element>
+      </values>
+    </field>
+    <field name="nav" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Show Navigation</title>
+      <values>
+        <element>true</element>
+        <element>false</element>
+      </values>
+    </field>
+    <field name="color1" type="zope.schema.Choice">
       <description/>
       <required>False</required>
       <default></default>
@@ -122,25 +134,25 @@
     </field>
 
     <field name="slides-1" type="zope.schema.Int">
-          <description/>
-          <required>True</required>
-          <title>Slides to show on each row</title>
-          <min>0</min>
-          <max>20</max>
+      <description/>
+      <required>True</required>
+      <title>Slides to show on each row</title>
+      <min>0</min>
+      <max>20</max>
     </field>
     <field name="slides-2" type="zope.schema.Int">
-          <description/>
-          <required>True</required>
-          <title>Slides to show on each row for 1024 width</title>
-          <min>0</min>
-          <max>15</max>
+      <description/>
+      <required>True</required>
+      <title>Slides to show on each row for 1024 width</title>
+      <min>0</min>
+      <max>15</max>
     </field>
     <field name="slides-3" type="zope.schema.Int">
-          <description/>
-          <required>True</required>
-          <title>Slides to show on each row for 768 width</title>
-          <min>0</min>
-          <max>10</max>
+      <description/>
+      <required>True</required>
+      <title>Slides to show on each row for 768 width</title>
+      <min>0</min>
+      <max>10</max>
     </field>
-</schema>
+  </schema>
 </model>
