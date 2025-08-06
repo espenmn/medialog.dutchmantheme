@@ -12,7 +12,6 @@
           <tal:replace tal:condition="python: iconset != 'fontawesome'" tal:replace="structure context/@@fontload"></tal:replace>
     </tal:condition>
 
-
       <style>
           #popover-upload {z-index: 999}
           .disabled-True { opacity: 0.3}
@@ -25,6 +24,17 @@
           option[value=custom-background3], .custom-background3 {background-color: #${view/color3|None} !important}  
           .plone-link-opposite : {color: ${view/color2|None} };
           .plone-background-opposite {background: ${view/color2|None}}
+             .text-end {text-align: right}
+            .text-center {text-align: center}
+            .text-decoration-none {text-decoration: none}
+            .text-decoration-underline {text-decoration: underline}
+            .text-decoration-line-through {text-decoration: line-through}
+            .text-lowercase {text-transform: lowercase}
+            .text-uppercase {text-transform: uppercase}
+            .text-capitalize {text-transform: capitalize}
+            .text-wrap {white-space: normal}
+            .text-nowrap {white-space: nowrap}
+            .text-break {word-wrap: break-word;	word-break: break-word;}
  
           <tal:override tal:condition="view/override|None">
 
