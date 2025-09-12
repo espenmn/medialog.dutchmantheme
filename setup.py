@@ -54,7 +54,7 @@ setup(
         'medialog.controlpanel',
         'plone.app.mosaic',
         'plone.app.tiles',
-        'medialog.iconpicker',
+        'medialog.iconpicker>=2.0.0',
         'collective.z3cform.colorpicker',
         'plone.app.imagecropping',
         # -*- Extra requirements: -*-

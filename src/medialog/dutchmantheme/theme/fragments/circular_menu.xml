@@ -45,7 +45,8 @@
       <title>Menu Icon</title>
     </field>
 
-    <field name="iconfield" type="zope.schema.TextLine"  >
+    <field name="iconfield" type="zope.schema.TextLine"
+      form:widget="medialog.iconpicker.widgets.widget.IconPickerFieldWidget">
       <description>Default Icon if content types does not have icon set</description>
       <required>True</required>
       <title>Default Icon</title>
