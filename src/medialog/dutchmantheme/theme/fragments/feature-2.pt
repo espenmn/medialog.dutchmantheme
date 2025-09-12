@@ -14,7 +14,7 @@
 	<div class="feature-text-2">
     <h2 tal:condition="title" class="${view/data/color1|None}">${title}</h2>
 	  <p class="${view/data/color2}" tal:condition="description">${description}</p>
-	  <a tal:condition="item_url|None" class="btn btn-primary ${view/data/color3}" href="${item_url}">${view/data/buttontext}</a>
+	  <a tal:condition="item_url|None" class="btn btn-primary ${view/data/color3}" href="${item_url|None}">${view/data/buttontext}</a>
 </div>
 </div>
 <style>

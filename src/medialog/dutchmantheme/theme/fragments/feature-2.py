@@ -1,12 +1,12 @@
 def get_theurl(self):
-    link =  self.data['link']
+    link =  self.data.get('link', None)
     if link:
         item =  link
         items =self.context.portal_catalog(UID=item)
         irurl = items[0].getURL()
         return irurl
 
-    url = self.data['select']
+    url = self.data.get('select', None)
 
     if url:
         if url.startswith('${portal_url}'):
