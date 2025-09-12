@@ -15,6 +15,7 @@
   </field>
   <field name="iconfield" type="zope.schema.TextLine"
       form:widget="medialog.iconpicker.widgets.widget.IconPickerFieldWidget">
+    <default>fa fa-home</default>
     <description/>
     <required>True</required>
     <title>Icon</title>
