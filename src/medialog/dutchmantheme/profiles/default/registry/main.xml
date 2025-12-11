@@ -27,21 +27,54 @@
 		<value key="font_load_url" key_type="field.TextLine"></value>
 	</records>
 
-	<records prefix="plone.bundles/imagesloaded-js"
-	           interface="plone.base.interfaces.IBundleRegistry">
-	    <value key="depends">plone</value>
-	    <value key="jscompilation">++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js</value>
-	    <value key="last_compilation">2024-10-06 00:00:00</value>
-	    <value key="compile">False</value>
-	    <value key="enabled">False</value>
+	<!-- ===============================
+       imagesLoaded RESOURCE
+       =============================== -->
+	<records prefix="dutchman.imagesloaded" interface="Products.CMFPlone.interfaces.IResourceRegistry">
+		<value key="js">++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js</value>
 	</records>
-	<records prefix="plone.bundles/masonry-js"
-	           interface="plone.base.interfaces.IBundleRegistry">
-	    <value key="depends">imagesloaded-js</value>
-	    <value key="jscompilation">++theme++dutchman-theme/javascript/masonry.pkgd.min.js</value>
-	    <value key="csscompilation">++theme++dutchman-theme/css/masonary.css</value>
-	    <value key="last_compilation">2017-10-06 00:00:00</value>
-	    <value key="compile">False</value>
-	    <value key="enabled">False</value>
+
+	<!-- ===============================
+       imagesLoaded BUNDLE
+       =============================== -->
+	<records prefix="plone.bundles/imagesloaded-js" interface="plone.base.interfaces.IBundleRegistry">
+		<value key="resources">
+			<element>dutchman.imagesloaded</element>
+		</value>
+		<value key="depends">plone</value>
+		<value key="enabled">True</value>
+		<value key="compile">False</value>
 	</records>
+
+	<!-- ===============================
+       Masonry JS RESOURCE
+       =============================== -->
+	<records prefix="dutchman.masonry" interface="Products.CMFPlone.interfaces.IResourceRegistry">
+		<value key="js">++theme++dutchman-theme/javascript/masonry.pkgd.min.js</value>
+		<!-- Optional: masonry typically requires imagesLoaded -->
+		<value key="deps">dutchman.imagesloaded</value>
+	</records>
+
+	<!-- ===============================
+       Masonry CSS RESOURCE
+       =============================== -->
+	<records prefix="dutchman.masonry-css" interface="Products.CMFPlone.interfaces.IResourceRegistry">
+		<value key="css">++theme++dutchman-theme/css/masonary.css</value>
+	</records>
+
+
+	<!-- ===============================
+       Masonry BUNDLE
+       =============================== -->
+	<records prefix="plone.bundles/masonry-js" interface="plone.base.interfaces.IBundleRegistry">
+		<value key="resources">
+			<element>dutchman.masonry</element>
+			<element>dutchman.masonry-css</element>
+		</value>
+		<value key="depends">imagesloaded-js</value>
+		<value key="enabled">True</value>
+		<value key="compile">False</value>
+	</records>
+
+
 </registry>
