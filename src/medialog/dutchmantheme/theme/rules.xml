@@ -9,17 +9,16 @@
   <notheme css:if-not-content="#visual-portal-wrapper" />
   <notheme css:if-content=".template-manage-viewlets" />
 
-   <!-- Footer -->
+  <!-- Footer -->
   <xsl:variable name="footer_portlets" select="//footer[@id='portal-footer-wrapper']//div[@class='portletWrapper']/*[not(contains(@id,'portal-colophon')) and not(contains(@id,'portal-footer-signature')) and not(contains(@class,'portletActions'))]"></xsl:variable>
-  <xsl:variable name="footer_portlets_count" select="count($footer_portlets)"></xsl:variable>  
-        <xsl:variable name="central">
-        <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
-        <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
-        <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
-        <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
+  <xsl:variable name="footer_portlets_count" select="count($footer_portlets)"></xsl:variable>
+  <xsl:variable name="central">
+    <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
+    <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
+    <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
+    <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
   </xsl:variable>
 
-   
   <rules if="$diazo_off">
     <xi:include href="++theme++dutchman-theme/disabled.xml"/>
   </rules>
@@ -52,7 +51,7 @@
     <xi:include href="++theme++dutchman-theme/fullmenu_l.xml"/>
   </rules>
 
-  <rules if="$barceloneta">  
+  <rules if="$barceloneta">
     <xi:include href="/++theme++dutchman-theme/barceloneta.xml"/>
   </rules>
 
@@ -90,8 +89,5 @@
   <drop css:theme="#portal-toolbar" css:if-content=".userrole-anonymous" />
   <after css:theme="body" css:content="#customcss" href="/@@theme-fragment/customcss" />
   <!-- <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" /> -->
-
-
-
 
 </rules>
