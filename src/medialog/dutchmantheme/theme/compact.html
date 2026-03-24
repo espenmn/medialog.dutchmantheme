@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="h-100">
+
+  <head>
+    <title>Plone Theme</title>
+    <link rel="apple-touch-icon" href="++theme++barceloneta/barceloneta-apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+      href="++theme++barceloneta/barceloneta-apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+      href="++theme++barceloneta/barceloneta-apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+      href="++theme++barceloneta/barceloneta-apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+      href="++theme++barceloneta/barceloneta-apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="++theme++barceloneta/barceloneta-apple-touch-icon-precomposed.png" />
+    <script href="++plone++DocentIMS.ActionItems/js/action_items.js"></script>
+    
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <section id="portal-toolbar">
+    </section>
+
+    <div class="outer-wrapper flex-shrink-0">
+      <header class="container relative z-10">
+        <nav class="flex items-center justify-between py-8">
+
+          <!-- LOGO -->
+          <div id="portal-logo"></div>
+
+          <!-- MENU -->
+          <div id="portal-globalnav" class="hidden lg:flex gap-8 items-center">
+          </div>
+
+          <!-- CTA -->
+          <a href="/contact" class="btn btn-primary hidden xl:flex">
+            Neem contact
+          </a>
+
+          <!-- MOBILE BUTTON -->
+          <button class="lg:hidden">☰</button>
+
+        </nav>
+      </header>
+
+      <div id="above-content-wrapper">
+        <div id="above-content">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <aside id="global_statusmessage" class="col-12"></aside>
+        </div>
+        <main id="main-container" class="row">
+          <section id="portal-column-content">
+          </section>
+          <aside id="portal-column-one">
+          </aside>
+          <aside id="portal-column-two" role="complementary">
+          </aside>
+        </main>
+        <!--/row-->
+      </div>
+      <!--/container-->
+
+
+    </div> <!--/outer-wrapper -->
+    <div id="below-portlets-wrapper-div">
+      <div id="below-portlets-wrapper"></div>
+    </div>
+
+
+
+    <footer id="portal-footer-wrapper" class="mt-auto">
+      <div class="container" id="portal-footer">
+        <div class="doormat row"></div>
+        <div class="copyright row">
+          <div class="col-12"></div>
+        </div>
+        <div class="colophon row">
+          <div class="col-12"></div>
+        </div>
+        <div class="site-actions row">
+          <div class="col-12"></div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+
+    #portal-globalnav {
+      display: flex;
+      gap: 2rem;
+      font-weight: bold;
+    }
+
+    #portal-globalnav a {
+      border-bottom: 2px solid transparent;
+    }
+
+    #portal-globalnav a:hover {
+      border-color: currentColor;
+    }
+    </style>
+
+  </body>
+
+</html>

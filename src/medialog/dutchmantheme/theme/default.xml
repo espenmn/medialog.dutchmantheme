@@ -6,7 +6,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude">
 
 
-  <theme href="index.html" />
+  <theme href="compact.html" />
 
 
 
@@ -20,7 +20,7 @@
   <!-- set aria-label for toggler button -->
   <copy attributes="aria-label" css:theme=".navbar-toggler" css:content=".navbar-toggler" />
   <!-- move searchbox into place -->
-  <replace css:theme="#portal-searchbox" css:content="#portal-searchbox" mode="raw" />
+  <!-- <replace css:theme="#portal-searchbox" css:content="#portal-searchbox" mode="raw" /> -->
   <drop css:content="#portal-header #portal-searchbox" />
 
   <!-- Content header -->

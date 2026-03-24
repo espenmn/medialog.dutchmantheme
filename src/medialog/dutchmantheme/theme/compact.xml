@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <rules xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css">
+
+    <theme href="compact.html" />
+
+    <!-- BODY -->
+    <copy attributes="*" css:content="body" css:theme="body" />
+    <merge attributes="class" css:content="body" css:theme="body" />
+
+    <!-- LOGO -->
+    <replace css:theme="#portal-logo" css:content="#portal-logo" />
+
+    <!-- NAVIGATION -->
+    <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
+
+    <!-- MAIN CONTENT -->
+    <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content" />
+
+    <!-- LEFT / RIGHT -->
+    <replace css:theme-children="#portal-column-one" css:content-children="#portal-column-one" />
+
+    <replace css:theme-children="#portal-column-two" css:content-children="#portal-column-two" />
+
+    <!-- STATUS -->
+    <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
+
+    <!-- FOOTER -->
+    <replace css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" />
+
+  </rules>
+</rules>
