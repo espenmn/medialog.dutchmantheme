@@ -14,6 +14,7 @@
           id="card_items"
 			    class="col-md-${view/css_class|None}">
 			<div class="card margin-10-0"
+          style="border-radius: ${view/data/border_radius|None}px !important; overflow: hidden !important"
           tal:define="item_url item/getURL|item/absolute_url|None;
           description item/Description;
           description python: description.ljust(500);

@@ -18,9 +18,6 @@ def editmode(self):
         return self.data['disabled']  == False
     return True
 
-def folder_url(self):
-	url = self.data['folder_url']
-	return url
 
 def item_width(self):
 	images = self.data['image_items']

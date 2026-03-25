@@ -1,55 +1,50 @@
-
-<section id="card-items"
-    tal:define="buttontext view/data/buttontext|None;
+<section id="card-items" tal:define="buttontext view/data/buttontext|None;
     items view/get_items|None;
-		f_id python: view.id"
-    class="cards-${f_id} disabled-${view/data/disabled|None}"
-    tal:condition="view/editmode">
- 
+		f_id python: view.id" class="cards-${f_id} disabled-${view/data/disabled|None}" tal:condition="view/editmode">
 
-<tal:check tal:condition="items"
-	    tal:define="image_size view/data/image_size|None;
+
+	<tal:check tal:condition="items" tal:define="image_size view/data/image_size|None;
 	        css_class view/css_class|None;
 	        color1 view/data/color1">
 
 		<tal:repeat tal:repeat="item items">
 			<div class="card" tal:define="item_url item/getURL|item/absolute_url|None;
            description item/Description;
-           max_chars view/data/max_chars|python:1000">
-        <a href="${item_url}">
-				  <img class="card-img-top" alt="${item/Title}" title="${item/Title}"
-					      src="${item_url}/@@images/image/${image_size}" />
-        </a>
+           max_chars view/data/max_chars|python:1000" style="border-radius: ${view/data/border_radius|None}px !important; overflow: hidden !important">
+				<a href="${item_url}">
+					<img class="card-img-top" alt="${item/Title}" title="${item/Title}" src="${item_url}/@@images/image/${image_size}" />
+				</a>
 				<div class="card-block padding-20">
-				    <a href="${item_url}"><h3 class="card-title">
+					<a href="${item_url}">
+						<h3 class="card-title">
 						${item/Title}
-					</h3></a>
+						</h3>
+					</a>
 					<p class="card-text" tal:condition="max_chars">
 						${python: description[:max_chars]}…
 					</p>
-          <p tal:condition="view/data/show_date|None"><i class="fa fa-calendar"> </i> <span tal:content="python:here.toLocalizedTime(item.Date,
-                         long_format=1)">Date</span> 
-          </p>
+					<p tal:condition="view/data/show_date|None">
+						<i class="fa fa-calendar"></i>
+						<span tal:content="python:here.toLocalizedTime(item.Date, long_format=1)">Date</span>
+					</p>
 					<p>
-						<a tal:condition="buttontext"
-                class="btn btn-primary ${color1}"
-                href="${item_url}">
+						<a tal:condition="buttontext" class="btn btn-primary ${color1}" href="${item_url}">
                 ${buttontext}
-            </a>
+						</a>
 						<!--a class="btn" href="${item_url}">Action</a-->
 					</p>
 				</div>
-		    </div>
+			</div>
 		</tal:repeat>
-</tal:check>
-<style tal:define="small view/small; medium view/medium; large view/large">
-    <tal:check tal:condition="view/data/image_height|None">
+	</tal:check>
+	<style tal:define="small view/small; medium view/medium; large view/large">
+		<tal:check tal:condition="view/data/image_height|None">
         .cards-${f_id} img.card-img-top {
             object-fit: cover;
             height: ${python: view.data['image_height']}px !important;
             object-position: ${python: view.data['position-x']}% ${python: view.data['position-y']}%;
         }
-    </tal:check>
+		</tal:check>
     	.card {
 			margin: 0 1% 2% 1%;
 			box-sizing: border-box;
@@ -83,17 +78,17 @@
 		.margin-10-0 { margin 10px 0}
 	</style>
 
- 
-<script src="++theme++dutchman-theme/javascript/masonry.pkgd.min.js"/>
-<script src="++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js"/>  
 
-<script>
+	<script src="++theme++dutchman-theme/javascript/masonry.pkgd.min.js"/>
+	<script src="++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js"/>
+
+	<script>
 	$('#card-items').imagesLoaded(function() {
       $('#card-items').masonry();
     });
 
-</script>
-<!-- <script>require([
+	</script>
+	<!-- <script>require([
   'jquery',
   '++theme++dutchman-theme/javascript/masonry.pkgd.min',
   '++theme++dutchman-theme/javascript/imagesloaded.pkgd.min'

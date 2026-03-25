@@ -27,7 +27,7 @@
     <xi:include href="++theme++dutchman-theme/default.xml"/>
   </rules>
 
-  <rules if="compact">
+  <rules if="$compact">
     <xi:include href="++theme++dutchman-theme/compact.xml"/>
   </rules>
 

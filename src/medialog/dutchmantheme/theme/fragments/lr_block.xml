@@ -55,6 +55,12 @@
       <default>50</default>
       <title>X cordinate if Strech images is enabled</title>
     </field>
+    <field name="border_radius" type="zope.schema.Int">
+      <description>Leave empty to disable</description>
+      <required>False</required>
+      <title>Corner radius</title>
+      <default></default>
+    </field>
 
     <field name="title" type="zope.schema.TextLine">
       <description/>
@@ -100,7 +106,7 @@
     <field name="color2" type="zope.schema.Choice">
       <description/>
       <required>False</required>
-      <title>Text coior</title>
+      <title>Text color</title>
       <values>
         <element>black</element>
         <element>white</element>
