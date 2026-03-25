@@ -31,19 +31,24 @@
   <!-- MAIN CONTENT -->
   <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content" />
 
-  <!-- LEFT / RIGHT -->
-  <replace css:theme-children="#portal-column-one" css:content-children="#portal-column-one" />
-  <replace css:theme-children="#portal-column-two" css:content-children="#portal-column-two" />
+  <!-- Left column -->
+  <after css:theme-children="#portal-column-one" css:content-children="#portal-column-one"></after>
+  <drop css:theme="#portal-column-one" css:if-not-content="#portal-column-one" />
+
+  <!-- Right column -->
+  <after css:theme-children="#portal-column-two" css:content-children="#portal-column-two"></after>
+  <drop css:theme="#portal-column-two" css:if-not-content="#portal-column-two" />
 
   <!-- STATUS -->
   <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
 
   <!-- FOOTER -->
-  <replace css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" />
   <replace css:theme="#below-portlets-wrapper" css:content-children="#below-portlets-wrapper-div" method="raw" />
-  <drop css:content-children="#below-portlets-wrapper" />
-  <drop css:content-children="#below-portlets-wrapper-div" />
-  <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper"></after>
+  <drop css:content-children="#below-portlets-wrapper"  />
+  <drop css:content-children="#below-portlets-wrapper-div"  />
+  <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper"></after> 
+
+  
 
 
  

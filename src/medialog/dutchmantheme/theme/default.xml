@@ -29,8 +29,6 @@
 
   <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
 
-  <!-- <replace css:theme="#above-content" css:content="#viewlet-below-content-body" /> -->
-
   <!-- Central column -->
   <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content"></replace>
 
@@ -53,83 +51,9 @@
    <replace css:theme="#below-portlets-wrapper" css:content-children="#below-portlets-wrapper-div" method="raw" />
   <drop css:content-children="#below-portlets-wrapper"  />
   <drop css:content-children="#below-portlets-wrapper-div"  />
-  <!-- <drop css:theme-children="#below-portlets-wrapper-div"  /> -->
-  <!-- <drop css:content="#below-portlets-wrapper-div"  /> -->
-  <!-- <drop css:theme="#below-portlets-wrapper-div"  /> --> 
-  
-  <!-- manage-portlets Footer portlets -->
- <!-- <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" css:if-content="#portal-footer-wrapper #portletmanager-plone-footerportlets"></after>  -->
+    
 <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper"></after> 
 
- 
-  <!-- <replace css:theme-children="#portal-footer .copyright > div" css:content-children="#portal-footer-wrapper #portal-footer-signature .card-body" /> -->
-<!-- <drop css:theme="#portal-footer .copyright" css:if-not-content="#portal-footer-wrapper #portal-footer-signature" /> -->
-
-  <!-- Replace colophon information with Plone version. -->
-  <!-- <replace css:theme-children="#portal-footer .colophon > div" css:content-children="#portal-footer-wrapper #portal-colophon .card-body" /> -->
-  <!-- <drop css:theme="#portal-footer .colophon" css:if-not-content="#portal-footer-wrapper #portal-colophon" /> -->
-
-  <!-- Replace site-actions with Plone version. -->
-  <!-- <replace css:theme-children="#portal-footer .site-actions > div" css:content="#portal-footer-wrapper .actions-site_actions" /> -->
-  <!-- <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" /> -->
-
-  <!-- Move all other footer portlets into doormat area. -->
-<!-- 
-  <replace css:theme-children="#portal-footer .doormat">
-    <xsl:variable name="columns">
-      <xsl:if test="$footer_portlets_count=1">col-md-12</xsl:if>
-      <xsl:if test="$footer_portlets_count=2">col-md-6</xsl:if>
-      <xsl:if test="$footer_portlets_count=3">col-md-4</xsl:if>
-      <xsl:if test="$footer_portlets_count=4">col-md-3</xsl:if>
-      <xsl:if test="$footer_portlets_count>4">col-md-4</xsl:if>
-    </xsl:variable>
-    <xsl:for-each select="$footer_portlets">
-      <div class="col-xs-12 {$columns}">
-        <xsl:for-each select=".">
-          <xsl:choose>
-            <xsl:when css:test=".card">
-              <xsl:choose>
-                <xsl:when css:test=".card-header:not(.titleless)">
-                  <div class="headline">
-                    <h2>
-                      <xsl:apply-templates select="./node()[@class='card-header']/node()" />
-                    </h2>
-                  </div>
-                </xsl:when>
-              </xsl:choose>
-              <xsl:choose>
-                <xsl:when css:test=".portletCollection">
-                  <ul>
-                    <xsl:for-each css:select=".portletItem">
-                      <li>
-                        <a>
-                          <xsl:copy-of select="a/attribute::*" />
-                          <xsl:apply-templates select="./a/text()" />
-                        </a>
-                        <small>
-                          <xsl:value-of css:select=".portletItemDetails" />
-                        </small>
-                      </li>
-                    </xsl:for-each>
-                  </ul>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:apply-templates css:select=".card-body" />
-                </xsl:otherwise>
-              </xsl:choose>
-              <xsl:if css:test=".card-footer">
-                <p>
-                  <xsl:apply-templates select="./node()[@class='card-footer']/node()" />
-                </p>
-              </xsl:if>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:apply-templates select="./node()" />
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:for-each>
-      </div>
-    </xsl:for-each>
-  </replace>  -->
+  
 
 </rules>
