@@ -24,9 +24,7 @@
 		<value key="footerlink_visited">fffbd3</value>
 		<value key="jsheading" purge="False"></value>
 		<value key="jsfooter" purge="False"></value>
-		<value key="font_load_url" key_type="field.TextLine"></value>
-		<value key="compact_buttontext" key_type="field.TextLine"></value>
-		<value key="compact_link" key_type="field.TextLine"></value>
+		<value key="font_load_url" key_type="field.TextLine"></value> 
 	</records>
 
 	<records prefix="plone.bundles/imagesloaded-js"
