@@ -15,115 +15,134 @@
   <link rel="apple-touch-icon-precomposed" href="++theme++barceloneta/barceloneta-apple-touch-icon-precomposed.png" />
   <script href="++plone++DocentIMS.ActionItems/js/action_items.js"></script>
 </head>
-<section id="portal-toolbar">
-</section>
-
-<div class="outer-wrapper flex-shrink-0">
-  <header id="content-header"
-    class="container d-flex pt-3 flex-column justify-content-between align-items-lg-start flex-lg-row">
 
 
-    <div id="portal-logo-wrapper" class="pb-3 d-flex justify-content-between align-items-center order-lg-first w-auto">
-      <div id="portal-logo" class="order-lg-0"></div>
-      <div class="navbar navbar-expand-lg">
-        <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          <span class="navbar-toggler-icon "></span>
-        </button>
+<body class="d-flex flex-column h-100">
+  <section id="portal-toolbar"></section>
+  <div class="outer-wrapper flex-shrink-0">
+    <header id="content-header"
+      class="container d-flex pt-3 flex-column justify-content-between align-items-lg-start flex-lg-row">
+
+
+      <div id="portal-logo-wrapper"
+        class="pb-3 d-flex justify-content-between align-items-center order-lg-first w-auto">
+        <div id="portal-logo" class="order-lg-0"></div>
+        <div class="navbar navbar-expand-lg">
+          <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+        </div>
+
       </div>
- 
-    </div>
 
-    <div id="mainnavigation-wrapper">
-      <div id="mainnavigation">
-        <nav class="navbar navbar-expand-lg navbar-barceloneta pat-navigationmarker" id="portal-globalnav-wrapper">
-          <div class="container">
-            <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header justify-content-end">
-                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
-                  aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body align-items-center">
-                <ul class="navbar-nav me-auto" id="portal-globalnav">
-                </ul>
-                <a href="/contact" class="phonebutton btn btn-primary xl:flex xhiddenonmobile">
-                   
-                    <svg fill="#FFF"  height="30px" 
-                        viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M231.55566,175.0791A56.07032,56.07032,0,0,1,176,224C96.59766,224,32,159.40234,32,80A56.07029,56.07029,0,0,1,80.91992,24.44434a16.02839,16.02839,0,0,1,16.65235,9.583l20.09179,46.87793a15.96924,15.96924,0,0,1-1.32031,15.06641L99.709,121.38965l-.00195.00195a76.54083,76.54083,0,0,0,35.20508,35.04981l25.043-16.69336a15.95139,15.95139,0,0,1,15.17871-1.39453l46.83789,20.07324A16.03476,16.03476,0,0,1,231.55566,175.0791ZM157.35156,47.72852a72.12078,72.12078,0,0,1,50.91992,50.91992,7.99975,7.99975,0,0,0,15.457-4.13086,88.16381,88.16381,0,0,0-62.2461-62.2461,7.99975,7.99975,0,0,0-4.13086,15.457Zm-8.28418,30.917a40.06626,40.06626,0,0,1,28.28711,28.28711,7.99975,7.99975,0,0,0,15.457-4.13086,56.10589,56.10589,0,0,0-39.61328-39.61328,7.99975,7.99975,0,0,0-4.13086,15.457Z"/>
+      <div id="mainnavigation-wrapper">
+        <div id="mainnavigation">
+          <nav class="navbar navbar-expand-lg navbar-barceloneta pat-navigationmarker" id="portal-globalnav-wrapper">
+            <div class="container">
+              <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header justify-content-end">
+                  <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body align-items-center">
+                  <ul class="navbar-nav me-auto" id="portal-globalnav">
+                  </ul>
+                  <a href="/contact" class="phonebutton btn btn-primary xl:flex xhiddenonmobile">
+
+                    <svg fill="#FFF" height="30px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M231.55566,175.0791A56.07032,56.07032,0,0,1,176,224C96.59766,224,32,159.40234,32,80A56.07029,56.07029,0,0,1,80.91992,24.44434a16.02839,16.02839,0,0,1,16.65235,9.583l20.09179,46.87793a15.96924,15.96924,0,0,1-1.32031,15.06641L99.709,121.38965l-.00195.00195a76.54083,76.54083,0,0,0,35.20508,35.04981l25.043-16.69336a15.95139,15.95139,0,0,1,15.17871-1.39453l46.83789,20.07324A16.03476,16.03476,0,0,1,231.55566,175.0791ZM157.35156,47.72852a72.12078,72.12078,0,0,1,50.91992,50.91992,7.99975,7.99975,0,0,0,15.457-4.13086,88.16381,88.16381,0,0,0-62.2461-62.2461,7.99975,7.99975,0,0,0-4.13086,15.457Zm-8.28418,30.917a40.06626,40.06626,0,0,1,28.28711,28.28711,7.99975,7.99975,0,0,0,15.457-4.13086,56.10589,56.10589,0,0,0-39.61328-39.61328,7.99975,7.99975,0,0,0-4.13086,15.457Z" />
                     </svg>
                     </svg>&nbsp;<b>Neem contact met ons op</b>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
 
+        </div>
       </div>
+    </header>
+
+
+    <div id="above-content-wrapper">
+      <div id="above-content"></div>
     </div>
-  </header>
-
-
-
-
-  <div id="above-content-wrapper">
-    <div id="above-content"></div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <aside id="global_statusmessage" class="col-12"></aside>
+    <div class="container">
+      <div class="row">
+        <aside id="global_statusmessage" class="col-12"></aside>
+      </div>
+      <main id="main-container" class="row">
+        <section id="portal-column-content">
+        </section>
+        <aside id="portal-column-one">
+        </aside>
+        <aside id="portal-column-two" role="complementary">
+        </aside>
+      </main>
     </div>
-    <main id="main-container" class="row">
-      <section id="portal-column-content">
-      </section>
-      <aside id="portal-column-one">
-      </aside>
-      <aside id="portal-column-two" role="complementary">
-      </aside>
-    </main>
-  </div>
 
 
 
-</div> <!--/outer-wrapper -->
+    <div id="below-portlets-wrapper-div">
+      <div id="below-portlets-wrapper"></div>
+    </div>
 
-<after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper"></after>
+    <footer id="portal-footer-wrapper" class="mt-auto">
+      <div class="container" id="portal-footer">
+        <div class="doormat row"></div>
+        <div class="copyright row">
+          <div class="col-12"></div>
+        </div>
+        <div class="colophon row">
+          <div class="col-12"></div>
+        </div>
+        <div class="site-actions row">
+          <div class="col-12"></div>
+        </div>
+      </div>
+    </footer>
 
+  </div> <!--/outer-wrapper -->
 
+  <style>
+    nav.navbar-barceloneta,
+    #portal-globalnav {
+      font-weight: bold;
+      list-style: none;
+      background: none !important;
+      --bs-navbar-background: none;
 
-<style>
-  nav.navbar-barceloneta,
-  #portal-globalnav {
-    font-weight: bold;
-    list-style: none;
-    background: none !important;
-    --bs-navbar-background: none;
- 
-  }
+    }
 
-  #mainnavigation-wrapper #portal-globalnav a {
-    border-bottom: 2px solid transparent;
-    font-size: 150%;
-    font-family: Arial, Helvetica, sans-serif; 
-    color: #777;
-  }
+    #mainnavigation-wrapper #portal-globalnav a {
+      border-bottom: 2px solid transparent;
+      font-size: 150%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #777;
+    }
 
-  #portal-globalnav a:hover {
-    border-color: inherit;
-  }
-  #mainnavigation-wrapper .phonebutton  {
-    color: white; stroke: white; 
-    border-radius: 12px; 
-    padding: 10px 20px; 
-    font-family: Arial, Helvetica, sans-serif;  
-    margin-left: 50px;
-  }
+    #portal-globalnav a:hover {
+      border-color: inherit;
+    }
 
-  @media (max-width: 800px) {
-    .phonebutton  {width: 100%}
-  }
-</style>
+    #mainnavigation-wrapper .phonebutton {
+      color: white;
+      stroke: white;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 50px;
+    }
+
+    @media (max-width: 800px) {
+      .phonebutton {
+        width: 100%
+      }
+    }
+  </style>
 </body>
 
 </html>

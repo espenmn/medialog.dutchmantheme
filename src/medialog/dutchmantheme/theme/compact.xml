@@ -6,50 +6,27 @@
   xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <theme href="compact.html" />
-
-  <!-- BODY -->
   <copy attributes="*" css:content="body" css:theme="body" />
   <merge attributes="class" css:content="body" css:theme="body" />
-
-  <!-- move global nav and livesearch -->
   <replace css:theme-children="#portal-globalnav" css:content-children="#portal-globalnav" />
-  <!-- set aria-label for toggler button -->
   <copy attributes="aria-label" css:theme=".navbar-toggler" css:content=".navbar-toggler" />
-  <!-- move searchbox into place -->
-  <!-- <replace css:theme="#portal-searchbox" css:content="#portal-searchbox" mode="raw" /> -->
   <drop css:content="#portal-header #portal-searchbox" />
-
-  <!-- Content header -->
   <replace css:theme="#portal-logo" css:content="#portal-logo" mode="raw" />
   <drop css:content="#portal-logo" />
-
   <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
 
-
-  
-
-  <!-- MAIN CONTENT -->
   <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content" />
-
-  <!-- Left column -->
   <after css:theme-children="#portal-column-one" css:content-children="#portal-column-one"></after>
   <drop css:theme="#portal-column-one" css:if-not-content="#portal-column-one" />
-
-  <!-- Right column -->
   <after css:theme-children="#portal-column-two" css:content-children="#portal-column-two"></after>
   <drop css:theme="#portal-column-two" css:if-not-content="#portal-column-two" />
 
-  <!-- STATUS -->
   <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
 
-  <!-- FOOTER -->
   <replace css:theme="#below-portlets-wrapper" css:content-children="#below-portlets-wrapper-div" method="raw" />
   <drop css:content-children="#below-portlets-wrapper"  />
   <drop css:content-children="#below-portlets-wrapper-div"  />
   <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper"></after> 
-
-  
-
 
  
 </rules>

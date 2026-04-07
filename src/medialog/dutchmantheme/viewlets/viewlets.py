@@ -26,7 +26,6 @@ class JSFooterViewlet(ViewletBase):
     
     # def __init__(self, context):
     #     js_footer =  api.portal.get_registry_record('medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.jsfooter')
-        
     
     def render(self):
         js_footer =  api.portal.get_registry_record('medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.jsfooter')
