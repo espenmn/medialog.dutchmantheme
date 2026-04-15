@@ -30,37 +30,151 @@
 	<!-- ===============================
        imagesLoaded RESOURCE
        =============================== -->
-	<records prefix="dutchman.imagesloaded" interface="Products.CMFPlone.interfaces.IResourceRegistry">
-		<value key="js">++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js</value>
-	</records>
 
-	<!-- ===============================
-       imagesLoaded BUNDLE
-       =============================== -->
-	<!-- <records prefix="plone.bundles/imagesloaded-js" interface="plone.base.interfaces.IBundleRegistry">
-		<value key="resources">
-			<element>dutchman.imagesloaded</element>
-		</value>
-		<value key="depends">plone</value>
-		<value key="enabled">True</value>
-		<value key="compile">False</value>
-	</records> -->
 
-	<!-- ===============================
-       Masonry JS RESOURCE
-       =============================== -->
-	<records prefix="dutchman.masonry" interface="Products.CMFPlone.interfaces.IResourceRegistry">
-		<value key="js">++theme++dutchman-theme/javascript/masonry.pkgd.min.js</value>
-		<!-- Optional: masonry typically requires imagesLoaded -->
-		<value key="deps">dutchman.imagesloaded</value>
-	</records>
+  <record name="plone.bundles/imagesloaded-js.compile" interface="plone.base.interfaces.resources.IBundleRegistry" field="compile">
+    <field type="plone.registry.field.Bool">
+      <default>True</default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">If its true and you modify this bundle you need to build it before production</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Does your bundle contains any RequireJS or LESS file?</title>
+    </field>
+    <value>False</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.csscompilation" interface="plone.base.interfaces.resources.IBundleRegistry" field="csscompilation">
+    <field type="plone.registry.field.ASCIILine">
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">URL of the last css compilation</title>
+    </field>
+    <value/>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.depends" interface="plone.base.interfaces.resources.IBundleRegistry" field="depends">
+    <field type="plone.registry.field.ASCIILine">
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">In case you want to be the last: *, in case its the first should be empty</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Depends on another bundle</title>
+    </field>
+    <value>plone</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.develop_css" interface="plone.base.interfaces.resources.IBundleRegistry" field="develop_css">
+    <field type="plone.registry.field.Bool">
+      <default>False</default>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Develop CSS</title>
+    </field>
+    <value>False</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.develop_javascript" interface="plone.base.interfaces.resources.IBundleRegistry" field="develop_javascript">
+    <field type="plone.registry.field.Bool">
+      <default>False</default>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Develop JavaScript</title>
+    </field>
+    <value>False</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.enabled" interface="plone.base.interfaces.resources.IBundleRegistry" field="enabled">
+    <field type="plone.registry.field.Bool">
+      <default>True</default>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">It's enabled?</title>
+    </field>
+    <value>False</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.expression" interface="plone.base.interfaces.resources.IBundleRegistry" field="expression">
+    <field type="plone.registry.field.ASCIILine">
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">In case its a bundle we can have a condition to render it (it does not apply if the bundle is merged).</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Expression to render</title>
+    </field>
+    <value/>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.jscompilation" interface="plone.base.interfaces.resources.IBundleRegistry" field="jscompilation">
+    <field type="plone.registry.field.ASCIILine">
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">URL of the last js compilation</title>
+    </field>
+    <value>++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.last_compilation" interface="plone.base.interfaces.resources.IBundleRegistry" field="last_compilation">
+    <field type="plone.registry.field.Datetime">
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Date time of the last compilation of this bundle</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Last compiled date</title>
+    </field>
+    <value>2024-10-06 00:00:00.000006</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.load_async" interface="plone.base.interfaces.resources.IBundleRegistry" field="load_async">
+    <field type="plone.registry.field.Bool">
+      <default>False</default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Load the JavaScript files asynchronously by adding an ``async`` attribute to the script tag.</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Load asynchronously</title>
+    </field>
+    <value>False</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.load_defer" interface="plone.base.interfaces.resources.IBundleRegistry" field="load_defer">
+    <field type="plone.registry.field.Bool">
+      <default>False</default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Load the JavaScript files deferred after the document has been parsed but before ``DOMContentLoaded`` by adding a ``defer`` attribute to the script tag.</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Load deferred</title>
+    </field>
+    <value>False</value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.merge_with" interface="plone.base.interfaces.resources.IBundleRegistry" field="merge_with">
+    <field type="plone.registry.field.Choice">
+      <default></default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">In production mode, bundles are merged together to reduce the quantity of JS and CSS resources loaded by the browser. Choose 'default' if this bundle must be available for all the visitors, choose 'logged-in' if it must be available for logged-in users only, or leave it empty if it must not be merged.</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Merge with</title>
+      <values>
+        <element></element>
+        <element>default</element>
+        <element>logged-in</element>
+      </values>
+    </field>
+    <value></value>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.resources" interface="plone.base.interfaces.resources.IBundleRegistry" field="resources">
+    <field type="plone.registry.field.List">
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">The resources that are going to be loaded on this bundle in order</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Loaded resources</title>
+      <value_type type="plone.registry.field.ASCIILine">
+        <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Resource name</title>
+      </value_type>
+    </field>
+    <value/>
+  </record>
+  <record name="plone.bundles/imagesloaded-js.stub_js_modules" interface="plone.base.interfaces.resources.IBundleRegistry" field="stub_js_modules">
+    <field type="plone.registry.field.List">
+      <default/>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Define list of modules that will be defined empty on RequireJS build steps to prevent loading modules multiple times.</description>
+      <missing_value/>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">(DEPRECATED) Stub JavaScript modules</title>
+      <value_type type="plone.registry.field.ASCIILine">
+        <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="">Resource name</title>
+      </value_type>
+    </field>
+    <value/>
+  </record>
 
-	<!-- ===============================
+  	<!-- ===============================
        Masonry CSS RESOURCE
        =============================== -->
 	<records prefix="dutchman.masonry-css" interface="Products.CMFPlone.interfaces.IResourceRegistry">
 		<value key="css">++theme++dutchman-theme/css/masonary.css</value>
 	</records>
+
+
+	<!-- ===============================
+       Masonry JS RESOURCE
+       =============================== -->
+	<!-- <records prefix="dutchman.masonry" interface="Products.CMFPlone.interfaces.IResourceRegistry">
+		<value key="js">++theme++dutchman-theme/javascript/masonry.pkgd.min.js</value> -->
+		<!-- Optional: masonry typically requires imagesLoaded -->
+		<!-- <value key="deps">dutchman.imagesloaded</value>
+	</records> -->
+
 
 
 	<!-- ===============================
