@@ -27,14 +27,14 @@
 		<value key="font_load_url" key_type="field.TextLine"></value> 
 	</records>
 
-	<records prefix="plone.bundles/imagesloaded-js"
+	<!-- <records prefix="plone.bundles/imagesloaded-js"
 	           interface="Products.CMFPlone.interfaces.IBundleRegistry">
 	    <value key="depends">plone</value>
 	    <value key="jscompilation">++theme++dutchman-theme/javascript/imagesloaded.pkgd.min.js</value>
 	    <value key="last_compilation">2017-10-06 00:00:00</value>
 	    <value key="compile">False</value>
 	    <value key="enabled">False</value>
-	</records>
+	</records> -->
 	<!-- <records prefix="plone.bundles/masonry-js"
 	           interface="Products.CMFPlone.interfaces.IBundleRegistry">
 	    <value key="depends">imagesloaded-js</value>
