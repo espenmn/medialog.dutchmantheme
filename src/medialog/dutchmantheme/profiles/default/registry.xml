@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <registry>
 
-	<records interface="medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings">
+	<!-- <records interface="medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings">
 		<value key="style">dutchmanblue</value>
 		<value key="external_style"></value>
 		<value key="rules">default</value>
@@ -25,7 +25,7 @@
 		<value key="jsheading" purge="False"></value>
 		<value key="jsfooter" purge="False"></value>
 		<value key="font_load_url" key_type="field.TextLine"></value> 
-	</records>
+	</records> -->
 
 	<!-- <records prefix="plone.bundles/imagesloaded-js"
 	           interface="Products.CMFPlone.interfaces.IBundleRegistry">

@@ -37,14 +37,14 @@
 	<!-- ===============================
        imagesLoaded BUNDLE
        =============================== -->
-	<records prefix="plone.bundles/imagesloaded-js" interface="plone.base.interfaces.IBundleRegistry">
+	<!-- <records prefix="plone.bundles/imagesloaded-js" interface="plone.base.interfaces.IBundleRegistry">
 		<value key="resources">
 			<element>dutchman.imagesloaded</element>
 		</value>
 		<value key="depends">plone</value>
 		<value key="enabled">True</value>
 		<value key="compile">False</value>
-	</records>
+	</records> -->
 
 	<!-- ===============================
        Masonry JS RESOURCE
@@ -66,7 +66,7 @@
 	<!-- ===============================
        Masonry BUNDLE
        =============================== -->
-	<records prefix="plone.bundles/masonry-js" interface="plone.base.interfaces.IBundleRegistry">
+	<!-- <records prefix="plone.bundles/masonry-js" interface="plone.base.interfaces.IBundleRegistry">
 		<value key="resources">
 			<element>dutchman.masonry</element>
 			<element>dutchman.masonry-css</element>
@@ -74,7 +74,7 @@
 		<value key="depends">imagesloaded-js</value>
 		<value key="enabled">True</value>
 		<value key="compile">False</value>
-	</records>
+	</records> -->
 
 
 </registry>
