@@ -3,6 +3,9 @@ def p_image(self):
     items =self.context.portal_catalog(UID=item)
     return items
 
+def border_radius(self):
+    return self.data.get('border_radius') or None
+
 def one_image(self):
     item =  self.data['background_image'] or self.data['bkground_image']
     items =self.context.portal_catalog(UID=item)

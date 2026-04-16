@@ -19,3 +19,6 @@ def editmode(self):
     if  'disabled' in self.data:
         return self.data['disabled']  == False
     return True
+
+def border_radius(self):
+    return self.data.get('border_radius') or None
