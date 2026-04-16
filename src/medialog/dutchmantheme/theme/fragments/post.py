@@ -16,4 +16,5 @@ def editmode(self):
     return True
 
 def border_radius(self):
-    return self.data['border_radius'] or None 
+    return self.data.get('border_radius') or None
+    # return self.data['border_radius'] or None 
