@@ -18,7 +18,6 @@
            </div> <!-- end new-text-->
            <div class="clearboth" />
          </div> <!--end shadow-box-->
-
     </div>
 
 </tal:define>
