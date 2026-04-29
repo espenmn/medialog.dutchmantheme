@@ -22,7 +22,7 @@
                 <a href="${item_url}" class="lrlink ${color2}" tal:condition="buttontext" href="">${buttontext}</a>
             </div>
             <div class="half image margin-0 padding-0;" 
-                           style="border-radius: ${view/border_radius|None}" 
+                           style="border-radius: ${view/border_radius|None}px" 
                            tal:define="obj item/getObject;
                            scale_func obj/@@images;
                            scaled_image python:scale_func.scale('image', scale=image_size)">

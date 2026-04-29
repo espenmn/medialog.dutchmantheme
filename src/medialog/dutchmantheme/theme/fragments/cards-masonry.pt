@@ -28,7 +28,9 @@
 						<span tal:content="python:here.toLocalizedTime(item.Date, long_format=1)">Date</span>
 					</p>
 					<p>
-						<a tal:condition="buttontext" class="btn btn-primary ${color1}" href="${item_url}">
+						<a tal:condition="buttontext" 
+						style="border-radius: ${view/data/border_radius|None}px" 
+						class="btn btn-primary ${color1}" href="${item_url}">
                 ${buttontext}
 						</a>
 						<!--a class="btn" href="${item_url}">Action</a-->

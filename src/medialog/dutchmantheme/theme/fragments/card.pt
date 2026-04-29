@@ -16,11 +16,13 @@ tal:condition="view/editmode|None"
 				 ${view/data/description|None}
 		</p>
 		<p>
-         <a class="btn btn-primary" href="${view/item_url}" tal:condition="not: inline|None">
+         <a class="btn btn-primary" 
+            style="border-radius: ${view/data/border_radius|None}px" 
+            href="${view/item_url}" tal:condition="not: inline|None">
                  ${view/data/linktext|None}
          </a>
         <a href="${view/item_url}"
-               style="border-radius: ${view/border_radius|None}px" 
+               style="border-radius: ${view/border_radius|None}px !important" 
                tal:condition="inline|None" class="btn btn-primary pat-contentloader"
                data-pat-contentloader="url:${view/item_url|None}?ajax_load=1;
                target:#block-${python: view.id};content:#content">
