@@ -21,7 +21,9 @@
 
                 <a href="${item_url}" class="lrlink ${color2}" tal:condition="buttontext" href="">${buttontext}</a>
             </div>
-            <div class="half image margin-0 padding-0; border-radius: ${view/border_radius|None}" tal:define="obj item/getObject;
+            <div class="half image margin-0 padding-0;" 
+                           style="border-radius: ${view/border_radius|None}" 
+                           tal:define="obj item/getObject;
                            scale_func obj/@@images;
                            scaled_image python:scale_func.scale('image', scale=image_size)">
                 <img tal:condition="scaled_image|None" tal:replace="structure python:scaled_image.tag()" tal:on-error="" />

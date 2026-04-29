@@ -14,8 +14,10 @@
       <div class="${color2}" tal:define="value view/data/text|nothing;
               output_relative_to nocall:value/@@output_relative_to|nothing" tal:condition="output_relative_to" tal:content="structure python:output_relative_to(context)" />
 
-      <div class="buttondiv" tal:condition="view/data/button|None">
-        <a class="btn btn-primary ${view/data/buttontype|None}" href="${line_url|None}">
+      <div class="buttondiv" tal:condition="view/data/button|None"  >
+        <a class="btn btn-primary ${view/data/buttontype|None}" 
+           style="border-radius: ${view/border_radius|None}"  
+           href="${line_url|None}">
              ${view/data/button}
         </a>
       </div>

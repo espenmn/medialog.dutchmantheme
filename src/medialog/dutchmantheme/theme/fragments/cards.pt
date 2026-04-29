@@ -33,7 +33,9 @@
       		${python: description[:max_chars]}…
       	</p>
 				<p>
-					<a tal:condition="buttontext" class="btn btn-primary ${color1}" href="${item_url}">${buttontext}</a>
+					<a tal:condition="buttontext" class="btn btn-primary ${color1}" 
+            style="border-radius: ${view/border_radius|None}" 
+            href="${item_url}">${buttontext}</a>
 						<!--a class="btn" href="${item_url}">Action</a-->
 				</p>
 				</div>
