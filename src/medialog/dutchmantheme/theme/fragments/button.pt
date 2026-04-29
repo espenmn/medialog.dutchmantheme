@@ -5,7 +5,7 @@
        <div class="roundbutton">
            <div class="button btn btn-primary ${view/data/color1|None}">
              <a class="${view/data/color2}" href="${link_url|None}"
-             style="border-radius: ${view/data/border_radius|None}px">
+             style="border-radius: ${view/data/border_radius|None}px !important">
              ${view/data/buttontext}</a>
            </div>
        </div>
