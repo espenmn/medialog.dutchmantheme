@@ -4,7 +4,9 @@
     tal:define="link view/one_link|None; link_url link/getURL|None">
        <div class="roundbutton">
            <div class="button btn btn-primary ${view/data/color1|None}">
-             <a class="${view/data/color2}" href="${link_url|None}">${view/data/buttontext}</a>
+             <a class="${view/data/color2}" href="${link_url|None}"
+             style="border-radius: ${view/data/border_radius|None}px">
+             ${view/data/buttontext}</a>
            </div>
        </div>
        <tal:define tal:define="load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or '';">

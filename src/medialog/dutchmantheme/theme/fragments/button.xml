@@ -7,25 +7,25 @@
   xmlns:security="http://namespaces.plone.org/supermodel/security"
   xmlns:users="http://namespaces.plone.org/supermodel/users"
   xmlns="http://namespaces.plone.org/supermodel/schema">
-<schema>
-  <field name="disabled" type="zope.schema.Bool">
+  <schema>
+    <field name="disabled" type="zope.schema.Bool">
       <required>false</required>
       <title>Hide fragment</title>
       <description>Click here to hide fragment</description>
-  </field>
-  <field name="buttontext" type="zope.schema.TextLine">
-    <description/>
-    <required>True</required>
-    <default>MORE INFO</default>
-    <title>Buttontext</title>
-  </field>
-  <field name="link" type="zope.schema.Choice">
+    </field>
+    <field name="buttontext" type="zope.schema.TextLine">
+      <description/>
+      <required>True</required>
+      <default>MORE INFO</default>
+      <title>Buttontext</title>
+    </field>
+    <field name="link" type="zope.schema.Choice">
       <description/>
       <required>True</required>
       <title>Choose Link to</title>
       <source>collective.themefragments.tiles.CatalogSource</source>
-  </field>
-  <field name="color1" type="zope.schema.Choice">
+    </field>
+    <field name="color1" type="zope.schema.Choice">
       <description/>
       <required>False</required>
       <default>plone-background</default>
@@ -44,29 +44,35 @@
       </values>
     </field>
     <field name="color2" type="zope.schema.Choice">
-        <description/>
-        <required>False</required>
-        <title>Color 2</title>
-        <values>
-          <element>white</element>
-          <element>black</element>
-          <element>plone-link</element>
-          <element>plone-link-2</element>
-          <element>plone-link-3</element>
-          <element>plone-link-opposite</element>
-          <element>custom-color1</element>
-          <element>custom-color2</element>
-          <element>custom-color3</element>
-        </values>
-      </field>
-      <field name="effect" type="zope.schema.Choice">
-            <description/>
-            <required>True</required>
-            <title>Effect</title>
-            <values>
-              <element>no_effect</element>
-              <element>buttonzoom</element>
-            </values>
-          </field>
+      <description/>
+      <required>False</required>
+      <title>Color 2</title>
+      <values>
+        <element>white</element>
+        <element>black</element>
+        <element>plone-link</element>
+        <element>plone-link-2</element>
+        <element>plone-link-3</element>
+        <element>plone-link-opposite</element>
+        <element>custom-color1</element>
+        <element>custom-color2</element>
+        <element>custom-color3</element>
+      </values>
+    </field>
+    <field name="effect" type="zope.schema.Choice">
+      <description/>
+      <required>True</required>
+      <title>Effect</title>
+      <values>
+        <element>no_effect</element>
+        <element>buttonzoom</element>
+      </values>
+    </field>
+    <field name="border_radius" type="zope.schema.Int">
+      <description>Leave empty to disable</description>
+      <required>False</required>
+      <title>Corner radius</title>
+      <default></default>
+    </field>
   </schema>
 </model>
