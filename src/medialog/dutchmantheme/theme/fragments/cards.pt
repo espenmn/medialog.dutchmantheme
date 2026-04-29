@@ -34,7 +34,7 @@
       	</p>
 				<p>
 					<a tal:condition="buttontext" class="btn btn-primary ${color1}" 
-            style="border-radius: ${view/border_radius|None}" 
+            style="border-radius: ${view/border_radius|None}px" 
             href="${item_url}">${buttontext}</a>
 						<!--a class="btn" href="${item_url}">Action</a-->
 				</p>

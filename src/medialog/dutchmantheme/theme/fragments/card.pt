@@ -20,6 +20,7 @@ tal:condition="view/editmode|None"
                  ${view/data/linktext|None}
          </a>
         <a href="${view/item_url}"
+               style="border-radius: ${view/border_radius|None}px" 
                tal:condition="inline|None" class="btn btn-primary pat-contentloader"
                data-pat-contentloader="url:${view/item_url|None}?ajax_load=1;
                target:#block-${python: view.id};content:#content">

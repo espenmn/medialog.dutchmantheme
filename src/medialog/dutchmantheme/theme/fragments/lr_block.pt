@@ -16,7 +16,7 @@
 
       <div class="buttondiv" tal:condition="view/data/button|None"  >
         <a class="btn btn-primary ${view/data/buttontype|None}" 
-           style="border-radius: ${view/border_radius|None}"  
+           style="border-radius: ${view/border_radius|None}px"  
            href="${line_url|None}">
              ${view/data/button}
         </a>
