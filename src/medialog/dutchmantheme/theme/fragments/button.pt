@@ -3,9 +3,9 @@
     id="fragment-${view/id|None}"
     tal:define="link view/one_link|None; link_url link/getURL|None">
        <div class="roundbutton">
-           <div class="button btn btn-primary ${view/data/color1|None}">
-             <a class="${view/data/color2}" href="${link_url|None}"
-             style="border-radius: ${view/data/border_radius|None}px !important">
+           <div class="button btn btn-primary ${view/data/color1|None}"
+           style="border-radius: ${view/data/border_radius|None}px !important">
+             <a class="${view/data/color2}" href="${link_url|None}" >
              ${view/data/buttontext}</a>
            </div>
        </div>
