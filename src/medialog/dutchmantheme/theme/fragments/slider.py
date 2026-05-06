@@ -1,9 +1,16 @@
 def image_size(self):
     return self.data["image_size"]
 
+  
 def get_items(self):
     language = self.context.Language()
-    folder_path = self.data['folder_url']
+    portal = self.context.portal_url.getPortalObject()
+    portal_path = '/'.join(portal.getPhysicalPath())
+    
+    if portal_path: 
+        folder_path = f'{portal_path}/{self.data['folder_url']}'
+    else:
+        folder_path = self.data['folder_url']
     return self.context.portal_catalog(path={'query': folder_path, 'depth': 1}, Language=language)
 
 def t_out(self):
