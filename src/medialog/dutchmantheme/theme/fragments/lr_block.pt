@@ -7,7 +7,8 @@
                 color1 view/data/color1;
                 color2 view/data/color2;
                 load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or ''" class="lrblock disabled-${view/data/disabled|None}" tal:condition="view/editmode|None" data-anchor="anchor-${title}" title="${title}">
-  <div class="container flex padding-0 ${css_class} ${color1}" style="border-radius: ${view/data/border_radius|None}px !important;" >
+  <div class="container flex padding-0 ${css_class} ${color1}" 
+    style="border-radius: ${view/data/border_radius|None}px !important;" >
     <div class="half bodytext ${color2} padding-40">
       <h2 class="${color2}" tal:condition="title">${title}</h2>
       <h4 class="${color2}" tal:condition="view/data/description">${view/data/description}</h4>
@@ -22,7 +23,7 @@
         </a>
       </div>
     </div> 
-    <div class="half image margin-0 padding-0;">
+    <div class="half image margin-0 padding-0">
       <img alt="${title}" class="image-inline" 
         title="${title}" src="${image_url}/@@images/image/${scale}" />
     </div>
@@ -31,7 +32,8 @@
   <style>
 
     <tal:check tal:condition="view/data/image_height|None"> 
-    #fragment-${python: view.id} .container.flex  max-height: ${view/data/image_height}px }
+    #fragment-${python: view.id} .container.flex  {overflow: visible }
+    #fragment-${python: view.id} .half.bodytext { overflow: visible} 
     #fragment-${python: view.id} img.image-inline {
         object-fit: cover;
         width: 100%;
@@ -47,15 +49,17 @@
         width: 100%;
         object-position: ${view/data/position-y|None}%  ${view/data/position-y|None}%;
     }
+    #fragment-${python: view.id} .half.bodytext {
+      min-height: ${view/data/min_height}px; 
+    }
     </tal:check>
     <tal:check tal:condition="view/data/full_height|None">
-    #fragment-${python: view.id} .container.flex  { min-height: ${view/data/min_height}px; max-height: 100%; align-items: stretch }
-
-    #fragment-${python: view.id} img.image-inline {
-        object-fit: cover;
+ 
+    #fragment-${python: view.id} .half.image img.image-inline {
         width: 100%;
-        object-position: ${view/data/position-y|None}%  ${view/data/position-y|None}%;
-        height: 100%;
+        object-fit: cover;
+        object-position: ${view/data/position-y|None}% ${view/data/position-y|None}%;
+        height: 0px;
     }
     </tal:check>
 
@@ -81,5 +85,32 @@
       color:  black !important;
       }
   </style>
+
+  <tal:check tal:condition="view/data/full_height|None">
+
+<script>
+
+
+function setEqualHeight() {
+    var $fragment = $("#fragment-${python: view.id}");
+    $fragment.find(".half.image img.image-inline").height(0);
+    var bodyHeight = $fragment.find(".half.bodytext").outerHeight();
+    $fragment.find(".half.image img.image-inline").height(bodyHeight);
+}
+
+// run on load
+$(window).on("load", function() {
+    setEqualHeight();
+});
+
+// run on resize
+$(window).on("resize", function() {
+    setEqualHeight();
+});
+
+</script>
+
+ 
+</tal:check>
 
 </section>
