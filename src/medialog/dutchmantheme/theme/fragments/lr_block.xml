@@ -39,6 +39,18 @@
       <title>Max height in pixels</title>
       <default></default>
     </field>
+    <field name="min_height" type="zope.schema.Int">
+      <description>Leave empty to disable</description>
+      <required>False</required>
+      <title>Min height in pixels</title>
+      <default></default>
+    </field>
+    <field name="full_height" type="zope.schema.Bool">
+      <description>Image fills height </description>
+      <required>False</required>
+      <title>Always make image 100% height</title>
+      <default></default>
+    </field>
     <field name="position-y" type="zope.schema.Int">
       <description>Vertical image position in %. 50 is centered. 0 is top, 100 is bottom</description>
       <required>false</required>
