@@ -43,8 +43,8 @@
 		<tal:check tal:condition="view/data/image_height|None">
         .cards-${f_id} img.card-img-top {
             object-fit: cover;
-            height: ${python: view.data['image_height']}px !important;
-            object-position: ${python: view.data['position-x']}% ${python: view.data['position-y']}%;
+            height: ${view/data/image_height}px !important;
+            object-position: ${view/data/position-x|None}% ${view/data/position-y|None}%;
         }
 		</tal:check>
     	.card {
