@@ -15,7 +15,7 @@
                     tal:replace="structure python:scaled_image.tag()"
                     tal:on-error=""
                     tal:condition="scaled_image"/>
-              <div><p  class="center">${item/Title}</p></div>
+              <div tal:condition="not: view/data/disable_title|None"><p  class="center">${item/Title}</p></div>
             </a>
           </figure>
         </li>

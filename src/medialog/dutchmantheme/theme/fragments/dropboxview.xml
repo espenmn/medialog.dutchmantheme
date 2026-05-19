@@ -50,5 +50,10 @@
             <min>1</min>
             <max>30</max>
         </field>
+        <field name="disable_title" type="zope.schema.Bool">
+            <required>false</required>
+            <title>Disable title</title>
+            <description>CHide filename/titlet</description>
+        </field>
     </schema>
 </model>
