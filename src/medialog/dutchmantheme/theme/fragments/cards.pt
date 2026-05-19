@@ -48,8 +48,8 @@
   height: auto;
 <tal:check tal:condition="view/data/image_height|None">
   object-fit: cover;
-  height: ${python: view.data.['image_height']'px !important;
-  object-position: ${python: view.data['position-x']}% ${view/data/position-y|None}%;
+  height: ${view/data/image_height}px !important;
+  object-position: ${view/data/position-x}% ${view/data/position-y|None}%;
 </tal:check>
 }
 </style>
