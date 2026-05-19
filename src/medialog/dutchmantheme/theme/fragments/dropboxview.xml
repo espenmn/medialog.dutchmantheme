@@ -39,7 +39,7 @@
         <field name="image_width" type="zope.schema.Int">
             <description>Choose Image width pixels</description>
             <required>True</required>
-            <title>Image Size</title>
+            <title>Image Width</title>
             <default>250</default>
         </field>
         <field name="max_images" type="zope.schema.Int">

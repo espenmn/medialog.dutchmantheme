@@ -3,17 +3,17 @@
         buttontext view/data/buttontext|None;
         f_id python: view.id"
         id="cards-${f_id}"
-        class="disabled-${view/data/disabled|None} flex flex-wrap gap-0 column-gap-1"
+        class="disabled-${view/data/disabled|None} flex flex-wrap gap-0 column-gap-0"
+        style="margin-left: -10px; margin-right: -10px"
         tal:condition="view/editmode|None">
 	<tal:check tal:condition="items"
 	    tal:define="image_size view/data/image_size|None;
 	        css_class view/css_class|None;
 	        color1 view/data/color1">
 
-		<div tal:repeat="item items"
-          id="card_items"
+		<div tal:repeat="item items" 
 			    class="col-md-${view/css_class|None}">
-			<div class="card margin-10-0"
+			<div class="card margin-10"
           style="border-radius: ${view/data/border_radius|None}px !important; overflow: hidden !important"
           tal:define="item_url item/getURL|item/absolute_url|None;
           description item/Description;
