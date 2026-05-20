@@ -26,6 +26,10 @@
       list-style-type: none;
     }
 
+    section #${view/get_id|None} li:empty {
+      display: none;
+    }
+
     section #${view/get_id|None} ol.flex.flex-wrap  {
       padding: 0;
       list-style-image: none;
