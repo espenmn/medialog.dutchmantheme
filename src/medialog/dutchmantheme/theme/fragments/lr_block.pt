@@ -1,6 +1,7 @@
 <section id="fragment-${python: view.id}" 
                 tal:define="scale view/data/image_size;
                 title view/data/title|None;
+                id view/id;
                 image view/one_image|view|None;
                 image_url image/getURL;
                 css_class view/data/css_class;
@@ -13,7 +14,9 @@
       <h2 class="${color2}" tal:condition="title">${title}</h2>
       <h4 class="${color2}" tal:condition="view/data/description">${view/data/description}</h4>
       <div class="${color2}" tal:define="value view/data/text|nothing;
-              output_relative_to nocall:value/@@output_relative_to|nothing" tal:condition="output_relative_to" tal:content="structure python:output_relative_to(context)" />
+              output_relative_to nocall:value/@@output_relative_to|nothing" 
+              tal:condition="output_relative_to" 
+              tal:content="structure python:output_relative_to(context)" />
 
       <div class="buttondiv" tal:condition="view/data/button|None"  >
         <a class="btn btn-primary ${view/data/buttontype|None}" 
@@ -28,29 +31,31 @@
         title="${title}" src="${image_url}/@@images/image/${scale}" />
     </div>
   </div>
+ 
+
   <link rel="stylesheet" href="++theme++dutchman-theme/css/lr_block.css" tal:condition="load_css" />
   <style>
 
-    <tal:check tal:condition="view/data/image_height|None"> 
+    <tal:check tal:condition="view/image_height|None"> 
     #fragment-${python: view.id} .container.flex  {overflow: visible }
     #fragment-${python: view.id} .half.bodytext { overflow: visible} 
     #fragment-${python: view.id} img.image-inline {
         object-fit: cover;
         width: 100%;
         height: 100% ;
-        max-height: ${view/data/image_height}px;
+        max-height: ${view/image_height}px;
         object-position: ${view/data/position-y|None}%  ${view/data/position-y|None}%;
     }
     </tal:check>
-    <tal:check tal:condition="view/data/min_height|None">
-    #fragment-${python: view.id} .container.flex { min-height: ${view/data/min_height}px; }
+    <tal:check tal:condition="view/min_height|None">
+    #fragment-${python: view.id} .container.flex { min-height: ${view/min_height}px; }
     #fragment-${python: view.id} img.image-inline {
         object-fit: cover;
         width: 100%;
         object-position: ${view/data/position-y|None}%  ${view/data/position-y|None}%;
     }
     #fragment-${python: view.id} .half.bodytext {
-      min-height: ${view/data/min_height}px; 
+      min-height: ${view/min_height}px; 
     }
     </tal:check>
     <tal:check tal:condition="view/data/full_height|None">
@@ -59,7 +64,7 @@
         width: 100%;
         object-fit: cover;
         object-position: ${view/data/position-y|None}% ${view/data/position-y|None}%;
-        height: 0px;
+        height: 0;
     }
     </tal:check>
 
@@ -90,24 +95,24 @@
 
 <script>
 
+(function() {
+    function setEqualHeight() {
+        var $fragment = $("#fragment-${id}");
+        var $img = $fragment.find(".half.image img.image-inline");
+        var $body = $fragment.find(".half.bodytext");
+        $img.height(0);
+        var bodyHeight = $body.outerHeight();
+        console.log("Fragment ${id}:", bodyHeight);
+        $img.height(bodyHeight);
+    }
 
-function setEqualHeight() {
-    var $fragment = $("#fragment-${python: view.id}");
-    $fragment.find(".half.image img.image-inline").height(0);
-    var bodyHeight = $fragment.find(".half.bodytext").outerHeight();
-    $fragment.find(".half.image img.image-inline").height(bodyHeight);
-}
+    // run on load
+    $(window).on("load", setEqualHeight);
 
-// run on load
-$(window).on("load", function() {
-    setEqualHeight();
-});
+    // run on resize
+    $(window).on("resize", setEqualHeight);
 
-// run on resize
-$(window).on("resize", function() {
-    setEqualHeight();
-});
-
+})();
 </script>
 
  

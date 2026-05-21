@@ -3,6 +3,9 @@ def p_image(self):
     items =self.context.portal_catalog(UID=item)
     return items
 
+def min_height(self):
+    return self.data.get('min_height') or None
+
 def border_radius(self):
     return self.data.get('border_radius') or None
 
