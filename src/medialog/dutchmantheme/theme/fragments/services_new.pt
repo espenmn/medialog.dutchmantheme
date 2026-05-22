@@ -1,4 +1,4 @@
-<section id="fragment-services" tal:define="folder_url view/folder_url|None;
+<section id="fragment-services" tal:define="folder_url request/form/folder_url|None;
 				 css_file python: view.data['css_file'];
 				 title view/get_folder_title|None;
 				 color1 python: view.data['color1'];
@@ -17,12 +17,17 @@
 
 	<div tal:condition="folder_url">
 		<div class="center wow fadeInDown animated container servicetext" style="visibility: visible; animation-name: fadeInDown;">
-			<h2 class="${color2}" tal:content="titlee|None"/>
+			<h2 class="${color2}" tal:content="title|None"/>
 			<p class="lead ${color2}" tal:condition="item/Description|None" tal:content="item/Description|None"/>
 		</div>
 		<div class="service-items container flex flex-wrap">
-			<div tal:repeat="item view/get_items|None" class="wow fadeInDown animated service-item ${color3}" data-wow-delay="600ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms;
+ 
+			<div tal:repeat="item view/get_items|None" 
+				class="wow fadeInDown animated service-item ${color3}" 
+				data-wow-delay="600ms" data-wow-duration="1000ms" 
+				style="visibility: visible; animation-duration: 1000ms;
 		                         animation-delay: 600ms; animation-name: fadeInDown;">
+								 
 				<tal:define tal:define="item_url item/getURL|item/absolute_url;
 		 							               item_title item/Title;
 																 description item/Description;
@@ -35,7 +40,7 @@
 							<h1 class="media-heading ${color4}">${item_title}</h1>
 						</a>
 						<p tal:condition="max_chars">
-						 						${python: description[:max_chars]}<tal:check tal:condition="python: des_lenght>max_chars">…</tal:check>
+						 	${python: description[:max_chars]}<tal:check tal:condition="python: des_lenght>max_chars">…</tal:check>
 						</p>
 						<div tal:condition="python: css_file=='services3'">
 							<a href="${item_url}">
