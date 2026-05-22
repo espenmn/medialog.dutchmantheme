@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model xmlns="http://namespaces.plone.org/supermodel/schema"
-       xmlns:form="http://namespaces.plone.org/supermodel/form"
-       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
-       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-       i18n:domain="medialog.dutchmantheme">
-<schema>
-  <field name="disabled" type="zope.schema.Bool">
+  xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="medialog.dutchmantheme">
+  <schema>
+    <field name="disabled" type="zope.schema.Bool">
       <required>false</required>
       <title>Hide fragment</title>
       <description>Click here to hide fragment</description>
-  </field>
-  <field name="title" type="zope.schema.TextLine">
-    <description/>
-    <required>False</required>
-    <title>Tittel</title>
-  </field>
-  <field name="description" type="zope.schema.Text">
-    <description/>
-    <required>False</required>
-    <title>Description</title>
-  </field>
-  <field name="keyword" type="zope.schema.Choice">
+    </field>
+    <field name="title" type="zope.schema.TextLine">
       <description/>
-      <required>True</required>
+      <required>False</required>
+      <title>Tittel</title>
+    </field>
+    <field name="description" type="zope.schema.Text">
+      <description/>
+      <required>False</required>
+      <title>Description</title>
+    </field>
+    <field name="keyword" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
       <title>Keyword</title>
       <vocabulary>plone.app.vocabularies.Keywords</vocabulary>
+    </field>
+    <field name="linked_folder" type="zope.schema.Choice">
+      <description>Choose Folder</description>
+      <required>False</required>
+      <title>Set this to select a folder instead</title>
+      <source>collective.themefragments.tiles.CatalogSource</source>
     </field>
     <field name="sort_on" type="zope.schema.Choice">
       <description/>
@@ -48,16 +53,38 @@
       </values>
     </field>
     <field name="css_file" type="zope.schema.Choice">
-        <description/>
-        <required>True</required>
-        <title>Style</title>
-        <values>
-          <element>features</element>
-          <element>features2</element>
-          <element>features3</element>
-          <element>features4</element>
-          <element>features5</element>
-        </values>
-      </field>
-</schema>
+      <description/>
+      <required>True</required>
+      <title>Style</title>
+      <values>
+        <element>features</element>
+        <element>features2</element>
+        <element>features3</element>
+        <element>features4</element>
+        <element>features5</element>
+      </values>
+    </field>
+    <field name="buttoncolor" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Button color</title>
+      <values>
+        <element>grey-background</element>
+        <element>black-background</element>
+        <element>white-background</element>
+        <element>plone-background</element>
+        <element>plone-background-2</element>
+        <element>plone-background-3</element>
+        <element>plone-background-opposite</element>
+        <element>custom-background1</element>
+        <element>custom-background2</element>
+        <element>custom-background3</element>
+      </values>
+    </field>
+    <field name="button" type="zope.schema.TextLine">
+      <title>Button text</title>
+      <description>Skip if you dont want button</description>
+      <required>False</required>
+    </field>
+  </schema>
 </model>
