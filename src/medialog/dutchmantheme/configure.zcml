@@ -22,6 +22,14 @@
       post_handler=".setuphandlers.post_install"
       />
 
+<genericsetup:upgradeStep
+    title="Add new Dutchman theme registry fields"
+    description="Adds c_button and g_image registry records"
+    source="*"
+    destination="1001"
+    profile="medialog.dutchmantheme:default"
+    handler=".upgrades.update_registry" 
+  />
   <genericsetup:registerProfile
       name="uninstall"
       title="medialog.dutchmantheme (uninstall)"

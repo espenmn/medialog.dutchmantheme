@@ -88,7 +88,11 @@ class IMedialogDutchmanThemeSettings(model.Schema):
             'footer_color',
             'footerlink_color',
             'footerlink_hover',
-            'footerlink_visited']
+            'footerlink_visited',
+            'c_button',
+            'c_button_url', 
+            'g_image',
+            'g_image_url']
     )
 
     style = schema.Choice(
@@ -218,6 +222,26 @@ class IMedialogDutchmanThemeSettings(model.Schema):
     footerlink_visited = schema.Text(
         title=_('footerlink-visited', default=u'Footerlink visited'),
         required=False,
+    )
+    
+    c_button = schema.TextLine(
+        title=_('Contact Button',),
+        required=False, 
+    )
+    
+    c_button_url = schema.TextLine(
+        title=_('Contact Button URL',),
+        required=False, 
+    )
+    
+    g_image = schema.TextLine(
+        title=_('Google image URL',),
+        required=False, 
+    )
+    
+    g_image_url = schema.TextLine(
+        title=_('Google image link',),
+        required=False, 
     )
 
     widget(

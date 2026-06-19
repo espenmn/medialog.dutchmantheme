@@ -56,8 +56,7 @@ setup(
         'plone.app.tiles',
         'medialog.iconpicker>=2.0.0',
         'collective.z3cform.colorpicker',
-        'plone.app.imagecropping',
-        # -*- Extra requirements: -*-
+        'plone.app.imagecropping', 
         'z3c.jbot',
         'plone.api>=1.8.4',
         'plone.app.dexterity',

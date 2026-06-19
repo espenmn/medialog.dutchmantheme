@@ -1,0 +1,6 @@
+<registry>
+  <records interface="medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings">
+    <value key="c_button"></value>
+    <value key="g_image"></value>
+  </records>
+</registry>

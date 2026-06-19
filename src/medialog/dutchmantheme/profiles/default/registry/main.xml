@@ -8,6 +8,10 @@
 		<value key="color1">123456</value>
 		<value key="color2">234561</value>
 		<value key="color3">345612</value>
+		<value key="c_button"></value>
+		<value key="g_image"></value>
+		<value key="c_button_url"></value>
+		<value key="g_image_url"></value>
 		<value key="load_css">True</value>
 		<value key="extra_css" purge="False">.outer-wrapper div.container, #content-header div.container {max-width: 1450px !important;}</value>
 		<value key="enable_overrides">False</value>
