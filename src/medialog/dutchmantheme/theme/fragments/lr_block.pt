@@ -7,6 +7,7 @@
                 css_class view/data/css_class;
                 color1 view/data/color1;
                 color2 view/data/color2;
+                link_url view/get_theurl; 
                 load_css python:context.portal_registry['medialog.dutchmantheme.interfaces.IMedialogDutchmanThemeSettings.load_css'] or ''" class="lrblock disabled-${view/data/disabled|None}" tal:condition="view/editmode|None" data-anchor="anchor-${title}" title="${title}">
   <div class="container flex padding-0 ${css_class} ${color1}" 
     style="border-radius: ${view/data/border_radius|None}px !important; overflow: hidden" >
@@ -21,7 +22,7 @@
       <div class="buttondiv" tal:condition="view/data/button|None"  >
         <a class="btn btn-primary ${view/data/buttontype|None}" 
            style="border-radius: ${view/border_radius|None}px"  
-           href="${line_url|None}">
+           href="${link_url|None}">
              ${view/data/button}
         </a>
       </div>
