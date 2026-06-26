@@ -14,7 +14,7 @@
              <div class="post-info">
              <span tal:content="python:here.toLocalizedTime(obj.Date, long_format=1)">Date</span>  <span>|</span> <span class="entry-author">${load_item/Creator}</span></div>
              <p>${load_item/Description|None}</p>
-             <div><a class="button btn btn-primary" href="${item_url}" title="Lire la suite">${view/data/linktext|None}</a></div>
+             <div><a class="button btn btn-primary" href="${item_url}" title="Button">${view/data/linktext|None}</a></div>
            </div> <!-- end new-text-->
            <div class="clearboth" />
          </div> <!--end shadow-box-->
