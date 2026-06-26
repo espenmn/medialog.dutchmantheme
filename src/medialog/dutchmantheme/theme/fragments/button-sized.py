@@ -3,7 +3,9 @@ def one_link(self):
     #return item
 
     items =self.context.portal_catalog(UID=item)
-    return items[0]
+    if items:
+        return items[0].getObject()
+    return None
     #return self.context.portal_catalog(uuid=(self.data['background_image']))
 
 def editmode(self):
