@@ -3,9 +3,10 @@ def one_link(self):
     #return item
 
     items =self.context.portal_catalog(UID=item)
-    return items[0]
-    #return self.context.portal_catalog(uuid=(self.data['background_image']))
-
+    if items:
+        return items[0].getObject()
+    return None
+    
 def editmode(self):
     form = self.request.form
     if  '_layouteditor' in form:
