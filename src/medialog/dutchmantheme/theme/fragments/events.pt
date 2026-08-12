@@ -29,9 +29,8 @@
           <span tal:condition="python: whole_day==True">
             <i class="fa fa-calendar"></i>
             <span tal:content="python:here.toLocalizedTime(item.start, long_format=0)">Date</span>
-          </span> 
+          </span>
         </p>
-
         <figure tal:define="scale_func obj/@@images;
                     scale context/@@images;" tal:on-error="">
           <tal:check tal:condition="not: view/cropped|None" tal:define="scaled_image python:scale_func.scale('image', scale=image_size)">
@@ -41,7 +40,7 @@
               image_height view/data/image_height;
               image_direction view/data/direction;
             scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction=image_direction)">
-            <img tal:replace="structure python:scaled_image.tag(title=${item/Title})" tal:on-error="" />
+            <img tal:replace="structure python:scaled_image.tag(title='')" tal:on-error="" />
           </tal:check>
         </figure>
 
