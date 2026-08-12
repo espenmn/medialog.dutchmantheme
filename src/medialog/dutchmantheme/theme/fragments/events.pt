@@ -40,7 +40,7 @@
               image_height view/data/image_height;
               image_direction view/data/direction;
             scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction=image_direction)">
-            <img tal:replace="structure python:scaled_image.tag(title='')" tal:on-error="" />
+            <img tal:replace="structure python:scaled_image.tag()" tal:on-error="" />
           </tal:check>
         </figure>
 
