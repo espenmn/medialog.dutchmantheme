@@ -2,19 +2,19 @@
 <model xmlns:form="http://namespaces.plone.org/supermodel/form"
   xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
   xmlns="http://namespaces.plone.org/supermodel/schema">
-    <schema>
-      <field name="disabled" type="zope.schema.Bool">
-          <required>false</required>
-          <title>Hide fragment</title>
-          <description>Click here to hide fragment</description>
-      </field>
-      <field name="keyword" type="zope.schema.List">
-        <description/>
-        <title>Tagged with Keywords</title>
-        <value_type type="zope.schema.Choice">
-          <vocabulary>plone.app.vocabularies.Keywords</vocabulary>
-        </value_type>
-      </field>
+  <schema>
+    <field name="disabled" type="zope.schema.Bool">
+      <required>false</required>
+      <title>Hide fragment</title>
+      <description>Click here to hide fragment</description>
+    </field>
+    <field name="keyword" type="zope.schema.List">
+      <description/>
+      <title>Tagged with Keywords</title>
+      <value_type type="zope.schema.Choice">
+        <vocabulary>plone.app.vocabularies.Keywords</vocabulary>
+      </value_type>
+    </field>
     <field name="item_c" type="zope.schema.Int">
       <description>Number of items to fetch</description>
       <title>Items</title>
@@ -23,11 +23,11 @@
       <default>6</default>
     </field>
     <field name="image_size" type="zope.schema.Choice">
-         <description>Choose Image Size (scale)</description>
-         <required>True</required>
-         <title>Image Size</title>
-         <default>preview</default>
-       <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
+      <description>Choose Image Size (scale)</description>
+      <required>True</required>
+      <title>Image Size</title>
+      <default>preview</default>
+      <vocabulary>plone.app.vocabularies.ImagesScales</vocabulary>
     </field>
     <field name="image_width" type="zope.schema.Int">
       <description>Set size if you want to scale image more precisely</description>
@@ -52,5 +52,5 @@
         <element>down</element>
       </values>
     </field>
-</schema>
+  </schema>
 </model>
