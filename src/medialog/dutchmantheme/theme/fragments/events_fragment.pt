@@ -1,0 +1,125 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en" i18n:domain="medialog.dutchmantheme">
+
+  <div class="eventitems disabled-${view/data/disabled|None}" tal:condition="view/editmode|None" tal:define="image_size view/data/image_size|None; 
+    show_description view/data/show_description|None;
+    show_image view/data/show_image|None;
+    cropped view/cropped|None">
+
+    <div class="programicon_item ckFilter-obj" tal:repeat="item view/get_items|None">
+
+      <div class="eventitem" tal:define="obj item/getObject;
+          item_url item/getURL|item/absolute_url;
+          whole_day item/whole_day|python: False">
+
+        <!--p class="pre_title">
+            <a href="link to subject">
+               item/Subject repeat</a>
+        </p-->
+
+        <div class="cal_date card me-3 flex-shrink-0 text-center">
+          <div class="cal_month card-header p-2" tal:content="python:here.toLocalizedTime(item.start, '%B')">August</div>
+          <div class="card-body d-flex flex-column p-2">
+            <h3 class="cal_day card-title fs-1 m-0" tal:content="python:here.toLocalizedTime(item.start, '%d')">12</h3>
+            <span class="cal_wkday card-text" tal:content="python:here.toLocalizedTime(item.start, '%A')">>Wednesday</span>
+          </div>
+        </div>
+        <div class="cal_info clearfix">
+          <h1 class="users">
+            <a href="${item_url}">${item/Title}</a>
+          </h1>
+          <p tal:condition="show_description|None" class="black event-description">${item/Description|None}</p>
+           <p i18n:translate="">${item/location|None} </p>
+          <p class="sub_info">
+            
+            
+            <span tal:condition="python: whole_day!=True"> 
+              <span tal:content="python:here.toLocalizedTime(item.start, '%d %b %Y, %H.%M')">Date</span>
+            <span i18n:translate="">to</span>  
+              <span tal:content="python:here.toLocalizedTime(item.end, '%d %b %H.%M')">Date</span>
+            </span>
+
+            <span tal:condition="python: whole_day==True">
+              <i class="fa fa-calendar"></i>
+              <span tal:content="python:here.toLocalizedTime(item.start, long_format=0)">Date</span>
+            </span>
+          </p>
+          <figure tal:condition="show_image|None" tal:define="scale_func obj/@@images;
+                    scale context/@@images;" tal:on-error="">
+            <a href="${item_url}" title="open event">
+              <tal:check tal:condition="not: view/cropped|None" tal:define="scaled_image python:scale_func.scale('image', scale=image_size)">
+                <img tal:replace="structure python:scaled_image.tag(title='')" tal:on-error="" />
+              </tal:check>
+              <tal:check tal:condition="view/cropped|None" tal:define="image_width view/data/image_width;
+              image_height view/data/image_height;
+              image_direction view/data/direction;
+            scaled_image python:scale_func.scale('image', width=image_width, height=image_height, direction=image_direction)">
+                <img tal:condition="scaled_image" tal:replace="structure python:scaled_image.tag()" tal:on-error="" />
+                <!-- <img tal:condition="not: scaled_image" src="/@@site-logo/logo_proloog_600.png" />  -->
+              </tal:check>
+              <a href="${item_url}">
+              </figure>
+            </div>
+          </div>
+  
+ 
+      </div>
+    </div>
+     <style>
+div.eventitems {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+
+.eventitem {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.eventitems .cal_date {
+   min-width: 90px; 
+}
+ 
+
+p.pre_title  {
+text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+p.sub_info span,
+.pre_title a, {
+	text-align: center;
+	color: #b7b7b7;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+div.programicon_item.ckFilter-obj {
+	margin: 2em 0;
+}
+
+
+h1.users a {
+	color: #5c5c5c;
+}
+
+  p.sub_info span {
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.programicon_item.ckFilter-obj {
+	width: 32%;
+	min-width: 300px;
+
+}
+
+          </style>
+  </html>
