@@ -5,10 +5,10 @@ tal:define="scale context/@@images;
   image_width view/data/image_width;
   image_height view/data/image_height">
     <figure class="custom-leadimage"
-        style="border-radius: ${view/data/border_radius|None}px" 
         tal:define="scaled_image python:scale.scale('image', scale=image_size)"
         tal:condition="scaled_image">
-        <img tal:replace="structure python:scaled_image.tag()"
+        <img style="border-radius: ${view/data/border_radius|None}px" 
+             tal:replace="structure python:scaled_image.tag()"
              tal:on-error=""/>
        </figure>
 <style>
