@@ -2,13 +2,13 @@
 tal:condition="view/editmode|None"
 tal:define="scale context/@@images;
   image_size view/data/image_size;
+  bradius view/data/border_radius|None;
   image_width view/data/image_width;
   image_height view/data/image_height">
-    <figure class="custom-leadimage"
-        tal:define="scaled_image python:scale.scale('image', scale=image_size);
-        bradius view/data/border_radius|None"
+    <figure class="custom-leadimage bradius-${bradius}"
+        tal:define="scaled_image python:scale.scale('image', scale=image_size)"
         tal:condition="scaled_image">
-        <img tal:replace="structure python:scaled_image.tag(style='border-radius: ${bradius}px')"
+        <img tal:replace="structure python:scaled_image.tag()"
              tal:on-error=""/>
        </figure>
 <style>
@@ -18,5 +18,6 @@ tal:define="scale context/@@images;
 	width: ${image_width}px !important;
 	object-position: ${view/data/position-x}% ${view/data/position-y}%;
 }
+.bradius-${bradius} img {border-radius: ${bradius}px}
 </style>
 </div>
